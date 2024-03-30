@@ -52,7 +52,7 @@
             btnSignIn.Location = new System.Drawing.Point(12, 298);
             btnSignIn.Name = "btnSignIn";
             btnSignIn.Size = new System.Drawing.Size(324, 40);
-            btnSignIn.TabIndex = 1;
+            btnSignIn.TabIndex = 2;
             btnSignIn.Text = "Sign In";
             btnSignIn.ThemeName = "Windows8";
             btnSignIn.Click += btnSignIn_Click;
@@ -65,12 +65,13 @@
             txtPassword.NullText = "Password";
             txtPassword.PasswordChar = '●';
             txtPassword.Size = new System.Drawing.Size(324, 27);
-            txtPassword.TabIndex = 0;
+            txtPassword.TabIndex = 1;
             txtPassword.ThemeName = "Windows8";
             txtPassword.UseSystemPasswordChar = true;
             // 
             // frmLogin
             // 
+            AcceptButton = btnSignIn;
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(348, 450);

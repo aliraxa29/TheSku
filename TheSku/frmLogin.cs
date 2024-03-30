@@ -25,6 +25,7 @@ namespace TheSku
             var user = dbContext1.Users.Where(x => x.UserName == this.txtUserName.Text.Trim() && x.Password == this.txtPassword.Text).FirstOrDefault();
             if (user is not null)
             {
+                Global.UserName = user.UserName;
                 base.Hide();
                 new frmMain(dbContext1).Show();
             }

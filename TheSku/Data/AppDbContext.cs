@@ -16,6 +16,7 @@ namespace TheSku.Data
             optionsBuilder.UseMySql(ConfigurationManager.ConnectionStrings["ConString"].ToString(), ServerVersion.AutoDetect(ConfigurationManager.ConnectionStrings["ConString"].ToString()));
         }
 
+        public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<User> Users { get; set; }
     }
 }
