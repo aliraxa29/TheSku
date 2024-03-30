@@ -22,6 +22,12 @@ namespace TheSku
                 this.txtUserName.Focus();
                 return;
             }
+            if (string.IsNullOrEmpty(this.txtPassword.Text))
+            {
+                MessageBox.Show("Password is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtPassword.Focus();
+                return;
+            }
             var user = dbContext1.Users.Where(x => x.UserName == this.txtUserName.Text.Trim() && x.Password == this.txtPassword.Text).FirstOrDefault();
             if (user is not null)
             {

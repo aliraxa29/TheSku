@@ -32,6 +32,9 @@
             lblID = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
+            btnClose = new Telerik.WinControls.UI.RadButton();
+            btnDelete = new Telerik.WinControls.UI.RadButton();
+            btnNew = new Telerik.WinControls.UI.RadButton();
             btnSave = new Telerik.WinControls.UI.RadButton();
             panel3 = new System.Windows.Forms.Panel();
             tabControl1 = new System.Windows.Forms.TabControl();
@@ -45,9 +48,17 @@
             name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             supplier_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             groupBox1 = new System.Windows.Forms.GroupBox();
+            txtLimit = new System.Windows.Forms.NumericUpDown();
+            txtNameFilter = new Telerik.WinControls.UI.RadTextBox();
+            label4 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            btnDisplay = new Telerik.WinControls.UI.RadButton();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnDelete).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnNew).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnSave).BeginInit();
             panel3.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -57,6 +68,10 @@
             tpList.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gvList).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txtLimit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtNameFilter).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnDisplay).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -79,6 +94,7 @@
             lblID.Size = new System.Drawing.Size(13, 15);
             lblID.TabIndex = 1;
             lblID.Text = "0";
+            lblID.Visible = false;
             // 
             // label1
             // 
@@ -93,12 +109,47 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnClose);
+            panel2.Controls.Add(btnDelete);
+            panel2.Controls.Add(btnNew);
             panel2.Controls.Add(btnSave);
             panel2.Dock = System.Windows.Forms.DockStyle.Left;
             panel2.Location = new System.Drawing.Point(0, 71);
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(200, 414);
             panel2.TabIndex = 1;
+            // 
+            // btnClose
+            // 
+            btnClose.ForeColor = System.Drawing.Color.Black;
+            btnClose.Location = new System.Drawing.Point(3, 132);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new System.Drawing.Size(194, 36);
+            btnClose.TabIndex = 1;
+            btnClose.Text = "Close";
+            btnClose.ThemeName = "Windows8";
+            btnClose.Click += btnClose_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.ForeColor = System.Drawing.Color.Red;
+            btnDelete.Location = new System.Drawing.Point(3, 90);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new System.Drawing.Size(194, 36);
+            btnDelete.TabIndex = 1;
+            btnDelete.Text = "Delete";
+            btnDelete.ThemeName = "Windows8";
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnNew
+            // 
+            btnNew.Location = new System.Drawing.Point(3, 48);
+            btnNew.Name = "btnNew";
+            btnNew.Size = new System.Drawing.Size(194, 36);
+            btnNew.TabIndex = 1;
+            btnNew.Text = "New";
+            btnNew.ThemeName = "Windows8";
+            btnNew.Click += btnNew_Click;
             // 
             // btnSave
             // 
@@ -183,7 +234,6 @@
             tpList.TabIndex = 1;
             tpList.Text = "List";
             tpList.UseVisualStyleBackColor = true;
-            tpList.Enter += tpList_Enter;
             // 
             // groupBox2
             // 
@@ -215,6 +265,7 @@
             gvList.Size = new System.Drawing.Size(629, 265);
             gvList.TabIndex = 0;
             gvList.CellDoubleClick += gvList_CellDoubleClick;
+            gvList.KeyDown += gvList_KeyDown;
             // 
             // name
             // 
@@ -232,6 +283,11 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtLimit);
+            groupBox1.Controls.Add(txtNameFilter);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(btnDisplay);
             groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             groupBox1.Location = new System.Drawing.Point(3, 3);
             groupBox1.Name = "groupBox1";
@@ -239,6 +295,55 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filters";
+            // 
+            // txtLimit
+            // 
+            txtLimit.Location = new System.Drawing.Point(165, 58);
+            txtLimit.Maximum = new decimal(new int[] { -915455471, -439557943, 2, 0 });
+            txtLimit.Name = "txtLimit";
+            txtLimit.Size = new System.Drawing.Size(90, 25);
+            txtLimit.TabIndex = 4;
+            txtLimit.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            txtLimit.KeyDown += txtNameFilter_KeyDown;
+            // 
+            // txtNameFilter
+            // 
+            txtNameFilter.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtNameFilter.Location = new System.Drawing.Point(6, 60);
+            txtNameFilter.Name = "txtNameFilter";
+            txtNameFilter.Size = new System.Drawing.Size(153, 23);
+            txtNameFilter.TabIndex = 3;
+            txtNameFilter.ThemeName = "Windows8";
+            txtNameFilter.KeyDown += txtNameFilter_KeyDown;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(6, 38);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(44, 17);
+            label4.TabIndex = 2;
+            label4.Text = "Name";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(165, 38);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(40, 17);
+            label3.TabIndex = 2;
+            label3.Text = "Limit";
+            // 
+            // btnDisplay
+            // 
+            btnDisplay.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            btnDisplay.Location = new System.Drawing.Point(540, 47);
+            btnDisplay.Name = "btnDisplay";
+            btnDisplay.Size = new System.Drawing.Size(90, 36);
+            btnDisplay.TabIndex = 1;
+            btnDisplay.Text = "Display";
+            btnDisplay.ThemeName = "Windows8";
+            btnDisplay.Click += btnDisplay_Click;
             // 
             // frmSupplier
             // 
@@ -256,6 +361,9 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnDelete).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnNew).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnSave).EndInit();
             panel3.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
@@ -266,6 +374,11 @@
             tpList.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gvList).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)txtLimit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtNameFilter).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnDisplay).EndInit();
             ResumeLayout(false);
         }
 
@@ -289,5 +402,13 @@
         private Telerik.WinControls.UI.RadButton btnSave;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplier_name;
+        private Telerik.WinControls.UI.RadButton btnNew;
+        private Telerik.WinControls.UI.RadButton btnDisplay;
+        private Telerik.WinControls.UI.RadButton btnDelete;
+        private Telerik.WinControls.UI.RadButton btnClose;
+        private System.Windows.Forms.NumericUpDown txtLimit;
+        private Telerik.WinControls.UI.RadTextBox txtNameFilter;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

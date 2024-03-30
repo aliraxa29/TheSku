@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 using TheSku.Data;
 
 namespace TheSku
@@ -13,6 +14,7 @@ namespace TheSku
             AppDbContext = dbContext;
             InitializeComponent();
             this.gvList.AutoGenerateColumns = false;
+            this.ActiveControl = this.txtSupplierName;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -65,24 +67,30 @@ namespace TheSku
             this.txtSupplierName.Clear();
         }
 
-        private void tpList_Enter(object sender, EventArgs e)
-        {
-            var suppliers = AppDbContext.Suppliers.Take(100).OrderByDescending(x => x.Modified).ToList();
-            this.gvList.DataSource = suppliers;
-        }
-
         private void frmSupplier_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.S)
             {
                 this.btnSave.PerformClick();
             }
+            if (e.Control && e.KeyCode == Keys.X)
+            {
+                this.btnClose.PerformClick();
+            }
+            if (e.Control && e.KeyCode == Keys.B)
+            {
+                this.btnNew.PerformClick();
+            }
+            if (e.Control && e.KeyCode == Keys.D)
+            {
+                this.btnDelete.PerformClick();
+            }
             if (e.KeyCode == Keys.F5)
             {
                 if (tabControl1.SelectedIndex == 0)
                 {
                     tabControl1.SelectTab(1);
-                    this.gvList.Focus();
+                    this.txtNameFilter.Focus();
                 }
                 else
                 {
@@ -107,7 +115,12 @@ namespace TheSku
 
         private void BindGrid()
         {
-
+            var suppliers = AppDbContext.Suppliers.
+                Where(s => string.IsNullOrEmpty(this.txtNameFilter.Text) || s.Name.Contains(this.txtNameFilter.Text)).
+                Take((int)this.txtLimit.Value).
+                OrderByDescending(x => x.Modified).
+                ToList();
+            this.gvList.DataSource = suppliers;
         }
 
         private void LoadData()
@@ -120,9 +133,72 @@ namespace TheSku
                     this.txtSupplierName.Text = supplier.SupplierName;
                     this.tabControl1.SelectTab(0);
                     this.txtSupplierName.Focus();
+                    this.lblID.Visible = true;
                 }
             }
         }
 
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            this.lblID.Text = "0";
+            this.lblID.Visible = false;
+            this.txtSupplierName.Clear();
+            this.tabControl1.SelectTab(0);
+            this.txtSupplierName.Focus();
+        }
+
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            this.BindGrid();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.lblID.Text != "0")
+            {
+                if (MessageBox.Show($"Are you sure you want to delete {this.lblID.Text}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                    if (supplier is not null)
+                    {
+                        AppDbContext.Suppliers.Remove(supplier);
+                        AppDbContext.SaveChanges();
+                        MessageBox.Show($"{this.lblID.Text} deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.btnNew.PerformClick();
+                    }
+                }
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Are you sure you want to close {this.Text}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                base.Close();
+            }
+        }
+
+        private void txtNameFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                this.btnDisplay.PerformClick();
+            }
+            if (this.gvList.RowCount > 0)
+            {
+                if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down)
+                {
+                    this.gvList.Focus();
+                }
+            }
+        }
+
+        private void gvList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && this.gvList.RowCount > 0)
+            {
+                gvList_CellDoubleClick(sender, new DataGridViewCellEventArgs(this.gvList.CurrentCell.ColumnIndex, this.gvList.CurrentCell.RowIndex));
+            }
+        }
     }
 }

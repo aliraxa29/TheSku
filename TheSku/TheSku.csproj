@@ -6,6 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationManifest>app.manifest</ApplicationManifest>
 	<ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
+	<AssemblyName>The Sku</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
