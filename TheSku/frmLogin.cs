@@ -28,7 +28,9 @@ namespace TheSku
                 this.txtPassword.Focus();
                 return;
             }
-            var user = dbContext1.Users.Where(x => x.UserName == this.txtUserName.Text.Trim() && x.Password == this.txtPassword.Text).FirstOrDefault();
+            var user = dbContext1.Users
+                     .Where(x => x.UserName == this.txtUserName.Text.Trim() && x.Password == Security.EncryptString(this.txtPassword.Text))
+                     .FirstOrDefault();
             if (user is not null)
             {
                 Global.UserName = user.UserName;

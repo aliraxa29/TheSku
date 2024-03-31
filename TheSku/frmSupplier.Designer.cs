@@ -54,6 +54,8 @@
             label3 = new System.Windows.Forms.Label();
             btnDisplay = new Telerik.WinControls.UI.RadButton();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            label5 = new System.Windows.Forms.Label();
+            radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
@@ -72,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)txtLimit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtNameFilter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnDisplay).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)radTextBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -82,7 +85,7 @@
             panel1.Dock = System.Windows.Forms.DockStyle.Top;
             panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(849, 71);
+            panel1.Size = new System.Drawing.Size(988, 71);
             panel1.TabIndex = 0;
             // 
             // lblID
@@ -167,7 +170,7 @@
             panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             panel3.Location = new System.Drawing.Point(200, 71);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(649, 414);
+            panel3.Size = new System.Drawing.Size(788, 414);
             panel3.TabIndex = 1;
             // 
             // tabControl1
@@ -179,7 +182,7 @@
             tabControl1.Location = new System.Drawing.Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new System.Drawing.Size(649, 414);
+            tabControl1.Size = new System.Drawing.Size(788, 414);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -188,19 +191,21 @@
             tabPage1.Location = new System.Drawing.Point(4, 26);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            tabPage1.Size = new System.Drawing.Size(641, 384);
+            tabPage1.Size = new System.Drawing.Size(780, 384);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Supplier";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(radTextBox1);
+            groupBox3.Controls.Add(label5);
             groupBox3.Controls.Add(txtSupplierName);
             groupBox3.Controls.Add(label2);
             groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             groupBox3.Location = new System.Drawing.Point(3, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(635, 100);
+            groupBox3.Size = new System.Drawing.Size(774, 100);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Details";
@@ -230,7 +235,7 @@
             tpList.Location = new System.Drawing.Point(4, 26);
             tpList.Name = "tpList";
             tpList.Padding = new System.Windows.Forms.Padding(3);
-            tpList.Size = new System.Drawing.Size(641, 384);
+            tpList.Size = new System.Drawing.Size(780, 384);
             tpList.TabIndex = 1;
             tpList.Text = "List";
             tpList.UseVisualStyleBackColor = true;
@@ -241,7 +246,7 @@
             groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             groupBox2.Location = new System.Drawing.Point(3, 92);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new System.Drawing.Size(635, 289);
+            groupBox2.Size = new System.Drawing.Size(774, 289);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "List";
@@ -262,7 +267,7 @@
             gvList.Name = "gvList";
             gvList.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             gvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            gvList.Size = new System.Drawing.Size(629, 265);
+            gvList.Size = new System.Drawing.Size(768, 265);
             gvList.TabIndex = 0;
             gvList.CellDoubleClick += gvList_CellDoubleClick;
             gvList.KeyDown += gvList_KeyDown;
@@ -291,7 +296,7 @@
             groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             groupBox1.Location = new System.Drawing.Point(3, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(635, 89);
+            groupBox1.Size = new System.Drawing.Size(774, 89);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filters";
@@ -337,7 +342,7 @@
             // btnDisplay
             // 
             btnDisplay.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnDisplay.Location = new System.Drawing.Point(540, 47);
+            btnDisplay.Location = new System.Drawing.Point(679, 47);
             btnDisplay.Name = "btnDisplay";
             btnDisplay.Size = new System.Drawing.Size(90, 36);
             btnDisplay.TabIndex = 1;
@@ -345,11 +350,31 @@
             btnDisplay.ThemeName = "Windows8";
             btnDisplay.Click += btnDisplay_Click;
             // 
+            // label5
+            // 
+            label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(419, 44);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(99, 17);
+            label5.TabIndex = 0;
+            label5.Text = "Supplier Name";
+            // 
+            // radTextBox1
+            // 
+            radTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            radTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            radTextBox1.Location = new System.Drawing.Point(536, 41);
+            radTextBox1.Name = "radTextBox1";
+            radTextBox1.Size = new System.Drawing.Size(232, 23);
+            radTextBox1.TabIndex = 1;
+            radTextBox1.ThemeName = "Windows8";
+            // 
             // frmSupplier
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(849, 485);
+            ClientSize = new System.Drawing.Size(988, 485);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -379,6 +404,7 @@
             ((System.ComponentModel.ISupportInitialize)txtLimit).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtNameFilter).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnDisplay).EndInit();
+            ((System.ComponentModel.ISupportInitialize)radTextBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -410,5 +436,7 @@
         private Telerik.WinControls.UI.RadTextBox txtNameFilter;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private Telerik.WinControls.UI.RadTextBox radTextBox1;
+        private System.Windows.Forms.Label label5;
     }
 }
