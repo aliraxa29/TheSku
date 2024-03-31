@@ -32,5 +32,15 @@ namespace TheSku
             frmUser.MdiParent = this;
             frmUser.Show();
         }
+
+        private void aboutUsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAbout().ShowDialog();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
