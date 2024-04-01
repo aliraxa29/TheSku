@@ -49,14 +49,15 @@ namespace TheSku
             txtFirstName = new Telerik.WinControls.UI.RadTextBox();
             label2 = new System.Windows.Forms.Label();
             groupBox3 = new System.Windows.Forms.GroupBox();
-            txtUsername = new Telerik.WinControls.UI.RadTextBox();
-            label8 = new System.Windows.Forms.Label();
-            txtLastName = new Telerik.WinControls.UI.RadTextBox();
-            label6 = new System.Windows.Forms.Label();
-            txtFullName = new Telerik.WinControls.UI.RadTextBox();
+            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             label7 = new System.Windows.Forms.Label();
-            txtPassword = new Telerik.WinControls.UI.RadTextBox();
+            txtUsername = new Telerik.WinControls.UI.RadTextBox();
+            txtFullName = new Telerik.WinControls.UI.RadTextBox();
+            txtLastName = new Telerik.WinControls.UI.RadTextBox();
+            label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
+            txtPassword = new Telerik.WinControls.UI.RadTextBox();
+            label6 = new System.Windows.Forms.Label();
             tabPage1 = new System.Windows.Forms.TabPage();
             panel3 = new System.Windows.Forms.Panel();
             tabControl1 = new System.Windows.Forms.TabControl();
@@ -79,9 +80,10 @@ namespace TheSku
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtFirstName).BeginInit();
             groupBox3.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtUsername).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtLastName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtFullName).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtLastName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtPassword).BeginInit();
             tabPage1.SuspendLayout();
             panel3.SuspendLayout();
@@ -99,7 +101,7 @@ namespace TheSku
             // 
             radTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             radTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            radTextBox1.Location = new System.Drawing.Point(1087, 111);
+            radTextBox1.Location = new System.Drawing.Point(1087, 66);
             radTextBox1.Name = "radTextBox1";
             radTextBox1.Size = new System.Drawing.Size(232, 23);
             radTextBox1.TabIndex = 1;
@@ -226,7 +228,7 @@ namespace TheSku
             // 
             label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(970, 114);
+            label5.Location = new System.Drawing.Point(970, 69);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(99, 17);
             label5.TabIndex = 0;
@@ -234,18 +236,20 @@ namespace TheSku
             // 
             // txtFirstName
             // 
+            txtFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
             txtFirstName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtFirstName.Location = new System.Drawing.Point(123, 40);
+            txtFirstName.Location = new System.Drawing.Point(189, 3);
             txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new System.Drawing.Size(232, 23);
-            txtFirstName.TabIndex = 1;
+            txtFirstName.Size = new System.Drawing.Size(180, 27);
+            txtFirstName.TabIndex = 0;
             txtFirstName.ThemeName = "Windows8";
             txtFirstName.TextChanged += txtFirstName_TextChanged;
             // 
             // label2
             // 
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(6, 43);
+            label2.Location = new System.Drawing.Point(3, 8);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(75, 17);
             label2.TabIndex = 0;
@@ -253,104 +257,128 @@ namespace TheSku
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(tableLayoutPanel1);
             groupBox3.Controls.Add(radTextBox1);
             groupBox3.Controls.Add(label5);
-            groupBox3.Controls.Add(txtUsername);
-            groupBox3.Controls.Add(label8);
-            groupBox3.Controls.Add(txtLastName);
-            groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(txtFullName);
-            groupBox3.Controls.Add(label7);
-            groupBox3.Controls.Add(txtPassword);
-            groupBox3.Controls.Add(label9);
-            groupBox3.Controls.Add(txtFirstName);
-            groupBox3.Controls.Add(label2);
             groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             groupBox3.Location = new System.Drawing.Point(3, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(751, 241);
+            groupBox3.Size = new System.Drawing.Size(751, 151);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Details";
             // 
-            // txtUsername
+            // tableLayoutPanel1
             // 
-            txtUsername.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            txtUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtUsername.Location = new System.Drawing.Point(513, 70);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new System.Drawing.Size(232, 23);
-            txtUsername.TabIndex = 1;
-            txtUsername.ThemeName = "Windows8";
-            // 
-            // label8
-            // 
-            label8.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(396, 73);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(75, 17);
-            label8.TabIndex = 0;
-            label8.Text = "User Name";
-            // 
-            // txtLastName
-            // 
-            txtLastName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            txtLastName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtLastName.Location = new System.Drawing.Point(513, 41);
-            txtLastName.Name = "txtLastName";
-            txtLastName.Size = new System.Drawing.Size(232, 23);
-            txtLastName.TabIndex = 1;
-            txtLastName.ThemeName = "Windows8";
-            txtLastName.TextChanged += txtFirstName_TextChanged;
-            // 
-            // label6
-            // 
-            label6.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(396, 44);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(73, 17);
-            label6.TabIndex = 0;
-            label6.Text = "Last Name";
-            // 
-            // txtFullName
-            // 
-            txtFullName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtFullName.Location = new System.Drawing.Point(123, 69);
-            txtFullName.Name = "txtFullName";
-            txtFullName.ReadOnly = true;
-            txtFullName.Size = new System.Drawing.Size(232, 23);
-            txtFullName.TabIndex = 1;
-            txtFullName.ThemeName = "Windows8";
+            tableLayoutPanel1.ColumnCount = 4;
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.Controls.Add(label2, 0, 0);
+            tableLayoutPanel1.Controls.Add(txtFirstName, 1, 0);
+            tableLayoutPanel1.Controls.Add(label7, 0, 1);
+            tableLayoutPanel1.Controls.Add(txtUsername, 3, 1);
+            tableLayoutPanel1.Controls.Add(txtFullName, 1, 1);
+            tableLayoutPanel1.Controls.Add(txtLastName, 3, 0);
+            tableLayoutPanel1.Controls.Add(label8, 2, 1);
+            tableLayoutPanel1.Controls.Add(label9, 0, 2);
+            tableLayoutPanel1.Controls.Add(txtPassword, 1, 2);
+            tableLayoutPanel1.Controls.Add(label6, 2, 0);
+            tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            tableLayoutPanel1.Location = new System.Drawing.Point(3, 21);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.Size = new System.Drawing.Size(745, 100);
+            tableLayoutPanel1.TabIndex = 2;
             // 
             // label7
             // 
+            label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(6, 72);
+            label7.Location = new System.Drawing.Point(3, 41);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(71, 17);
             label7.TabIndex = 0;
             label7.Text = "Full Name";
             // 
-            // txtPassword
+            // txtUsername
             // 
-            txtPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtPassword.Location = new System.Drawing.Point(123, 98);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new System.Drawing.Size(232, 23);
-            txtPassword.TabIndex = 1;
-            txtPassword.ThemeName = "Windows8";
-            txtPassword.TextChanged += txtFirstName_TextChanged;
+            txtUsername.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtUsername.Location = new System.Drawing.Point(561, 36);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new System.Drawing.Size(181, 27);
+            txtUsername.TabIndex = 4;
+            txtUsername.ThemeName = "Windows8";
+            // 
+            // txtFullName
+            // 
+            txtFullName.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtFullName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtFullName.Location = new System.Drawing.Point(189, 36);
+            txtFullName.Name = "txtFullName";
+            txtFullName.ReadOnly = true;
+            txtFullName.Size = new System.Drawing.Size(180, 27);
+            txtFullName.TabIndex = 1;
+            txtFullName.ThemeName = "Windows8";
+            // 
+            // txtLastName
+            // 
+            txtLastName.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtLastName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtLastName.Location = new System.Drawing.Point(561, 3);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new System.Drawing.Size(181, 27);
+            txtLastName.TabIndex = 3;
+            txtLastName.ThemeName = "Windows8";
+            txtLastName.TextChanged += txtFirstName_TextChanged;
+            // 
+            // label8
+            // 
+            label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(480, 41);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(75, 17);
+            label8.TabIndex = 0;
+            label8.Text = "User Name";
             // 
             // label9
             // 
+            label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(6, 101);
+            label9.Location = new System.Drawing.Point(3, 74);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(66, 17);
             label9.TabIndex = 0;
             label9.Text = "Password";
+            // 
+            // txtPassword
+            // 
+            txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtPassword.Location = new System.Drawing.Point(189, 69);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '●';
+            txtPassword.Size = new System.Drawing.Size(180, 28);
+            txtPassword.TabIndex = 2;
+            txtPassword.ThemeName = "Windows8";
+            txtPassword.UseSystemPasswordChar = true;
+            txtPassword.TextChanged += txtFirstName_TextChanged;
+            // 
+            // label6
+            // 
+            label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(482, 8);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(73, 17);
+            label6.TabIndex = 0;
+            label6.Text = "Last Name";
             // 
             // tabPage1
             // 
@@ -402,7 +430,7 @@ namespace TheSku
             btnClose.Location = new System.Drawing.Point(3, 132);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(194, 36);
-            btnClose.TabIndex = 1;
+            btnClose.TabIndex = 3;
             btnClose.Text = "Close";
             btnClose.ThemeName = "Windows8";
             btnClose.Click += btnClose_Click;
@@ -413,7 +441,7 @@ namespace TheSku
             btnDelete.Location = new System.Drawing.Point(3, 90);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new System.Drawing.Size(194, 36);
-            btnDelete.TabIndex = 1;
+            btnDelete.TabIndex = 2;
             btnDelete.Text = "Delete";
             btnDelete.ThemeName = "Windows8";
             btnDelete.Click += btnDelete_Click;
@@ -433,7 +461,7 @@ namespace TheSku
             btnSave.Location = new System.Drawing.Point(3, 6);
             btnSave.Name = "btnSave";
             btnSave.Size = new System.Drawing.Size(194, 36);
-            btnSave.TabIndex = 1;
+            btnSave.TabIndex = 0;
             btnSave.Text = "Save";
             btnSave.ThemeName = "Windows8";
             btnSave.Click += btnSave_Click;
@@ -508,9 +536,11 @@ namespace TheSku
             ((System.ComponentModel.ISupportInitialize)txtFirstName).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)txtUsername).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtLastName).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtFullName).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtLastName).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtPassword).EndInit();
             tabPage1.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -567,5 +597,6 @@ namespace TheSku
         private System.Windows.Forms.DataGridViewTextBoxColumn user_name;
         private Telerik.WinControls.UI.RadTextBox txtPassword;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

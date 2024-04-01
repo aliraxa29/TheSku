@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using System.Windows.Forms;
 
 namespace TheSku
@@ -14,11 +8,11 @@ namespace TheSku
         public frmAbout()
         {
             InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
+            this.Text = string.Format("About {0}", AssemblyTitle);
+            this.labelProductName.Text = string.Concat("Product: ",AssemblyProduct);
+            this.labelVersion.Text = string.Format("Version {0}", AssemblyVersion);
+            this.labelCopyright.Text = string.Format("Copyright: {0}", AssemblyCopyright);
+            this.labelCompanyName.Text = string.Format("Company: {0}", AssemblyCompany);
             this.textBoxDescription.Text = AssemblyDescription;
         }
 
@@ -37,7 +31,7 @@ namespace TheSku
                         return titleAttribute.Title;
                     }
                 }
-                return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+                return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().Location);
             }
         }
 

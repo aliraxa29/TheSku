@@ -7,6 +7,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
 	<ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
 	<AssemblyName>The Sku</AssemblyName>
+	<Title>$(AssemblyName)</Title>
+	<Company>Your Company</Company>
+	<Copyright>2024 </Copyright>
   </PropertyGroup>
 
   <ItemGroup>

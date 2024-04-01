@@ -81,7 +81,6 @@
             // 
             // labelProductName
             // 
-            labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
             labelProductName.Location = new System.Drawing.Point(167, 0);
             labelProductName.Margin = new System.Windows.Forms.Padding(7, 0, 4, 0);
             labelProductName.MaximumSize = new System.Drawing.Size(0, 20);
@@ -164,7 +163,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmAbout";
-            Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            Padding = new System.Windows.Forms.Padding(10);
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

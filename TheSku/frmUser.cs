@@ -153,6 +153,7 @@ namespace TheSku
                     this.txtLastName.Text = supplier.LastName;
                     this.txtFullName.Text = supplier.FullName;
                     this.txtUsername.Text = supplier.UserName;
+                    this.txtPassword.Text = Security.DecryptString(supplier.Password);
                     this.tabControl1.SelectTab(0);
                     this.txtFirstName.Focus();
                     this.txtUsername.ReadOnly = true;
