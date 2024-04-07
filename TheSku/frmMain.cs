@@ -75,5 +75,17 @@ namespace TheSku
         {
             new frmCustomer(dbContext) { MdiParent = this }.Show();
         }
+
+        private void countryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmCountry"] != null)
+            {
+                Application.OpenForms["frmCountry"].BringToFront();
+            }
+            else
+            {
+                new frmCountry(dbContext) { MdiParent = this }.Show();
+            }
+        }
     }
 }
