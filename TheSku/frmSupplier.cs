@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using TheSku.Data;
 
@@ -13,6 +14,9 @@ namespace TheSku
         {
             AppDbContext = dbContext;
             InitializeComponent();
+            this.btnReload.Shortcuts.Add(new RadShortcut(Keys.Control, Keys.R));
+            this.btnDelete.Shortcuts.Add(new RadShortcut(Keys.Control, Keys.T));
+            this.btnCopyNameToClipboard.Shortcuts.Add(new RadShortcut(Keys.Alt, Keys.C));
             this.gvList.AutoGenerateColumns = false;
             this.ActiveControl = this.txtSupplierName;
         }
@@ -100,7 +104,7 @@ namespace TheSku
             }
         }
 
-        private void gvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void gvList_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
             if (this.gvList.RowCount > 0 && e.RowIndex >= 0)
             {
@@ -197,8 +201,22 @@ namespace TheSku
         {
             if (e.KeyCode == Keys.Enter && this.gvList.RowCount > 0)
             {
-                gvList_CellDoubleClick(sender, new DataGridViewCellEventArgs(this.gvList.CurrentCell.ColumnIndex, this.gvList.CurrentCell.RowIndex));
+                GridCellElement cell = this.gvList.CurrentCell;
+                this.gvList_CellDoubleClick(sender, new GridViewCellEventArgs(cell.RowInfo, cell.ColumnInfo, this.gvList.ActiveEditor));
             }
+        }
+
+        private void btnCopyNameToClipboard_Click(object sender, EventArgs e)
+        {
+            if (this.lblID.Text != "0")
+            {
+                Clipboard.SetText(this.lblID.Text);
+            }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            this.LoadData();
         }
     }
 }
