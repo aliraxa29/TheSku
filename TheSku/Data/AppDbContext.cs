@@ -22,16 +22,10 @@ namespace TheSku.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<User>().HasData(new User()
-            {
-                Name = "admin",
-                Creation = DateTime.Now,
-                Modified = DateTime.Now,
-                ModifiedBy = "Administrator",
-                Owner = "Administrator",
-                UserName = "admin",
-                Password = Security.EncryptString("admin")
-            });
+
+            modelBuilder.Entity<User>().HasData(DefaultData.Users());
+            modelBuilder.Entity<Country>().HasData(DefaultData.Countries());
+            modelBuilder.Entity<Currency>().HasData(DefaultData.Currencies());
         }
 
         public DbSet<Supplier> Suppliers { get; set; }
@@ -40,5 +34,7 @@ namespace TheSku.Data
         public DbSet<Customer> Customer { get; set; }
         public DbSet<CustomerGroup> CustomerGroup { get; set; }
         public DbSet<Account> Account { get; set; }
+        public DbSet<Country> Country { get; set; }
+        public DbSet<Currency> Currency { get; set; }
     }
 }

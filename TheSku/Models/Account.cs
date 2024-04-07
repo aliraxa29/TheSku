@@ -27,7 +27,6 @@ public class Account
     [Column("account_name")]
     public string AccountName { get; set; }
     [MaxLength(255)]
-    [Required]
     [Column("account_number")]
     public string AccountNumber { get; set; }
     [MaxLength(1)]
