@@ -70,5 +70,10 @@ namespace TheSku
                 new frmSupplierGroup(dbContext) { MdiParent = this }.Show();
             }
         }
+
+        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmCustomer(dbContext) { MdiParent = this }.Show();
+        }
     }
 }

@@ -101,8 +101,9 @@
             // customerToolStripMenuItem
             // 
             customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            customerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            customerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             customerToolStripMenuItem.Text = "Customer";
+            customerToolStripMenuItem.Click += customerToolStripMenuItem_Click;
             // 
             // buyingToolStripMenuItem
             // 
@@ -115,20 +116,20 @@
             // 
             supplierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { supplierToolStripMenuItem1, supplierGroupToolStripMenuItem });
             supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            supplierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            supplierToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             supplierToolStripMenuItem.Text = "Supplier";
             // 
             // supplierToolStripMenuItem1
             // 
             supplierToolStripMenuItem1.Name = "supplierToolStripMenuItem1";
-            supplierToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            supplierToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             supplierToolStripMenuItem1.Text = "Supplier";
             supplierToolStripMenuItem1.Click += supplierToolStripMenuItem_Click;
             // 
             // supplierGroupToolStripMenuItem
             // 
             supplierGroupToolStripMenuItem.Name = "supplierGroupToolStripMenuItem";
-            supplierGroupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            supplierGroupToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             supplierGroupToolStripMenuItem.Text = "Supplier Group";
             supplierGroupToolStripMenuItem.Click += supplierGroupToolStripMenuItem_Click;
             // 
