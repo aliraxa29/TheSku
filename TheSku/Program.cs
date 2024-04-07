@@ -20,16 +20,10 @@ namespace TheSku
             var serviceCollection = new ServiceCollection();
             ConfigureServices(serviceCollection);
             var serviceProvider = serviceCollection.BuildServiceProvider();
-
-            // Use the service provider to create the main form
             Application.Run(serviceProvider.GetRequiredService<frmLogin>());
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmLogin());
         }
         private static void ConfigureServices(IServiceCollection services)
         {
-            // Configure the DbContext with the connection string
             services.AddDbContext<AppDbContext>(options =>
                 options.UseMySql(ConfigurationManager.ConnectionStrings["ConString"].ToString(), ServerVersion.AutoDetect(ConfigurationManager.ConnectionStrings["ConString"].ToString())));
             services.AddTransient<frmLogin>();
