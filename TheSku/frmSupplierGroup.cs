@@ -7,66 +7,56 @@ using TheSku.Data;
 
 namespace TheSku
 {
-    public partial class frmSupplier : Form
+    public partial class frmSupplierGroup : Form
     {
         AppDbContext AppDbContext;
-        bool IsBinded = false;
-        public frmSupplier(AppDbContext dbContext)
+        public frmSupplierGroup(AppDbContext dbContext)
         {
-            AppDbContext = dbContext;
+            this.AppDbContext = dbContext;
             InitializeComponent();
             this.btnReload.Shortcuts.Add(new RadShortcut(Keys.Control, Keys.R));
             this.btnDelete.Shortcuts.Add(new RadShortcut(Keys.Control, Keys.T));
             this.btnCopyNameToClipboard.Shortcuts.Add(new RadShortcut(Keys.Alt, Keys.C));
-            this.gvList.AutoGenerateColumns = false;
-            this.ActiveControl = this.txtSupplierName;
+            this.ActiveControl = this.txtSupplierGroupName;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(this.txtSupplierName.Text))
+            if (string.IsNullOrWhiteSpace(this.txtSupplierGroupName.Text))
             {
-                MessageBox.Show("Supplier Name is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.txtSupplierName.Focus();
-                return;
-            }
-            if (this.cmbSupplierGroup.SelectedIndex == -1)
-            {
-                MessageBox.Show("Supplier Group is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.cmbSupplierGroup.Focus();
+                MessageBox.Show("Supplier Group Name is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtSupplierGroupName.Focus();
                 return;
             }
             if (this.lblID.Text == "0")
             {
-                var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.txtSupplierName.Text.Trim())).FirstOrDefault();
+                var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.txtSupplierGroupName.Text.Trim())).FirstOrDefault();
                 if (supplier is not null)
                 {
-                    MessageBox.Show("Supplier with this Name is already exists", "Exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.txtSupplierName.Focus();
+                    MessageBox.Show("Supplier Group with this Name is already exists", "Exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtSupplierGroupName.Focus();
                     return;
                 }
-                Supplier supplier1 = new Supplier()
+                SupplierGroup supplier1 = new SupplierGroup()
                 {
-                    Name = this.txtSupplierName.Text.Trim(),
+                    Name = this.txtSupplierGroupName.Text.Trim(),
                     Creation = DateTime.Now,
                     ModifiedBy = Global.UserName,
                     Owner = Global.UserName,
-                    SupplierName = this.txtSupplierName.Text.Trim(),
-                    SupplierGroup = this.cmbSupplierGroup.SelectedValue?.ToString(),
+                    SupplierGroupName = this.txtSupplierGroupName.Text.Trim(),
                 };
-                AppDbContext.Suppliers.Add(supplier1);
+                AppDbContext.SupplierGroup.Add(supplier1);
                 AppDbContext.SaveChanges();
                 this.ResetForm();
             }
             else
             {
-                var supplier1 = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                var supplier1 = AppDbContext.SupplierGroup.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
                 if (supplier1 is not null)
                 {
-                    supplier1.SupplierName = this.txtSupplierName.Text.Trim();
+                    supplier1.SupplierGroupName = this.txtSupplierGroupName.Text.Trim();
                     supplier1.Modified = DateTime.Now;
                     supplier1.ModifiedBy = Global.UserName;
-                    supplier1.SupplierGroup = this.cmbSupplierGroup.SelectedValue?.ToString();
                     AppDbContext.SaveChanges();
                     this.ResetForm();
                 }
@@ -77,11 +67,12 @@ namespace TheSku
         {
             this.lblID.Text = "0";
             this.lblID.Visible = false;
-            this.txtSupplierName.Clear();
-            this.cmbSupplierGroup.SelectedIndex = -1;
+            this.txtSupplierGroupName.Clear();
+            this.tabControl1.SelectTab(0);
+            this.txtSupplierGroupName.Focus();
         }
 
-        private void frmSupplier_KeyDown(object sender, KeyEventArgs e)
+        private void frmSupplierGroup_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.S)
             {
@@ -109,12 +100,12 @@ namespace TheSku
                 else
                 {
                     tabControl1.SelectTab(0);
-                    this.txtSupplierName.Focus();
+                    this.txtSupplierGroupName.Focus();
                 }
             }
         }
 
-        private void gvList_CellDoubleClick(object sender, GridViewCellEventArgs e)
+        private void gvList_CellDoubleClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
             if (this.gvList.RowCount > 0 && e.RowIndex >= 0)
             {
@@ -129,7 +120,7 @@ namespace TheSku
 
         private void BindGrid()
         {
-            var suppliers = AppDbContext.Suppliers
+            var suppliers = AppDbContext.SupplierGroup
                             .OrderByDescending(x => x.Modified)
                             .Where(s => string.IsNullOrEmpty(this.txtNameFilter.Text) || s.Name.Contains(this.txtNameFilter.Text))
                             .Take((int)this.txtLimit.Value)
@@ -141,18 +132,12 @@ namespace TheSku
         {
             if (this.lblID.Text != "0")
             {
-                if (!this.IsBinded)
-                {
-                    this.brnRefreshFields.PerformClick();
-                    this.IsBinded = true;
-                }
-                var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                var supplier = AppDbContext.SupplierGroup.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
                 if (supplier is not null)
                 {
-                    this.txtSupplierName.Text = supplier.SupplierName;
-                    this.cmbSupplierGroup.SelectedValue = supplier.SupplierGroup;
+                    this.txtSupplierGroupName.Text = supplier.SupplierGroupName;
                     this.tabControl1.SelectTab(0);
-                    this.txtSupplierName.Focus();
+                    this.txtSupplierGroupName.Focus();
                     this.lblID.Visible = true;
                 }
             }
@@ -174,10 +159,10 @@ namespace TheSku
             {
                 if (MessageBox.Show($"Are you sure you want to delete {this.lblID.Text}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                    var supplier = AppDbContext.SupplierGroup.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
                     if (supplier is not null)
                     {
-                        AppDbContext.Suppliers.Remove(supplier);
+                        AppDbContext.SupplierGroup.Remove(supplier);
                         AppDbContext.SaveChanges();
                         MessageBox.Show($"{this.lblID.Text} deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.btnNew.PerformClick();
@@ -229,19 +214,6 @@ namespace TheSku
         private void btnReload_Click(object sender, EventArgs e)
         {
             this.LoadData();
-        }
-
-        private void cmbSupplierGroup_Enter(object sender, EventArgs e)
-        {
-            if (this.cmbSupplierGroup.DataSource == null)
-            {
-                this.cmbSupplierGroup.DataSource = AppDbContext.SupplierGroup.ToList();
-            }
-        }
-
-        private void brnRefreshFields_Click(object sender, EventArgs e)
-        {
-            this.cmbSupplierGroup.DataSource = AppDbContext.SupplierGroup.ToList();
         }
     }
 }

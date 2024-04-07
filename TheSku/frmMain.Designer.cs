@@ -30,11 +30,19 @@
         {
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            pOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            supplierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            sellingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            buyingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            supplierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            supplierGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             accountingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            chartOfAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             userManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +56,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, supplierToolStripMenuItem1, accountingToolStripMenuItem, userManagementToolStripMenuItem, aboutToolStripMenuItem });
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, sellingToolStripMenuItem, buyingToolStripMenuItem, accountingToolStripMenuItem, userManagementToolStripMenuItem, aboutToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -57,15 +65,21 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { changePasswordToolStripMenuItem, exitToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { pOSToolStripMenuItem, changePasswordToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             fileToolStripMenuItem.Text = "File";
             // 
+            // pOSToolStripMenuItem
+            // 
+            pOSToolStripMenuItem.Name = "pOSToolStripMenuItem";
+            pOSToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            pOSToolStripMenuItem.Text = "POS";
+            // 
             // changePasswordToolStripMenuItem
             // 
             changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             changePasswordToolStripMenuItem.Text = "Change Password";
             changePasswordToolStripMenuItem.Click += changePasswordToolStripMenuItem_Click;
             // 
@@ -73,29 +87,75 @@
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4;
-            exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            exitToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
-            // supplierToolStripMenuItem1
+            // sellingToolStripMenuItem
             // 
-            supplierToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { supplierToolStripMenuItem });
-            supplierToolStripMenuItem1.Name = "supplierToolStripMenuItem1";
-            supplierToolStripMenuItem1.Size = new System.Drawing.Size(62, 20);
-            supplierToolStripMenuItem1.Text = "Supplier";
+            sellingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { customerToolStripMenuItem });
+            sellingToolStripMenuItem.Name = "sellingToolStripMenuItem";
+            sellingToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            sellingToolStripMenuItem.Text = "Selling";
+            // 
+            // customerToolStripMenuItem
+            // 
+            customerToolStripMenuItem.Name = "customerToolStripMenuItem";
+            customerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            customerToolStripMenuItem.Text = "Customer";
+            // 
+            // buyingToolStripMenuItem
+            // 
+            buyingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { supplierToolStripMenuItem });
+            buyingToolStripMenuItem.Name = "buyingToolStripMenuItem";
+            buyingToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            buyingToolStripMenuItem.Text = "Buying";
             // 
             // supplierToolStripMenuItem
             // 
+            supplierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { supplierToolStripMenuItem1, supplierGroupToolStripMenuItem });
             supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            supplierToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            supplierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             supplierToolStripMenuItem.Text = "Supplier";
-            supplierToolStripMenuItem.Click += supplierToolStripMenuItem_Click;
+            // 
+            // supplierToolStripMenuItem1
+            // 
+            supplierToolStripMenuItem1.Name = "supplierToolStripMenuItem1";
+            supplierToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            supplierToolStripMenuItem1.Text = "Supplier";
+            supplierToolStripMenuItem1.Click += supplierToolStripMenuItem_Click;
+            // 
+            // supplierGroupToolStripMenuItem
+            // 
+            supplierGroupToolStripMenuItem.Name = "supplierGroupToolStripMenuItem";
+            supplierGroupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            supplierGroupToolStripMenuItem.Text = "Supplier Group";
+            supplierGroupToolStripMenuItem.Click += supplierGroupToolStripMenuItem_Click;
             // 
             // accountingToolStripMenuItem
             // 
+            accountingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { accountToolStripMenuItem, chartOfAccountsToolStripMenuItem, reportToolStripMenuItem });
             accountingToolStripMenuItem.Name = "accountingToolStripMenuItem";
             accountingToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             accountingToolStripMenuItem.Text = "Accounting";
+            // 
+            // accountToolStripMenuItem
+            // 
+            accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+            accountToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            accountToolStripMenuItem.Text = "Account";
+            // 
+            // chartOfAccountsToolStripMenuItem
+            // 
+            chartOfAccountsToolStripMenuItem.Name = "chartOfAccountsToolStripMenuItem";
+            chartOfAccountsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            chartOfAccountsToolStripMenuItem.Text = "Chart Of Accounts";
+            // 
+            // reportToolStripMenuItem
+            // 
+            reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            reportToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            reportToolStripMenuItem.Text = "Reports";
             // 
             // userManagementToolStripMenuItem
             // 
@@ -175,14 +235,22 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutUsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem accountingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
         private System.Windows.Forms.StatusStrip ssMain;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lblUsername;
+        private System.Windows.Forms.ToolStripMenuItem sellingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buyingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem supplierGroupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chartOfAccountsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
     }
 }

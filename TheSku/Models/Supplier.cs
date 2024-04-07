@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -21,14 +22,26 @@ public class Supplier
     public int Docstatus { get; set; }
     [Column("parent")]
     public string Parent { get; set; }
-    [Column("parentfield")]
-    public string ParentField { get; set; }
-    [Column("parenttype")]
-    public string ParentType { get; set; }
     [Required]
     [Column("supplier_name")]
     public string SupplierName { get; set; }
     [Required]
     [Column("supplier_group")]
     public string SupplierGroup { get; set; }
+    [Column("supplier_type")]
+    public string SupplierType { get; set; }
+    [Column("supplier_details")]
+    public string SupplierDetails { get; set; }
+    [Column("tax_id")]
+    public string TaxID { get; set; }
+    [Column("primary_address")]
+    public string PrimaryAddress { get; set; }
+    [Column("primary_contact")]
+    public string PrimaryContact { get; set; }
+    [Column("accounts")]
+    public List<PartyAccount> PartyAccounts { get; set; }
+    [Column("disabled")]
+    public int Disabled { get; set; }
+    [Column("block_supplier")]
+    public int BlockSupplier { get; set; }
 }
