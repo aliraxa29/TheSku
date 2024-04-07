@@ -247,9 +247,9 @@ namespace TheSku
             // 
             // label2
             // 
-            label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(3, 8);
+            label2.Location = new System.Drawing.Point(108, 8);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(75, 17);
             label2.TabIndex = 0;
@@ -297,9 +297,9 @@ namespace TheSku
             // 
             // label7
             // 
-            label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(3, 41);
+            label7.Location = new System.Drawing.Point(112, 41);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(71, 17);
             label7.TabIndex = 0;
@@ -349,9 +349,9 @@ namespace TheSku
             // 
             // label9
             // 
-            label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(3, 74);
+            label9.Location = new System.Drawing.Point(117, 74);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(66, 17);
             label9.TabIndex = 0;

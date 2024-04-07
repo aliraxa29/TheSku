@@ -178,13 +178,16 @@ namespace TheSku
             {
                 if (MessageBox.Show($"Are you sure you want to delete {this.lblID.Text}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var supplier = dbContext.Users.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
-                    if (supplier is not null)
+                    if (this.lblID.Text != Global.UserName)
                     {
-                        dbContext.Users.Remove(supplier);
-                        dbContext.SaveChanges();
-                        MessageBox.Show($"{this.lblID.Text} deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.btnNew.PerformClick();
+                        var supplier = dbContext.Users.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                        if (supplier is not null)
+                        {
+                            dbContext.Users.Remove(supplier);
+                            dbContext.SaveChanges();
+                            MessageBox.Show($"{this.lblID.Text} deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.btnNew.PerformClick();
+                        }
                     }
                 }
             }
