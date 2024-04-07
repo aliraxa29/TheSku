@@ -33,7 +33,6 @@ namespace TheSku
             ControlsContainer = new Telerik.WinControls.UI.CollapsiblePanelControlsContainer();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
-            windows8Theme2 = new Telerik.WinControls.Themes.Windows8Theme();
             txtLimit = new System.Windows.Forms.NumericUpDown();
             txtNameFilter = new Telerik.WinControls.UI.RadTextBox();
             label4 = new System.Windows.Forms.Label();
@@ -63,10 +62,13 @@ namespace TheSku
             tabControl1 = new System.Windows.Forms.TabControl();
             tpList = new System.Windows.Forms.TabPage();
             btnClose = new Telerik.WinControls.UI.RadButton();
-            btnDelete = new Telerik.WinControls.UI.RadButton();
             btnNew = new Telerik.WinControls.UI.RadButton();
             btnSave = new Telerik.WinControls.UI.RadButton();
             panel2 = new System.Windows.Forms.Panel();
+            radDropDownButton1 = new Telerik.WinControls.UI.RadDropDownButton();
+            btnReload = new Telerik.WinControls.UI.RadMenuItem();
+            btnDelete = new Telerik.WinControls.UI.RadMenuItem();
+            btnCopyNameToClipboard = new Telerik.WinControls.UI.RadMenuItem();
             lblID = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             panel1 = new System.Windows.Forms.Panel();
@@ -90,10 +92,10 @@ namespace TheSku
             tabControl1.SuspendLayout();
             tpList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnDelete).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnNew).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnSave).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)radDropDownButton1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -247,9 +249,9 @@ namespace TheSku
             // 
             // label2
             // 
-            label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(3, 8);
+            label2.Location = new System.Drawing.Point(108, 8);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(75, 17);
             label2.TabIndex = 0;
@@ -297,9 +299,9 @@ namespace TheSku
             // 
             // label7
             // 
-            label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(3, 41);
+            label7.Location = new System.Drawing.Point(112, 41);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(71, 17);
             label7.TabIndex = 0;
@@ -349,9 +351,9 @@ namespace TheSku
             // 
             // label9
             // 
-            label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(3, 74);
+            label9.Location = new System.Drawing.Point(117, 74);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(66, 17);
             label9.TabIndex = 0;
@@ -427,6 +429,7 @@ namespace TheSku
             // btnClose
             // 
             btnClose.ForeColor = System.Drawing.Color.Black;
+            btnClose.Image = Properties.Resources.Delete_24;
             btnClose.Location = new System.Drawing.Point(3, 132);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(194, 36);
@@ -435,20 +438,10 @@ namespace TheSku
             btnClose.ThemeName = "Windows8";
             btnClose.Click += btnClose_Click;
             // 
-            // btnDelete
-            // 
-            btnDelete.ForeColor = System.Drawing.Color.Red;
-            btnDelete.Location = new System.Drawing.Point(3, 90);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new System.Drawing.Size(194, 36);
-            btnDelete.TabIndex = 2;
-            btnDelete.Text = "Delete";
-            btnDelete.ThemeName = "Windows8";
-            btnDelete.Click += btnDelete_Click;
-            // 
             // btnNew
             // 
-            btnNew.Location = new System.Drawing.Point(3, 48);
+            btnNew.Image = Properties.Resources.New_24;
+            btnNew.Location = new System.Drawing.Point(3, 90);
             btnNew.Name = "btnNew";
             btnNew.Size = new System.Drawing.Size(194, 36);
             btnNew.TabIndex = 1;
@@ -458,7 +451,8 @@ namespace TheSku
             // 
             // btnSave
             // 
-            btnSave.Location = new System.Drawing.Point(3, 6);
+            btnSave.Image = Properties.Resources.Save_24;
+            btnSave.Location = new System.Drawing.Point(3, 48);
             btnSave.Name = "btnSave";
             btnSave.Size = new System.Drawing.Size(194, 36);
             btnSave.TabIndex = 0;
@@ -468,8 +462,8 @@ namespace TheSku
             // 
             // panel2
             // 
+            panel2.Controls.Add(radDropDownButton1);
             panel2.Controls.Add(btnClose);
-            panel2.Controls.Add(btnDelete);
             panel2.Controls.Add(btnNew);
             panel2.Controls.Add(btnSave);
             panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -477,6 +471,39 @@ namespace TheSku
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(200, 379);
             panel2.TabIndex = 4;
+            // 
+            // radDropDownButton1
+            // 
+            radDropDownButton1.Image = Properties.Resources.Configuration_24;
+            radDropDownButton1.Items.AddRange(new Telerik.WinControls.RadItem[] { btnReload, btnDelete, btnCopyNameToClipboard });
+            radDropDownButton1.Location = new System.Drawing.Point(3, 6);
+            radDropDownButton1.Name = "radDropDownButton1";
+            radDropDownButton1.Size = new System.Drawing.Size(194, 36);
+            radDropDownButton1.TabIndex = 1;
+            radDropDownButton1.Text = "Actions";
+            radDropDownButton1.ThemeName = "Windows8";
+            // 
+            // btnReload
+            // 
+            btnReload.Image = Properties.Resources.Refresh_24;
+            btnReload.Name = "btnReload";
+            btnReload.Text = "Reload";
+            btnReload.Click += btnReload_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.ForeColor = System.Drawing.Color.Red;
+            btnDelete.Image = Properties.Resources.Delete_File_24;
+            btnDelete.Name = "btnDelete";
+            btnDelete.Text = "Delete";
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnCopyNameToClipboard
+            // 
+            btnCopyNameToClipboard.Image = Properties.Resources.Copy__2__24;
+            btnCopyNameToClipboard.Name = "btnCopyNameToClipboard";
+            btnCopyNameToClipboard.Text = "Copy To Clipboard";
+            btnCopyNameToClipboard.Click += btnCopyNameToClipboard_Click;
             // 
             // lblID
             // 
@@ -547,10 +574,10 @@ namespace TheSku
             tabControl1.ResumeLayout(false);
             tpList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnDelete).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnNew).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnSave).EndInit();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)radDropDownButton1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -561,7 +588,6 @@ namespace TheSku
         private Telerik.WinControls.UI.CollapsiblePanelControlsContainer ControlsContainer;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
         private Telerik.WinControls.UI.RadTextBox radTextBox1;
-        private Telerik.WinControls.Themes.Windows8Theme windows8Theme2;
         private System.Windows.Forms.NumericUpDown txtLimit;
         private Telerik.WinControls.UI.RadTextBox txtNameFilter;
         private System.Windows.Forms.Label label4;
@@ -579,7 +605,6 @@ namespace TheSku
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpList;
         private Telerik.WinControls.UI.RadButton btnClose;
-        private Telerik.WinControls.UI.RadButton btnDelete;
         private Telerik.WinControls.UI.RadButton btnNew;
         private Telerik.WinControls.UI.RadButton btnSave;
         private System.Windows.Forms.Panel panel2;
@@ -598,5 +623,9 @@ namespace TheSku
         private Telerik.WinControls.UI.RadTextBox txtPassword;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Telerik.WinControls.UI.RadDropDownButton radDropDownButton1;
+        private Telerik.WinControls.UI.RadMenuItem btnReload;
+        private Telerik.WinControls.UI.RadMenuItem btnCopyNameToClipboard;
+        private Telerik.WinControls.UI.RadMenuItem btnDelete;
     }
 }
