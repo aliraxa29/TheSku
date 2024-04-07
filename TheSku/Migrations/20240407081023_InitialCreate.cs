@@ -26,7 +26,7 @@ namespace TheSku.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     owner = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    docstatus = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    docstatus = table.Column<int>(type: "int(1)", nullable: false, defaultValue: 0),
                     parent = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     parentfield = table.Column<string>(type: "varchar(255)", nullable: true)
@@ -54,7 +54,7 @@ namespace TheSku.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     owner = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    docstatus = table.Column<int>(type: "int", nullable: false),
+                    docstatus = table.Column<int>(type: "int(1)", nullable: false, defaultValue: 0),
                     parent = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     parentfield = table.Column<string>(type: "varchar(255)", nullable: true)
@@ -82,7 +82,7 @@ namespace TheSku.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     owner = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    docstatus = table.Column<int>(type: "int", nullable: false),
+                    docstatus = table.Column<int>(type: "int(1)", nullable: false, defaultValue: 0),
                     parent = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     parentfield = table.Column<string>(type: "varchar(255)", nullable: true)

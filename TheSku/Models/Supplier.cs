@@ -28,4 +28,7 @@ public class Supplier
     [Required]
     [Column("supplier_name")]
     public string SupplierName { get; set; }
+    [Required]
+    [Column("supplier_group")]
+    public string SupplierGroup { get; set; }
 }
