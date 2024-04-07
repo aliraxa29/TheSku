@@ -53,5 +53,10 @@ namespace TheSku
         {
             Application.Exit();
         }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmChangePassword(dbContext).ShowDialog();
+        }
     }
 }
