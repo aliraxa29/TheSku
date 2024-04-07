@@ -28,25 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             panel1 = new System.Windows.Forms.Panel();
             lblID = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
+            radDropDownButton1 = new Telerik.WinControls.UI.RadDropDownButton();
+            btnReload = new Telerik.WinControls.UI.RadMenuItem();
+            btnDelete = new Telerik.WinControls.UI.RadMenuItem();
+            btnCopyNameToClipboard = new Telerik.WinControls.UI.RadMenuItem();
             btnClose = new Telerik.WinControls.UI.RadButton();
-            btnDelete = new Telerik.WinControls.UI.RadButton();
             btnNew = new Telerik.WinControls.UI.RadButton();
+            brnRefreshFields = new Telerik.WinControls.UI.RadButton();
             btnSave = new Telerik.WinControls.UI.RadButton();
             panel3 = new System.Windows.Forms.Panel();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
             groupBox3 = new System.Windows.Forms.GroupBox();
+            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             txtSupplierName = new Telerik.WinControls.UI.RadTextBox();
             label2 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            cmbSupplierGroup = new Telerik.WinControls.UI.RadDropDownList();
             tpList = new System.Windows.Forms.TabPage();
             groupBox2 = new System.Windows.Forms.GroupBox();
-            gvList = new System.Windows.Forms.DataGridView();
-            name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            supplier_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            gvList = new Telerik.WinControls.UI.RadGridView();
             groupBox1 = new System.Windows.Forms.GroupBox();
             txtLimit = new System.Windows.Forms.NumericUpDown();
             txtNameFilter = new Telerik.WinControls.UI.RadTextBox();
@@ -54,27 +63,28 @@
             label3 = new System.Windows.Forms.Label();
             btnDisplay = new Telerik.WinControls.UI.RadButton();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
-            label5 = new System.Windows.Forms.Label();
-            radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)radDropDownButton1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnDelete).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnNew).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)brnRefreshFields).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnSave).BeginInit();
             panel3.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox3.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtSupplierName).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cmbSupplierGroup).BeginInit();
             tpList.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gvList).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gvList.MasterTemplate).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtLimit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtNameFilter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnDisplay).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)radTextBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -112,9 +122,10 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(radDropDownButton1);
             panel2.Controls.Add(btnClose);
-            panel2.Controls.Add(btnDelete);
             panel2.Controls.Add(btnNew);
+            panel2.Controls.Add(brnRefreshFields);
             panel2.Controls.Add(btnSave);
             panel2.Dock = System.Windows.Forms.DockStyle.Left;
             panel2.Location = new System.Drawing.Point(0, 71);
@@ -122,44 +133,83 @@
             panel2.Size = new System.Drawing.Size(200, 414);
             panel2.TabIndex = 1;
             // 
-            // btnClose
+            // radDropDownButton1
             // 
-            btnClose.ForeColor = System.Drawing.Color.Black;
-            btnClose.Location = new System.Drawing.Point(3, 132);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new System.Drawing.Size(194, 36);
-            btnClose.TabIndex = 1;
-            btnClose.Text = "Close";
-            btnClose.ThemeName = "Windows8";
-            btnClose.Click += btnClose_Click;
+            radDropDownButton1.Image = Properties.Resources.Configuration_24;
+            radDropDownButton1.Items.AddRange(new Telerik.WinControls.RadItem[] { btnReload, btnDelete, btnCopyNameToClipboard });
+            radDropDownButton1.Location = new System.Drawing.Point(3, 6);
+            radDropDownButton1.Name = "radDropDownButton1";
+            radDropDownButton1.Size = new System.Drawing.Size(194, 36);
+            radDropDownButton1.TabIndex = 5;
+            radDropDownButton1.Text = "Actions";
+            radDropDownButton1.ThemeName = "Windows8";
+            // 
+            // btnReload
+            // 
+            btnReload.Image = Properties.Resources.Refresh_24;
+            btnReload.Name = "btnReload";
+            btnReload.Text = "Reload";
+            btnReload.UseCompatibleTextRendering = false;
+            btnReload.Click += btnReload_Click;
             // 
             // btnDelete
             // 
             btnDelete.ForeColor = System.Drawing.Color.Red;
-            btnDelete.Location = new System.Drawing.Point(3, 90);
+            btnDelete.Image = Properties.Resources.Delete_File_24;
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new System.Drawing.Size(194, 36);
-            btnDelete.TabIndex = 1;
             btnDelete.Text = "Delete";
-            btnDelete.ThemeName = "Windows8";
+            btnDelete.UseCompatibleTextRendering = false;
             btnDelete.Click += btnDelete_Click;
+            // 
+            // btnCopyNameToClipboard
+            // 
+            btnCopyNameToClipboard.Image = Properties.Resources.Copy__2__24;
+            btnCopyNameToClipboard.Name = "btnCopyNameToClipboard";
+            btnCopyNameToClipboard.Text = "Copy To Clipboard";
+            btnCopyNameToClipboard.UseCompatibleTextRendering = false;
+            btnCopyNameToClipboard.Click += btnCopyNameToClipboard_Click;
+            // 
+            // btnClose
+            // 
+            btnClose.ForeColor = System.Drawing.Color.Black;
+            btnClose.Image = Properties.Resources.Delete_24;
+            btnClose.Location = new System.Drawing.Point(3, 174);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new System.Drawing.Size(194, 36);
+            btnClose.TabIndex = 7;
+            btnClose.Text = "Close";
+            btnClose.ThemeName = "Windows8";
+            btnClose.Click += btnClose_Click;
             // 
             // btnNew
             // 
-            btnNew.Location = new System.Drawing.Point(3, 48);
+            btnNew.Image = Properties.Resources.New_24;
+            btnNew.Location = new System.Drawing.Point(3, 132);
             btnNew.Name = "btnNew";
             btnNew.Size = new System.Drawing.Size(194, 36);
-            btnNew.TabIndex = 1;
+            btnNew.TabIndex = 6;
             btnNew.Text = "New";
             btnNew.ThemeName = "Windows8";
             btnNew.Click += btnNew_Click;
             // 
+            // brnRefreshFields
+            // 
+            brnRefreshFields.Image = Properties.Resources.Refresh_24;
+            brnRefreshFields.Location = new System.Drawing.Point(3, 90);
+            brnRefreshFields.Name = "brnRefreshFields";
+            brnRefreshFields.Size = new System.Drawing.Size(194, 36);
+            brnRefreshFields.TabIndex = 4;
+            brnRefreshFields.Text = "Refresh Fields";
+            brnRefreshFields.ThemeName = "Windows8";
+            brnRefreshFields.Click += brnRefreshFields_Click;
+            // 
             // btnSave
             // 
-            btnSave.Location = new System.Drawing.Point(3, 6);
+            btnSave.Image = Properties.Resources.Save_24;
+            btnSave.Location = new System.Drawing.Point(3, 48);
             btnSave.Name = "btnSave";
             btnSave.Size = new System.Drawing.Size(194, 36);
-            btnSave.TabIndex = 1;
+            btnSave.TabIndex = 4;
             btnSave.Text = "Save";
             btnSave.ThemeName = "Windows8";
             btnSave.Click += btnSave_Click;
@@ -198,35 +248,80 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(radTextBox1);
-            groupBox3.Controls.Add(label5);
-            groupBox3.Controls.Add(txtSupplierName);
-            groupBox3.Controls.Add(label2);
+            groupBox3.Controls.Add(tableLayoutPanel1);
             groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             groupBox3.Location = new System.Drawing.Point(3, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(774, 100);
+            groupBox3.Size = new System.Drawing.Size(774, 126);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Details";
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 4;
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.Controls.Add(txtSupplierName, 1, 0);
+            tableLayoutPanel1.Controls.Add(label2, 0, 0);
+            tableLayoutPanel1.Controls.Add(label5, 2, 0);
+            tableLayoutPanel1.Controls.Add(cmbSupplierGroup, 3, 0);
+            tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            tableLayoutPanel1.Location = new System.Drawing.Point(3, 21);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.Size = new System.Drawing.Size(768, 100);
+            tableLayoutPanel1.TabIndex = 3;
+            // 
             // txtSupplierName
             // 
+            txtSupplierName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtSupplierName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtSupplierName.Location = new System.Drawing.Point(123, 40);
+            txtSupplierName.Location = new System.Drawing.Point(195, 5);
             txtSupplierName.Name = "txtSupplierName";
-            txtSupplierName.Size = new System.Drawing.Size(232, 23);
+            txtSupplierName.Size = new System.Drawing.Size(186, 23);
             txtSupplierName.TabIndex = 1;
             txtSupplierName.ThemeName = "Windows8";
             // 
             // label2
             // 
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(6, 43);
+            label2.Location = new System.Drawing.Point(90, 8);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(99, 17);
             label2.TabIndex = 0;
             label2.Text = "Supplier Name";
+            // 
+            // label5
+            // 
+            label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(472, 8);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(101, 17);
+            label5.TabIndex = 0;
+            label5.Text = "Supplier Group";
+            // 
+            // cmbSupplierGroup
+            // 
+            cmbSupplierGroup.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            cmbSupplierGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            cmbSupplierGroup.DisplayMember = "SupplierGroupName";
+            cmbSupplierGroup.DropDownAnimationEnabled = true;
+            cmbSupplierGroup.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            cmbSupplierGroup.Location = new System.Drawing.Point(579, 5);
+            cmbSupplierGroup.Name = "cmbSupplierGroup";
+            cmbSupplierGroup.Size = new System.Drawing.Size(186, 23);
+            cmbSupplierGroup.TabIndex = 2;
+            cmbSupplierGroup.ThemeName = "Windows8";
+            cmbSupplierGroup.ValueMember = "Name";
+            cmbSupplierGroup.Enter += cmbSupplierGroup_Enter;
             // 
             // tpList
             // 
@@ -253,38 +348,50 @@
             // 
             // gvList
             // 
-            gvList.AllowUserToAddRows = false;
-            gvList.AllowUserToDeleteRows = false;
-            gvList.AllowUserToOrderColumns = true;
-            gvList.AllowUserToResizeRows = false;
-            gvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            gvList.BackgroundColor = System.Drawing.SystemColors.Control;
-            gvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { name, supplier_name });
+            gvList.BackColor = System.Drawing.Color.Transparent;
             gvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            gvList.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            gvList.ForeColor = System.Drawing.SystemColors.ControlText;
+            gvList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             gvList.Location = new System.Drawing.Point(3, 21);
-            gvList.MultiSelect = false;
+            // 
+            // 
+            // 
+            gvList.MasterTemplate.AllowAddNewRow = false;
+            gvList.MasterTemplate.AllowColumnChooser = false;
+            gvList.MasterTemplate.AllowDragToGroup = false;
+            gvList.MasterTemplate.AllowRowResize = false;
+            gvList.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "SupplierName";
+            gridViewTextBoxColumn1.HeaderText = "Supplier Name";
+            gridViewTextBoxColumn1.Name = "supplier_name";
+            gridViewTextBoxColumn1.ReadOnly = true;
+            gridViewTextBoxColumn1.Width = 331;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "SupplierGroup";
+            gridViewTextBoxColumn2.HeaderText = "Supplier Group";
+            gridViewTextBoxColumn2.Name = "suppiler_group";
+            gridViewTextBoxColumn2.ReadOnly = true;
+            gridViewTextBoxColumn2.Width = 232;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Name";
+            gridViewTextBoxColumn3.HeaderText = "Name";
+            gridViewTextBoxColumn3.Name = "name";
+            gridViewTextBoxColumn3.ReadOnly = true;
+            gridViewTextBoxColumn3.Width = 186;
+            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn1, gridViewTextBoxColumn2, gridViewTextBoxColumn3 });
+            gvList.MasterTemplate.EnableFiltering = true;
+            gvList.MasterTemplate.EnableGrouping = false;
+            gvList.MasterTemplate.EnablePaging = true;
+            gvList.MasterTemplate.ViewDefinition = tableViewDefinition1;
             gvList.Name = "gvList";
-            gvList.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            gvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            gvList.ReadOnly = true;
+            gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
             gvList.Size = new System.Drawing.Size(768, 265);
             gvList.TabIndex = 0;
+            gvList.ThemeName = "Windows8";
             gvList.CellDoubleClick += gvList_CellDoubleClick;
-            gvList.KeyDown += gvList_KeyDown;
-            // 
-            // name
-            // 
-            name.DataPropertyName = "name";
-            name.HeaderText = "Name";
-            name.Name = "name";
-            name.ReadOnly = true;
-            // 
-            // supplier_name
-            // 
-            supplier_name.DataPropertyName = "SupplierName";
-            supplier_name.HeaderText = "Supplier Name";
-            supplier_name.Name = "supplier_name";
-            supplier_name.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -350,26 +457,6 @@
             btnDisplay.ThemeName = "Windows8";
             btnDisplay.Click += btnDisplay_Click;
             // 
-            // label5
-            // 
-            label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(419, 44);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(99, 17);
-            label5.TabIndex = 0;
-            label5.Text = "Supplier Name";
-            // 
-            // radTextBox1
-            // 
-            radTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            radTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            radTextBox1.Location = new System.Drawing.Point(536, 41);
-            radTextBox1.Name = "radTextBox1";
-            radTextBox1.Size = new System.Drawing.Size(232, 23);
-            radTextBox1.TabIndex = 1;
-            radTextBox1.ThemeName = "Windows8";
-            // 
             // frmSupplier
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -386,25 +473,28 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)radDropDownButton1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnDelete).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnNew).EndInit();
+            ((System.ComponentModel.ISupportInitialize)brnRefreshFields).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnSave).EndInit();
             panel3.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)txtSupplierName).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cmbSupplierGroup).EndInit();
             tpList.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gvList.MasterTemplate).EndInit();
             ((System.ComponentModel.ISupportInitialize)gvList).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)txtLimit).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtNameFilter).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnDisplay).EndInit();
-            ((System.ComponentModel.ISupportInitialize)radTextBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -420,23 +510,26 @@
         private System.Windows.Forms.TabPage tpList;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView gvList;
         private System.Windows.Forms.GroupBox groupBox3;
         private Telerik.WinControls.UI.RadTextBox txtSupplierName;
         private System.Windows.Forms.Label label2;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
-        private Telerik.WinControls.UI.RadButton btnSave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplier_name;
-        private Telerik.WinControls.UI.RadButton btnNew;
         private Telerik.WinControls.UI.RadButton btnDisplay;
-        private Telerik.WinControls.UI.RadButton btnDelete;
-        private Telerik.WinControls.UI.RadButton btnClose;
         private System.Windows.Forms.NumericUpDown txtLimit;
         private Telerik.WinControls.UI.RadTextBox txtNameFilter;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private Telerik.WinControls.UI.RadTextBox radTextBox1;
+        private Telerik.WinControls.UI.RadDropDownButton radDropDownButton1;
+        private Telerik.WinControls.UI.RadMenuItem btnReload;
+        private Telerik.WinControls.UI.RadMenuItem btnDelete;
+        private Telerik.WinControls.UI.RadMenuItem btnCopyNameToClipboard;
+        private Telerik.WinControls.UI.RadButton btnClose;
+        private Telerik.WinControls.UI.RadButton btnNew;
+        private Telerik.WinControls.UI.RadButton btnSave;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label5;
+        private Telerik.WinControls.UI.RadDropDownList cmbSupplierGroup;
+        private Telerik.WinControls.UI.RadGridView gvList;
+        private Telerik.WinControls.UI.RadButton brnRefreshFields;
     }
 }

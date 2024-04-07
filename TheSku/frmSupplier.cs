@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using TheSku.Data;
 
@@ -9,10 +10,14 @@ namespace TheSku
     public partial class frmSupplier : Form
     {
         AppDbContext AppDbContext;
+        bool IsBinded = false;
         public frmSupplier(AppDbContext dbContext)
         {
             AppDbContext = dbContext;
             InitializeComponent();
+            this.btnReload.Shortcuts.Add(new RadShortcut(Keys.Control, Keys.R));
+            this.btnDelete.Shortcuts.Add(new RadShortcut(Keys.Control, Keys.T));
+            this.btnCopyNameToClipboard.Shortcuts.Add(new RadShortcut(Keys.Alt, Keys.C));
             this.gvList.AutoGenerateColumns = false;
             this.ActiveControl = this.txtSupplierName;
         }
@@ -25,39 +30,45 @@ namespace TheSku
                 this.txtSupplierName.Focus();
                 return;
             }
-            var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.txtSupplierName.Text.Trim())).FirstOrDefault();
-            if (supplier is not null)
+            if (this.cmbSupplierGroup.SelectedIndex == -1)
             {
-                MessageBox.Show("Supplier with this Name is already exists", "Exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.txtSupplierName.Focus();
+                MessageBox.Show("Supplier Group is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.cmbSupplierGroup.Focus();
                 return;
+            }
+            if (this.lblID.Text == "0")
+            {
+                var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.txtSupplierName.Text.Trim())).FirstOrDefault();
+                if (supplier is not null)
+                {
+                    MessageBox.Show("Supplier with this Name is already exists", "Exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtSupplierName.Focus();
+                    return;
+                }
+                Supplier supplier1 = new Supplier()
+                {
+                    Name = this.txtSupplierName.Text.Trim(),
+                    Creation = DateTime.Now,
+                    ModifiedBy = Global.UserName,
+                    Owner = Global.UserName,
+                    SupplierName = this.txtSupplierName.Text.Trim(),
+                    SupplierGroup = this.cmbSupplierGroup.SelectedValue?.ToString(),
+                };
+                AppDbContext.Suppliers.Add(supplier1);
+                AppDbContext.SaveChanges();
+                this.ResetForm();
             }
             else
             {
-                if (this.lblID.Text == "0")
+                var supplier1 = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                if (supplier1 is not null)
                 {
-                    Supplier supplier1 = new Supplier()
-                    {
-                        Name = this.txtSupplierName.Text.Trim(),
-                        ModifiedBy = Global.UserName,
-                        Owner = Global.UserName,
-                        SupplierName = this.txtSupplierName.Text.Trim(),
-                    };
-                    AppDbContext.Suppliers.Add(supplier1);
+                    supplier1.SupplierName = this.txtSupplierName.Text.Trim();
+                    supplier1.Modified = DateTime.Now;
+                    supplier1.ModifiedBy = Global.UserName;
+                    supplier1.SupplierGroup = this.cmbSupplierGroup.SelectedValue?.ToString();
                     AppDbContext.SaveChanges();
                     this.ResetForm();
-                }
-                else
-                {
-                    var supplier1 = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
-                    if (supplier1 is not null)
-                    {
-                        supplier1.SupplierName = this.txtSupplierName.Text.Trim();
-                        supplier1.Modified = DateTime.Now;
-                        supplier1.ModifiedBy = Global.UserName;
-                        AppDbContext.SaveChanges();
-                        this.ResetForm();
-                    }
                 }
             }
         }
@@ -65,6 +76,7 @@ namespace TheSku
         private void ResetForm()
         {
             this.txtSupplierName.Clear();
+            this.cmbSupplierGroup.SelectedIndex = -1;
         }
 
         private void frmSupplier_KeyDown(object sender, KeyEventArgs e)
@@ -100,7 +112,7 @@ namespace TheSku
             }
         }
 
-        private void gvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void gvList_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
             if (this.gvList.RowCount > 0 && e.RowIndex >= 0)
             {
@@ -115,11 +127,11 @@ namespace TheSku
 
         private void BindGrid()
         {
-            var suppliers = AppDbContext.Suppliers.
-                Where(s => string.IsNullOrEmpty(this.txtNameFilter.Text) || s.Name.Contains(this.txtNameFilter.Text)).
-                Take((int)this.txtLimit.Value).
-                OrderByDescending(x => x.Modified).
-                ToList();
+            var suppliers = AppDbContext.Suppliers
+                            .OrderByDescending(x => x.Modified)
+                            .Where(s => string.IsNullOrEmpty(this.txtNameFilter.Text) || s.Name.Contains(this.txtNameFilter.Text))
+                            .Take((int)this.txtLimit.Value)
+                            .ToList();
             this.gvList.DataSource = suppliers;
         }
 
@@ -127,10 +139,16 @@ namespace TheSku
         {
             if (this.lblID.Text != "0")
             {
+                if (!this.IsBinded)
+                {
+                    this.brnRefreshFields.PerformClick();
+                    this.IsBinded = true;
+                }
                 var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
                 if (supplier is not null)
                 {
                     this.txtSupplierName.Text = supplier.SupplierName;
+                    this.cmbSupplierGroup.SelectedValue = supplier.SupplierGroup;
                     this.tabControl1.SelectTab(0);
                     this.txtSupplierName.Focus();
                     this.lblID.Visible = true;
@@ -145,6 +163,7 @@ namespace TheSku
             this.txtSupplierName.Clear();
             this.tabControl1.SelectTab(0);
             this.txtSupplierName.Focus();
+            this.cmbSupplierGroup.SelectedIndex = -1;
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
@@ -197,8 +216,35 @@ namespace TheSku
         {
             if (e.KeyCode == Keys.Enter && this.gvList.RowCount > 0)
             {
-                gvList_CellDoubleClick(sender, new DataGridViewCellEventArgs(this.gvList.CurrentCell.ColumnIndex, this.gvList.CurrentCell.RowIndex));
+                GridCellElement cell = this.gvList.CurrentCell;
+                this.gvList_CellDoubleClick(sender, new GridViewCellEventArgs(cell.RowInfo, cell.ColumnInfo, this.gvList.ActiveEditor));
             }
+        }
+
+        private void btnCopyNameToClipboard_Click(object sender, EventArgs e)
+        {
+            if (this.lblID.Text != "0")
+            {
+                Clipboard.SetText(this.lblID.Text);
+            }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            this.LoadData();
+        }
+
+        private void cmbSupplierGroup_Enter(object sender, EventArgs e)
+        {
+            if (this.cmbSupplierGroup.DataSource == null)
+            {
+                this.cmbSupplierGroup.DataSource = AppDbContext.SupplierGroup.ToList();
+            }
+        }
+
+        private void brnRefreshFields_Click(object sender, EventArgs e)
+        {
+            this.cmbSupplierGroup.DataSource = AppDbContext.SupplierGroup.ToList();
         }
     }
 }

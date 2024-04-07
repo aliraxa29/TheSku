@@ -2,8 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-[Table("tabSupplier")]
-public class Supplier
+[Table("tabSupplier Group")]
+public class SupplierGroup
 {
     [Required]
     [Key]
@@ -25,10 +25,7 @@ public class Supplier
     public string ParentField { get; set; }
     [Column("parenttype")]
     public string ParentType { get; set; }
-    [Required]
-    [Column("supplier_name")]
-    public string SupplierName { get; set; }
-    [Required]
-    [Column("supplier_group")]
-    public string SupplierGroup { get; set; }
+    [Column("supplier_group_name")]
+    public string SupplierGroupName { get; set; }
+
 }
