@@ -50,13 +50,17 @@
             ssMain = new System.Windows.Forms.StatusStrip();
             toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             lblUsername = new System.Windows.Forms.ToolStripStatusLabel();
+            customerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            customerGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            pOSInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ssMain.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, sellingToolStripMenuItem, buyingToolStripMenuItem, accountingToolStripMenuItem, userManagementToolStripMenuItem, aboutToolStripMenuItem });
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, viewToolStripMenuItem, sellingToolStripMenuItem, buyingToolStripMenuItem, accountingToolStripMenuItem, userManagementToolStripMenuItem, aboutToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -100,10 +104,10 @@
             // 
             // customerToolStripMenuItem
             // 
+            customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { customerToolStripMenuItem1, customerGroupToolStripMenuItem });
             customerToolStripMenuItem.Name = "customerToolStripMenuItem";
             customerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             customerToolStripMenuItem.Text = "Customer";
-            customerToolStripMenuItem.Click += customerToolStripMenuItem_Click;
             // 
             // buyingToolStripMenuItem
             // 
@@ -208,6 +212,32 @@
             lblUsername.Size = new System.Drawing.Size(30, 17);
             lblUsername.Text = "User";
             // 
+            // customerToolStripMenuItem1
+            // 
+            customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
+            customerToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            customerToolStripMenuItem1.Text = "Customer";
+            customerToolStripMenuItem1.Click += customerToolStripMenuItem_Click;
+            // 
+            // customerGroupToolStripMenuItem
+            // 
+            customerGroupToolStripMenuItem.Name = "customerGroupToolStripMenuItem";
+            customerGroupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            customerGroupToolStripMenuItem.Text = "Customer Group";
+            // 
+            // viewToolStripMenuItem
+            // 
+            viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { pOSInvoicesToolStripMenuItem });
+            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            viewToolStripMenuItem.Text = "View";
+            // 
+            // pOSInvoicesToolStripMenuItem
+            // 
+            pOSInvoicesToolStripMenuItem.Name = "pOSInvoicesToolStripMenuItem";
+            pOSInvoicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            pOSInvoicesToolStripMenuItem.Text = "POS Invoices";
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -253,5 +283,9 @@
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem customerGroupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pOSInvoicesToolStripMenuItem;
     }
 }
