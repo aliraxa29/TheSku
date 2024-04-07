@@ -2,8 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-[Table("tabSupplier Group")]
-public class SupplierGroup
+[Table("tabCustomer Group")]
+public class CustomerGroup
 {
     [MaxLength(255)]
     [Required]
@@ -24,7 +24,7 @@ public class SupplierGroup
     [Column("docstatus")]
     public int Docstatus { get; set; }
     [MaxLength(255)]
-    [Column("supplier_group_name")]
-    public string SupplierGroupName { get; set; }
+    [Column("customer_group_name")]
+    public string CustomerGroupName { get; set; }
 
 }

@@ -1,15 +1,13 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-[Table("tabSupplier Group")]
-public class SupplierGroup
+[Table("tabParty Accuount")]
+public class PartyAccount
 {
-    [MaxLength(255)]
-    [Required]
     [Key]
     [Column("name")]
-    public string Name { get; set; }
+    public int Name { get; set; }
     [Column("creation")]
     public DateTime Creation { get; set; }
     [Column("modified")]
@@ -24,7 +22,9 @@ public class SupplierGroup
     [Column("docstatus")]
     public int Docstatus { get; set; }
     [MaxLength(255)]
-    [Column("supplier_group_name")]
-    public string SupplierGroupName { get; set; }
-
+    [Column("company")]
+    public string Comapny { get; set; }
+    [MaxLength(255)]
+    [Column("account")]
+    public string Account { get; set; }
 }

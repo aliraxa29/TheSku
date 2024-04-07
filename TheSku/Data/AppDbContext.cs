@@ -19,5 +19,7 @@ namespace TheSku.Data
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<SupplierGroup> SupplierGroup { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<CustomerGroup> CustomerGroup { get; set; }
     }
 }

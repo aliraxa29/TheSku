@@ -392,6 +392,7 @@
             gvList.TabIndex = 0;
             gvList.ThemeName = "Windows8";
             gvList.CellDoubleClick += gvList_CellDoubleClick;
+            gvList.KeyDown += gvList_KeyDown;
             // 
             // groupBox1
             // 

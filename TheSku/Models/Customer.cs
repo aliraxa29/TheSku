@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System;
 
-[Table("tabSupplier")]
-public class Supplier
+[Table("tabCustomer")]
+public class Customer
 {
     [MaxLength(255)]
     [Required]
@@ -26,17 +26,17 @@ public class Supplier
     public int Docstatus { get; set; }
     [MaxLength(255)]
     [Required]
-    [Column("supplier_name")]
-    public string SupplierName { get; set; }
+    [Column("customer_name")]
+    public string CustomerName { get; set; }
     [MaxLength(255)]
     [Required]
-    [Column("supplier_group")]
-    public string SupplierGroup { get; set; }
+    [Column("customer_group")]
+    public string CustomerGroup { get; set; }
     [MaxLength(255)]
-    [Column("supplier_type")]
-    public string SupplierType { get; set; }
-    [Column("supplier_details")]
-    public string SupplierDetails { get; set; }
+    [Column("customer_type")]
+    public string CustomerType { get; set; }
+    [Column("customer_details")]
+    public string CustomerDetails { get; set; }
     [MaxLength(255)]
     [Column("tax_id")]
     public string TaxID { get; set; }
@@ -50,7 +50,7 @@ public class Supplier
     [MaxLength(1)]
     [Column("disabled")]
     public int Disabled { get; set; }
-    [MaxLength(1)]
-    [Column("block_supplier")]
-    public int BlockSupplier { get; set; }
+    [MaxLength(255)]
+    [Column("phone_number")]
+    public string PhoneNumber { get; set; }
 }

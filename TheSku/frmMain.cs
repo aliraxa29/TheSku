@@ -58,5 +58,22 @@ namespace TheSku
         {
             new frmChangePassword(dbContext).ShowDialog();
         }
+
+        private void supplierGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["SupplierGroup"] != null)
+            {
+                Application.OpenForms["SupplierGroup"].BringToFront();
+            }
+            else
+            {
+                new frmSupplierGroup(dbContext) { MdiParent = this }.Show();
+            }
+        }
+
+        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmCustomer(dbContext) { MdiParent = this }.Show();
+        }
     }
 }
