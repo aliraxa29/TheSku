@@ -30,6 +30,10 @@ namespace TheSku
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             ControlsContainer = new Telerik.WinControls.UI.CollapsiblePanelControlsContainer();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
@@ -39,11 +43,8 @@ namespace TheSku
             label3 = new System.Windows.Forms.Label();
             btnDisplay = new Telerik.WinControls.UI.RadButton();
             groupBox1 = new System.Windows.Forms.GroupBox();
-            gvList = new System.Windows.Forms.DataGridView();
-            name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            user_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             groupBox2 = new System.Windows.Forms.GroupBox();
+            gvList = new Telerik.WinControls.UI.RadGridView();
             label5 = new System.Windows.Forms.Label();
             txtFirstName = new Telerik.WinControls.UI.RadTextBox();
             label2 = new System.Windows.Forms.Label();
@@ -61,14 +62,15 @@ namespace TheSku
             panel3 = new System.Windows.Forms.Panel();
             tabControl1 = new System.Windows.Forms.TabControl();
             tpList = new System.Windows.Forms.TabPage();
-            btnClose = new Telerik.WinControls.UI.RadButton();
-            btnNew = new Telerik.WinControls.UI.RadButton();
-            btnSave = new Telerik.WinControls.UI.RadButton();
             panel2 = new System.Windows.Forms.Panel();
             radDropDownButton1 = new Telerik.WinControls.UI.RadDropDownButton();
             btnReload = new Telerik.WinControls.UI.RadMenuItem();
             btnDelete = new Telerik.WinControls.UI.RadMenuItem();
             btnCopyNameToClipboard = new Telerik.WinControls.UI.RadMenuItem();
+            btnClose = new Telerik.WinControls.UI.RadButton();
+            btnNew = new Telerik.WinControls.UI.RadButton();
+            brnRefreshFields = new Telerik.WinControls.UI.RadButton();
+            btnSave = new Telerik.WinControls.UI.RadButton();
             lblID = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             panel1 = new System.Windows.Forms.Panel();
@@ -78,8 +80,9 @@ namespace TheSku
             ((System.ComponentModel.ISupportInitialize)txtNameFilter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnDisplay).BeginInit();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gvList).BeginInit();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gvList).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gvList.MasterTemplate).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtFirstName).BeginInit();
             groupBox3.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -91,11 +94,12 @@ namespace TheSku
             panel3.SuspendLayout();
             tabControl1.SuspendLayout();
             tpList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnNew).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnSave).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)radDropDownButton1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnNew).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)brnRefreshFields).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnSave).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -173,48 +177,6 @@ namespace TheSku
             groupBox1.TabStop = false;
             groupBox1.Text = "Filters";
             // 
-            // gvList
-            // 
-            gvList.AllowUserToAddRows = false;
-            gvList.AllowUserToDeleteRows = false;
-            gvList.AllowUserToOrderColumns = true;
-            gvList.AllowUserToResizeRows = false;
-            gvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            gvList.BackgroundColor = System.Drawing.SystemColors.Control;
-            gvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { name, full_name, user_name });
-            gvList.Dock = System.Windows.Forms.DockStyle.Fill;
-            gvList.Location = new System.Drawing.Point(3, 21);
-            gvList.MultiSelect = false;
-            gvList.Name = "gvList";
-            gvList.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            gvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            gvList.Size = new System.Drawing.Size(745, 230);
-            gvList.TabIndex = 0;
-            gvList.CellDoubleClick += gvList_CellDoubleClick;
-            gvList.KeyDown += gvList_KeyDown;
-            // 
-            // name
-            // 
-            name.DataPropertyName = "name";
-            name.HeaderText = "Name";
-            name.Name = "name";
-            name.ReadOnly = true;
-            // 
-            // full_name
-            // 
-            full_name.DataPropertyName = "FullName";
-            full_name.HeaderText = "Full Name";
-            full_name.Name = "full_name";
-            full_name.ReadOnly = true;
-            // 
-            // user_name
-            // 
-            user_name.DataPropertyName = "UserName";
-            user_name.HeaderText = "Username";
-            user_name.Name = "user_name";
-            user_name.ReadOnly = true;
-            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(gvList);
@@ -225,6 +187,54 @@ namespace TheSku
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "List";
+            // 
+            // gvList
+            // 
+            gvList.BackColor = System.Drawing.Color.Transparent;
+            gvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            gvList.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            gvList.ForeColor = System.Drawing.SystemColors.ControlText;
+            gvList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            gvList.Location = new System.Drawing.Point(3, 21);
+            // 
+            // 
+            // 
+            gvList.MasterTemplate.AllowAddNewRow = false;
+            gvList.MasterTemplate.AllowColumnChooser = false;
+            gvList.MasterTemplate.AllowDragToGroup = false;
+            gvList.MasterTemplate.AllowRowResize = false;
+            gvList.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "UserName";
+            gridViewTextBoxColumn1.HeaderText = "User Name";
+            gridViewTextBoxColumn1.Name = "user_name";
+            gridViewTextBoxColumn1.ReadOnly = true;
+            gridViewTextBoxColumn1.Width = 321;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "FullName";
+            gridViewTextBoxColumn2.HeaderText = "Full Name";
+            gridViewTextBoxColumn2.Name = "full_name";
+            gridViewTextBoxColumn2.ReadOnly = true;
+            gridViewTextBoxColumn2.Width = 225;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Name";
+            gridViewTextBoxColumn3.HeaderText = "Name";
+            gridViewTextBoxColumn3.Name = "name";
+            gridViewTextBoxColumn3.ReadOnly = true;
+            gridViewTextBoxColumn3.Width = 180;
+            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn1, gridViewTextBoxColumn2, gridViewTextBoxColumn3 });
+            gvList.MasterTemplate.EnableFiltering = true;
+            gvList.MasterTemplate.EnableGrouping = false;
+            gvList.MasterTemplate.EnablePaging = true;
+            gvList.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            gvList.Name = "gvList";
+            gvList.ReadOnly = true;
+            gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            gvList.Size = new System.Drawing.Size(745, 230);
+            gvList.TabIndex = 1;
+            gvList.ThemeName = "Windows8";
+            gvList.CellDoubleClick += gvList_CellDoubleClick;
+            gvList.KeyDown += gvList_KeyDown;
             // 
             // label5
             // 
@@ -426,45 +436,12 @@ namespace TheSku
             tpList.Text = "List";
             tpList.UseVisualStyleBackColor = true;
             // 
-            // btnClose
-            // 
-            btnClose.ForeColor = System.Drawing.Color.Black;
-            btnClose.Image = Properties.Resources.Delete_24;
-            btnClose.Location = new System.Drawing.Point(3, 132);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new System.Drawing.Size(194, 36);
-            btnClose.TabIndex = 3;
-            btnClose.Text = "Close";
-            btnClose.ThemeName = "Windows8";
-            btnClose.Click += btnClose_Click;
-            // 
-            // btnNew
-            // 
-            btnNew.Image = Properties.Resources.New_24;
-            btnNew.Location = new System.Drawing.Point(3, 90);
-            btnNew.Name = "btnNew";
-            btnNew.Size = new System.Drawing.Size(194, 36);
-            btnNew.TabIndex = 1;
-            btnNew.Text = "New";
-            btnNew.ThemeName = "Windows8";
-            btnNew.Click += btnNew_Click;
-            // 
-            // btnSave
-            // 
-            btnSave.Image = Properties.Resources.Save_24;
-            btnSave.Location = new System.Drawing.Point(3, 48);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new System.Drawing.Size(194, 36);
-            btnSave.TabIndex = 0;
-            btnSave.Text = "Save";
-            btnSave.ThemeName = "Windows8";
-            btnSave.Click += btnSave_Click;
-            // 
             // panel2
             // 
             panel2.Controls.Add(radDropDownButton1);
             panel2.Controls.Add(btnClose);
             panel2.Controls.Add(btnNew);
+            panel2.Controls.Add(brnRefreshFields);
             panel2.Controls.Add(btnSave);
             panel2.Dock = System.Windows.Forms.DockStyle.Left;
             panel2.Location = new System.Drawing.Point(0, 71);
@@ -479,7 +456,7 @@ namespace TheSku
             radDropDownButton1.Location = new System.Drawing.Point(3, 6);
             radDropDownButton1.Name = "radDropDownButton1";
             radDropDownButton1.Size = new System.Drawing.Size(194, 36);
-            radDropDownButton1.TabIndex = 1;
+            radDropDownButton1.TabIndex = 10;
             radDropDownButton1.Text = "Actions";
             radDropDownButton1.ThemeName = "Windows8";
             // 
@@ -488,6 +465,7 @@ namespace TheSku
             btnReload.Image = Properties.Resources.Refresh_24;
             btnReload.Name = "btnReload";
             btnReload.Text = "Reload";
+            btnReload.UseCompatibleTextRendering = false;
             btnReload.Click += btnReload_Click;
             // 
             // btnDelete
@@ -496,6 +474,7 @@ namespace TheSku
             btnDelete.Image = Properties.Resources.Delete_File_24;
             btnDelete.Name = "btnDelete";
             btnDelete.Text = "Delete";
+            btnDelete.UseCompatibleTextRendering = false;
             btnDelete.Click += btnDelete_Click;
             // 
             // btnCopyNameToClipboard
@@ -503,7 +482,53 @@ namespace TheSku
             btnCopyNameToClipboard.Image = Properties.Resources.Copy__2__24;
             btnCopyNameToClipboard.Name = "btnCopyNameToClipboard";
             btnCopyNameToClipboard.Text = "Copy To Clipboard";
+            btnCopyNameToClipboard.UseCompatibleTextRendering = false;
             btnCopyNameToClipboard.Click += btnCopyNameToClipboard_Click;
+            // 
+            // btnClose
+            // 
+            btnClose.ForeColor = System.Drawing.Color.Black;
+            btnClose.Image = Properties.Resources.Delete_24;
+            btnClose.Location = new System.Drawing.Point(3, 174);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new System.Drawing.Size(194, 36);
+            btnClose.TabIndex = 12;
+            btnClose.Text = "Close";
+            btnClose.ThemeName = "Windows8";
+            btnClose.Click += btnClose_Click;
+            // 
+            // btnNew
+            // 
+            btnNew.Image = Properties.Resources.New_24;
+            btnNew.Location = new System.Drawing.Point(3, 132);
+            btnNew.Name = "btnNew";
+            btnNew.Size = new System.Drawing.Size(194, 36);
+            btnNew.TabIndex = 11;
+            btnNew.Text = "New";
+            btnNew.ThemeName = "Windows8";
+            btnNew.Click += btnNew_Click;
+            // 
+            // brnRefreshFields
+            // 
+            brnRefreshFields.Image = Properties.Resources.Refresh_24;
+            brnRefreshFields.Location = new System.Drawing.Point(3, 90);
+            brnRefreshFields.Name = "brnRefreshFields";
+            brnRefreshFields.Size = new System.Drawing.Size(194, 36);
+            brnRefreshFields.TabIndex = 8;
+            brnRefreshFields.Text = "Refresh Fields";
+            brnRefreshFields.ThemeName = "Windows8";
+            brnRefreshFields.Click += brnRefreshFields_Click;
+            // 
+            // btnSave
+            // 
+            btnSave.Image = Properties.Resources.Save_24;
+            btnSave.Location = new System.Drawing.Point(3, 48);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new System.Drawing.Size(194, 36);
+            btnSave.TabIndex = 9;
+            btnSave.Text = "Save";
+            btnSave.ThemeName = "Windows8";
+            btnSave.Click += btnSave_Click;
             // 
             // lblID
             // 
@@ -558,8 +583,9 @@ namespace TheSku
             ((System.ComponentModel.ISupportInitialize)btnDisplay).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)gvList).EndInit();
             groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gvList.MasterTemplate).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gvList).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtFirstName).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
@@ -573,11 +599,12 @@ namespace TheSku
             panel3.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tpList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnNew).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnSave).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)radDropDownButton1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnNew).EndInit();
+            ((System.ComponentModel.ISupportInitialize)brnRefreshFields).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnSave).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -594,7 +621,6 @@ namespace TheSku
         private System.Windows.Forms.Label label3;
         private Telerik.WinControls.UI.RadButton btnDisplay;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView gvList;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label5;
         private Telerik.WinControls.UI.RadTextBox txtFirstName;
@@ -604,9 +630,6 @@ namespace TheSku
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpList;
-        private Telerik.WinControls.UI.RadButton btnClose;
-        private Telerik.WinControls.UI.RadButton btnNew;
-        private Telerik.WinControls.UI.RadButton btnSave;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label label1;
@@ -617,15 +640,17 @@ namespace TheSku
         private System.Windows.Forms.Label label7;
         private Telerik.WinControls.UI.RadTextBox txtUsername;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn full_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn user_name;
         private Telerik.WinControls.UI.RadTextBox txtPassword;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Telerik.WinControls.UI.RadDropDownButton radDropDownButton1;
         private Telerik.WinControls.UI.RadMenuItem btnReload;
-        private Telerik.WinControls.UI.RadMenuItem btnCopyNameToClipboard;
         private Telerik.WinControls.UI.RadMenuItem btnDelete;
+        private Telerik.WinControls.UI.RadMenuItem btnCopyNameToClipboard;
+        private Telerik.WinControls.UI.RadButton btnClose;
+        private Telerik.WinControls.UI.RadButton btnNew;
+        private Telerik.WinControls.UI.RadButton brnRefreshFields;
+        private Telerik.WinControls.UI.RadButton btnSave;
+        private Telerik.WinControls.UI.RadGridView gvList;
     }
 }

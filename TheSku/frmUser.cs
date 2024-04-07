@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 using TheSku.Data;
 
 namespace TheSku
@@ -119,7 +120,7 @@ namespace TheSku
             }
         }
 
-        private void gvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void gvList_CellDoubleClick(object sender, GridViewCellEventArgs e)
         {
             if (this.gvList.RowCount > 0 && e.RowIndex >= 0)
             {
@@ -220,7 +221,8 @@ namespace TheSku
         {
             if (e.KeyCode == Keys.Enter && this.gvList.RowCount > 0)
             {
-                gvList_CellDoubleClick(sender, new DataGridViewCellEventArgs(this.gvList.CurrentCell.ColumnIndex, this.gvList.CurrentCell.RowIndex));
+                GridCellElement cell = this.gvList.CurrentCell;
+                this.gvList_CellDoubleClick(sender, new GridViewCellEventArgs(cell.RowInfo, cell.ColumnInfo, this.gvList.ActiveEditor));
             }
         }
 
@@ -235,6 +237,11 @@ namespace TheSku
             {
                 Clipboard.SetText(this.lblID.Text);
             }
+        }
+
+        private void brnRefreshFields_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
