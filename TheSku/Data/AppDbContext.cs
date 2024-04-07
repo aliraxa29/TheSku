@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 using System.Configuration;
+using System.Xml;
 
 namespace TheSku.Data
 {
@@ -14,6 +17,21 @@ namespace TheSku.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(ConfigurationManager.ConnectionStrings["ConString"].ToString(), ServerVersion.AutoDetect(ConfigurationManager.ConnectionStrings["ConString"].ToString()));
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<User>().HasData(new User()
+            {
+                Name = "admin",
+                Creation = DateTime.Now,
+                Modified = DateTime.Now,
+                ModifiedBy = "Administrator",
+                Owner = "Administrator",
+                UserName = "admin",
+                Password = Security.EncryptString("admin")
+            });
         }
 
         public DbSet<Supplier> Suppliers { get; set; }

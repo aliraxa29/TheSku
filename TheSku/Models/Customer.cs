@@ -7,7 +7,6 @@ using System;
 public class Customer
 {
     [MaxLength(255)]
-    [Required]
     [Key]
     [Column("name")]
     public string Name { get; set; }
@@ -23,7 +22,7 @@ public class Customer
     public string Owner { get; set; }
     [MaxLength(1)]
     [Column("docstatus")]
-    public int Docstatus { get; set; }
+    public int Docstatus { get; set; } = 0;
     [MaxLength(255)]
     [Required]
     [Column("customer_name")]
@@ -45,12 +44,13 @@ public class Customer
     [MaxLength(255)]
     [Column("primary_contact")]
     public string PrimaryContact { get; set; }
-    [Column("accounts")]
-    public List<PartyAccount> PartyAccounts { get; set; }
     [MaxLength(1)]
     [Column("disabled")]
     public int Disabled { get; set; }
     [MaxLength(255)]
     [Column("phone_number")]
     public string PhoneNumber { get; set; }
+    [Column("credit_limit")]
+    public List<CustomerCreditLimit> CreditLimits { get; set; }
+    public List<PartyAccount> PartyAccounts { get; set; }
 }
