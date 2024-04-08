@@ -49,13 +49,13 @@
             reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             userManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            countryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            currencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ssMain = new System.Windows.Forms.StatusStrip();
             toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             lblUsername = new System.Windows.Forms.ToolStripStatusLabel();
-            countryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            currencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ssMain.SuspendLayout();
             SuspendLayout();
@@ -194,16 +194,30 @@
             // 
             userManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { userToolStripMenuItem, countryToolStripMenuItem, currencyToolStripMenuItem });
             userManagementToolStripMenuItem.Name = "userManagementToolStripMenuItem";
-            userManagementToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
-            userManagementToolStripMenuItem.Text = "User Management";
+            userManagementToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            userManagementToolStripMenuItem.Text = "Management";
             // 
             // userToolStripMenuItem
             // 
             userToolStripMenuItem.Image = Properties.Resources.User_Security_24;
             userToolStripMenuItem.Name = "userToolStripMenuItem";
-            userToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            userToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             userToolStripMenuItem.Text = "User";
             userToolStripMenuItem.Click += userToolStripMenuItem_Click;
+            // 
+            // countryToolStripMenuItem
+            // 
+            countryToolStripMenuItem.Name = "countryToolStripMenuItem";
+            countryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            countryToolStripMenuItem.Text = "Country";
+            countryToolStripMenuItem.Click += countryToolStripMenuItem_Click;
+            // 
+            // currencyToolStripMenuItem
+            // 
+            currencyToolStripMenuItem.Name = "currencyToolStripMenuItem";
+            currencyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            currencyToolStripMenuItem.Text = "Currency";
+            currencyToolStripMenuItem.Click += currencyToolStripMenuItem_Click;
             // 
             // aboutToolStripMenuItem
             // 
@@ -215,7 +229,7 @@
             // aboutUsToolStripMenuItem
             // 
             aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            aboutUsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            aboutUsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             aboutUsToolStripMenuItem.Text = "About Us";
             aboutUsToolStripMenuItem.Click += aboutUsToolStripMenuItem_Click;
             // 
@@ -239,19 +253,6 @@
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new System.Drawing.Size(30, 17);
             lblUsername.Text = "User";
-            // 
-            // countryToolStripMenuItem
-            // 
-            countryToolStripMenuItem.Name = "countryToolStripMenuItem";
-            countryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            countryToolStripMenuItem.Text = "Country";
-            countryToolStripMenuItem.Click += countryToolStripMenuItem_Click;
-            // 
-            // currencyToolStripMenuItem
-            // 
-            currencyToolStripMenuItem.Name = "currencyToolStripMenuItem";
-            currencyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            currencyToolStripMenuItem.Text = "Currency";
             // 
             // frmMain
             // 
