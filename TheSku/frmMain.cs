@@ -87,5 +87,17 @@ namespace TheSku
                 new frmCountry(dbContext) { MdiParent = this }.Show();
             }
         }
+
+        private void currencyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmCurrency"] != null)
+            {
+                Application.OpenForms["frmCurrency"].BringToFront();
+            }
+            else
+            {
+                new frmCurrency(dbContext) { MdiParent = this }.Show();
+            }
+        }
     }
 }

@@ -7,67 +7,67 @@ using TheSku.Data;
 
 namespace TheSku
 {
-    public partial class frmSupplier : Form
+    public partial class frmCurrency : Form
     {
-        AppDbContext AppDbContext;
-        bool IsBinded = false;
-        public frmSupplier(AppDbContext dbContext)
+        AppDbContext dbContext;
+
+        public frmCurrency(AppDbContext dbContext)
         {
-            AppDbContext = dbContext;
+            this.dbContext = dbContext;
             InitializeComponent();
             this.btnReload.Shortcuts.Add(new RadShortcut(Keys.Control, Keys.R));
             this.btnDelete.Shortcuts.Add(new RadShortcut(Keys.Control, Keys.T));
             this.btnCopyNameToClipboard.Shortcuts.Add(new RadShortcut(Keys.Alt, Keys.C));
             this.gvList.AutoGenerateColumns = false;
-            this.ActiveControl = this.txtSupplierName;
+            this.ActiveControl = this.txtCurrencyName;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(this.txtSupplierName.Text))
+            if (string.IsNullOrWhiteSpace(this.txtCurrencyName.Text))
             {
-                MessageBox.Show("Supplier Name is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.txtSupplierName.Focus();
-                return;
-            }
-            if (this.cmbSupplierGroup.SelectedIndex == -1)
-            {
-                MessageBox.Show("Supplier Group is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.cmbSupplierGroup.Focus();
+                MessageBox.Show("Currency Name is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtCurrencyName.Focus();
                 return;
             }
             if (this.lblID.Text == "0")
             {
-                var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.txtSupplierName.Text.Trim())).FirstOrDefault();
-                if (supplier is not null)
+                var currency1 = dbContext.Currency.Where(x => x.Name.Equals(this.txtCurrencyName.Text.Trim())).FirstOrDefault();
+                if (currency1 is not null)
                 {
-                    MessageBox.Show("Supplier with this Name is already exists", "Exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.txtSupplierName.Focus();
+                    MessageBox.Show("Currency with this Name is already exists", "Exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtCurrencyName.Focus();
                     return;
                 }
-                Supplier supplier1 = new Supplier()
+                Currency currency = new Currency()
                 {
-                    Name = this.txtSupplierName.Text.Trim(),
+                    Name = this.txtCurrencyName.Text.Trim(),
                     Creation = DateTime.Now,
                     ModifiedBy = Global.UserName,
                     Owner = Global.UserName,
-                    SupplierName = this.txtSupplierName.Text.Trim(),
-                    SupplierGroup = this.cmbSupplierGroup.SelectedValue?.ToString(),
+                    CurrencyName = this.txtCurrencyName.Text.Trim(),
+                    Enabled = Convert.ToInt16(this.chkEnabled.Checked),
+                    Symbol = this.txtSymbol.Text,
+                    Fraction = this.txtFraction.Text,
+                    FractionUnits = this.txtFractionUnits.Text,
+                    SmallestCurrencyFractionValue = this.txtSmallestFractionValue.Value,
                 };
-                AppDbContext.Suppliers.Add(supplier1);
-                AppDbContext.SaveChanges();
+                dbContext.Currency.Add(currency);
+                dbContext.SaveChanges();
                 this.ResetForm();
             }
             else
             {
-                var supplier1 = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
-                if (supplier1 is not null)
+                var currency = dbContext.Currency.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                if (currency is not null)
                 {
-                    supplier1.SupplierName = this.txtSupplierName.Text.Trim();
-                    supplier1.Modified = DateTime.Now;
-                    supplier1.ModifiedBy = Global.UserName;
-                    supplier1.SupplierGroup = this.cmbSupplierGroup.SelectedValue?.ToString();
-                    AppDbContext.SaveChanges();
+                    currency.CurrencyName = this.txtCurrencyName.Text.Trim();
+                    currency.Enabled = Convert.ToInt16(this.chkEnabled.Checked);
+                    currency.Symbol = this.txtSymbol.Text;
+                    currency.Fraction = this.txtFraction.Text;
+                    currency.FractionUnits = this.txtFractionUnits.Text;
+                    currency.SmallestCurrencyFractionValue = this.txtSmallestFractionValue.Value;
+                    dbContext.SaveChanges();
                     this.ResetForm();
                 }
             }
@@ -77,13 +77,16 @@ namespace TheSku
         {
             this.lblID.Text = "0";
             this.lblID.Visible = false;
-            this.txtSupplierName.Clear();
-            this.cmbSupplierGroup.SelectedIndex = -1;
+            this.txtCurrencyName.Clear();
+            this.txtFraction.Clear();
+            this.txtFractionUnits.Clear();
+            this.txtSmallestFractionValue.Value = 0;
+            this.txtSymbol.Clear();
             this.tabControl1.SelectTab(0);
-            this.txtSupplierName.Focus();
+            this.txtCurrencyName.Focus();
         }
 
-        private void frmSupplier_KeyDown(object sender, KeyEventArgs e)
+        private void frmCurrency_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.S)
             {
@@ -111,7 +114,7 @@ namespace TheSku
                 else
                 {
                     tabControl1.SelectTab(0);
-                    this.txtSupplierName.Focus();
+                    this.txtCurrencyName.Focus();
                 }
             }
         }
@@ -131,7 +134,7 @@ namespace TheSku
 
         private void BindGrid()
         {
-            var suppliers = AppDbContext.Suppliers
+            var suppliers = dbContext.Currency
                             .OrderByDescending(x => x.Modified)
                             .Where(s => string.IsNullOrEmpty(this.txtNameFilter.Text) || s.Name.Contains(this.txtNameFilter.Text))
                             .Take((int)this.txtLimit.Value)
@@ -143,18 +146,16 @@ namespace TheSku
         {
             if (this.lblID.Text != "0")
             {
-                if (!this.IsBinded)
+                var currency = dbContext.Currency.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                if (currency is not null)
                 {
-                    this.brnRefreshFields.PerformClick();
-                    this.IsBinded = true;
-                }
-                var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
-                if (supplier is not null)
-                {
-                    this.txtSupplierName.Text = supplier.SupplierName;
-                    this.cmbSupplierGroup.SelectedValue = supplier.SupplierGroup;
+                    this.txtCurrencyName.Text = currency.CurrencyName;
+                    this.txtFraction.Text = currency.Fraction;
+                    this.txtFractionUnits.Text = currency.FractionUnits;
+                    this.txtSmallestFractionValue.Value = currency.SmallestCurrencyFractionValue;
+                    this.txtSymbol.Text = currency.Symbol;
                     this.tabControl1.SelectTab(0);
-                    this.txtSupplierName.Focus();
+                    this.txtCurrencyName.Focus();
                     this.lblID.Visible = true;
                 }
             }
@@ -163,6 +164,14 @@ namespace TheSku
         private void btnNew_Click(object sender, EventArgs e)
         {
             this.ResetForm();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Are you sure you want to close {this.Text}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                base.Close();
+            }
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
@@ -176,11 +185,11 @@ namespace TheSku
             {
                 if (MessageBox.Show($"Are you sure you want to delete {this.lblID.Text}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
-                    if (supplier is not null)
+                    var currency = dbContext.Currency.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                    if (currency is not null)
                     {
-                        AppDbContext.Suppliers.Remove(supplier);
-                        AppDbContext.SaveChanges();
+                        dbContext.Currency.Remove(currency);
+                        dbContext.SaveChanges();
                         MessageBox.Show($"{this.lblID.Text} deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.btnNew.PerformClick();
                     }
@@ -188,12 +197,17 @@ namespace TheSku
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnCopyNameToClipboard_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show($"Are you sure you want to close {this.Text}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (this.lblID.Text != "0")
             {
-                base.Close();
+                Clipboard.SetText(this.lblID.Text);
             }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            this.LoadData();
         }
 
         private void txtNameFilter_KeyDown(object sender, KeyEventArgs e)
@@ -220,30 +234,19 @@ namespace TheSku
             }
         }
 
-        private void btnCopyNameToClipboard_Click(object sender, EventArgs e)
+        private void gvList_CellFormatting(object sender, CellFormattingEventArgs e)
         {
-            if (this.lblID.Text != "0")
+            if (e.CellElement.ColumnInfo.Name == "status")
             {
-                Clipboard.SetText(this.lblID.Text);
+                if (e.CellElement.Value.ToString() == "1")
+                {
+                    e.CellElement.Text = "Enabled";
+                }
+                else
+                {
+                    e.CellElement.Text = "Disabled";
+                }
             }
-        }
-
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            this.LoadData();
-        }
-
-        private void cmbSupplierGroup_Enter(object sender, EventArgs e)
-        {
-            if (this.cmbSupplierGroup.DataSource == null)
-            {
-                this.cmbSupplierGroup.DataSource = AppDbContext.SupplierGroup.ToList();
-            }
-        }
-
-        private void brnRefreshFields_Click(object sender, EventArgs e)
-        {
-            this.cmbSupplierGroup.DataSource = AppDbContext.SupplierGroup.ToList();
         }
     }
 }
