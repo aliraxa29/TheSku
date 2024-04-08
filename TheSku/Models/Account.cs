@@ -51,10 +51,10 @@ public class Account
     [Column("account_type")]
     public string AccountType { get; set; }
     [Column("tax_rate", TypeName = "decimal(21,9)")]
-    public decimal TaxRate { get; set; }
+    public decimal TaxRate { get; set; } = 0;
     [MaxLength(1)]
     [Column("freeze_account")]
-    public int FreezeAccount { get; set; }
+    public int FreezeAccount { get; set; } = 0;
     [MaxLength(255)]
     [Column("balance_must_be")]
     public string BalanceMustBe { get; set; }

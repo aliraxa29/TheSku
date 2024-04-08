@@ -99,5 +99,17 @@ namespace TheSku
                 new frmCurrency(dbContext) { MdiParent = this }.Show();
             }
         }
+
+        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmAccount"] != null)
+            {
+                Application.OpenForms["frmAccount"].BringToFront();
+            }
+            else
+            {
+                new frmAccount(dbContext) { MdiParent = this }.Show();
+            }
+        }
     }
 }
