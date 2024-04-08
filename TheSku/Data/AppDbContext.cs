@@ -36,5 +36,6 @@ namespace TheSku.Data
         public DbSet<Account> Account { get; set; }
         public DbSet<Country> Country { get; set; }
         public DbSet<Currency> Currency { get; set; }
+        public DbSet<Company> Company { get; set; }
     }
 }
