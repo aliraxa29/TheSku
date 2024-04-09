@@ -59,6 +59,7 @@ namespace TheSku.Data
         public DbSet<FinanceBook> FinanceBook { get; set; }
         public DbSet<FiscalYear> FiscalYear { get; set; }
         public DbSet<GLEntry> GLEntries { get; set; }
+        public DbSet<Warehouse> Warehouse { get; set; }
     }
 }
 

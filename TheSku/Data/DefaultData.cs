@@ -382,8 +382,20 @@ public class DefaultData
     {
         return new List<CostCenter>
         {
-            new CostCenter() { Name = company.Name, Creation = DateTime.Now, Owner = user, ModifiedBy = user, CostCenterName = company.Name, Company = company },
-            new CostCenter() { Name = $"Main - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, CostCenterName = company.Name, Company = company, ParentCostCenter = company.Name },
+            new CostCenter() { Name = company.Name, Creation = DateTime.Now, Owner = user, ModifiedBy = user, CostCenterName = company.CompanyName, Company = company, IsGroup = true },
+            new CostCenter() { Name = $"Main - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, CostCenterName = "Main", Company = company, ParentCostCenter = company.Name },
+        };
+    }
+    
+    public static List<Warehouse> Warehouses(Company company, string user)
+    {
+        return new List<Warehouse>
+        {
+            new Warehouse() { Name = $"All Warehouses - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = true },
+            new Warehouse() { Name = $"Finished Goods - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
+            new Warehouse() { Name = $"Goods In Transit - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
+            new Warehouse() { Name = $"Stores - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
+            new Warehouse() { Name = $"Work In Progress - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
         };
     }
 }
