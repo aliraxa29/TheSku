@@ -4,6 +4,7 @@ using TheSku.Data;
 public class Global
 {
     public static string UserName { get; set; }
+
     public static string Country
     {
         get
