@@ -55,6 +55,10 @@ namespace TheSku.Data
         public DbSet<Currency> Currency { get; set; }
         public DbSet<Company> Company { get; set; }
         public DbSet<Singles> Singles { get; set; }
+        public DbSet<CostCenter> CostCenter { get; set; }
+        public DbSet<FinanceBook> FinanceBook { get; set; }
+        public DbSet<FiscalYear> FiscalYear { get; set; }
+        public DbSet<GLEntry> GLEntries { get; set; }
     }
 }
 

@@ -377,4 +377,13 @@ public class DefaultData
             new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "Session", Label = "Default Country", Field = "default_country", Value = null },
         };
     }
+
+    public static List<CostCenter> CostCenters(Company company, string user)
+    {
+        return new List<CostCenter>
+        {
+            new CostCenter() { Name = company.Name, Creation = DateTime.Now, Owner = user, ModifiedBy = user, CostCenterName = company.Name, Company = company },
+            new CostCenter() { Name = $"Main - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, CostCenterName = company.Name, Company = company, ParentCostCenter = company.Name },
+        };
+    }
 }

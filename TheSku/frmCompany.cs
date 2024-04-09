@@ -101,6 +101,7 @@ namespace TheSku
                 dbContext.Company.Add(company2);
                 dbContext.SaveChanges();
                 this.CreateChartOfAccounts(company2, currency);
+                this.AddCostCenters(company2);
                 this.ResetForm();
             }
             else
@@ -121,6 +122,12 @@ namespace TheSku
                     this.ResetForm();
                 }
             }
+        }
+
+        private void AddCostCenters(Company company)
+        {
+            dbContext.CostCenter.AddRange(DefaultData.CostCenters(company, Global.UserName));
+            dbContext.SaveChanges();
         }
 
         private void CreateChartOfAccounts(Company company, Currency currency)
