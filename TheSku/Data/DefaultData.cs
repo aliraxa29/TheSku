@@ -368,4 +368,13 @@ public class DefaultData
             new Currency() { Creation = DateTime.Now, Name = "ZWL", CurrencyName = "ZWL", Fraction = "Cent", FractionUnits = "100", SmallestCurrencyFractionValue = 0, Symbol = "ZWL$"},
         };
     }
+    
+    public static List<Singles> DefaultValues()
+    {
+        return new List<Singles>
+        {
+            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "Session", Label = "Default Company", Field = "default_company", Value = null },
+            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "Session", Label = "Default Country", Field = "default_country", Value = null },
+        };
+    }
 }

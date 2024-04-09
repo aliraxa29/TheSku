@@ -111,5 +111,17 @@ namespace TheSku
                 new frmAccount(dbContext) { MdiParent = this }.Show();
             }
         }
+
+        private void companyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmCompany"] != null)
+            {
+                Application.OpenForms["frmCompany"].BringToFront();
+            }
+            else
+            {
+                new frmCompany(dbContext) { MdiParent = this }.Show();
+            }
+        }
     }
 }

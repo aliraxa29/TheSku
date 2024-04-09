@@ -34,7 +34,7 @@ public class Account
     public int IsGroup { get; set; }
     [MaxLength(255)]
     [Column("company")]
-    public string Company { get; set; }
+    public Company Company { get; set; }
     [MaxLength(255)]
     [Column("root_type")]
     public string RootType { get; set; }
@@ -43,7 +43,7 @@ public class Account
     public string ReportType { get; set; }
     [MaxLength(255)]
     [Column("account_currency")]
-    public string AccountCurrency { get; set; }
+    public Currency Currency { get; set; }
     [MaxLength(255)]
     [Column("parent_account")]
     public string ParentAccount { get; set; }

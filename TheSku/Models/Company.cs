@@ -33,9 +33,9 @@ public class Company
     [Column("tax_id")]
     public string TaxID { get; set; }
     [Column("date_of_establishment", TypeName = "DATE")]
-    public DateTime DateOfEstablishment { get; set; }
+    public DateTime? DateOfEstablishment { get; set; }
     [Column("date_of_incorporation", TypeName = "DATE")]
-    public DateTime DateOfIncorporation { get; set; }
+    public DateTime? DateOfIncorporation { get; set; }
     [MaxLength(255)]
     [Column("fax")]
     public string Fax { get; set; }
@@ -57,4 +57,10 @@ public class Company
     [MaxLength(255)]
     [Column("coa_template")]
     public string CoaTemplate { get; set; }
+    [MaxLength(255)]
+    [Column("existing_company")]
+    public string ExistingCompany { get; set; }
+    [MaxLength(255)]
+    [Column("company_currency")]
+    public Currency Currency { get; set; }
 }

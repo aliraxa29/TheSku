@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Configuration;
-using System.Xml;
+using System.Linq;
+using TheSku.Data;
 
 namespace TheSku.Data
 {
@@ -23,9 +22,27 @@ namespace TheSku.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            foreach (var fk in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            {
+                fk.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+
             modelBuilder.Entity<User>().HasData(DefaultData.Users());
             modelBuilder.Entity<Country>().HasData(DefaultData.Countries());
             modelBuilder.Entity<Currency>().HasData(DefaultData.Currencies());
+            var defaultSingles = DefaultData.DefaultValues().Select(s => new Singles
+            {
+                Name = Guid.NewGuid(),
+                Creation = s.Creation,
+                Modified = s.Modified,
+                ModifiedBy = s.ModifiedBy,
+                Owner = s.Owner,
+                Doctype = s.Doctype,
+                Label = s.Label,
+                Field = s.Field,
+                Value = s.Value
+            }).ToList();
+            modelBuilder.Entity<Singles>().HasData(defaultSingles);
         }
 
         public DbSet<Supplier> Suppliers { get; set; }
@@ -37,5 +54,18 @@ namespace TheSku.Data
         public DbSet<Country> Country { get; set; }
         public DbSet<Currency> Currency { get; set; }
         public DbSet<Company> Company { get; set; }
+        public DbSet<Singles> Singles { get; set; }
+    }
+}
+
+public static class DbContextOptionsProvider
+{
+    public static DbContextOptions<AppDbContext> Options { get; }
+
+    static DbContextOptionsProvider()
+    {
+        var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
+        optionsBuilder.UseMySql(ConfigurationManager.ConnectionStrings["ConString"].ToString(), ServerVersion.AutoDetect(ConfigurationManager.ConnectionStrings["ConString"].ToString()));
+        Options = optionsBuilder.Options;
     }
 }

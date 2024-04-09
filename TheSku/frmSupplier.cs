@@ -67,6 +67,7 @@ namespace TheSku
                     supplier1.Modified = DateTime.Now;
                     supplier1.ModifiedBy = Global.UserName;
                     supplier1.SupplierGroup = this.cmbSupplierGroup.SelectedValue?.ToString();
+                    AppDbContext.Suppliers.Update(supplier1);
                     AppDbContext.SaveChanges();
                     this.ResetForm();
                 }
