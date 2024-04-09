@@ -19,9 +19,8 @@ public class Account
     [MaxLength(255)]
     [Column("owner")]
     public string Owner { get; set; }
-    [MaxLength(1)]
     [Column("disabled")]
-    public int Disabled { get; set; }
+    public bool Disabled { get; set; }
     [MaxLength(255)]
     [Required]
     [Column("account_name")]
@@ -29,9 +28,8 @@ public class Account
     [MaxLength(255)]
     [Column("account_number")]
     public string AccountNumber { get; set; }
-    [MaxLength(1)]
     [Column("is_group")]
-    public int IsGroup { get; set; }
+    public bool IsGroup { get; set; }
     [MaxLength(255)]
     [Column("company")]
     public Company Company { get; set; }
@@ -52,9 +50,8 @@ public class Account
     public string AccountType { get; set; }
     [Column("tax_rate", TypeName = "decimal(21,9)")]
     public decimal TaxRate { get; set; } = 0;
-    [MaxLength(1)]
     [Column("freeze_account")]
-    public int FreezeAccount { get; set; } = 0;
+    public bool FreezeAccount { get; set; } = false;
     [MaxLength(255)]
     [Column("balance_must_be")]
     public string BalanceMustBe { get; set; }

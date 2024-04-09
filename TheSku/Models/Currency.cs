@@ -23,9 +23,8 @@ public class Currency
     [Required]
     [Column("currency_name")]
     public string CurrencyName { get; set; }
-    [MaxLength(1)]
     [Column("enabled")]
-    public int Enabled { get; set; } = 1;
+    public bool Enabled { get; set; } = true;
     [MaxLength(255)]
     [Column("fraction")]
     public string Fraction { get; set; }

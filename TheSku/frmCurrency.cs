@@ -46,7 +46,7 @@ namespace TheSku
                     ModifiedBy = Global.UserName,
                     Owner = Global.UserName,
                     CurrencyName = this.txtCurrencyName.Text.Trim(),
-                    Enabled = Convert.ToInt16(this.chkEnabled.Checked),
+                    Enabled = this.chkEnabled.Checked,
                     Symbol = this.txtSymbol.Text,
                     Fraction = this.txtFraction.Text,
                     FractionUnits = this.txtFractionUnits.Text,
@@ -62,7 +62,7 @@ namespace TheSku
                 if (currency is not null)
                 {
                     currency.CurrencyName = this.txtCurrencyName.Text.Trim();
-                    currency.Enabled = Convert.ToInt16(this.chkEnabled.Checked);
+                    currency.Enabled = this.chkEnabled.Checked;
                     currency.Symbol = this.txtSymbol.Text;
                     currency.Fraction = this.txtFraction.Text;
                     currency.FractionUnits = this.txtFractionUnits.Text;

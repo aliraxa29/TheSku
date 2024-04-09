@@ -374,7 +374,7 @@ namespace TheSku
         private void BindCombo()
         {
             this.cmbCountry.DataSource = dbContext.Country.ToList();
-            this.cmbCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled == 1).ToList();
+            this.cmbCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled).ToList();
             this.cmbCountry.SelectedValue = Global.Country;
             this.cmbCurrency.SelectedValue = Global.Currency;
         }
