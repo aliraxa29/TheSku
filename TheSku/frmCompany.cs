@@ -94,7 +94,7 @@ namespace TheSku
                     Website = this.txtWebsite.Text,
                     CompanyDescription = this.txtCompanyDescription.Text,
                     CoaBasedOn = this.cmbCoaBasedOn.SelectedItem?.ToString(),
-                    CoaTemplate = this.cmbCoaTemplate.SelectedItem?.ToString(),
+                    CoaTemplate = this.cmbCoaBasedOn.SelectedItem?.ToString() == "Existing Company" ? this.cmbCoaTemplate.SelectedValue?.ToString() : null,
                     ExistingCompany = this.cmbCoaBasedOn.SelectedItem?.ToString() == "Existing Company" ? this.cmbExistingCompany.SelectedValue?.ToString() : null,
                     Currency = currency,
                 };

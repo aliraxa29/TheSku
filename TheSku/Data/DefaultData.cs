@@ -373,8 +373,9 @@ public class DefaultData
     {
         return new List<Singles>
         {
-            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "Session", Label = "Default Company", Field = "default_company", Value = null },
-            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "Session", Label = "Default Country", Field = "default_country", Value = null },
+            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Company", Field = "default_company", Value = null },
+            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Country", Field = "default_country", Value = null },
+            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Currency", Field = "default_currency", Value = null },
         };
     }
 
