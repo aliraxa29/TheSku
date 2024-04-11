@@ -31,10 +31,10 @@ namespace TheSku
         /// </summary>
         private void InitializeComponent()
         {
-            GridViewTextBoxColumn gridViewTextBoxColumn7 = new GridViewTextBoxColumn();
-            GridViewTextBoxColumn gridViewTextBoxColumn8 = new GridViewTextBoxColumn();
-            GridViewTextBoxColumn gridViewTextBoxColumn9 = new GridViewTextBoxColumn();
-            TableViewDefinition tableViewDefinition3 = new TableViewDefinition();
+            GridViewTextBoxColumn gridViewTextBoxColumn1 = new GridViewTextBoxColumn();
+            GridViewTextBoxColumn gridViewTextBoxColumn2 = new GridViewTextBoxColumn();
+            GridViewTextBoxColumn gridViewTextBoxColumn3 = new GridViewTextBoxColumn();
+            TableViewDefinition tableViewDefinition1 = new TableViewDefinition();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             txtLimit = new NumericUpDown();
             txtNameFilter = new RadTextBox();
@@ -196,35 +196,36 @@ namespace TheSku
             gvList.MasterTemplate.AllowDragToGroup = false;
             gvList.MasterTemplate.AllowRowResize = false;
             gvList.MasterTemplate.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "AccountName";
-            gridViewTextBoxColumn7.HeaderText = "Account Name";
-            gridViewTextBoxColumn7.Name = "account_name";
-            gridViewTextBoxColumn7.ReadOnly = true;
-            gridViewTextBoxColumn7.Width = 470;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "Disabled";
-            gridViewTextBoxColumn8.HeaderText = "Status";
-            gridViewTextBoxColumn8.Name = "status";
-            gridViewTextBoxColumn8.ReadOnly = true;
-            gridViewTextBoxColumn8.Width = 212;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "Name";
-            gridViewTextBoxColumn9.HeaderText = "Name";
-            gridViewTextBoxColumn9.Name = "name";
-            gridViewTextBoxColumn9.ReadOnly = true;
-            gridViewTextBoxColumn9.Width = 380;
-            gvList.MasterTemplate.Columns.AddRange(new GridViewDataColumn[] { gridViewTextBoxColumn7, gridViewTextBoxColumn8, gridViewTextBoxColumn9 });
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "AccountName";
+            gridViewTextBoxColumn1.HeaderText = "Account Name";
+            gridViewTextBoxColumn1.Name = "account_name";
+            gridViewTextBoxColumn1.ReadOnly = true;
+            gridViewTextBoxColumn1.Width = 470;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Disabled";
+            gridViewTextBoxColumn2.HeaderText = "Status";
+            gridViewTextBoxColumn2.Name = "status";
+            gridViewTextBoxColumn2.ReadOnly = true;
+            gridViewTextBoxColumn2.Width = 212;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Name";
+            gridViewTextBoxColumn3.HeaderText = "Name";
+            gridViewTextBoxColumn3.Name = "name";
+            gridViewTextBoxColumn3.ReadOnly = true;
+            gridViewTextBoxColumn3.Width = 380;
+            gvList.MasterTemplate.Columns.AddRange(new GridViewDataColumn[] { gridViewTextBoxColumn1, gridViewTextBoxColumn2, gridViewTextBoxColumn3 });
             gvList.MasterTemplate.EnableFiltering = true;
             gvList.MasterTemplate.EnableGrouping = false;
             gvList.MasterTemplate.EnablePaging = true;
-            gvList.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            gvList.MasterTemplate.ViewDefinition = tableViewDefinition1;
             gvList.Name = "gvList";
             gvList.ReadOnly = true;
             gvList.RightToLeft = RightToLeft.No;
             gvList.Size = new System.Drawing.Size(1081, 372);
             gvList.TabIndex = 0;
             gvList.ThemeName = "Windows8";
+            gvList.CellFormatting += gvList_CellFormatting;
             gvList.CellDoubleClick += gvList_CellDoubleClick;
             gvList.KeyDown += gvList_KeyDown;
             // 
@@ -285,7 +286,7 @@ namespace TheSku
             // 
             cmbCompany.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             cmbCompany.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            cmbCompany.DisplayMember = "SupplierGroupName";
+            cmbCompany.DisplayMember = "CompanyName";
             cmbCompany.DropDownAnimationEnabled = true;
             cmbCompany.Enabled = false;
             cmbCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F);

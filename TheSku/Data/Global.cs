@@ -11,7 +11,7 @@ public class Global
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                var default_country = dbContext.Singles.Where(c => c.Field == "default_country" && c.Doctype == "Session").FirstOrDefault();
+                var default_country = dbContext.Singles.Where(c => c.Field == "default_country" && c.Doctype == "System Settings").FirstOrDefault();
                 return default_country?.Value;
             }
         }
@@ -23,7 +23,7 @@ public class Global
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                var default_currency = dbContext.Singles.Where(c => c.Field == "default_currency" && c.Doctype == "Session").FirstOrDefault();
+                var default_currency = dbContext.Singles.Where(c => c.Field == "default_currency" && c.Doctype == "System Settings").FirstOrDefault();
                 return default_currency?.Value;
             }
         }
@@ -34,8 +34,8 @@ public class Global
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                var cd = dbContext.Singles.Where(c => c.Field == "default_company").FirstOrDefault();
-                return cd?.Value;
+                var default_company = dbContext.Singles.Where(c => c.Field == "default_company" && c.Doctype == "System Settings").FirstOrDefault();
+                return default_company?.Value;
             }
         }
     }

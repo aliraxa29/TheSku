@@ -239,6 +239,7 @@ namespace TheSku
             gvList.Size = new System.Drawing.Size(1081, 371);
             gvList.TabIndex = 0;
             gvList.ThemeName = "Windows8";
+            gvList.CellFormatting += gvList_CellFormatting;
             gvList.CellDoubleClick += gvList_CellDoubleClick;
             gvList.KeyDown += gvList_KeyDown;
             // 
@@ -306,7 +307,7 @@ namespace TheSku
             cmbCountry.Location = new System.Drawing.Point(813, 6);
             cmbCountry.Name = "cmbCountry";
             cmbCountry.Size = new System.Drawing.Size(265, 23);
-            cmbCountry.TabIndex = 7;
+            cmbCountry.TabIndex = 8;
             cmbCountry.ThemeName = "Windows8";
             cmbCountry.ValueMember = "Name";
             // 
@@ -430,7 +431,7 @@ namespace TheSku
             dtpIncorporation.Location = new System.Drawing.Point(813, 41);
             dtpIncorporation.Name = "dtpIncorporation";
             dtpIncorporation.Size = new System.Drawing.Size(265, 23);
-            dtpIncorporation.TabIndex = 8;
+            dtpIncorporation.TabIndex = 9;
             dtpIncorporation.TabStop = false;
             dtpIncorporation.Text = "4/8/2024";
             dtpIncorporation.ThemeName = "Windows8";
@@ -445,7 +446,7 @@ namespace TheSku
             dtpEstablishment.Location = new System.Drawing.Point(813, 76);
             dtpEstablishment.Name = "dtpEstablishment";
             dtpEstablishment.Size = new System.Drawing.Size(265, 23);
-            dtpEstablishment.TabIndex = 9;
+            dtpEstablishment.TabIndex = 10;
             dtpEstablishment.TabStop = false;
             dtpEstablishment.Text = "4/8/2024";
             dtpEstablishment.ThemeName = "Windows8";
@@ -498,7 +499,7 @@ namespace TheSku
             txtEmailAddress.Location = new System.Drawing.Point(813, 111);
             txtEmailAddress.Name = "txtEmailAddress";
             txtEmailAddress.Size = new System.Drawing.Size(265, 23);
-            txtEmailAddress.TabIndex = 10;
+            txtEmailAddress.TabIndex = 11;
             txtEmailAddress.ThemeName = "Windows8";
             // 
             // label12
@@ -528,7 +529,7 @@ namespace TheSku
             txtWebsite.Location = new System.Drawing.Point(813, 146);
             txtWebsite.Name = "txtWebsite";
             txtWebsite.Size = new System.Drawing.Size(265, 23);
-            txtWebsite.TabIndex = 11;
+            txtWebsite.TabIndex = 12;
             txtWebsite.ThemeName = "Windows8";
             // 
             // label14
@@ -571,7 +572,7 @@ namespace TheSku
             cmbExistingCompany.Location = new System.Drawing.Point(813, 216);
             cmbExistingCompany.Name = "cmbExistingCompany";
             cmbExistingCompany.Size = new System.Drawing.Size(265, 23);
-            cmbExistingCompany.TabIndex = 13;
+            cmbExistingCompany.TabIndex = 14;
             cmbExistingCompany.ThemeName = "Windows8";
             cmbExistingCompany.ValueMember = "Name";
             // 
@@ -598,7 +599,7 @@ namespace TheSku
             cmbCoaTemplate.Location = new System.Drawing.Point(273, 251);
             cmbCoaTemplate.Name = "cmbCoaTemplate";
             cmbCoaTemplate.Size = new System.Drawing.Size(264, 25);
-            cmbCoaTemplate.TabIndex = 6;
+            cmbCoaTemplate.TabIndex = 7;
             cmbCoaTemplate.ValueMember = "Name";
             // 
             // label15
@@ -624,7 +625,7 @@ namespace TheSku
             cmbCoaBasedOn.Location = new System.Drawing.Point(273, 215);
             cmbCoaBasedOn.Name = "cmbCoaBasedOn";
             cmbCoaBasedOn.Size = new System.Drawing.Size(264, 25);
-            cmbCoaBasedOn.TabIndex = 12;
+            cmbCoaBasedOn.TabIndex = 6;
             cmbCoaBasedOn.ValueMember = "Name";
             cmbCoaBasedOn.SelectedIndexChanged += cmbCoaBasedOn_SelectedIndexChanged;
             // 

@@ -135,5 +135,17 @@ namespace TheSku
                 new frmSystemSettings(dbContext) { MdiParent = this }.Show();
             }
         }
+
+        private void chartOfAccountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmChartOfAccounts"] != null)
+            {
+                Application.OpenForms["frmChartOfAccounts"].BringToFront();
+            }
+            else
+            {
+                new frmChartOfAccounts(dbContext) { MdiParent = this }.Show();
+            }
+        }
     }
 }

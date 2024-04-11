@@ -374,6 +374,7 @@ namespace TheSku
         private void BindCombo()
         {
             this.cmbCountry.DataSource = dbContext.Country.ToList();
+            this.cmbCountry.SelectedValue = Global.Country;
             this.cmbCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled).ToList();
             this.cmbCountry.SelectedValue = Global.Country;
             this.cmbCurrency.SelectedValue = Global.Currency;
@@ -409,6 +410,21 @@ namespace TheSku
             string[] words = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string initials = string.Concat(words.Select(word => word[0]));
             return initials;
+        }
+
+        private void gvList_CellFormatting(object sender, CellFormattingEventArgs e)
+        {
+            if (e.CellElement.ColumnInfo.Name == "status")
+            {
+                if (e.CellElement.Value.ToString() == "False")
+                {
+                    e.CellElement.Text = "Enabled";
+                }
+                else
+                {
+                    e.CellElement.Text = "Disabled";
+                }
+            }
         }
     }
 }

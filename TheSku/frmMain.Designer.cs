@@ -177,20 +177,21 @@
             // accountToolStripMenuItem
             // 
             accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            accountToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            accountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             accountToolStripMenuItem.Text = "Account";
             accountToolStripMenuItem.Click += accountToolStripMenuItem_Click;
             // 
             // chartOfAccountsToolStripMenuItem
             // 
             chartOfAccountsToolStripMenuItem.Name = "chartOfAccountsToolStripMenuItem";
-            chartOfAccountsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            chartOfAccountsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             chartOfAccountsToolStripMenuItem.Text = "Chart Of Accounts";
+            chartOfAccountsToolStripMenuItem.Click += chartOfAccountsToolStripMenuItem_Click;
             // 
             // reportToolStripMenuItem
             // 
             reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            reportToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            reportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             reportToolStripMenuItem.Text = "Reports";
             // 
             // userManagementToolStripMenuItem

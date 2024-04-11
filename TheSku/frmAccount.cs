@@ -116,6 +116,9 @@ namespace TheSku
             this.cmbRootType.SelectedIndex = 0;
             this.tabControl1.SelectTab(0);
             this.txtAccountName.Focus();
+            this.txtAccountName.ReadOnly = false;
+            this.txtAccountNumber.ReadOnly = false;
+            this.chkIsGroup.ReadOnly = false;
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
@@ -218,6 +221,9 @@ namespace TheSku
                     this.cmbParentAccount.SelectedValue = account.ParentAccount;
                     this.cmbBalanceMustBe.SelectedItem = account.BalanceMustBe;
                     this.cmbCurrency.SelectedValue = account.Currency.Name;
+                    this.txtAccountName.ReadOnly = true;
+                    this.txtAccountNumber.ReadOnly = true;
+                    this.chkIsGroup.ReadOnly = true;
                     this.tabControl1.SelectTab(0);
                     this.txtAccountName.Focus();
                     this.lblID.Visible = true;
@@ -297,14 +303,29 @@ namespace TheSku
         {
             this.cmbCompany.DataSource = dbContext.Company.ToList();
             this.cmbCompany.SelectedValue = Global.Company;
-            this.cmbCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled).ToList();
+            this.cmbCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled == true).ToList();
             this.cmbCurrency.SelectedValue = Global.Currency;
-            this.cmbParentAccount.DataSource = dbContext.Account.Where(c => c.IsGroup && c.Company == this.cmbCompany.SelectedValue).ToList();
+            this.cmbParentAccount.DataSource = dbContext.Account.Where(c => c.IsGroup && c.Company == dbContext.Company.Where(c => c.Name == this.cmbCompany.SelectedValue.ToString()).FirstOrDefault()).ToList(); ;
         }
 
         private void brnRefreshFields_Click(object sender, EventArgs e)
         {
             this.BindCombo();
+        }
+
+        private void gvList_CellFormatting(object sender, CellFormattingEventArgs e)
+        {
+            if (e.CellElement.ColumnInfo.Name == "status")
+            {
+                if (Convert.ToBoolean(e.CellElement.Value) == false)
+                {
+                    e.CellElement.Text = "Enabled";
+                }
+                else
+                {
+                    e.CellElement.Text = "Disabled";
+                }
+            }
         }
     }
 }

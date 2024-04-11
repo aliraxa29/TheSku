@@ -154,6 +154,7 @@ namespace TheSku
                     this.txtFractionUnits.Text = currency.FractionUnits;
                     this.txtSmallestFractionValue.Value = currency.SmallestCurrencyFractionValue;
                     this.txtSymbol.Text = currency.Symbol;
+                    this.chkEnabled.Checked = currency.Enabled;
                     this.tabControl1.SelectTab(0);
                     this.txtCurrencyName.Focus();
                     this.lblID.Visible = true;
@@ -238,7 +239,7 @@ namespace TheSku
         {
             if (e.CellElement.ColumnInfo.Name == "status")
             {
-                if (e.CellElement.Value.ToString() == "1")
+                if ((bool)e.CellElement.Value)
                 {
                     e.CellElement.Text = "Enabled";
                 }
