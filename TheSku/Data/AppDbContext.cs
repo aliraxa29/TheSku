@@ -47,6 +47,7 @@ namespace TheSku.Data
         }
 
         public DbSet<Brand> Brand { get; set; }
+        public DbSet<Bin> Bin { get; set; }
         public DbSet<Item> Item { get; set; }
         public DbSet<ItemGroup> ItemGroup { get; set; }
         public DbSet<ItemPrice> ItemPrice { get; set; }
