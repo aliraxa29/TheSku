@@ -147,5 +147,10 @@ namespace TheSku
                 new frmChartOfAccounts(dbContext) { MdiParent = this }.Show();
             }
         }
+
+        private void pOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmChartOfAccounts(dbContext) { MdiParent = this }.Show();
+        }
     }
 }

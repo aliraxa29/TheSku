@@ -15,4 +15,9 @@
     {
         return (true, null);
     }
+
+    public void SaveSalesInvoice()
+    {
+
+    }
 }

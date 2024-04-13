@@ -28,6 +28,7 @@ namespace TheSku.Data
             }
 
             modelBuilder.Entity<User>().HasData(DefaultData.Users());
+            modelBuilder.Entity<PackingType>().HasData(DefaultData.PackingTypes());
             modelBuilder.Entity<Country>().HasData(DefaultData.Countries());
             modelBuilder.Entity<Currency>().HasData(DefaultData.Currencies());
             var defaultSingles = DefaultData.DefaultValues().Select(s => new Singles
@@ -45,6 +46,17 @@ namespace TheSku.Data
             modelBuilder.Entity<Singles>().HasData(defaultSingles);
         }
 
+        public DbSet<Brand> Brand { get; set; }
+        public DbSet<Item> Item { get; set; }
+        public DbSet<ItemGroup> ItemGroup { get; set; }
+        public DbSet<ItemTaxTemplate> ItemTaxTemplate { get; set; }
+        public DbSet<LoyaltyProgram> LoyaltyProgram { get; set; }
+        public DbSet<PackingType> PackingType { get; set; }
+        public DbSet<PosProfile> PosProfile { get; set; }
+        public DbSet<PriceList> PriceList { get; set; }
+        public DbSet<SalesInvoice> SalesInvoice { get; set; }
+        public DbSet<Territory> Territory { get; set; }
+        public DbSet<Uom> Uom { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<SupplierGroup> SupplierGroup { get; set; }

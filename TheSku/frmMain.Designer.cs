@@ -81,13 +81,14 @@
             // pOSToolStripMenuItem
             // 
             pOSToolStripMenuItem.Name = "pOSToolStripMenuItem";
-            pOSToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            pOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             pOSToolStripMenuItem.Text = "POS";
+            pOSToolStripMenuItem.Click += pOSToolStripMenuItem_Click;
             // 
             // changePasswordToolStripMenuItem
             // 
             changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             changePasswordToolStripMenuItem.Text = "Change Password";
             changePasswordToolStripMenuItem.Click += changePasswordToolStripMenuItem_Click;
             // 
@@ -95,7 +96,7 @@
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4;
-            exitToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -109,7 +110,7 @@
             // pOSInvoicesToolStripMenuItem
             // 
             pOSInvoicesToolStripMenuItem.Name = "pOSInvoicesToolStripMenuItem";
-            pOSInvoicesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            pOSInvoicesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             pOSInvoicesToolStripMenuItem.Text = "POS Invoices";
             // 
             // sellingToolStripMenuItem
@@ -123,7 +124,7 @@
             // 
             customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { customerToolStripMenuItem1, customerGroupToolStripMenuItem });
             customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            customerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            customerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             customerToolStripMenuItem.Text = "Customer";
             // 
             // customerToolStripMenuItem1
@@ -150,7 +151,7 @@
             // 
             supplierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { supplierToolStripMenuItem1, supplierGroupToolStripMenuItem });
             supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            supplierToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            supplierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             supplierToolStripMenuItem.Text = "Supplier";
             // 
             // supplierToolStripMenuItem1
@@ -247,7 +248,7 @@
             // aboutUsToolStripMenuItem
             // 
             aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            aboutUsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            aboutUsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             aboutUsToolStripMenuItem.Text = "About Us";
             aboutUsToolStripMenuItem.Click += aboutUsToolStripMenuItem_Click;
             // 
