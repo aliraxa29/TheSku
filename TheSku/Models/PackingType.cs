@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
+[Table("tabPacking Type")]
 public class PackingType
 {
     [MaxLength(255)]

@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
+using System.Collections.Generic;
 
 [Table("tabFiscal Year")]
 public class FiscalYear
@@ -30,5 +31,6 @@ public class FiscalYear
     public DateTime? YearStartDate { get; set; }
     [Column("year_end_date", TypeName = "DATE")]
     public DateTime? YearEndDate { get; set; }
-
+    [Column("year_end_date", TypeName = "DATE")]
+    public List<FiscalYearCompany> FiscalYearCompanies { get; set; }
 }

@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
+using System.Security.Principal;
+using TheSku.Data;
+using System.Linq;
 [Table("tabWarehouse")]
 public class Warehouse
 {
@@ -57,5 +60,5 @@ public class Warehouse
     public string Pin { get; set; }
     [MaxLength(255)]
     [Column("cost_center")]
-    public CostCenter CostCenter { get; set; }
+    public CostCenter CostCenter { get; set; }    
 }

@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
+[Table("tabItem Tax Template Detail")]
 public class ItemTaxTemplateDetail
 {
     [MaxLength(255)]

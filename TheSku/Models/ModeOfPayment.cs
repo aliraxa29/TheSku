@@ -2,13 +2,12 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
-[Table("tabBrand")]
-public class Brand
+[Table("tabMode Of Payment")]
+public class ModeOfPayment
 {
-    [MaxLength(255)]
     [Key]
     [Column("name")]
-    public string Name { get; set; }
+    public Guid Name { get; set; }
     [Column("creation")]
     public DateTime Creation { get; set; }
     [Column("modified")]
@@ -20,8 +19,11 @@ public class Brand
     [Column("owner")]
     public string Owner { get; set; }
     [MaxLength(255)]
-    [Column("brand_name")]
-    public string BrandName { get; set; }
-    [Column("description")]
-    public string Description { get; set; }
+    [Column("mode_of_payment_name")]
+    public string ModeOfPaymentName { get; set; }
+    [Column("enabled")]
+    public bool Enabled { get; set; } = true;
+    [MaxLength(255)]
+    [Column("type")]
+    public string Type { get; set; }
 }

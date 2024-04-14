@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
+[Table("tabPrice List")]
 public class PriceList
 {
     [MaxLength(255)]

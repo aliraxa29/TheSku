@@ -26,7 +26,11 @@ namespace TheSku.Data
             {
                 fk.DeleteBehavior = DeleteBehavior.Restrict;
             }
-
+            modelBuilder.Entity<Company>()
+                            .HasOne(c => c.RoundOffAccount)
+                            .WithOne()
+                            .HasForeignKey<Company>(c => c.RoundOffAccountId)
+                            .IsRequired(false);
             modelBuilder.Entity<User>().HasData(DefaultData.Users());
             modelBuilder.Entity<PackingType>().HasData(DefaultData.PackingTypes());
             modelBuilder.Entity<Country>().HasData(DefaultData.Countries());
@@ -73,7 +77,11 @@ namespace TheSku.Data
         public DbSet<FinanceBook> FinanceBook { get; set; }
         public DbSet<FiscalYear> FiscalYear { get; set; }
         public DbSet<GLEntry> GLEntries { get; set; }
+        public DbSet<UomConversionDetail> UomConversionDetail { get; set; }
         public DbSet<Warehouse> Warehouse { get; set; }
+        public DbSet<FiscalYearCompany> FiscalYearCompany { get; set; }
+        public DbSet<SalesInvoicePayment> SalesInvoicePayment { get; set; }
+        public DbSet<ModeOfPayment> ModeOfPayment { get; set; }
     }
 }
 

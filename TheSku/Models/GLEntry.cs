@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System;
 
 /// <summary>
-/// All Transactions will be recorded in this table. Any Accounting report will be generated from this table.
+/// All accounting transactions will be recorded in this table. Any Accounting report will be generated from this table.
 /// </summary>
 [Table("tabGl Entry")]
 public class GLEntry
@@ -21,6 +21,9 @@ public class GLEntry
     [MaxLength(255)]
     [Column("owner")]
     public string Owner { get; set; }
+    [MaxLength(1)]
+    [Column("docstatus")]
+    public int Docstatus { get; set; }
     [Column("posting_date", TypeName = "DATE")]
     public DateTime PostingDate { get; set; }
     [Column("transaction_date", TypeName = "DATE")]
@@ -45,6 +48,9 @@ public class GLEntry
     [Column("account_currency")]
     public Currency Currency { get; set; }
     [MaxLength(255)]
+    [Column("against")]
+    public string Against { get; set; }
+    [MaxLength(255)]
     [Column("against_account")]
     public Account AgainstAccount { get; set; }
     [MaxLength(255)]
@@ -68,6 +74,9 @@ public class GLEntry
     [MaxLength(255)]
     [Column("fiscal_year")]
     public FiscalYear FiscalYear { get; set; }
+    [MaxLength(255)]
+    [Column("company")]
+    public Company Company { get; set; }
     [MaxLength(255)]
     [Column("fiscal_year")]
     public FinanceBook FinanceBook { get; set; }

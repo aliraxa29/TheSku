@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
+[Table("tabTerritory")]
 public class Territory
 {
     [Key]

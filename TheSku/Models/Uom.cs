@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
+[Table("tabUom")]
 public class Uom
 {
     [MaxLength(255)]

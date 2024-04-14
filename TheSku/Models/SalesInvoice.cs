@@ -55,7 +55,7 @@ public class SalesInvoice
     [Column("posting_date", TypeName = "DATE")]
     public DateTime? PostingDate { get; set; }
     [Column("posting_time", TypeName = "TIME")]
-    public DateTime? PostingTime { get; set; }
+    public TimeSpan? PostingTime { get; set; }
     [Column("set_posting_time")]
     public bool SetPostingTime { get; set; } = false;
     [Column("due_date", TypeName = "DATE")]
@@ -101,6 +101,9 @@ public class SalesInvoice
     [MaxLength(255)]
     [Column("price_list")]
     public PriceList PriceList { get; set; }
+    [MaxLength(255)]
+    [Column("price_list_currency")]
+    public Currency PriceListCurrency { get; set; }
     [Column("total_qty", TypeName = "DECIMAL(21,9)")]
     public decimal TotalQty { get; set; } = 0;
     [Column("base_total", TypeName = "DECIMAL(21,9)")]
@@ -177,9 +180,14 @@ public class SalesInvoice
     [MaxLength(255)]
     [Column("against_income_account")]
     public Account AgainstIncomeAccount { get; set; }
+    [MaxLength(1)]
     [Column("total_items")]
     public int TotalItems { get; set; } = 0;
+    [MaxLength(1)]
     [Column("print_count")]
     public int PrintCount { get; set; } = 0;
+    [MaxLength(1)]
+    [Column("is_settled")]
+    public int IsSettled { get; set; } = 0;
     public List<SalesInvoiceItem> SalesInvoiceItems { get; set; }
 }

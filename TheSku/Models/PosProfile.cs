@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System;
 using Newtonsoft.Json;
 
+[Table("tabPos Profile")]
 public class PosProfile
 {
     [MaxLength(255)]

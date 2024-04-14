@@ -150,7 +150,7 @@ namespace TheSku
 
         private void pOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmChartOfAccounts(dbContext) { MdiParent = this }.Show();
+            new frmPos() { MdiParent = this }.Show();
         }
     }
 }

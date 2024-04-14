@@ -115,6 +115,9 @@ public class SalesInvoiceItem
     public DateTime? ExpiryDate { get; set; }
     [Column("incoming_rate", TypeName = "DECIMAL(21,9)")]
     public decimal IncomingRate { get; set; } = 0;
+    [MaxLength(255)]
+    [Column("cost_center")]
+    public CostCenter CostCenter { get; set; }
     [Column("is_settled")]
     public bool IsSettled { get; set; } = false;
     [MaxLength(255)]
@@ -126,5 +129,5 @@ public class SalesInvoiceItem
     [Column("posting_date", TypeName = "DATE")]
     public DateTime? PostingDate { get; set; }
     [Column("posting_time", TypeName = "TIME")]
-    public DateTime? PostingTime { get; set; }
+    public TimeSpan? PostingTime { get; set; }
 }

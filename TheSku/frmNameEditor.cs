@@ -22,7 +22,7 @@ namespace TheSku
                 this.txtNewName.Focus();
                 return;
             }
-            var d = dbContext.
+            //var d = dbContext.
         }
     }
 }

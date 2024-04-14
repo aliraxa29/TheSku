@@ -1,7 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
+using System.Collections.Generic;
 
+/// <summary>
+/// Company information will be stored in this table
+/// </summary>
 [Table("tabCompany")]
 public class Company
 {
@@ -63,4 +67,16 @@ public class Company
     [MaxLength(255)]
     [Column("company_currency")]
     public Currency Currency { get; set; }
+    [MaxLength(255)]
+    [Column("round_off_account")]
+    public string RoundOffAccountId { get; set; }
+    [MaxLength(255)]
+    [Column("default_payable_account")]
+    public string DefaultPayableAccountId { get; set; }
+
+
+    [ForeignKey("RoundOffAccountId")]
+    public Account RoundOffAccount { get; set; }
+    [ForeignKey("DefaultPayableAccountId")]
+    public Account DefaultPayableAccount { get; set; }
 }

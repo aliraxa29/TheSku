@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
+[Table("tabLoyalty Program")]
 public class LoyaltyProgram
 {
     [MaxLength(255)]

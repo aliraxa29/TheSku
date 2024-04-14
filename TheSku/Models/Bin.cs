@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
+[Table("tabBin")]
 public class Bin
 {
     [MaxLength(255)]

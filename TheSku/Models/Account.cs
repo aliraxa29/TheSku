@@ -30,8 +30,7 @@ public class Account
     public string AccountNumber { get; set; }
     [Column("is_group")]
     public bool IsGroup { get; set; }
-    [MaxLength(255)]
-    [Column("company")]
+    [MaxLength(255), Column("company_name")]
     public Company Company { get; set; }
     [MaxLength(255)]
     [Column("root_type")]

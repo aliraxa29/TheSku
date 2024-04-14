@@ -1,7 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
+using TheSku.Data;
+using System.Linq;
 
+/// <summary>
+/// A type of Product or Service that you make sales invoice against it.
+/// </summary>
+[Table("tabItem")]
 public class Item
 {
     [MaxLength(255)]

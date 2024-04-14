@@ -1,13 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
-using Telerik.Windows.Documents.Fixed.Model.Editing.Lists;
-using TheSku.Data;
-using System.Linq;
-using System.Collections.Generic;
 
-[Table("tabItem Tax Template")]
-public class ItemTaxTemplate
+[Table("tabFiscal Year Company")]
+public class FiscalYearCompany
 {
     [MaxLength(255)]
     [Key]
@@ -23,13 +19,12 @@ public class ItemTaxTemplate
     [MaxLength(255)]
     [Column("owner")]
     public string Owner { get; set; }
+    [Column("idx")]
+    public string Index { get; set; }
     [MaxLength(255)]
-    [Column("title")]
-    public string Title { get; set; }
+    [Column("fiscal_year")]
+    public FiscalYear FiscalYear { get; set; }
     [MaxLength(255)]
     [Column("company")]
     public Company Company { get; set; }
-    [Column("disabled")]
-    public bool Disabled { get; set; } = false;
-    public List<ItemTaxTemplateDetail> ItemTaxTemplateDetails { get; set; }
 }

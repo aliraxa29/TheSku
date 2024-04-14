@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
+[Table("tabItem Group")]
 public class ItemGroup
 {
     [MaxLength(255)]

@@ -60,7 +60,7 @@ namespace TheSku
                     TaxID = this.txtTaxID.Text,
                     PrimaryAddress = this.txtCustomerPrimaryAddress.Text,
                     PrimaryContact = this.txtCustomerPrimaryContact.Text,
-                    Disabled = 0,
+                    Disabled = false,
                     PhoneNumber = this.txtPhoneNumber.Text.Trim(),
                 };
                 foreach (GridViewRowInfo row in this.gvCreditLimit.Rows)

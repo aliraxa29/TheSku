@@ -374,10 +374,10 @@ namespace TheSku
         private void BindCombo()
         {
             this.cmbCountry.DataSource = dbContext.Country.ToList();
-            this.cmbCountry.SelectedValue = Global.Country;
+            this.cmbCountry.SelectedValue = Global.Country.Name;
             this.cmbCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled).ToList();
-            this.cmbCountry.SelectedValue = Global.Country;
-            this.cmbCurrency.SelectedValue = Global.Currency;
+            this.cmbCountry.SelectedValue = Global.Country.Name;
+            this.cmbCurrency.SelectedValue = Global.Currency.Name;
         }
 
         private void cmbCoaBasedOn_SelectedIndexChanged(object sender, EventArgs e)

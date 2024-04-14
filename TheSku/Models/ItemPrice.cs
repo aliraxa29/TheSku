@@ -1,7 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
+using TheSku.Data;
+using System.Linq;
 
+[Table("tabItem Price")]
 public class ItemPrice
 {
     [MaxLength(255)]
