@@ -152,5 +152,17 @@ namespace TheSku
         {
             new frmPos() { MdiParent = this }.Show();
         }
+
+        private void brandToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmBrand"] != null)
+            {
+                Application.OpenForms["frmBrand"].BringToFront();
+            }
+            else
+            {
+                new frmBrand() { MdiParent = this }.Show();
+            }
+        }
     }
 }
