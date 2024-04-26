@@ -81,7 +81,7 @@ $ dotnet ef add migrations InitialCreate --project TheSku
 $ dotnet ef database update --project TheSku
 ```
 
-After that, just build the project to get executeables for the production ready.
+After that, just build the project to get executeables for the development.
 
 > **Note**
 > This application uses **MariaDB** or **MySql** as backend server. So be sure, you have installed one of them.
