@@ -2,8 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
-[Table("tabCurrency")]
-public class Currency
+[Table("tabFiscal Year Company")]
+public class FiscalYearCompany
 {
     [MaxLength(255)]
     [Key]
@@ -19,21 +19,12 @@ public class Currency
     [MaxLength(255)]
     [Column("owner")]
     public string Owner { get; set; }
+    [Column("idx")]
+    public string Index { get; set; }
     [MaxLength(255)]
-    [Required]
-    [Column("currency_name")]
-    public string CurrencyName { get; set; }
-    [Column("enabled")]
-    public bool Enabled { get; set; } = true;
+    [Column("fiscal_year")]
+    public FiscalYear FiscalYear { get; set; }
     [MaxLength(255)]
-    [Column("fraction")]
-    public string Fraction { get; set; }
-    [MaxLength(255)]
-    [Column("fraction_units")]
-    public string FractionUnits { get; set; }
-    [Column("smallest_currency_fraction_value", TypeName = "decimal(21,9)")]
-    public decimal SmallestCurrencyFractionValue { get; set; }
-    [MaxLength(255)]
-    [Column("symbol")]
-    public string Symbol { get; set; }
+    [Column("company")]
+    public Company Company { get; set; }
 }

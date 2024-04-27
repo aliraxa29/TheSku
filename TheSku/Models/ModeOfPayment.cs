@@ -2,13 +2,12 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
-[Table("tabCurrency")]
-public class Currency
+[Table("tabMode Of Payment")]
+public class ModeOfPayment
 {
-    [MaxLength(255)]
     [Key]
     [Column("name")]
-    public string Name { get; set; }
+    public Guid Name { get; set; }
     [Column("creation")]
     public DateTime Creation { get; set; }
     [Column("modified")]
@@ -20,20 +19,11 @@ public class Currency
     [Column("owner")]
     public string Owner { get; set; }
     [MaxLength(255)]
-    [Required]
-    [Column("currency_name")]
-    public string CurrencyName { get; set; }
+    [Column("mode_of_payment_name")]
+    public string ModeOfPaymentName { get; set; }
     [Column("enabled")]
     public bool Enabled { get; set; } = true;
     [MaxLength(255)]
-    [Column("fraction")]
-    public string Fraction { get; set; }
-    [MaxLength(255)]
-    [Column("fraction_units")]
-    public string FractionUnits { get; set; }
-    [Column("smallest_currency_fraction_value", TypeName = "decimal(21,9)")]
-    public decimal SmallestCurrencyFractionValue { get; set; }
-    [MaxLength(255)]
-    [Column("symbol")]
-    public string Symbol { get; set; }
+    [Column("type")]
+    public string Type { get; set; }
 }

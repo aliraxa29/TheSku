@@ -111,5 +111,58 @@ namespace TheSku
                 new frmAccount(dbContext) { MdiParent = this }.Show();
             }
         }
+
+        private void companyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmCompany"] != null)
+            {
+                Application.OpenForms["frmCompany"].BringToFront();
+            }
+            else
+            {
+                new frmCompany(dbContext) { MdiParent = this }.Show();
+            }
+        }
+
+        private void sessionSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmSystemSettings"] != null)
+            {
+                Application.OpenForms["frmSystemSettings"].BringToFront();
+            }
+            else
+            {
+                new frmSystemSettings(dbContext) { MdiParent = this }.Show();
+            }
+        }
+
+        private void chartOfAccountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmChartOfAccounts"] != null)
+            {
+                Application.OpenForms["frmChartOfAccounts"].BringToFront();
+            }
+            else
+            {
+                new frmChartOfAccounts(dbContext) { MdiParent = this }.Show();
+            }
+        }
+
+        private void pOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmPos() { MdiParent = this }.Show();
+        }
+
+        private void brandToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmBrand"] != null)
+            {
+                Application.OpenForms["frmBrand"].BringToFront();
+            }
+            else
+            {
+                new frmBrand() { MdiParent = this }.Show();
+            }
+        }
     }
 }

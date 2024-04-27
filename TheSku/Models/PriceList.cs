@@ -2,8 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
-[Table("tabCurrency")]
-public class Currency
+[Table("tabPrice List")]
+public class PriceList
 {
     [MaxLength(255)]
     [Key]
@@ -19,21 +19,18 @@ public class Currency
     [MaxLength(255)]
     [Column("owner")]
     public string Owner { get; set; }
-    [MaxLength(255)]
-    [Required]
-    [Column("currency_name")]
-    public string CurrencyName { get; set; }
     [Column("enabled")]
     public bool Enabled { get; set; } = true;
     [MaxLength(255)]
-    [Column("fraction")]
-    public string Fraction { get; set; }
+    [Column("price_list_name")]
+    public string PriceListName { get; set; }
     [MaxLength(255)]
-    [Column("fraction_units")]
-    public string FractionUnits { get; set; }
-    [Column("smallest_currency_fraction_value", TypeName = "decimal(21,9)")]
-    public decimal SmallestCurrencyFractionValue { get; set; }
-    [MaxLength(255)]
-    [Column("symbol")]
-    public string Symbol { get; set; }
+    [Column("currency")]
+    public Currency Currency { get; set; }
+    [Column("buying")]
+    public bool Buying { get; set; } = false;
+    [Column("selling")]
+    public bool Selling { get; set; } = false;
+    [Column("price_not_uom_dependent")]
+    public bool PriceNotUomDependent { get; set; } = false;
 }

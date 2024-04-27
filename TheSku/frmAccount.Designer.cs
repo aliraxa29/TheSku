@@ -1,4 +1,7 @@
-﻿namespace TheSku
+﻿using System.Windows.Forms;
+using Telerik.WinControls.UI;
+
+namespace TheSku
 {
     partial class frmAccount
     {
@@ -28,54 +31,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            GridViewTextBoxColumn gridViewTextBoxColumn1 = new GridViewTextBoxColumn();
+            GridViewTextBoxColumn gridViewTextBoxColumn2 = new GridViewTextBoxColumn();
+            GridViewTextBoxColumn gridViewTextBoxColumn3 = new GridViewTextBoxColumn();
+            TableViewDefinition tableViewDefinition1 = new TableViewDefinition();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
-            txtLimit = new System.Windows.Forms.NumericUpDown();
-            txtNameFilter = new Telerik.WinControls.UI.RadTextBox();
-            label4 = new System.Windows.Forms.Label();
-            label3 = new System.Windows.Forms.Label();
-            groupBox1 = new System.Windows.Forms.GroupBox();
-            btnDisplay = new Telerik.WinControls.UI.RadButton();
-            gvList = new Telerik.WinControls.UI.RadGridView();
-            groupBox2 = new System.Windows.Forms.GroupBox();
-            tpList = new System.Windows.Forms.TabPage();
-            txtAccountNumber = new Telerik.WinControls.UI.RadTextBox();
-            label2 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
-            cmbCompany = new Telerik.WinControls.UI.RadDropDownList();
-            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            label6 = new System.Windows.Forms.Label();
-            txtAccountName = new Telerik.WinControls.UI.RadTextBox();
-            chkDisabled = new Telerik.WinControls.UI.RadCheckBox();
-            label7 = new System.Windows.Forms.Label();
-            label8 = new System.Windows.Forms.Label();
-            cmbRootType = new Telerik.WinControls.UI.RadDropDownList();
-            cmbReportType = new Telerik.WinControls.UI.RadDropDownList();
-            label9 = new System.Windows.Forms.Label();
-            cmbParentAccount = new Telerik.WinControls.UI.RadDropDownList();
-            chkIsGroup = new Telerik.WinControls.UI.RadCheckBox();
-            label10 = new System.Windows.Forms.Label();
-            cmbBalanceMustBe = new Telerik.WinControls.UI.RadDropDownList();
-            chkFrozen = new Telerik.WinControls.UI.RadCheckBox();
-            groupBox3 = new System.Windows.Forms.GroupBox();
-            tabControl1 = new System.Windows.Forms.TabControl();
-            tabPage1 = new System.Windows.Forms.TabPage();
-            panel3 = new System.Windows.Forms.Panel();
-            btnClose = new Telerik.WinControls.UI.RadButton();
-            btnNew = new Telerik.WinControls.UI.RadButton();
-            brnRefreshFields = new Telerik.WinControls.UI.RadButton();
-            btnSave = new Telerik.WinControls.UI.RadButton();
-            btnCopyNameToClipboard = new Telerik.WinControls.UI.RadMenuItem();
-            btnDelete = new Telerik.WinControls.UI.RadMenuItem();
-            btnReload = new Telerik.WinControls.UI.RadMenuItem();
-            radDropDownButton1 = new Telerik.WinControls.UI.RadDropDownButton();
-            panel2 = new System.Windows.Forms.Panel();
-            lblID = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
-            panel1 = new System.Windows.Forms.Panel();
+            txtLimit = new NumericUpDown();
+            txtNameFilter = new RadTextBox();
+            label4 = new Label();
+            label3 = new Label();
+            groupBox1 = new GroupBox();
+            btnDisplay = new RadButton();
+            gvList = new RadGridView();
+            groupBox2 = new GroupBox();
+            tpList = new TabPage();
+            txtAccountNumber = new RadTextBox();
+            label2 = new Label();
+            label5 = new Label();
+            cmbCompany = new RadDropDownList();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            cmbAccountType = new ComboBox();
+            label6 = new Label();
+            txtAccountName = new RadTextBox();
+            chkDisabled = new RadCheckBox();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            cmbParentAccount = new RadDropDownList();
+            chkIsGroup = new RadCheckBox();
+            label10 = new Label();
+            cmbBalanceMustBe = new ComboBox();
+            chkFrozen = new RadCheckBox();
+            cmbCurrency = new RadDropDownList();
+            label11 = new Label();
+            label12 = new Label();
+            cmbRootType = new ComboBox();
+            cmbReportType = new ComboBox();
+            txtTaxRate = new RadSpinEditor();
+            lblTaxRate = new Label();
+            groupBox3 = new GroupBox();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            panel3 = new Panel();
+            btnClose = new RadButton();
+            btnNew = new RadButton();
+            brnRefreshFields = new RadButton();
+            btnSave = new RadButton();
+            btnCopyNameToClipboard = new RadMenuItem();
+            btnDelete = new RadMenuItem();
+            btnReload = new RadMenuItem();
+            radDropDownButton1 = new RadDropDownButton();
+            panel2 = new Panel();
+            lblID = new Label();
+            label1 = new Label();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)txtLimit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtNameFilter).BeginInit();
             groupBox1.SuspendLayout();
@@ -89,12 +98,11 @@
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtAccountName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chkDisabled).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cmbRootType).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cmbReportType).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cmbParentAccount).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chkIsGroup).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cmbBalanceMustBe).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chkFrozen).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cmbCurrency).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtTaxRate).BeginInit();
             groupBox3.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -116,6 +124,7 @@
             txtLimit.Size = new System.Drawing.Size(90, 25);
             txtLimit.TabIndex = 4;
             txtLimit.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            txtLimit.KeyDown += txtNameFilter_KeyDown;
             // 
             // txtNameFilter
             // 
@@ -125,6 +134,7 @@
             txtNameFilter.Size = new System.Drawing.Size(153, 23);
             txtNameFilter.TabIndex = 3;
             txtNameFilter.ThemeName = "Windows8";
+            txtNameFilter.KeyDown += txtNameFilter_KeyDown;
             // 
             // label4
             // 
@@ -151,7 +161,7 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(btnDisplay);
-            groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            groupBox1.Dock = DockStyle.Top;
             groupBox1.Location = new System.Drawing.Point(3, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new System.Drawing.Size(1087, 89);
@@ -161,21 +171,22 @@
             // 
             // btnDisplay
             // 
-            btnDisplay.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            btnDisplay.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnDisplay.Location = new System.Drawing.Point(994, 47);
             btnDisplay.Name = "btnDisplay";
             btnDisplay.Size = new System.Drawing.Size(90, 36);
             btnDisplay.TabIndex = 1;
             btnDisplay.Text = "Display";
             btnDisplay.ThemeName = "Windows8";
+            btnDisplay.Click += btnDisplay_Click;
             // 
             // gvList
             // 
             gvList.BackColor = System.Drawing.Color.Transparent;
-            gvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            gvList.Dock = DockStyle.Fill;
             gvList.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             gvList.ForeColor = System.Drawing.SystemColors.ControlText;
-            gvList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            gvList.ImeMode = ImeMode.NoControl;
             gvList.Location = new System.Drawing.Point(3, 21);
             // 
             // 
@@ -184,7 +195,7 @@
             gvList.MasterTemplate.AllowColumnChooser = false;
             gvList.MasterTemplate.AllowDragToGroup = false;
             gvList.MasterTemplate.AllowRowResize = false;
-            gvList.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gvList.MasterTemplate.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "AccountName";
             gridViewTextBoxColumn1.HeaderText = "Account Name";
@@ -203,22 +214,25 @@
             gridViewTextBoxColumn3.Name = "name";
             gridViewTextBoxColumn3.ReadOnly = true;
             gridViewTextBoxColumn3.Width = 380;
-            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn1, gridViewTextBoxColumn2, gridViewTextBoxColumn3 });
+            gvList.MasterTemplate.Columns.AddRange(new GridViewDataColumn[] { gridViewTextBoxColumn1, gridViewTextBoxColumn2, gridViewTextBoxColumn3 });
             gvList.MasterTemplate.EnableFiltering = true;
             gvList.MasterTemplate.EnableGrouping = false;
             gvList.MasterTemplate.EnablePaging = true;
             gvList.MasterTemplate.ViewDefinition = tableViewDefinition1;
             gvList.Name = "gvList";
             gvList.ReadOnly = true;
-            gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            gvList.RightToLeft = RightToLeft.No;
             gvList.Size = new System.Drawing.Size(1081, 372);
             gvList.TabIndex = 0;
             gvList.ThemeName = "Windows8";
+            gvList.CellFormatting += gvList_CellFormatting;
+            gvList.CellDoubleClick += gvList_CellDoubleClick;
+            gvList.KeyDown += gvList_KeyDown;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(gvList);
-            groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            groupBox2.Dock = DockStyle.Fill;
             groupBox2.Location = new System.Drawing.Point(3, 92);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new System.Drawing.Size(1087, 396);
@@ -232,7 +246,7 @@
             tpList.Controls.Add(groupBox1);
             tpList.Location = new System.Drawing.Point(4, 26);
             tpList.Name = "tpList";
-            tpList.Padding = new System.Windows.Forms.Padding(3);
+            tpList.Padding = new Padding(3);
             tpList.Size = new System.Drawing.Size(1093, 491);
             tpList.TabIndex = 1;
             tpList.Text = "List";
@@ -240,9 +254,9 @@
             // 
             // txtAccountNumber
             // 
-            txtAccountNumber.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtAccountNumber.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtAccountNumber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtAccountNumber.Location = new System.Drawing.Point(273, 5);
+            txtAccountNumber.Location = new System.Drawing.Point(273, 3);
             txtAccountNumber.Name = "txtAccountNumber";
             txtAccountNumber.Size = new System.Drawing.Size(264, 23);
             txtAccountNumber.TabIndex = 1;
@@ -250,9 +264,9 @@
             // 
             // label2
             // 
-            label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label2.Anchor = AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(155, 8);
+            label2.Location = new System.Drawing.Point(155, 6);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(112, 17);
             label2.TabIndex = 0;
@@ -260,9 +274,9 @@
             // 
             // label5
             // 
-            label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label5.Anchor = AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(741, 8);
+            label5.Location = new System.Drawing.Point(741, 6);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(66, 17);
             label5.TabIndex = 0;
@@ -270,12 +284,13 @@
             // 
             // cmbCompany
             // 
-            cmbCompany.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            cmbCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            cmbCompany.DisplayMember = "SupplierGroupName";
+            cmbCompany.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            cmbCompany.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbCompany.DisplayMember = "CompanyName";
             cmbCompany.DropDownAnimationEnabled = true;
+            cmbCompany.Enabled = false;
             cmbCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            cmbCompany.Location = new System.Drawing.Point(813, 5);
+            cmbCompany.Location = new System.Drawing.Point(813, 3);
             cmbCompany.Name = "cmbCompany";
             cmbCompany.Size = new System.Drawing.Size(265, 23);
             cmbCompany.TabIndex = 2;
@@ -285,10 +300,11 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.Controls.Add(cmbAccountType, 0, 5);
             tableLayoutPanel1.Controls.Add(txtAccountNumber, 1, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 0);
             tableLayoutPanel1.Controls.Add(label5, 2, 0);
@@ -298,31 +314,52 @@
             tableLayoutPanel1.Controls.Add(chkDisabled, 1, 2);
             tableLayoutPanel1.Controls.Add(label7, 2, 1);
             tableLayoutPanel1.Controls.Add(label8, 2, 2);
-            tableLayoutPanel1.Controls.Add(cmbRootType, 3, 1);
-            tableLayoutPanel1.Controls.Add(cmbReportType, 3, 2);
             tableLayoutPanel1.Controls.Add(label9, 2, 3);
             tableLayoutPanel1.Controls.Add(cmbParentAccount, 3, 3);
             tableLayoutPanel1.Controls.Add(chkIsGroup, 1, 3);
             tableLayoutPanel1.Controls.Add(label10, 2, 4);
             tableLayoutPanel1.Controls.Add(cmbBalanceMustBe, 3, 4);
             tableLayoutPanel1.Controls.Add(chkFrozen, 1, 4);
-            tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel1.Controls.Add(cmbCurrency, 3, 5);
+            tableLayoutPanel1.Controls.Add(label11, 2, 5);
+            tableLayoutPanel1.Controls.Add(label12, 0, 5);
+            tableLayoutPanel1.Controls.Add(cmbRootType, 3, 1);
+            tableLayoutPanel1.Controls.Add(cmbReportType, 3, 2);
+            tableLayoutPanel1.Controls.Add(txtTaxRate, 1, 6);
+            tableLayoutPanel1.Controls.Add(lblTaxRate, 0, 6);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new System.Drawing.Point(3, 21);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 5;
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(1081, 170);
+            tableLayoutPanel1.RowCount = 7;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.28531F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2853069F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2853069F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2853069F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2853069F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2853069F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2881641F));
+            tableLayoutPanel1.Size = new System.Drawing.Size(1081, 206);
             tableLayoutPanel1.TabIndex = 3;
+            // 
+            // cmbAccountType
+            // 
+            cmbAccountType.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            cmbAccountType.DisplayMember = "SupplierGroupName";
+            cmbAccountType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbAccountType.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            cmbAccountType.Items.AddRange(new object[] { "Accumulated Depreciation", "Asset Received But Not Billed", "Bank", "Cash", "Chargeable", "Capital Work in Progress", "Cost of Goods Sold", "Depreciation", "Equity", "Expense Account", "Expenses Included In Asset Valuation", "Expenses Included In Valuation", "Fixed Asset", "Income Account", "Payable", "Receivable", "Round Off", "Stock", "Stock Adjustment", "Stock Received But Not Billed", "Service Received But Not Billed", "Tax", "Temporary" });
+            cmbAccountType.Location = new System.Drawing.Point(273, 148);
+            cmbAccountType.Name = "cmbAccountType";
+            cmbAccountType.Size = new System.Drawing.Size(264, 25);
+            cmbAccountType.TabIndex = 13;
+            cmbAccountType.ValueMember = "Name";
+            cmbAccountType.SelectedIndexChanged += cmbAccountType_SelectedIndexChanged;
             // 
             // label6
             // 
-            label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label6.Anchor = AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(169, 42);
+            label6.Location = new System.Drawing.Point(169, 35);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(98, 17);
             label6.TabIndex = 0;
@@ -330,9 +367,9 @@
             // 
             // txtAccountName
             // 
-            txtAccountName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtAccountName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtAccountName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtAccountName.Location = new System.Drawing.Point(273, 39);
+            txtAccountName.Location = new System.Drawing.Point(273, 32);
             txtAccountName.Name = "txtAccountName";
             txtAccountName.Size = new System.Drawing.Size(264, 23);
             txtAccountName.TabIndex = 1;
@@ -340,8 +377,8 @@
             // 
             // chkDisabled
             // 
-            chkDisabled.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkDisabled.Location = new System.Drawing.Point(273, 76);
+            chkDisabled.Anchor = AnchorStyles.Left;
+            chkDisabled.Location = new System.Drawing.Point(273, 63);
             chkDisabled.Name = "chkDisabled";
             chkDisabled.Size = new System.Drawing.Size(66, 18);
             chkDisabled.TabIndex = 3;
@@ -350,9 +387,9 @@
             // 
             // label7
             // 
-            label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label7.Anchor = AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(737, 42);
+            label7.Location = new System.Drawing.Point(737, 35);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(70, 17);
             label7.TabIndex = 0;
@@ -360,47 +397,19 @@
             // 
             // label8
             // 
-            label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label8.Anchor = AnchorStyles.Right;
             label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(725, 76);
+            label8.Location = new System.Drawing.Point(725, 64);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(82, 17);
             label8.TabIndex = 0;
             label8.Text = "Report Type";
             // 
-            // cmbRootType
-            // 
-            cmbRootType.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            cmbRootType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            cmbRootType.DisplayMember = "SupplierGroupName";
-            cmbRootType.DropDownAnimationEnabled = true;
-            cmbRootType.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            cmbRootType.Location = new System.Drawing.Point(813, 39);
-            cmbRootType.Name = "cmbRootType";
-            cmbRootType.Size = new System.Drawing.Size(265, 23);
-            cmbRootType.TabIndex = 2;
-            cmbRootType.ThemeName = "Windows8";
-            cmbRootType.ValueMember = "Name";
-            // 
-            // cmbReportType
-            // 
-            cmbReportType.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            cmbReportType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            cmbReportType.DisplayMember = "SupplierGroupName";
-            cmbReportType.DropDownAnimationEnabled = true;
-            cmbReportType.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            cmbReportType.Location = new System.Drawing.Point(813, 73);
-            cmbReportType.Name = "cmbReportType";
-            cmbReportType.Size = new System.Drawing.Size(265, 23);
-            cmbReportType.TabIndex = 2;
-            cmbReportType.ThemeName = "Windows8";
-            cmbReportType.ValueMember = "Name";
-            // 
             // label9
             // 
-            label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label9.Anchor = AnchorStyles.Right;
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(705, 110);
+            label9.Location = new System.Drawing.Point(705, 93);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(102, 17);
             label9.TabIndex = 0;
@@ -408,12 +417,12 @@
             // 
             // cmbParentAccount
             // 
-            cmbParentAccount.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            cmbParentAccount.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            cmbParentAccount.DisplayMember = "SupplierGroupName";
+            cmbParentAccount.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            cmbParentAccount.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbParentAccount.DisplayMember = "AccountName";
             cmbParentAccount.DropDownAnimationEnabled = true;
             cmbParentAccount.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            cmbParentAccount.Location = new System.Drawing.Point(813, 107);
+            cmbParentAccount.Location = new System.Drawing.Point(813, 90);
             cmbParentAccount.Name = "cmbParentAccount";
             cmbParentAccount.Size = new System.Drawing.Size(265, 23);
             cmbParentAccount.TabIndex = 2;
@@ -422,8 +431,8 @@
             // 
             // chkIsGroup
             // 
-            chkIsGroup.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkIsGroup.Location = new System.Drawing.Point(273, 110);
+            chkIsGroup.Anchor = AnchorStyles.Left;
+            chkIsGroup.Location = new System.Drawing.Point(273, 92);
             chkIsGroup.Name = "chkIsGroup";
             chkIsGroup.Size = new System.Drawing.Size(66, 18);
             chkIsGroup.TabIndex = 3;
@@ -432,9 +441,9 @@
             // 
             // label10
             // 
-            label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label10.Anchor = AnchorStyles.Right;
             label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(698, 144);
+            label10.Location = new System.Drawing.Point(698, 122);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(109, 17);
             label10.TabIndex = 0;
@@ -442,35 +451,119 @@
             // 
             // cmbBalanceMustBe
             // 
-            cmbBalanceMustBe.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            cmbBalanceMustBe.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            cmbBalanceMustBe.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             cmbBalanceMustBe.DisplayMember = "SupplierGroupName";
-            cmbBalanceMustBe.DropDownAnimationEnabled = true;
+            cmbBalanceMustBe.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbBalanceMustBe.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            cmbBalanceMustBe.Location = new System.Drawing.Point(813, 141);
+            cmbBalanceMustBe.Items.AddRange(new object[] { "", "Credit", "Debit" });
+            cmbBalanceMustBe.Location = new System.Drawing.Point(813, 119);
             cmbBalanceMustBe.Name = "cmbBalanceMustBe";
-            cmbBalanceMustBe.Size = new System.Drawing.Size(265, 23);
+            cmbBalanceMustBe.Size = new System.Drawing.Size(265, 25);
             cmbBalanceMustBe.TabIndex = 2;
-            cmbBalanceMustBe.ThemeName = "Windows8";
             cmbBalanceMustBe.ValueMember = "Name";
             // 
             // chkFrozen
             // 
-            chkFrozen.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkFrozen.Location = new System.Drawing.Point(273, 144);
+            chkFrozen.Anchor = AnchorStyles.Left;
+            chkFrozen.Location = new System.Drawing.Point(273, 121);
             chkFrozen.Name = "chkFrozen";
             chkFrozen.Size = new System.Drawing.Size(57, 18);
             chkFrozen.TabIndex = 3;
             chkFrozen.Text = "Frozen";
             chkFrozen.ThemeName = "Windows8";
             // 
+            // cmbCurrency
+            // 
+            cmbCurrency.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            cmbCurrency.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbCurrency.DisplayMember = "CurrencyName";
+            cmbCurrency.DropDownAnimationEnabled = true;
+            cmbCurrency.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            cmbCurrency.Location = new System.Drawing.Point(813, 148);
+            cmbCurrency.Name = "cmbCurrency";
+            cmbCurrency.Size = new System.Drawing.Size(265, 23);
+            cmbCurrency.TabIndex = 2;
+            cmbCurrency.ThemeName = "Windows8";
+            cmbCurrency.ValueMember = "Name";
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.Right;
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(745, 151);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(62, 17);
+            label11.TabIndex = 0;
+            label11.Text = "Currency";
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.Right;
+            label12.AutoSize = true;
+            label12.Location = new System.Drawing.Point(176, 151);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(91, 17);
+            label12.TabIndex = 0;
+            label12.Text = "Account Type";
+            // 
+            // cmbRootType
+            // 
+            cmbRootType.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            cmbRootType.DisplayMember = "SupplierGroupName";
+            cmbRootType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbRootType.Enabled = false;
+            cmbRootType.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            cmbRootType.Items.AddRange(new object[] { "", "Expense", "Income", "Asset", "Liability", "Equity" });
+            cmbRootType.Location = new System.Drawing.Point(813, 32);
+            cmbRootType.Name = "cmbRootType";
+            cmbRootType.Size = new System.Drawing.Size(265, 25);
+            cmbRootType.TabIndex = 13;
+            cmbRootType.ValueMember = "Name";
+            // 
+            // cmbReportType
+            // 
+            cmbReportType.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            cmbReportType.DisplayMember = "SupplierGroupName";
+            cmbReportType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbReportType.Enabled = false;
+            cmbReportType.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            cmbReportType.Items.AddRange(new object[] { "", "Balance Sheet", "Profit and Loss" });
+            cmbReportType.Location = new System.Drawing.Point(813, 61);
+            cmbReportType.Name = "cmbReportType";
+            cmbReportType.Size = new System.Drawing.Size(265, 25);
+            cmbReportType.TabIndex = 13;
+            cmbReportType.ValueMember = "Name";
+            // 
+            // txtTaxRate
+            // 
+            txtTaxRate.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtTaxRate.DecimalPlaces = 2;
+            txtTaxRate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtTaxRate.Location = new System.Drawing.Point(273, 178);
+            txtTaxRate.Name = "txtTaxRate";
+            txtTaxRate.Size = new System.Drawing.Size(264, 23);
+            txtTaxRate.TabIndex = 14;
+            txtTaxRate.ThemeName = "Windows8";
+            txtTaxRate.Visible = false;
+            // 
+            // lblTaxRate
+            // 
+            lblTaxRate.Anchor = AnchorStyles.Right;
+            lblTaxRate.AutoSize = true;
+            lblTaxRate.Location = new System.Drawing.Point(207, 181);
+            lblTaxRate.Name = "lblTaxRate";
+            lblTaxRate.Size = new System.Drawing.Size(60, 17);
+            lblTaxRate.TabIndex = 0;
+            lblTaxRate.Text = "Tax Rate";
+            lblTaxRate.Visible = false;
+            // 
             // groupBox3
             // 
             groupBox3.Controls.Add(tableLayoutPanel1);
-            groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            groupBox3.Dock = DockStyle.Top;
             groupBox3.Location = new System.Drawing.Point(3, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(1087, 194);
+            groupBox3.Size = new System.Drawing.Size(1087, 230);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Details";
@@ -479,7 +572,7 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tpList);
-            tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            tabControl1.Dock = DockStyle.Fill;
             tabControl1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             tabControl1.Location = new System.Drawing.Point(0, 0);
             tabControl1.Name = "tabControl1";
@@ -492,7 +585,7 @@
             tabPage1.Controls.Add(groupBox3);
             tabPage1.Location = new System.Drawing.Point(4, 26);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            tabPage1.Padding = new Padding(3);
             tabPage1.Size = new System.Drawing.Size(1093, 491);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Account";
@@ -501,7 +594,7 @@
             // panel3
             // 
             panel3.Controls.Add(tabControl1);
-            panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel3.Dock = DockStyle.Fill;
             panel3.Location = new System.Drawing.Point(200, 71);
             panel3.Name = "panel3";
             panel3.Size = new System.Drawing.Size(1101, 521);
@@ -517,6 +610,7 @@
             btnClose.TabIndex = 7;
             btnClose.Text = "Close";
             btnClose.ThemeName = "Windows8";
+            btnClose.Click += btnClose_Click;
             // 
             // btnNew
             // 
@@ -527,6 +621,7 @@
             btnNew.TabIndex = 6;
             btnNew.Text = "New";
             btnNew.ThemeName = "Windows8";
+            btnNew.Click += btnNew_Click;
             // 
             // brnRefreshFields
             // 
@@ -537,6 +632,7 @@
             brnRefreshFields.TabIndex = 4;
             brnRefreshFields.Text = "Refresh Fields";
             brnRefreshFields.ThemeName = "Windows8";
+            brnRefreshFields.Click += brnRefreshFields_Click;
             // 
             // btnSave
             // 
@@ -555,6 +651,7 @@
             btnCopyNameToClipboard.Name = "btnCopyNameToClipboard";
             btnCopyNameToClipboard.Text = "Copy To Clipboard";
             btnCopyNameToClipboard.UseCompatibleTextRendering = false;
+            btnCopyNameToClipboard.Click += btnCopyNameToClipboard_Click;
             // 
             // btnDelete
             // 
@@ -563,6 +660,7 @@
             btnDelete.Name = "btnDelete";
             btnDelete.Text = "Delete";
             btnDelete.UseCompatibleTextRendering = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnReload
             // 
@@ -570,6 +668,7 @@
             btnReload.Name = "btnReload";
             btnReload.Text = "Reload";
             btnReload.UseCompatibleTextRendering = false;
+            btnReload.Click += btnReload_Click;
             // 
             // radDropDownButton1
             // 
@@ -589,7 +688,7 @@
             panel2.Controls.Add(btnNew);
             panel2.Controls.Add(brnRefreshFields);
             panel2.Controls.Add(btnSave);
-            panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            panel2.Dock = DockStyle.Left;
             panel2.Location = new System.Drawing.Point(0, 71);
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(200, 521);
@@ -622,7 +721,7 @@
             panel1.BackColor = System.Drawing.Color.Black;
             panel1.Controls.Add(lblID);
             panel1.Controls.Add(label1);
-            panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            panel1.Dock = DockStyle.Top;
             panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(1301, 71);
@@ -631,7 +730,7 @@
             // frmAccount
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1301, 592);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -639,7 +738,8 @@
             KeyPreview = true;
             Name = "frmAccount";
             Text = "Account";
-            WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            WindowState = FormWindowState.Maximized;
+            KeyDown += frmAccount_KeyDown;
             ((System.ComponentModel.ISupportInitialize)txtLimit).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtNameFilter).EndInit();
             groupBox1.ResumeLayout(false);
@@ -655,12 +755,11 @@
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)txtAccountName).EndInit();
             ((System.ComponentModel.ISupportInitialize)chkDisabled).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cmbRootType).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cmbReportType).EndInit();
             ((System.ComponentModel.ISupportInitialize)cmbParentAccount).EndInit();
             ((System.ComponentModel.ISupportInitialize)chkIsGroup).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cmbBalanceMustBe).EndInit();
             ((System.ComponentModel.ISupportInitialize)chkFrozen).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cmbCurrency).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtTaxRate).EndInit();
             groupBox3.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
@@ -714,13 +813,19 @@
         private Telerik.WinControls.UI.RadCheckBox chkDisabled;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private Telerik.WinControls.UI.RadDropDownList cmbRootType;
-        private Telerik.WinControls.UI.RadDropDownList cmbReportType;
         private System.Windows.Forms.Label label9;
         private Telerik.WinControls.UI.RadDropDownList cmbParentAccount;
         private Telerik.WinControls.UI.RadCheckBox chkIsGroup;
         private System.Windows.Forms.Label label10;
-        private Telerik.WinControls.UI.RadDropDownList cmbBalanceMustBe;
+        private ComboBox cmbBalanceMustBe;
         private Telerik.WinControls.UI.RadCheckBox chkFrozen;
+        private Telerik.WinControls.UI.RadDropDownList cmbCurrency;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cmbAccountType;
+        private System.Windows.Forms.ComboBox cmbRootType;
+        private System.Windows.Forms.ComboBox cmbReportType;
+        private RadSpinEditor txtTaxRate;
+        private System.Windows.Forms.Label lblTaxRate;
     }
 }

@@ -7,68 +7,61 @@ using TheSku.Data;
 
 namespace TheSku
 {
-    public partial class frmSupplier : Form
+    public partial class frmBrand : Form
     {
-        AppDbContext AppDbContext;
-        bool IsBinded = false;
-        public frmSupplier(AppDbContext dbContext)
+        AppDbContext dbContext = new AppDbContext(DbContextOptionsProvider.Options);
+
+        public frmBrand()
         {
-            AppDbContext = dbContext;
             InitializeComponent();
             this.btnReload.Shortcuts.Add(new RadShortcut(Keys.Control, Keys.R));
             this.btnDelete.Shortcuts.Add(new RadShortcut(Keys.Control, Keys.T));
             this.btnCopyNameToClipboard.Shortcuts.Add(new RadShortcut(Keys.Alt, Keys.C));
             this.gvList.AutoGenerateColumns = false;
-            this.ActiveControl = this.txtSupplierName;
+            this.ActiveControl = this.txtBrandName;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(this.txtSupplierName.Text))
+            if (string.IsNullOrWhiteSpace(this.txtBrandName.Text))
             {
-                MessageBox.Show("Supplier Name is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.txtSupplierName.Focus();
-                return;
-            }
-            if (this.cmbSupplierGroup.SelectedIndex == -1)
-            {
-                MessageBox.Show("Supplier Group is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.cmbSupplierGroup.Focus();
+                MessageBox.Show("Brand Name is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtBrandName.Focus();
                 return;
             }
             if (this.lblID.Text == "0")
             {
-                var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.txtSupplierName.Text.Trim())).FirstOrDefault();
-                if (supplier is not null)
+                var brand = dbContext.Brand.Where(x => x.Name.Equals(this.txtBrandName.Text.Trim())).FirstOrDefault();
+                if (brand is not null)
                 {
-                    MessageBox.Show("Supplier with this Name is already exists", "Exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.txtSupplierName.Focus();
+                    MessageBox.Show("Brand with this Name is already exists", "Exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.txtBrandName.Focus();
                     return;
                 }
-                Supplier supplier1 = new Supplier()
+                Brand brand1 = new Brand()
                 {
-                    Name = this.txtSupplierName.Text.Trim(),
+                    Name = this.txtBrandName.Text.Trim(),
                     Creation = DateTime.Now,
                     ModifiedBy = Global.UserName,
                     Owner = Global.UserName,
-                    SupplierName = this.txtSupplierName.Text.Trim(),
-                    SupplierGroup = this.cmbSupplierGroup.SelectedValue?.ToString(),
+                    BrandName = this.txtBrandName.Text.Trim(),
+                    Description = txtDescription.Text,
                 };
-                AppDbContext.Suppliers.Add(supplier1);
-                AppDbContext.SaveChanges();
+                dbContext.Brand.Add(brand1);
+                dbContext.SaveChanges();
                 this.ResetForm();
             }
             else
             {
-                var supplier1 = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
-                if (supplier1 is not null)
+                var brand = dbContext.Brand.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                if (brand is not null)
                 {
-                    supplier1.SupplierName = this.txtSupplierName.Text.Trim();
-                    supplier1.Modified = DateTime.Now;
-                    supplier1.ModifiedBy = Global.UserName;
-                    supplier1.SupplierGroup = this.cmbSupplierGroup.SelectedValue?.ToString();
-                    AppDbContext.Suppliers.Update(supplier1);
-                    AppDbContext.SaveChanges();
+                    brand.BrandName = this.txtBrandName.Text.Trim();
+                    brand.Modified = DateTime.Now;
+                    brand.ModifiedBy = Global.UserName;
+                    brand.Description = this.txtDescription.Text;
+                    dbContext.Brand.Update(brand);
+                    dbContext.SaveChanges();
                     this.ResetForm();
                 }
             }
@@ -78,13 +71,13 @@ namespace TheSku
         {
             this.lblID.Text = "0";
             this.lblID.Visible = false;
-            this.txtSupplierName.Clear();
-            this.cmbSupplierGroup.SelectedIndex = -1;
+            this.txtDescription.Clear();
+            this.txtBrandName.Clear();
             this.tabControl1.SelectTab(0);
-            this.txtSupplierName.Focus();
+            this.txtBrandName.Focus();
         }
 
-        private void frmSupplier_KeyDown(object sender, KeyEventArgs e)
+        private void frmBrand_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.S)
             {
@@ -112,7 +105,7 @@ namespace TheSku
                 else
                 {
                     tabControl1.SelectTab(0);
-                    this.txtSupplierName.Focus();
+                    this.txtBrandName.Focus();
                 }
             }
         }
@@ -132,7 +125,7 @@ namespace TheSku
 
         private void BindGrid()
         {
-            var suppliers = AppDbContext.Suppliers
+            var suppliers = dbContext.Brand
                             .OrderByDescending(x => x.Modified)
                             .Where(s => string.IsNullOrEmpty(this.txtNameFilter.Text) || s.Name.Contains(this.txtNameFilter.Text))
                             .Take((int)this.txtLimit.Value)
@@ -144,18 +137,13 @@ namespace TheSku
         {
             if (this.lblID.Text != "0")
             {
-                if (!this.IsBinded)
-                {
-                    this.brnRefreshFields.PerformClick();
-                    this.IsBinded = true;
-                }
-                var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                var supplier = dbContext.Brand.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
                 if (supplier is not null)
                 {
-                    this.txtSupplierName.Text = supplier.SupplierName;
-                    this.cmbSupplierGroup.SelectedValue = supplier.SupplierGroup;
+                    this.txtBrandName.Text = supplier.BrandName;
+                    this.txtDescription.Text = supplier.Description;
                     this.tabControl1.SelectTab(0);
-                    this.txtSupplierName.Focus();
+                    this.txtBrandName.Focus();
                     this.lblID.Visible = true;
                 }
             }
@@ -164,29 +152,6 @@ namespace TheSku
         private void btnNew_Click(object sender, EventArgs e)
         {
             this.ResetForm();
-        }
-
-        private void btnDisplay_Click(object sender, EventArgs e)
-        {
-            this.BindGrid();
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (this.lblID.Text != "0")
-            {
-                if (MessageBox.Show($"Are you sure you want to delete {this.lblID.Text}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    var supplier = AppDbContext.Suppliers.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
-                    if (supplier is not null)
-                    {
-                        AppDbContext.Suppliers.Remove(supplier);
-                        AppDbContext.SaveChanges();
-                        MessageBox.Show($"{this.lblID.Text} deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.btnNew.PerformClick();
-                    }
-                }
-            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -212,6 +177,29 @@ namespace TheSku
             }
         }
 
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            this.BindGrid();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.lblID.Text != "0")
+            {
+                if (MessageBox.Show($"Are you sure you want to delete {this.lblID.Text}?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    var brand = dbContext.Brand.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                    if (brand is not null)
+                    {
+                        dbContext.Brand.Remove(brand);
+                        dbContext.SaveChanges();
+                        MessageBox.Show($"{this.lblID.Text} deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.btnNew.PerformClick();
+                    }
+                }
+            }
+        }
+
         private void gvList_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && this.gvList.RowCount > 0)
@@ -232,19 +220,6 @@ namespace TheSku
         private void btnReload_Click(object sender, EventArgs e)
         {
             this.LoadData();
-        }
-
-        private void cmbSupplierGroup_Enter(object sender, EventArgs e)
-        {
-            if (this.cmbSupplierGroup.DataSource == null)
-            {
-                this.cmbSupplierGroup.DataSource = AppDbContext.SupplierGroup.ToList();
-            }
-        }
-
-        private void brnRefreshFields_Click(object sender, EventArgs e)
-        {
-            this.cmbSupplierGroup.DataSource = AppDbContext.SupplierGroup.ToList();
         }
     }
 }

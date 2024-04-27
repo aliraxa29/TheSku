@@ -368,4 +368,70 @@ public class DefaultData
             new Currency() { Creation = DateTime.Now, Name = "ZWL", CurrencyName = "ZWL", Fraction = "Cent", FractionUnits = "100", SmallestCurrencyFractionValue = 0, Symbol = "ZWL$"},
         };
     }
+    
+    public static List<Singles> DefaultValues()
+    {
+        return new List<Singles>
+        {
+            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Company", Field = "default_company", Value = null },
+            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Country", Field = "default_country", Value = null },
+            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Currency", Field = "default_currency", Value = null },
+            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Warehouse", Field = "default_warehouse", Value = null },
+        };
+    }
+
+    public static List<CostCenter> CostCenters(Company company, string user)
+    {
+        return new List<CostCenter>
+        {
+            new CostCenter() { Name = company.Name, Creation = DateTime.Now, Owner = user, ModifiedBy = user, CostCenterName = company.CompanyName, Company = company, IsGroup = true },
+            new CostCenter() { Name = $"Main - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, CostCenterName = "Main", Company = company, ParentCostCenter = company.Name },
+        };
+    }
+    
+    public static List<Warehouse> Warehouses(Company company, string user)
+    {
+        return new List<Warehouse>
+        {
+            new Warehouse() { Name = $"All Warehouses - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = true },
+            new Warehouse() { Name = $"Finished Goods - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
+            new Warehouse() { Name = $"Goods In Transit - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
+            new Warehouse() { Name = $"Stores - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
+            new Warehouse() { Name = $"Work In Progress - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
+        };
+    }
+    
+    public static List<PackingType> PackingTypes()
+    {
+        return new List<PackingType>
+        {
+            new PackingType() { Name = "BARS/SHAMPOO", PackingTypeName = "BARS/SHAMPOO", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "BP METERS", PackingTypeName = "BP METERS", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "CAP", PackingTypeName = "CAP", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "CONDOMS", PackingTypeName = "CONDOMS", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "CREAM/OINT/GEL", PackingTypeName = "CREAM/OINT/GEL", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "DENTAL PRODUCTS", PackingTypeName = "DENTAL PRODUCTS", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "DRIPS", PackingTypeName = "DRIPS", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "E/EDROPS", PackingTypeName = "E/EDROPS", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "FEEDING ITEMS", PackingTypeName = "FEEDING ITEMS", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "GLUCOMETERS", PackingTypeName = "GLUCOMETERS", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "HERBAL", PackingTypeName = "HERBAL", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "INHALER/SPRAY", PackingTypeName = "INHALER/SPRAY", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "INJECTIONS", PackingTypeName = "INJECTIONS", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "INSULINS", PackingTypeName = "INSULINS", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "LIQUID/SOLUTION", PackingTypeName = "LIQUID/SOLUTION", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "MILK/SUPPLEMENT", PackingTypeName = "MILK/SUPPLEMENT", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "MISC", PackingTypeName = "MISC", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "NEBULIZER", PackingTypeName = "NEBULIZER", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "ORAL DROPS", PackingTypeName = "ORAL DROPS", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "PAMPERS/WIPES", PackingTypeName = "PAMPERS/WIPES", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "PERFUMES", PackingTypeName = "PERFUMES", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "SACHETS", PackingTypeName = "SACHETS", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "SURGICAL", PackingTypeName = "SURGICAL", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "SYP/SUSP", PackingTypeName = "SYP/SUSP", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "TAB", PackingTypeName = "TAB", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "TAB/CAP", PackingTypeName = "TAB/CAP", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new PackingType() { Name = "TOOTHBRUSH", PackingTypeName = "TOOTHBRUSH", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+        };
+    }
 }
