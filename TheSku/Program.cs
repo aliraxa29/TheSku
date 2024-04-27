@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using System;
 using System.Configuration;
 using System.Linq;
@@ -20,7 +19,15 @@ namespace TheSku
             var serviceCollection = new ServiceCollection();
             ConfigureServices(serviceCollection);
             var serviceProvider = serviceCollection.BuildServiceProvider();
-            Application.Run(serviceProvider.GetRequiredService<frmLogin>());
+            AppDbContext dbContext = new AppDbContext(DbContextOptionsProvider.Options);
+            if (dbContext.Company.Count() <= 0)
+            {
+                new frmCompanySetup(dbContext).ShowDialog();
+            }
+            else
+            {
+                Application.Run(serviceProvider.GetRequiredService<frmLogin>());
+            }
         }
         private static void ConfigureServices(IServiceCollection services)
         {

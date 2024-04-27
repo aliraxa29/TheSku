@@ -150,7 +150,7 @@ namespace TheSku
 
         private void pOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Global.PosProfile == null)
+            if (PosProfileSetting.PosProfile == null)
             {
                 MessageBox.Show("Please setup POS Profile first in order to use it.", "POS Profile Setup Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
