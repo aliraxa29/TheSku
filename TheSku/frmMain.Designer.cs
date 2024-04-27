@@ -43,6 +43,7 @@
             supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             supplierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             supplierGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            brandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             accountingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             chartOfAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,7 @@
             ssMain = new System.Windows.Forms.StatusStrip();
             toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             lblUsername = new System.Windows.Forms.ToolStripStatusLabel();
-            brandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            costCenterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ssMain.SuspendLayout();
             SuspendLayout();
@@ -125,7 +126,7 @@
             // 
             customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { customerToolStripMenuItem1, customerGroupToolStripMenuItem });
             customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            customerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            customerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             customerToolStripMenuItem.Text = "Customer";
             // 
             // customerToolStripMenuItem1
@@ -152,7 +153,7 @@
             // 
             supplierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { supplierToolStripMenuItem1, supplierGroupToolStripMenuItem });
             supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            supplierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            supplierToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             supplierToolStripMenuItem.Text = "Supplier";
             // 
             // supplierToolStripMenuItem1
@@ -169,9 +170,16 @@
             supplierGroupToolStripMenuItem.Text = "Supplier Group";
             supplierGroupToolStripMenuItem.Click += supplierGroupToolStripMenuItem_Click;
             // 
+            // brandToolStripMenuItem
+            // 
+            brandToolStripMenuItem.Name = "brandToolStripMenuItem";
+            brandToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            brandToolStripMenuItem.Text = "Brand";
+            brandToolStripMenuItem.Click += brandToolStripMenuItem_Click;
+            // 
             // accountingToolStripMenuItem
             // 
-            accountingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { accountToolStripMenuItem, chartOfAccountsToolStripMenuItem, reportToolStripMenuItem });
+            accountingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { accountToolStripMenuItem, chartOfAccountsToolStripMenuItem, reportToolStripMenuItem, costCenterToolStripMenuItem });
             accountingToolStripMenuItem.Name = "accountingToolStripMenuItem";
             accountingToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             accountingToolStripMenuItem.Text = "Accounting";
@@ -179,21 +187,21 @@
             // accountToolStripMenuItem
             // 
             accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            accountToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            accountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             accountToolStripMenuItem.Text = "Account";
             accountToolStripMenuItem.Click += accountToolStripMenuItem_Click;
             // 
             // chartOfAccountsToolStripMenuItem
             // 
             chartOfAccountsToolStripMenuItem.Name = "chartOfAccountsToolStripMenuItem";
-            chartOfAccountsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            chartOfAccountsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             chartOfAccountsToolStripMenuItem.Text = "Chart Of Accounts";
             chartOfAccountsToolStripMenuItem.Click += chartOfAccountsToolStripMenuItem_Click;
             // 
             // reportToolStripMenuItem
             // 
             reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            reportToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            reportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             reportToolStripMenuItem.Text = "Reports";
             // 
             // userManagementToolStripMenuItem
@@ -274,12 +282,12 @@
             lblUsername.Size = new System.Drawing.Size(30, 17);
             lblUsername.Text = "User";
             // 
-            // brandToolStripMenuItem
+            // costCenterToolStripMenuItem
             // 
-            brandToolStripMenuItem.Name = "brandToolStripMenuItem";
-            brandToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            brandToolStripMenuItem.Text = "Brand";
-            brandToolStripMenuItem.Click += brandToolStripMenuItem_Click;
+            costCenterToolStripMenuItem.Name = "costCenterToolStripMenuItem";
+            costCenterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            costCenterToolStripMenuItem.Text = "Cost Center";
+            costCenterToolStripMenuItem.Click += costCenterToolStripMenuItem_Click;
             // 
             // frmMain
             // 
@@ -335,5 +343,6 @@
         private System.Windows.Forms.ToolStripMenuItem companyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sessionSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem brandToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem costCenterToolStripMenuItem;
     }
 }

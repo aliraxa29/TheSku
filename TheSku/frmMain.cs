@@ -150,6 +150,11 @@ namespace TheSku
 
         private void pOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (Global.PosProfile == null)
+            {
+                MessageBox.Show("Please setup POS Profile first in order to use it.", "POS Profile Setup Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             new frmPos() { MdiParent = this }.Show();
         }
 
@@ -162,6 +167,18 @@ namespace TheSku
             else
             {
                 new frmBrand() { MdiParent = this }.Show();
+            }
+        }
+
+        private void costCenterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmCostCenter"] != null)
+            {
+                Application.OpenForms["frmCostCenter"].BringToFront();
+            }
+            else
+            {
+                new frmCostCenter() { MdiParent = this }.Show();
             }
         }
     }

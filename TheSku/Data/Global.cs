@@ -42,6 +42,18 @@ public class Global
             }
         }
     }
+    
+    public static PosProfile PosProfile
+    {
+        get
+        {
+            using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
+            {
+                return dbContext.PosProfile.Where(c => c.Company.Equals(Company) && c.Warehouse.Equals(Warehouse) && !c.Disabled).FirstOrDefault();
+            }
+        }
+    }
+
     public static Company Company
     {
         get

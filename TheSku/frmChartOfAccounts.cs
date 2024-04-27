@@ -38,7 +38,7 @@ namespace TheSku
             this.tvAccounts.DisplayMember = "Name";
             this.tvAccounts.ParentMember = "ParentAccount";
             this.tvAccounts.ChildMember = "Name";
-            accounts = dbContext.Account.Where(a => a.Company == dbContext.Company.Where(c => c.Name == this.cmbCompany.SelectedValue.ToString()).FirstOrDefault()).ToList();
+            accounts = dbContext.Account.Where(a => a.Company.Equals(dbContext.Company.Where(c => c.Name.Equals(this.cmbCompany.SelectedValue)).FirstOrDefault())).ToList();
         }
 
         private void btnExpandAll_Click(object sender, EventArgs e)
