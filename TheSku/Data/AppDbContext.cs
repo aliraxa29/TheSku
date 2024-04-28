@@ -35,6 +35,7 @@ namespace TheSku.Data
             modelBuilder.Entity<PackingType>().HasData(DefaultData.PackingTypes());
             modelBuilder.Entity<Country>().HasData(DefaultData.Countries());
             modelBuilder.Entity<Currency>().HasData(DefaultData.Currencies());
+            modelBuilder.Entity<Language>().HasData(DefaultData.Languages());
             var defaultSingles = DefaultData.DefaultValues().Select(s => new Singles
             {
                 Name = Guid.NewGuid(),
@@ -82,6 +83,7 @@ namespace TheSku.Data
         public DbSet<FiscalYearCompany> FiscalYearCompany { get; set; }
         public DbSet<SalesInvoicePayment> SalesInvoicePayment { get; set; }
         public DbSet<ModeOfPayment> ModeOfPayment { get; set; }
+        public DbSet<Language> Languages { get; set; }
     }
 }
 

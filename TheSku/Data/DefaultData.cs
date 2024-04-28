@@ -434,4 +434,12 @@ public class DefaultData
             new PackingType() { Name = "TOOTHBRUSH", PackingTypeName = "TOOTHBRUSH", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
         };
     }
+    
+    public static List<Language> Languages()
+    {
+        return new List<Language>
+        {
+            new Language() { Name = "English", LanguageName = "English", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+        };
+    }
 }

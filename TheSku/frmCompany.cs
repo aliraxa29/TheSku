@@ -125,19 +125,19 @@ namespace TheSku
             }
         }
 
-        private void AddWarehouses(Company company)
+        public void AddWarehouses(Company company)
         {
             dbContext.Warehouse.AddRange(DefaultData.Warehouses(company, Global.UserName));
             dbContext.SaveChanges();
         }
 
-        private void AddCostCenters(Company company)
+        public void AddCostCenters(Company company)
         {
             dbContext.CostCenter.AddRange(DefaultData.CostCenters(company, Global.UserName));
             dbContext.SaveChanges();
         }
 
-        private void CreateChartOfAccounts(Company company, Currency currency)
+        public void CreateChartOfAccounts(Company company, Currency currency)
         {
             if (this.cmbCoaBasedOn.Text == "Standard Template")
             {
