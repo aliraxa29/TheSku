@@ -39,4 +39,7 @@ public class User
     [Required]
     [Column("password")]
     public string Password { get; set; }
+    [MaxLength(255)]
+    [Column("role")]
+    public Role Role { get; set; }
 }

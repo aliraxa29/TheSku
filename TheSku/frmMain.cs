@@ -8,10 +8,12 @@ namespace TheSku
     public partial class frmMain : Form
     {
         readonly AppDbContext dbContext;
+        UserPermissions permissions;
 
         public frmMain(AppDbContext dbContext1)
         {
             dbContext = dbContext1;
+            permissions = new UserPermissions(dbContext1);
             InitializeComponent();
             this.lblUsername.Text = Global.UserName;
         }
@@ -197,7 +199,10 @@ namespace TheSku
 
         private void rolePermissionManagerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmRolePermissionManager(dbContext) { MdiParent = this }.Show();
+            if (permissions.HasReadPermission("Role Permission Manager"))
+            {
+                new frmRolePermissionManager(dbContext).ShowDialog();
+            }
         }
     }
 }
