@@ -83,6 +83,7 @@ namespace TheSku.Data
         public DbSet<SalesInvoicePayment> SalesInvoicePayment { get; set; }
         public DbSet<ModeOfPayment> ModeOfPayment { get; set; }
         public DbSet<Language> Languages { get; set; }
+        public DbSet<Role> Roles { get; set; }
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PharmacyManagementSystem.User;
+using System;
 using System.Windows.Forms;
 using TheSku.Data;
 
@@ -179,6 +180,18 @@ namespace TheSku
             else
             {
                 new frmCostCenter() { MdiParent = this }.Show();
+            }
+        }
+
+        private void roleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmRole"] != null)
+            {
+                Application.OpenForms["frmRole"].BringToFront();
+            }
+            else
+            {
+                new frmRole(dbContext) { MdiParent = this }.Show();
             }
         }
     }
