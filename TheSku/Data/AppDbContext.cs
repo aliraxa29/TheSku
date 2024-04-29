@@ -31,7 +31,6 @@ namespace TheSku.Data
                             .WithOne()
                             .HasForeignKey<Company>(c => c.RoundOffAccountId)
                             .IsRequired(false);
-            modelBuilder.Entity<User>().HasData(DefaultData.Users());
             modelBuilder.Entity<PackingType>().HasData(DefaultData.PackingTypes());
             modelBuilder.Entity<Country>().HasData(DefaultData.Countries());
             modelBuilder.Entity<Currency>().HasData(DefaultData.Currencies());

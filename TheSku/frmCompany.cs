@@ -405,7 +405,7 @@ namespace TheSku
             this.txtAbbrivation.Text = GetInitials(this.txtCompanyName.Text.Trim());
         }
 
-        static string GetInitials(string input)
+        public static string GetInitials(string input)
         {
             string[] words = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string initials = string.Concat(words.Select(word => word[0]));

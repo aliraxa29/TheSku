@@ -3,13 +3,6 @@ using System.Collections.Generic;
 
 public class DefaultData
 {
-    public static List<User> Users()
-    {
-        return new List<User>
-        {
-            new User() { Name = "admin", Creation = DateTime.Now, Modified = DateTime.Now, ModifiedBy = "Administrator", Owner = "Administrator", UserName = "admin", Password = Security.EncryptString("admin") }
-        };
-    }
 
     public static List<Country> Countries()
     {

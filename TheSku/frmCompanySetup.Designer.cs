@@ -262,6 +262,7 @@
             txtCompanyName.Size = new System.Drawing.Size(316, 27);
             txtCompanyName.TabIndex = 4;
             txtCompanyName.ThemeName = "Windows8";
+            txtCompanyName.TextChanged += txtCompanyName_TextChanged;
             // 
             // label6
             // 

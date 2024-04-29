@@ -124,6 +124,7 @@ namespace TheSku
                     {
                         var country = dbContext.Country.Where(c => c.Name.Equals(this.cmbCountry.SelectedValue)).FirstOrDefault();
                         var currency = dbContext.Currency.Where(c => c.Name.Equals(this.cmbCurrency.SelectedValue)).FirstOrDefault();
+                        string[] name = this.txtFullName.Text.Split(' ');
                         Company c = new Company();
                         c.Name = string.Concat(this.txtCompanyName.Text.Trim(), " - ", this.txtAbbrivation.Text.Trim());
                         c.Creation = DateTime.Now;
@@ -137,6 +138,7 @@ namespace TheSku
                         c.CoaTemplate = this.cmbCoaTemplate.SelectedItem.ToString();
                         c.Currency = currency;
                         dbContext.Company.Add(c);
+                        dbContext.Users.Add(new() { Creation = DateTime.Now, FullName = this.txtFullName.Text, Name = this.txtUsername.Text.Trim(), UserName = this.txtUsername.Text, Password = Security.EncryptString(this.txtPassword.Text), ModifiedBy = "Administrator", FirstName = name[0], LastName = name.Length > 1 ? name[1] : "" });
                         dbContext.SaveChanges();
                         this.CreateChartOfAccounts(c, currency);
                         this.AddCostCenters(c);
@@ -198,7 +200,7 @@ namespace TheSku
             {
                 Account account = new()
                 {
-                    Name = string.Concat(this.txtBank.Text.Trim(), " - ", company.Abbrivation),
+                    Name = string.Concat("1200 - ", this.txtBank.Text.Trim(), " - ", company.Abbrivation),
                     Creation = DateTime.Now,
                     Modified = DateTime.Now,
                     ModifiedBy = "Administrator",
@@ -350,6 +352,11 @@ namespace TheSku
             {
                 this.cmbCurrency.DataSource = dbContext.Currency.OrderBy(l => l.Name).ToList();
             }
+        }
+
+        private void txtCompanyName_TextChanged(object sender, EventArgs e)
+        {
+            this.txtAbbrivation.Text = frmCompany.GetInitials(this.txtCompanyName.Text.Trim());
         }
     }
 }
