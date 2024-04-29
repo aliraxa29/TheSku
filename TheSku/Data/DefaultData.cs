@@ -515,4 +515,25 @@ public class DefaultData
             new Language() { Name = "zh-TW", LanguageCode = "zh-TW", LanguageName = "繁體中文", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
         };
     }
+    
+    public static List<Document> Documents()
+    {
+        return new List<Document>
+        {
+            new Document() { Name = "Account", DocumentName = "Account", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Brand", DocumentName = "Brand", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "User", DocumentName = "User", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "System Settings", DocumentName = "System Settings", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Supplier Group", DocumentName = "Supplier Group", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Supplier", DocumentName = "Supplier", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Role Permission Manager", DocumentName = "Role Permission Manager", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Role", DocumentName = "Role", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Customer", DocumentName = "Customer", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Currency", DocumentName = "Currency", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Country", DocumentName = "Country", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Cost Center", DocumentName = "Cost Center", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Company", DocumentName = "Company", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Chart Of Accounts", DocumentName = "Chart Of Accounts", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+        };
+    }
 }
