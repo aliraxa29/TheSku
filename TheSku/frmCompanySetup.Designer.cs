@@ -28,14 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
             spStep = new Telerik.WinControls.UI.RadStepProgressBar();
             spHello = new Telerik.WinControls.UI.StepProgressItem();
             spUser = new Telerik.WinControls.UI.StepProgressItem();
             spBrand = new Telerik.WinControls.UI.StepProgressItem();
             stepProgressItem1 = new Telerik.WinControls.UI.StepProgressItem();
             radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            pYourOrganization = new System.Windows.Forms.Panel();
+            cmbCoaTemplate = new System.Windows.Forms.ComboBox();
+            txtBank = new Telerik.WinControls.UI.RadTextBox();
+            txtWhatItDo = new Telerik.WinControls.UI.RadTextBox();
+            label15 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label13 = new System.Windows.Forms.Label();
+            label14 = new System.Windows.Forms.Label();
             pCompanyInfo = new System.Windows.Forms.Panel();
             cmbLanguage = new Telerik.WinControls.UI.RadDropDownList();
             cmbCountry = new Telerik.WinControls.UI.RadDropDownList();
@@ -58,24 +66,19 @@
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
-            pYourOrganization = new System.Windows.Forms.Panel();
-            cmbCoaTemplate = new System.Windows.Forms.ComboBox();
-            txtBank = new Telerik.WinControls.UI.RadTextBox();
-            txtWhatItDo = new Telerik.WinControls.UI.RadTextBox();
-            label15 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
-            label13 = new System.Windows.Forms.Label();
-            label14 = new System.Windows.Forms.Label();
             btnNext = new Telerik.WinControls.UI.RadButton();
             btnBack = new Telerik.WinControls.UI.RadButton();
             btnCancel = new Telerik.WinControls.UI.RadButton();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             panel1 = new System.Windows.Forms.Panel();
-            panel2 = new System.Windows.Forms.Panel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
+            panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)spStep).BeginInit();
             ((System.ComponentModel.ISupportInitialize)radPanel1).BeginInit();
             radPanel1.SuspendLayout();
+            pYourOrganization.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txtBank).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtWhatItDo).BeginInit();
             pCompanyInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cmbLanguage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cmbCountry).BeginInit();
@@ -87,15 +90,12 @@
             ((System.ComponentModel.ISupportInitialize)txtPassword).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtUsername).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtFullName).BeginInit();
-            pYourOrganization.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)txtBank).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtWhatItDo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnNext).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCancel).BeginInit();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // spStep
@@ -141,6 +141,99 @@
             radPanel1.Size = new System.Drawing.Size(576, 301);
             radPanel1.TabIndex = 1;
             radPanel1.ThemeName = "Fluent";
+            // 
+            // pYourOrganization
+            // 
+            pYourOrganization.Controls.Add(cmbCoaTemplate);
+            pYourOrganization.Controls.Add(txtBank);
+            pYourOrganization.Controls.Add(txtWhatItDo);
+            pYourOrganization.Controls.Add(label15);
+            pYourOrganization.Controls.Add(label5);
+            pYourOrganization.Controls.Add(label13);
+            pYourOrganization.Controls.Add(label14);
+            pYourOrganization.Dock = System.Windows.Forms.DockStyle.Fill;
+            pYourOrganization.Location = new System.Drawing.Point(0, 0);
+            pYourOrganization.Name = "pYourOrganization";
+            pYourOrganization.Size = new System.Drawing.Size(576, 301);
+            pYourOrganization.TabIndex = 7;
+            pYourOrganization.Visible = false;
+            // 
+            // cmbCoaTemplate
+            // 
+            cmbCoaTemplate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            cmbCoaTemplate.DisplayMember = "SupplierGroupName";
+            cmbCoaTemplate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cmbCoaTemplate.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            radListDataItem3.Selected = true;
+            radListDataItem3.Text = "Standard Chart Of Accounts";
+            radListDataItem4.Text = "Chart Of Accounts With Numbers";
+            cmbCoaTemplate.Items.AddRange(new object[] { radListDataItem3, radListDataItem4 });
+            cmbCoaTemplate.Location = new System.Drawing.Point(162, 157);
+            cmbCoaTemplate.Name = "cmbCoaTemplate";
+            cmbCoaTemplate.Size = new System.Drawing.Size(316, 25);
+            cmbCoaTemplate.TabIndex = 2;
+            cmbCoaTemplate.ValueMember = "Name";
+            // 
+            // txtBank
+            // 
+            txtBank.Anchor = System.Windows.Forms.AnchorStyles.None;
+            txtBank.Font = new System.Drawing.Font("Segoe UI", 12F);
+            txtBank.Location = new System.Drawing.Point(162, 124);
+            txtBank.Name = "txtBank";
+            txtBank.Size = new System.Drawing.Size(316, 27);
+            txtBank.TabIndex = 1;
+            txtBank.ThemeName = "Windows8";
+            // 
+            // txtWhatItDo
+            // 
+            txtWhatItDo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            txtWhatItDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            txtWhatItDo.Location = new System.Drawing.Point(162, 91);
+            txtWhatItDo.Name = "txtWhatItDo";
+            txtWhatItDo.Size = new System.Drawing.Size(316, 27);
+            txtWhatItDo.TabIndex = 0;
+            txtWhatItDo.ThemeName = "Windows8";
+            // 
+            // label15
+            // 
+            label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            label15.AutoSize = true;
+            label15.Location = new System.Drawing.Point(4, 162);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(151, 15);
+            label15.TabIndex = 2;
+            label15.Text = "Chart Of Account Template";
+            // 
+            // label5
+            // 
+            label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(87, 128);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(68, 15);
+            label5.TabIndex = 2;
+            label5.Text = "Bank Name";
+            // 
+            // label13
+            // 
+            label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            label13.AutoSize = true;
+            label13.Location = new System.Drawing.Point(62, 98);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(95, 15);
+            label13.TabIndex = 2;
+            label13.Text = "What does it do?";
+            // 
+            // label14
+            // 
+            label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            label14.AutoSize = true;
+            label14.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label14.Location = new System.Drawing.Point(191, 10);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(223, 32);
+            label14.TabIndex = 1;
+            label14.Text = "Your Organization";
             // 
             // pCompanyInfo
             // 
@@ -399,99 +492,6 @@
             label8.TabIndex = 1;
             label8.Text = "The First User: You";
             // 
-            // pYourOrganization
-            // 
-            pYourOrganization.Controls.Add(cmbCoaTemplate);
-            pYourOrganization.Controls.Add(txtBank);
-            pYourOrganization.Controls.Add(txtWhatItDo);
-            pYourOrganization.Controls.Add(label15);
-            pYourOrganization.Controls.Add(label5);
-            pYourOrganization.Controls.Add(label13);
-            pYourOrganization.Controls.Add(label14);
-            pYourOrganization.Dock = System.Windows.Forms.DockStyle.Fill;
-            pYourOrganization.Location = new System.Drawing.Point(0, 0);
-            pYourOrganization.Name = "pYourOrganization";
-            pYourOrganization.Size = new System.Drawing.Size(576, 301);
-            pYourOrganization.TabIndex = 7;
-            pYourOrganization.Visible = false;
-            // 
-            // cmbCoaTemplate
-            // 
-            cmbCoaTemplate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            cmbCoaTemplate.DisplayMember = "SupplierGroupName";
-            cmbCoaTemplate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            cmbCoaTemplate.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            radListDataItem1.Selected = true;
-            radListDataItem1.Text = "Standard Chart Of Accounts";
-            radListDataItem2.Text = "Chart Of Accounts With Numbers";
-            cmbCoaTemplate.Items.AddRange(new object[] { radListDataItem1, radListDataItem2 });
-            cmbCoaTemplate.Location = new System.Drawing.Point(162, 157);
-            cmbCoaTemplate.Name = "cmbCoaTemplate";
-            cmbCoaTemplate.Size = new System.Drawing.Size(316, 25);
-            cmbCoaTemplate.TabIndex = 2;
-            cmbCoaTemplate.ValueMember = "Name";
-            // 
-            // txtBank
-            // 
-            txtBank.Anchor = System.Windows.Forms.AnchorStyles.None;
-            txtBank.Font = new System.Drawing.Font("Segoe UI", 12F);
-            txtBank.Location = new System.Drawing.Point(162, 124);
-            txtBank.Name = "txtBank";
-            txtBank.Size = new System.Drawing.Size(316, 27);
-            txtBank.TabIndex = 1;
-            txtBank.ThemeName = "Windows8";
-            // 
-            // txtWhatItDo
-            // 
-            txtWhatItDo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            txtWhatItDo.Font = new System.Drawing.Font("Segoe UI", 12F);
-            txtWhatItDo.Location = new System.Drawing.Point(162, 91);
-            txtWhatItDo.Name = "txtWhatItDo";
-            txtWhatItDo.Size = new System.Drawing.Size(316, 27);
-            txtWhatItDo.TabIndex = 0;
-            txtWhatItDo.ThemeName = "Windows8";
-            // 
-            // label15
-            // 
-            label15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(4, 162);
-            label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(151, 15);
-            label15.TabIndex = 2;
-            label15.Text = "Chart Of Account Template";
-            // 
-            // label5
-            // 
-            label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(87, 128);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(68, 15);
-            label5.TabIndex = 2;
-            label5.Text = "Bank Name";
-            // 
-            // label13
-            // 
-            label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(62, 98);
-            label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(95, 15);
-            label13.TabIndex = 2;
-            label13.Text = "What does it do?";
-            // 
-            // label14
-            // 
-            label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            label14.AutoSize = true;
-            label14.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label14.Location = new System.Drawing.Point(191, 10);
-            label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(223, 32);
-            label14.TabIndex = 1;
-            label14.Text = "Your Organization";
-            // 
             // btnNext
             // 
             btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
@@ -534,6 +534,17 @@
             panel1.Size = new System.Drawing.Size(146, 422);
             panel1.TabIndex = 3;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.companyImage;
+            pictureBox1.Location = new System.Drawing.Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(146, 422);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             panel2.Controls.Add(spStep);
@@ -542,17 +553,6 @@
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(594, 52);
             panel2.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.user_logo;
-            pictureBox1.Location = new System.Drawing.Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(146, 422);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
             // 
             // frmCompanySetup
             // 
@@ -572,10 +572,14 @@
             MinimizeBox = false;
             Name = "frmCompanySetup";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Setup Company";
+            Text = "Company Setup Wizard";
             ((System.ComponentModel.ISupportInitialize)spStep).EndInit();
             ((System.ComponentModel.ISupportInitialize)radPanel1).EndInit();
             radPanel1.ResumeLayout(false);
+            pYourOrganization.ResumeLayout(false);
+            pYourOrganization.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)txtBank).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtWhatItDo).EndInit();
             pCompanyInfo.ResumeLayout(false);
             pCompanyInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)cmbLanguage).EndInit();
@@ -590,16 +594,12 @@
             ((System.ComponentModel.ISupportInitialize)txtPassword).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtUsername).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtFullName).EndInit();
-            pYourOrganization.ResumeLayout(false);
-            pYourOrganization.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)txtBank).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtWhatItDo).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnNext).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnBack).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnCancel).EndInit();
             panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
