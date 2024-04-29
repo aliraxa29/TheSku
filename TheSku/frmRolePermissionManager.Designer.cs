@@ -1,4 +1,6 @@
-﻿namespace TheSku
+﻿using Telerik.WinControls.UI;
+
+namespace TheSku
 {
     partial class frmRolePermissionManager
     {
@@ -193,6 +195,7 @@
             gridViewCheckBoxColumn12.Name = "cancel";
             gridViewCheckBoxColumn12.Width = 64;
             gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn4, gridViewTextBoxColumn5, gridViewTextBoxColumn6, gridViewCheckBoxColumn7, gridViewCheckBoxColumn8, gridViewCheckBoxColumn9, gridViewCheckBoxColumn10, gridViewCheckBoxColumn11, gridViewCheckBoxColumn12 });
+            gvList.MasterTemplate.SummaryRowsTop.Add(new GridViewSummaryRowItem());
             gvList.MasterTemplate.EnableGrouping = false;
             gvList.MasterTemplate.EnableSorting = false;
             gvList.MasterTemplate.ViewDefinition = tableViewDefinition2;
@@ -200,7 +203,7 @@
             gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
             gvList.Size = new System.Drawing.Size(1120, 413);
             gvList.TabIndex = 2;
-            gvList.ThemeName = "ControlDefault";
+            gvList.ThemeName = "Windows8";
             gvList.CellValueChanged += gvList_CellValueChanged;
             // 
             // label3
