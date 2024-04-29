@@ -515,4 +515,121 @@ public class DefaultData
             new Language() { Name = "zh-TW", LanguageCode = "zh-TW", LanguageName = "繁體中文", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
         };
     }
+    
+    public static List<Document> Documents()
+    {
+        return new List<Document>
+        {
+            new Document() { Name = "Account", DocumentName = "Account", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Brand", DocumentName = "Brand", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "User", DocumentName = "User", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "System Settings", DocumentName = "System Settings", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Supplier Group", DocumentName = "Supplier Group", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Supplier", DocumentName = "Supplier", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Role Permission Manager", DocumentName = "Role Permission Manager", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Role", DocumentName = "Role", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Customer", DocumentName = "Customer", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Currency", DocumentName = "Currency", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Country", DocumentName = "Country", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Cost Center", DocumentName = "Cost Center", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Company", DocumentName = "Company", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Chart Of Accounts", DocumentName = "Chart Of Accounts", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+        };
+    }
+    
+    
+    public static List<Role> Roles()
+    {
+        return new List<Role>
+        {
+            new Role() { Name = "Academics User", RoleName = "Academics User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Accounts Manager", RoleName = "Accounts Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Accounts User", RoleName = "Accounts User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Administrator", RoleName = "Administrator", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Agriculture Manager", RoleName = "Agriculture Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Agriculture User", RoleName = "Agriculture User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Analytics", RoleName = "Analytics", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Auditor", RoleName = "Auditor", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Blogger", RoleName = "Blogger", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Customer", RoleName = "Customer", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Dashboard Manager", RoleName = "Dashboard Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Education Manager", RoleName = "Education Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Employee", RoleName = "Employee", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Employee Self Service", RoleName = "Employee Self Service", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Expense Approver", RoleName = "Expense Approver", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Fleet Manager", RoleName = "Fleet Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Fulfillment User", RoleName = "Fulfillment User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Guest", RoleName = "Guest", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Healthcare Administrator", RoleName = "Healthcare Administrator", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Hotel Manager", RoleName = "Hotel Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Hotel Reservation User", RoleName = "Hotel Reservation User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "HR Manager", RoleName = "HR Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "HR User", RoleName = "HR User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Inbox User", RoleName = "Inbox User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Instructor", RoleName = "Instructor", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Interviewer", RoleName = "Interviewer", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Item Manager", RoleName = "Item Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Knowledge Base Contributor", RoleName = "Knowledge Base Contributor", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Knowledge Base Editor", RoleName = "Knowledge Base Editor", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Laboratory User", RoleName = "Laboratory User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "LabTest Approver", RoleName = "LabTest Approver", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Leave Approver", RoleName = "Leave Approver", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "LMS User", RoleName = "LMS User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Loan Manager", RoleName = "Loan Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Maintenance Manager", RoleName = "Maintenance Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Maintenance User", RoleName = "Maintenance User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Manufacturing Manager", RoleName = "Manufacturing Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Manufacturing User", RoleName = "Manufacturing User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Newsletter Manager", RoleName = "Newsletter Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Non Profit Manager", RoleName = "Non Profit Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Non Profit Member", RoleName = "Non Profit Member", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Non Profit Portal User", RoleName = "Non Profit Portal User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Nursing User", RoleName = "Nursing User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Patient", RoleName = "Patient", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Physician", RoleName = "Physician", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Prepared Report User", RoleName = "Prepared Report User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Projects Manager", RoleName = "Projects Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Projects User", RoleName = "Projects User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Purchase Manager", RoleName = "Purchase Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Purchase Master Manager", RoleName = "Purchase Master Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Purchase User", RoleName = "Purchase User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Quality Manager", RoleName = "Quality Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Report Manager", RoleName = "Report Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Restaurant Manager", RoleName = "Restaurant Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Sales Manager", RoleName = "Sales Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Sales Master Manager", RoleName = "Sales Master Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Sales User", RoleName = "Sales User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Script Manager", RoleName = "Script Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Stock Manager", RoleName = "Stock Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Stock User", RoleName = "Stock User", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Student", RoleName = "Student", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Supplier", RoleName = "Supplier", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Support Team", RoleName = "Support Team", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "System Manager", RoleName = "System Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Translator", RoleName = "Translator", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Role() { Name = "Translator", RoleName = "Translator", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+        };
+    }
+    
+    public static List<UserPermission> UserPermissions(Role role)
+    {
+        return new List<UserPermission>
+        {
+            // User Permissions for System Manager
+            new UserPermission() { DocumentType = "Account", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Brand", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Chart Of Accounts", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = false, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Company", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = false, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Cost Center", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Country", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Currency", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Customer", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Role", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Role Permission Manager", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Supplier", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Supplier Group", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "System Settings", Role = role, Read = true, Write = true, Create = false, Cancel = false, Delete = false, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "User", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+        };
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using TheSku.Data;
 
 public class UserPermissions
@@ -13,15 +14,7 @@ public class UserPermissions
 
     public bool HasReadPermission(string doctype)
     {
-        if (!string.IsNullOrWhiteSpace(doctype))
-        {
-            //var s = Db.Con.Query("tabUser Permission").Select("read").Where(new { document_type = doctype, role = Role }).FirstOrDefault();
-            //if (s != null)
-            //{
-            //    return Convert.ToBoolean(s.read);
-            //}
-        }
-        return false;
+        return dbContext.UserPermissions.Where(p => p.DocumentType.Equals(doctype) && p.Role.Equals(Global.User.Role)).Select(p => p.Read).FirstOrDefault();
     }
     
     public bool HasCreatePermission(string doctype)

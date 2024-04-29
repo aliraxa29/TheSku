@@ -19,6 +19,7 @@ namespace TheSku
             this.btnCopyNameToClipboard.Shortcuts.Add(new RadShortcut(Keys.Alt, Keys.C));
             this.gvList.AutoGenerateColumns = false;
             this.ActiveControl = this.txtFirstName;
+            this.brnRefreshFields.PerformClick();
         }
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)
@@ -34,8 +35,8 @@ namespace TheSku
                 this.txtUsername.Focus();
                 return;
             }
-            var supplier = dbContext.Suppliers.Where(x => x.Name.Equals(this.txtUsername.Text.Trim())).FirstOrDefault();
-            if (supplier is not null)
+            var user1 = dbContext.Users.Where(x => x.Name.Equals(this.txtUsername.Text.Trim())).FirstOrDefault();
+            if (user1 is not null)
             {
                 MessageBox.Show($"{this.Text} with this Name is already exists", "Exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtUsername.Focus();
@@ -54,7 +55,8 @@ namespace TheSku
                         LastName = this.txtLastName.Text.Trim(),
                         FullName = this.txtFullName.Text.Trim(),
                         UserName = this.txtUsername.Text.Trim(),
-                        Password = Security.EncryptString(this.txtPassword.Text)
+                        Password = Security.EncryptString(this.txtPassword.Text),
+                        Role = dbContext.Roles.Where(r => r.Name.Equals(this.cmbRole.SelectedValue)).FirstOrDefault()
                     };
                     dbContext.Users.Add(user);
                     dbContext.SaveChanges();
@@ -62,15 +64,16 @@ namespace TheSku
                 }
                 else
                 {
-                    var supplier1 = dbContext.Users.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
-                    if (supplier1 is not null)
+                    var user = dbContext.Users.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
+                    if (user is not null)
                     {
-                        supplier1.FirstName = this.txtFirstName.Text.Trim();
-                        supplier1.LastName = this.txtLastName.Text.Trim();
-                        supplier1.FullName = this.txtFullName.Text.Trim();
-                        supplier1.Password = Security.EncryptString(this.txtPassword.Text);
-                        supplier1.Modified = DateTime.Now;
-                        supplier1.ModifiedBy = Global.UserName;
+                        user.FirstName = this.txtFirstName.Text.Trim();
+                        user.LastName = this.txtLastName.Text.Trim();
+                        user.FullName = this.txtFullName.Text.Trim();
+                        user.Password = Security.EncryptString(this.txtPassword.Text);
+                        user.Modified = DateTime.Now;
+                        user.ModifiedBy = Global.UserName;
+                        user.Role = dbContext.Roles.Where(r => r.Name.Equals(this.cmbRole.SelectedValue)).FirstOrDefault();
                         dbContext.SaveChanges();
                         this.ResetForm();
                     }
@@ -89,6 +92,7 @@ namespace TheSku
             this.txtUsername.ReadOnly = false;
             this.tabControl1.SelectTab(0);
             this.txtFirstName.Focus();
+            this.cmbRole.SelectedIndex = -1;
         }
 
         private void frmUser_KeyDown(object sender, KeyEventArgs e)
@@ -155,6 +159,7 @@ namespace TheSku
                     this.txtFullName.Text = supplier.FullName;
                     this.txtUsername.Text = supplier.UserName;
                     this.txtPassword.Text = Security.DecryptString(supplier.Password);
+                    this.cmbRole.SelectedValue = supplier.Role.Name;
                     this.tabControl1.SelectTab(0);
                     this.txtFirstName.Focus();
                     this.txtUsername.ReadOnly = true;
@@ -241,7 +246,7 @@ namespace TheSku
 
         private void brnRefreshFields_Click(object sender, EventArgs e)
         {
-
+            this.cmbRole.DataSource = dbContext.Roles.ToList();
         }
     }
 }

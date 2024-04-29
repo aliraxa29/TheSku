@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using TheSku.Data;
 
@@ -14,7 +15,7 @@ namespace TheSku
             InitializeComponent();
         }
 
-        private void btnSignIn_Click(object sender, System.EventArgs e)
+        private void btnSignIn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(this.txtUserName.Text))
             {
@@ -29,10 +30,11 @@ namespace TheSku
                 return;
             }
             var user = dbContext1.Users
-                     .Where(x => x.UserName == this.txtUserName.Text.Trim() && x.Password == Security.EncryptString(this.txtPassword.Text))
+                     .Where(x => x.UserName.Equals(this.txtUserName.Text.Trim()) && x.Password.Equals(Security.EncryptString(this.txtPassword.Text)))
                      .FirstOrDefault();
             if (user is not null)
             {
+                Global.User = user;
                 Global.UserName = user.UserName;
                 base.Hide();
                 new frmMain(dbContext1).Show();

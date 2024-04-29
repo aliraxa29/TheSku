@@ -523,6 +523,16 @@ namespace TheSku.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap companyImage {
+            get {
+                object obj = ResourceManager.GetObject("companyImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Computer_24 {
             get {
                 object obj = ResourceManager.GetObject("Computer_24", resourceCulture);
