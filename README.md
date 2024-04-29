@@ -3,7 +3,7 @@
   <br>
 </h1>
 
-<h4 align="center">An Elegant Accounts & Inventory Management System built with .NET 8 using Windows Forms with EF-Core.</h4>
+<h4 align="center">An Elegant multi-company, multi-language Accounts & Inventory Management System built with .NET 8 using Windows Forms with EF-Core.</h4>
 
 <!-- <p align="center">
   <a href="https://badge.fury.io/js/electron-markdownify">
