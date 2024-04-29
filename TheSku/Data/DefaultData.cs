@@ -607,7 +607,6 @@ public class DefaultData
             new Role() { Name = "Support Team", RoleName = "Support Team", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
             new Role() { Name = "System Manager", RoleName = "System Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
             new Role() { Name = "Translator", RoleName = "Translator", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
-            new Role() { Name = "Translator", RoleName = "Translator", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
         };
     }
     

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 using TheSku.Data;
@@ -30,7 +31,7 @@ namespace TheSku
                 return;
             }
             var user = dbContext1.Users
-                     .Where(x => x.UserName.Equals(this.txtUserName.Text.Trim()) && x.Password.Equals(Security.EncryptString(this.txtPassword.Text)))
+                     .Where(x => x.UserName.Equals(this.txtUserName.Text.Trim()) && x.Password.Equals(Security.EncryptString(this.txtPassword.Text))).Include(f => f.Role)
                      .FirstOrDefault();
             if (user is not null)
             {
