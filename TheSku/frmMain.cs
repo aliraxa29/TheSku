@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PharmacyManagementSystem.User;
+using System;
 using System.Windows.Forms;
 using TheSku.Data;
 
@@ -150,6 +151,11 @@ namespace TheSku
 
         private void pOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (PosProfileSetting.PosProfile == null)
+            {
+                MessageBox.Show("Please setup POS Profile first in order to use it.", "POS Profile Setup Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             new frmPos() { MdiParent = this }.Show();
         }
 
@@ -163,6 +169,35 @@ namespace TheSku
             {
                 new frmBrand() { MdiParent = this }.Show();
             }
+        }
+
+        private void costCenterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmCostCenter"] != null)
+            {
+                Application.OpenForms["frmCostCenter"].BringToFront();
+            }
+            else
+            {
+                new frmCostCenter() { MdiParent = this }.Show();
+            }
+        }
+
+        private void roleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmRole"] != null)
+            {
+                Application.OpenForms["frmRole"].BringToFront();
+            }
+            else
+            {
+                new frmRole(dbContext) { MdiParent = this }.Show();
+            }
+        }
+
+        private void rolePermissionManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmRolePermissionManager(dbContext) { MdiParent = this }.Show();
         }
     }
 }

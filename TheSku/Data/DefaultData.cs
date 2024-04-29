@@ -3,13 +3,6 @@ using System.Collections.Generic;
 
 public class DefaultData
 {
-    public static List<User> Users()
-    {
-        return new List<User>
-        {
-            new User() { Name = "admin", Creation = DateTime.Now, Modified = DateTime.Now, ModifiedBy = "Administrator", Owner = "Administrator", UserName = "admin", Password = Security.EncryptString("admin") }
-        };
-    }
 
     public static List<Country> Countries()
     {
@@ -432,6 +425,94 @@ public class DefaultData
             new PackingType() { Name = "TAB", PackingTypeName = "TAB", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
             new PackingType() { Name = "TAB/CAP", PackingTypeName = "TAB/CAP", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
             new PackingType() { Name = "TOOTHBRUSH", PackingTypeName = "TOOTHBRUSH", Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+        };
+    }
+    
+    public static List<Language> Languages()
+    {
+        return new List<Language>
+        {
+            new Language() { Name = "af", LanguageCode = "af", LanguageName = "Afrikaans", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "am", LanguageCode = "am", LanguageName = "አማርኛ", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "ar", LanguageCode = "ar", LanguageName = "العربية", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "bg", LanguageCode = "bg", LanguageName = "Bǎlgarski", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "bn", LanguageCode = "bn", LanguageName = "বাঙালি", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "bo", LanguageCode = "bo", LanguageName = "ལྷ་སའི་སྐད", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "bs", LanguageCode = "bs", LanguageName = "Bosanski", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "ca", LanguageCode = "ca", LanguageName = "Català", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "cs", LanguageCode = "cs", LanguageName = "česky", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "da", LanguageCode = "da", LanguageName = "Dansk", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "da-DK", LanguageCode = "da-DK", LanguageName = "Dansk (Danmark)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "de", LanguageCode = "de", LanguageName = "Deutsch", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "el", LanguageCode = "el", LanguageName = "ελληνικά", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "en", LanguageCode = "en", LanguageName = "English", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "en-GB", LanguageCode = "en-GB", LanguageName = "English (United Kingdom)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "en-US", LanguageCode = "en-US", LanguageName = "English (United States)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "es", LanguageCode = "es", LanguageName = "Español", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "es-AR", LanguageCode = "es-AR", LanguageName = "Español (Argentina)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "es-BO", LanguageCode = "es-BO", LanguageName = "Español (Bolivia)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "es-CL", LanguageCode = "es-CL", LanguageName = "Español (Chile)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "es-CO", LanguageCode = "es-CO", LanguageName = "Español (Colombia)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "es-DO", LanguageCode = "es-DO", LanguageName = "Español (República Dominicana)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "es-EC", LanguageCode = "es-EC", LanguageName = "Español (Ecuador)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "es-GT", LanguageCode = "es-GT", LanguageName = "Español (Guatemala)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "es-MX", LanguageCode = "es-MX", LanguageName = "Español (México)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "es-NI", LanguageCode = "es-NI", LanguageName = "Español (Nicaragua)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "es-PE", LanguageCode = "es-PE", LanguageName = "Español (Perú)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "et", LanguageCode = "et", LanguageName = "Eesti", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "fa", LanguageCode = "fa", LanguageName = "فارسی", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "fi", LanguageCode = "fi", LanguageName = "Suomi", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "fil", LanguageCode = "fil", LanguageName = "Filipino", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "fr", LanguageCode = "fr", LanguageName = "Français", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "fr-CA", LanguageCode = "fr-CA", LanguageName = "Français Canadien", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "gu", LanguageCode = "gu", LanguageName = "ગુજરાતી", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "he", LanguageCode = "he", LanguageName = "עברית", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "hi", LanguageCode = "hi", LanguageName = "हिंदी", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "hr", LanguageCode = "hr", LanguageName = "Hrvatski", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "hu", LanguageCode = "hu", LanguageName = "Magyar", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "id", LanguageCode = "id", LanguageName = "Indonesia", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "is", LanguageCode = "is", LanguageName = "íslenska", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "it", LanguageCode = "it", LanguageName = "Italiano", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "ja", LanguageCode = "ja", LanguageName = "日本語", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "km", LanguageCode = "km", LanguageName = "ភាសាខ្មែរ", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "kn", LanguageCode = "kn", LanguageName = "ಕನ್ನಡ", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "ko", LanguageCode = "ko", LanguageName = "한국의", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "ku", LanguageCode = "ku", LanguageName = "کوردی", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "lo", LanguageCode = "lo", LanguageName = "ລາວ", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "lt", LanguageCode = "lt", LanguageName = "Lietuvių kalba", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "lv", LanguageCode = "lv", LanguageName = "Latviešu valoda", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "mk", LanguageCode = "mk", LanguageName = "македонски", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "ml", LanguageCode = "ml", LanguageName = "മലയാളം", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "mr", LanguageCode = "mr", LanguageName = "मराठी", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "ms", LanguageCode = "ms", LanguageName = "Melayu", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "my", LanguageCode = "my", LanguageName = "မြန်မာ", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "nl", LanguageCode = "nl", LanguageName = "Nederlands", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "no", LanguageCode = "no", LanguageName = "Norsk", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "pl", LanguageCode = "pl", LanguageName = "Polski", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "ps", LanguageCode = "ps", LanguageName = "پښتو", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "pt", LanguageCode = "pt", LanguageName = "Português", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "pt-BR", LanguageCode = "pt-BR", LanguageName = "Português Brasileiro", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "ro", LanguageCode = "ro", LanguageName = "Român", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "ru", LanguageCode = "ru", LanguageName = "русский", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "rw", LanguageCode = "rw", LanguageName = "Kinyarwanda", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "si", LanguageCode = "si", LanguageName = "සිංහල", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "sk", LanguageCode = "sk", LanguageName = "Slovenčina (Slovak)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "sl", LanguageCode = "sl", LanguageName = "Slovenčina (Slovene)", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "sq", LanguageCode = "sq", LanguageName = "Shqiptar", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "sr", LanguageCode = "sr", LanguageName = "српски", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "sr-BA", LanguageCode = "sr-BA", LanguageName = "Srpski", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "sv", LanguageCode = "sv", LanguageName = "Svenska", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "sw", LanguageCode = "sw", LanguageName = "Swahili", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "ta", LanguageCode = "ta", LanguageName = "தமிழ்", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "te", LanguageCode = "te", LanguageName = "తెలుగు", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "th", LanguageCode = "th", LanguageName = "ไทย", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "tr", LanguageCode = "tr", LanguageName = "Türkçe", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "uk", LanguageCode = "uk", LanguageName = "українська", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "ur", LanguageCode = "ur", LanguageName = "اردو", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "uz", LanguageCode = "uz", LanguageName = "Ўзбек", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "vi", LanguageCode = "vi", LanguageName = "Việt", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "zh", LanguageCode = "zh", LanguageName = "简体中文", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Language() { Name = "zh-TW", LanguageCode = "zh-TW", LanguageName = "繁體中文", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
         };
     }
 }

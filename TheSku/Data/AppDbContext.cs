@@ -10,7 +10,7 @@ namespace TheSku.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -31,10 +31,10 @@ namespace TheSku.Data
                             .WithOne()
                             .HasForeignKey<Company>(c => c.RoundOffAccountId)
                             .IsRequired(false);
-            modelBuilder.Entity<User>().HasData(DefaultData.Users());
             modelBuilder.Entity<PackingType>().HasData(DefaultData.PackingTypes());
             modelBuilder.Entity<Country>().HasData(DefaultData.Countries());
             modelBuilder.Entity<Currency>().HasData(DefaultData.Currencies());
+            modelBuilder.Entity<Language>().HasData(DefaultData.Languages());
             var defaultSingles = DefaultData.DefaultValues().Select(s => new Singles
             {
                 Name = Guid.NewGuid(),
@@ -82,6 +82,10 @@ namespace TheSku.Data
         public DbSet<FiscalYearCompany> FiscalYearCompany { get; set; }
         public DbSet<SalesInvoicePayment> SalesInvoicePayment { get; set; }
         public DbSet<ModeOfPayment> ModeOfPayment { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<UserPermission> UserPermissions { get; set; }
+        public DbSet<Document> Documents { get; set; }
     }
 }
 

@@ -43,22 +43,25 @@
             supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             supplierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             supplierGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            brandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             accountingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             chartOfAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            costCenterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             userManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             countryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             currencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             companyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             sessionSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            roleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            rolePermissionManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ssMain = new System.Windows.Forms.StatusStrip();
             toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             lblUsername = new System.Windows.Forms.ToolStripStatusLabel();
-            brandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ssMain.SuspendLayout();
             SuspendLayout();
@@ -125,7 +128,7 @@
             // 
             customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { customerToolStripMenuItem1, customerGroupToolStripMenuItem });
             customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            customerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            customerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             customerToolStripMenuItem.Text = "Customer";
             // 
             // customerToolStripMenuItem1
@@ -152,7 +155,7 @@
             // 
             supplierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { supplierToolStripMenuItem1, supplierGroupToolStripMenuItem });
             supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            supplierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            supplierToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             supplierToolStripMenuItem.Text = "Supplier";
             // 
             // supplierToolStripMenuItem1
@@ -169,9 +172,16 @@
             supplierGroupToolStripMenuItem.Text = "Supplier Group";
             supplierGroupToolStripMenuItem.Click += supplierGroupToolStripMenuItem_Click;
             // 
+            // brandToolStripMenuItem
+            // 
+            brandToolStripMenuItem.Name = "brandToolStripMenuItem";
+            brandToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            brandToolStripMenuItem.Text = "Brand";
+            brandToolStripMenuItem.Click += brandToolStripMenuItem_Click;
+            // 
             // accountingToolStripMenuItem
             // 
-            accountingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { accountToolStripMenuItem, chartOfAccountsToolStripMenuItem, reportToolStripMenuItem });
+            accountingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { accountToolStripMenuItem, chartOfAccountsToolStripMenuItem, reportToolStripMenuItem, costCenterToolStripMenuItem });
             accountingToolStripMenuItem.Name = "accountingToolStripMenuItem";
             accountingToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             accountingToolStripMenuItem.Text = "Accounting";
@@ -196,9 +206,16 @@
             reportToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             reportToolStripMenuItem.Text = "Reports";
             // 
+            // costCenterToolStripMenuItem
+            // 
+            costCenterToolStripMenuItem.Name = "costCenterToolStripMenuItem";
+            costCenterToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            costCenterToolStripMenuItem.Text = "Cost Center";
+            costCenterToolStripMenuItem.Click += costCenterToolStripMenuItem_Click;
+            // 
             // userManagementToolStripMenuItem
             // 
-            userManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { userToolStripMenuItem, countryToolStripMenuItem, currencyToolStripMenuItem, companyToolStripMenuItem, sessionSettingsToolStripMenuItem });
+            userManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { userToolStripMenuItem, countryToolStripMenuItem, currencyToolStripMenuItem, companyToolStripMenuItem, sessionSettingsToolStripMenuItem, roleToolStripMenuItem, rolePermissionManagerToolStripMenuItem });
             userManagementToolStripMenuItem.Name = "userManagementToolStripMenuItem";
             userManagementToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             userManagementToolStripMenuItem.Text = "Management";
@@ -207,37 +224,51 @@
             // 
             userToolStripMenuItem.Image = Properties.Resources.User_Security_24;
             userToolStripMenuItem.Name = "userToolStripMenuItem";
-            userToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            userToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             userToolStripMenuItem.Text = "User";
             userToolStripMenuItem.Click += userToolStripMenuItem_Click;
             // 
             // countryToolStripMenuItem
             // 
             countryToolStripMenuItem.Name = "countryToolStripMenuItem";
-            countryToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            countryToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             countryToolStripMenuItem.Text = "Country";
             countryToolStripMenuItem.Click += countryToolStripMenuItem_Click;
             // 
             // currencyToolStripMenuItem
             // 
             currencyToolStripMenuItem.Name = "currencyToolStripMenuItem";
-            currencyToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            currencyToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             currencyToolStripMenuItem.Text = "Currency";
             currencyToolStripMenuItem.Click += currencyToolStripMenuItem_Click;
             // 
             // companyToolStripMenuItem
             // 
             companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            companyToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            companyToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             companyToolStripMenuItem.Text = "Company";
             companyToolStripMenuItem.Click += companyToolStripMenuItem_Click;
             // 
             // sessionSettingsToolStripMenuItem
             // 
             sessionSettingsToolStripMenuItem.Name = "sessionSettingsToolStripMenuItem";
-            sessionSettingsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            sessionSettingsToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             sessionSettingsToolStripMenuItem.Text = "System Settings";
             sessionSettingsToolStripMenuItem.Click += sessionSettingsToolStripMenuItem_Click;
+            // 
+            // roleToolStripMenuItem
+            // 
+            roleToolStripMenuItem.Name = "roleToolStripMenuItem";
+            roleToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            roleToolStripMenuItem.Text = "Role";
+            roleToolStripMenuItem.Click += roleToolStripMenuItem_Click;
+            // 
+            // rolePermissionManagerToolStripMenuItem
+            // 
+            rolePermissionManagerToolStripMenuItem.Name = "rolePermissionManagerToolStripMenuItem";
+            rolePermissionManagerToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            rolePermissionManagerToolStripMenuItem.Text = "Role Permission Manager";
+            rolePermissionManagerToolStripMenuItem.Click += rolePermissionManagerToolStripMenuItem_Click;
             // 
             // aboutToolStripMenuItem
             // 
@@ -273,13 +304,6 @@
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new System.Drawing.Size(30, 17);
             lblUsername.Text = "User";
-            // 
-            // brandToolStripMenuItem
-            // 
-            brandToolStripMenuItem.Name = "brandToolStripMenuItem";
-            brandToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            brandToolStripMenuItem.Text = "Brand";
-            brandToolStripMenuItem.Click += brandToolStripMenuItem_Click;
             // 
             // frmMain
             // 
@@ -335,5 +359,8 @@
         private System.Windows.Forms.ToolStripMenuItem companyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sessionSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem brandToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem costCenterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem roleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rolePermissionManagerToolStripMenuItem;
     }
 }

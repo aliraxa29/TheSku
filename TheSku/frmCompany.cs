@@ -125,19 +125,19 @@ namespace TheSku
             }
         }
 
-        private void AddWarehouses(Company company)
+        public void AddWarehouses(Company company)
         {
             dbContext.Warehouse.AddRange(DefaultData.Warehouses(company, Global.UserName));
             dbContext.SaveChanges();
         }
 
-        private void AddCostCenters(Company company)
+        public void AddCostCenters(Company company)
         {
             dbContext.CostCenter.AddRange(DefaultData.CostCenters(company, Global.UserName));
             dbContext.SaveChanges();
         }
 
-        private void CreateChartOfAccounts(Company company, Currency currency)
+        public void CreateChartOfAccounts(Company company, Currency currency)
         {
             if (this.cmbCoaBasedOn.Text == "Standard Template")
             {
@@ -374,9 +374,9 @@ namespace TheSku
         private void BindCombo()
         {
             this.cmbCountry.DataSource = dbContext.Country.ToList();
-            this.cmbCountry.SelectedValue = Global.Country.Name;
+            this.cmbCountry.SelectedValue = Global.Country.Name??"";
             this.cmbCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled).ToList();
-            this.cmbCountry.SelectedValue = Global.Country.Name;
+            this.cmbCountry.SelectedValue = Global.Country.Name??"";
             this.cmbCurrency.SelectedValue = Global.Currency.Name;
         }
 
@@ -405,7 +405,7 @@ namespace TheSku
             this.txtAbbrivation.Text = GetInitials(this.txtCompanyName.Text.Trim());
         }
 
-        static string GetInitials(string input)
+        public static string GetInitials(string input)
         {
             string[] words = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string initials = string.Concat(words.Select(word => word[0]));

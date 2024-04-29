@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="radRichTextEditor2.Text" xml:space="preserve">
+    <value>&lt;html&gt;&lt;ol style="box-sizing: border-box; font-size: 14px; font-family: inter, -apple-system, blinkmacsystemfont, &amp;quot;segoe ui&amp;quot;, roboto, oxygen, ubuntu, cantarell, &amp;quot;fira sans&amp;quot;, &amp;quot;droid sans&amp;quot;, &amp;quot;helvetica neue&amp;quot;, sans-serif; white-space: normal; word-spacing: 0px; margin-top: 0px; text-transform: none; font-weight: 400; color: rgb(51,60,68); font-style: normal; text-align: left; orphans: 2; widows: 2; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"&gt;&lt;li style="box-sizing: border-box"&gt;Certain documents, like an Invoice, should not be changed once final. The final state for such documents is called Submitted. You can restrict which roles can Submit.&lt;/li&gt;&lt;li style="box-sizing: border-box"&gt;You can change Submitted documents by cancelling them and then, amending them.&lt;/li&gt;&lt;li style="box-sizing: border-box"&gt;When you Amend a document after Cancel and save it, it will get a new number that is a version of the old number.&lt;/li&gt;&lt;li style="box-sizing: border-box"&gt;For example if you cancel and amend INV004 it will become a new document INV004-1. This helps you to keep track of each amendment.&lt;/li&gt;&lt;/ol&gt;&lt;/html&gt;</value>
+  </data>
+  <data name="radRichTextEditor1.Text" xml:space="preserve">
+    <value>&lt;html&gt;&lt;ol style="box-sizing: border-box; font-size: 14px; font-family: inter, -apple-system, blinkmacsystemfont, &amp;quot;segoe ui&amp;quot;, roboto, oxygen, ubuntu, cantarell, &amp;quot;fira sans&amp;quot;, &amp;quot;droid sans&amp;quot;, &amp;quot;helvetica neue&amp;quot;, sans-serif; white-space: normal; word-spacing: 0px; margin-top: 0px; text-transform: none; font-weight: 400; color: rgb(51,60,68); font-style: normal; text-align: left; orphans: 2; widows: 2; letter-spacing: normal; background-color: rgb(255,255,255); text-indent: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"&gt;&lt;li style="box-sizing: border-box"&gt;Permissions are set on Roles and Document Types (called DocTypes) by setting rights like Read, Write, Create, Delete, Submit, Cancel, Amend, Report, Import, Export, Print, Email and Set User Permissions.&lt;/li&gt;&lt;li style="box-sizing: border-box"&gt;Permissions get applied on Users based on what Roles they are assigned.&lt;/li&gt;&lt;li style="box-sizing: border-box"&gt;Roles can be set for users from their User page.&lt;span&gt; &lt;/span&gt;&lt;a style="box-sizing: border-box; cursor: pointer; text-decoration: none; color: ; outline-width: 0px; outline-style: none; outline-color: invert; background-color: transparent" href="http://carelive.resourcefactors.com/app/List/User"&gt;Setup &amp;gt; User&lt;/a&gt;&lt;/li&gt;&lt;li style="box-sizing: border-box"&gt;The system provides many pre-defined roles. You can add new roles to set finer permissions.&lt;a style="box-sizing: border-box; cursor: pointer; text-decoration: none; color: ; outline-width: 0px; outline-style: none; outline-color: invert; background-color: transparent" href="http://carelive.resourcefactors.com/app/List/Role"&gt;&lt;span&gt; &lt;/span&gt;Add a New Role&lt;/a&gt;&lt;/li&gt;&lt;li style="box-sizing: border-box"&gt;Permissions are automatically applied to Standard Reports and searches.&lt;/li&gt;&lt;li style="box-sizing: border-box"&gt;As a best practice, do not assign the same set of permission rule to different Roles. Instead, set multiple Roles to the same User.&lt;/li&gt;&lt;/ol&gt;&lt;/html&gt;</value>
+  </data>
+  <metadata name="windows8Theme1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+</root>

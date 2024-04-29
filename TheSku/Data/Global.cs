@@ -42,6 +42,7 @@ public class Global
             }
         }
     }
+
     public static Company Company
     {
         get

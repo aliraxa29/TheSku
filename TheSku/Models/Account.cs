@@ -30,8 +30,9 @@ public class Account
     public string AccountNumber { get; set; }
     [Column("is_group")]
     public bool IsGroup { get; set; }
-    [MaxLength(255), Column("company_name")]
-    public Company Company { get; set; }
+    [MaxLength(255)]
+    [Column("company")]
+    public string CompanyId { get; set; }
     [MaxLength(255)]
     [Column("root_type")]
     public string RootType { get; set; }
@@ -47,11 +48,14 @@ public class Account
     [MaxLength(255)]
     [Column("account_type")]
     public string AccountType { get; set; }
-    [Column("tax_rate", TypeName = "decimal(21,9)")]
+    [Column("tax_rate", TypeName = "DECIMAL(21,9)")]
     public decimal TaxRate { get; set; } = 0;
     [Column("freeze_account")]
     public bool FreezeAccount { get; set; } = false;
     [MaxLength(255)]
     [Column("balance_must_be")]
     public string BalanceMustBe { get; set; }
+
+    [ForeignKey("CompanyId")]
+    public Company Company { get; set; }
 }
