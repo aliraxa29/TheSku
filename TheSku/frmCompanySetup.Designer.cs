@@ -70,6 +70,9 @@
             btnBack = new Telerik.WinControls.UI.RadButton();
             btnCancel = new Telerik.WinControls.UI.RadButton();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            panel1 = new System.Windows.Forms.Panel();
+            panel2 = new System.Windows.Forms.Panel();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)spStep).BeginInit();
             ((System.ComponentModel.ISupportInitialize)radPanel1).BeginInit();
             radPanel1.SuspendLayout();
@@ -90,14 +93,17 @@
             ((System.ComponentModel.ISupportInitialize)btnNext).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnBack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCancel).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // spStep
             // 
-            spStep.Dock = System.Windows.Forms.DockStyle.Top;
+            spStep.Dock = System.Windows.Forms.DockStyle.Fill;
             spStep.Location = new System.Drawing.Point(0, 0);
             spStep.Name = "spStep";
-            spStep.Size = new System.Drawing.Size(740, 52);
+            spStep.Size = new System.Drawing.Size(594, 52);
             spStep.Steps.AddRange(new Telerik.WinControls.UI.StepProgressItem[] { spHello, spUser, spBrand, stepProgressItem1 });
             spStep.TabIndex = 0;
             spStep.Text = "radStepProgressBar1";
@@ -126,13 +132,13 @@
             // radPanel1
             // 
             radPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            radPanel1.Controls.Add(pYourOrganization);
             radPanel1.Controls.Add(pCompanyInfo);
             radPanel1.Controls.Add(pTheBrand);
             radPanel1.Controls.Add(pUser);
-            radPanel1.Controls.Add(pYourOrganization);
-            radPanel1.Location = new System.Drawing.Point(12, 58);
+            radPanel1.Location = new System.Drawing.Point(152, 58);
             radPanel1.Name = "radPanel1";
-            radPanel1.Size = new System.Drawing.Size(716, 266);
+            radPanel1.Size = new System.Drawing.Size(576, 301);
             radPanel1.TabIndex = 1;
             radPanel1.ThemeName = "Fluent";
             // 
@@ -148,17 +154,18 @@
             pCompanyInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             pCompanyInfo.Location = new System.Drawing.Point(0, 0);
             pCompanyInfo.Name = "pCompanyInfo";
-            pCompanyInfo.Size = new System.Drawing.Size(716, 266);
+            pCompanyInfo.Size = new System.Drawing.Size(576, 301);
             pCompanyInfo.TabIndex = 0;
             pCompanyInfo.Visible = false;
             // 
             // cmbLanguage
             // 
+            cmbLanguage.Anchor = System.Windows.Forms.AnchorStyles.None;
             cmbLanguage.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             cmbLanguage.DisplayMember = "LanguageName";
             cmbLanguage.DropDownAnimationEnabled = true;
             cmbLanguage.Font = new System.Drawing.Font("Segoe UI", 12F);
-            cmbLanguage.Location = new System.Drawing.Point(207, 74);
+            cmbLanguage.Location = new System.Drawing.Point(162, 91);
             cmbLanguage.Name = "cmbLanguage";
             cmbLanguage.Size = new System.Drawing.Size(316, 27);
             cmbLanguage.TabIndex = 3;
@@ -168,11 +175,12 @@
             // 
             // cmbCountry
             // 
+            cmbCountry.Anchor = System.Windows.Forms.AnchorStyles.None;
             cmbCountry.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             cmbCountry.DisplayMember = "CountryName";
             cmbCountry.DropDownAnimationEnabled = true;
             cmbCountry.Font = new System.Drawing.Font("Segoe UI", 12F);
-            cmbCountry.Location = new System.Drawing.Point(207, 107);
+            cmbCountry.Location = new System.Drawing.Point(162, 124);
             cmbCountry.Name = "cmbCountry";
             cmbCountry.Size = new System.Drawing.Size(316, 27);
             cmbCountry.TabIndex = 3;
@@ -182,11 +190,12 @@
             // 
             // cmbCurrency
             // 
+            cmbCurrency.Anchor = System.Windows.Forms.AnchorStyles.None;
             cmbCurrency.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             cmbCurrency.DisplayMember = "CurrencyName";
             cmbCurrency.DropDownAnimationEnabled = true;
             cmbCurrency.Font = new System.Drawing.Font("Segoe UI", 12F);
-            cmbCurrency.Location = new System.Drawing.Point(207, 140);
+            cmbCurrency.Location = new System.Drawing.Point(162, 157);
             cmbCurrency.Name = "cmbCurrency";
             cmbCurrency.Size = new System.Drawing.Size(316, 27);
             cmbCurrency.TabIndex = 3;
@@ -196,8 +205,9 @@
             // 
             // label4
             // 
+            label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(119, 146);
+            label4.Location = new System.Drawing.Point(74, 163);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(82, 15);
             label4.TabIndex = 2;
@@ -205,8 +215,9 @@
             // 
             // label3
             // 
+            label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(124, 113);
+            label3.Location = new System.Drawing.Point(79, 130);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(77, 15);
             label3.TabIndex = 2;
@@ -214,8 +225,9 @@
             // 
             // label2
             // 
+            label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(115, 80);
+            label2.Location = new System.Drawing.Point(70, 97);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(86, 15);
             label2.TabIndex = 2;
@@ -223,9 +235,10 @@
             // 
             // label1
             // 
+            label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label1.Location = new System.Drawing.Point(321, 20);
+            label1.Location = new System.Drawing.Point(265, 10);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(82, 32);
             label1.TabIndex = 1;
@@ -241,14 +254,15 @@
             pTheBrand.Dock = System.Windows.Forms.DockStyle.Fill;
             pTheBrand.Location = new System.Drawing.Point(0, 0);
             pTheBrand.Name = "pTheBrand";
-            pTheBrand.Size = new System.Drawing.Size(716, 266);
+            pTheBrand.Size = new System.Drawing.Size(576, 301);
             pTheBrand.TabIndex = 8;
             pTheBrand.Visible = false;
             // 
             // txtAbbrivation
             // 
+            txtAbbrivation.Anchor = System.Windows.Forms.AnchorStyles.None;
             txtAbbrivation.Font = new System.Drawing.Font("Segoe UI", 12F);
-            txtAbbrivation.Location = new System.Drawing.Point(207, 110);
+            txtAbbrivation.Location = new System.Drawing.Point(144, 124);
             txtAbbrivation.Name = "txtAbbrivation";
             txtAbbrivation.Size = new System.Drawing.Size(316, 27);
             txtAbbrivation.TabIndex = 5;
@@ -256,8 +270,9 @@
             // 
             // txtCompanyName
             // 
+            txtCompanyName.Anchor = System.Windows.Forms.AnchorStyles.None;
             txtCompanyName.Font = new System.Drawing.Font("Segoe UI", 12F);
-            txtCompanyName.Location = new System.Drawing.Point(207, 77);
+            txtCompanyName.Location = new System.Drawing.Point(144, 91);
             txtCompanyName.Name = "txtCompanyName";
             txtCompanyName.Size = new System.Drawing.Size(316, 27);
             txtCompanyName.TabIndex = 4;
@@ -266,8 +281,9 @@
             // 
             // label6
             // 
+            label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(132, 114);
+            label6.Location = new System.Drawing.Point(69, 128);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(69, 15);
             label6.TabIndex = 2;
@@ -275,8 +291,9 @@
             // 
             // label7
             // 
+            label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(107, 84);
+            label7.Location = new System.Drawing.Point(44, 98);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(94, 15);
             label7.TabIndex = 2;
@@ -284,9 +301,10 @@
             // 
             // label12
             // 
+            label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             label12.AutoSize = true;
             label12.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label12.Location = new System.Drawing.Point(293, 20);
+            label12.Location = new System.Drawing.Point(242, 10);
             label12.Name = "label12";
             label12.Size = new System.Drawing.Size(130, 32);
             label12.TabIndex = 1;
@@ -304,14 +322,15 @@
             pUser.Dock = System.Windows.Forms.DockStyle.Fill;
             pUser.Location = new System.Drawing.Point(0, 0);
             pUser.Name = "pUser";
-            pUser.Size = new System.Drawing.Size(716, 266);
+            pUser.Size = new System.Drawing.Size(576, 301);
             pUser.TabIndex = 9;
             pUser.Visible = false;
             // 
             // txtPassword
             // 
+            txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
-            txtPassword.Location = new System.Drawing.Point(207, 143);
+            txtPassword.Location = new System.Drawing.Point(147, 168);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '●';
             txtPassword.Size = new System.Drawing.Size(316, 27);
@@ -321,8 +340,9 @@
             // 
             // txtUsername
             // 
+            txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F);
-            txtUsername.Location = new System.Drawing.Point(207, 110);
+            txtUsername.Location = new System.Drawing.Point(147, 135);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new System.Drawing.Size(316, 27);
             txtUsername.TabIndex = 5;
@@ -330,8 +350,9 @@
             // 
             // txtFullName
             // 
+            txtFullName.Anchor = System.Windows.Forms.AnchorStyles.None;
             txtFullName.Font = new System.Drawing.Font("Segoe UI", 12F);
-            txtFullName.Location = new System.Drawing.Point(207, 77);
+            txtFullName.Location = new System.Drawing.Point(147, 102);
             txtFullName.Name = "txtFullName";
             txtFullName.Size = new System.Drawing.Size(316, 27);
             txtFullName.TabIndex = 4;
@@ -339,8 +360,9 @@
             // 
             // label11
             // 
+            label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(144, 150);
+            label11.Location = new System.Drawing.Point(84, 175);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(57, 15);
             label11.TabIndex = 2;
@@ -348,8 +370,9 @@
             // 
             // label10
             // 
+            label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(141, 117);
+            label10.Location = new System.Drawing.Point(81, 142);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(60, 15);
             label10.TabIndex = 2;
@@ -357,8 +380,9 @@
             // 
             // label9
             // 
+            label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(140, 84);
+            label9.Location = new System.Drawing.Point(80, 109);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(61, 15);
             label9.TabIndex = 2;
@@ -366,9 +390,10 @@
             // 
             // label8
             // 
+            label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label8.Location = new System.Drawing.Point(248, 20);
+            label8.Location = new System.Drawing.Point(191, 10);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(227, 32);
             label8.TabIndex = 1;
@@ -386,12 +411,13 @@
             pYourOrganization.Dock = System.Windows.Forms.DockStyle.Fill;
             pYourOrganization.Location = new System.Drawing.Point(0, 0);
             pYourOrganization.Name = "pYourOrganization";
-            pYourOrganization.Size = new System.Drawing.Size(716, 266);
+            pYourOrganization.Size = new System.Drawing.Size(576, 301);
             pYourOrganization.TabIndex = 7;
             pYourOrganization.Visible = false;
             // 
             // cmbCoaTemplate
             // 
+            cmbCoaTemplate.Anchor = System.Windows.Forms.AnchorStyles.None;
             cmbCoaTemplate.DisplayMember = "SupplierGroupName";
             cmbCoaTemplate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cmbCoaTemplate.Font = new System.Drawing.Font("Segoe UI", 9.75F);
@@ -399,7 +425,7 @@
             radListDataItem1.Text = "Standard Chart Of Accounts";
             radListDataItem2.Text = "Chart Of Accounts With Numbers";
             cmbCoaTemplate.Items.AddRange(new object[] { radListDataItem1, radListDataItem2 });
-            cmbCoaTemplate.Location = new System.Drawing.Point(207, 143);
+            cmbCoaTemplate.Location = new System.Drawing.Point(162, 157);
             cmbCoaTemplate.Name = "cmbCoaTemplate";
             cmbCoaTemplate.Size = new System.Drawing.Size(316, 25);
             cmbCoaTemplate.TabIndex = 2;
@@ -407,8 +433,9 @@
             // 
             // txtBank
             // 
+            txtBank.Anchor = System.Windows.Forms.AnchorStyles.None;
             txtBank.Font = new System.Drawing.Font("Segoe UI", 12F);
-            txtBank.Location = new System.Drawing.Point(207, 110);
+            txtBank.Location = new System.Drawing.Point(162, 124);
             txtBank.Name = "txtBank";
             txtBank.Size = new System.Drawing.Size(316, 27);
             txtBank.TabIndex = 1;
@@ -416,8 +443,9 @@
             // 
             // txtWhatItDo
             // 
+            txtWhatItDo.Anchor = System.Windows.Forms.AnchorStyles.None;
             txtWhatItDo.Font = new System.Drawing.Font("Segoe UI", 12F);
-            txtWhatItDo.Location = new System.Drawing.Point(207, 77);
+            txtWhatItDo.Location = new System.Drawing.Point(162, 91);
             txtWhatItDo.Name = "txtWhatItDo";
             txtWhatItDo.Size = new System.Drawing.Size(316, 27);
             txtWhatItDo.TabIndex = 0;
@@ -425,8 +453,9 @@
             // 
             // label15
             // 
+            label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(49, 148);
+            label15.Location = new System.Drawing.Point(4, 162);
             label15.Name = "label15";
             label15.Size = new System.Drawing.Size(151, 15);
             label15.TabIndex = 2;
@@ -434,8 +463,9 @@
             // 
             // label5
             // 
+            label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(132, 114);
+            label5.Location = new System.Drawing.Point(87, 128);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(68, 15);
             label5.TabIndex = 2;
@@ -443,8 +473,9 @@
             // 
             // label13
             // 
+            label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(107, 84);
+            label13.Location = new System.Drawing.Point(62, 98);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(95, 15);
             label13.TabIndex = 2;
@@ -452,9 +483,10 @@
             // 
             // label14
             // 
+            label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             label14.AutoSize = true;
             label14.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label14.Location = new System.Drawing.Point(248, 20);
+            label14.Location = new System.Drawing.Point(191, 10);
             label14.Name = "label14";
             label14.Size = new System.Drawing.Size(223, 32);
             label14.TabIndex = 1;
@@ -463,7 +495,7 @@
             // btnNext
             // 
             btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnNext.Location = new System.Drawing.Point(618, 330);
+            btnNext.Location = new System.Drawing.Point(618, 365);
             btnNext.Name = "btnNext";
             btnNext.Size = new System.Drawing.Size(110, 45);
             btnNext.TabIndex = 1;
@@ -474,7 +506,7 @@
             // btnBack
             // 
             btnBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnBack.Location = new System.Drawing.Point(502, 330);
+            btnBack.Location = new System.Drawing.Point(502, 365);
             btnBack.Name = "btnBack";
             btnBack.Size = new System.Drawing.Size(110, 45);
             btnBack.TabIndex = 0;
@@ -485,25 +517,55 @@
             // btnCancel
             // 
             btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-            btnCancel.Location = new System.Drawing.Point(12, 330);
+            btnCancel.Location = new System.Drawing.Point(152, 365);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new System.Drawing.Size(110, 45);
+            btnCancel.Size = new System.Drawing.Size(78, 45);
             btnCancel.TabIndex = 2;
             btnCancel.Text = "Cancel";
             btnCancel.ThemeName = "Windows8";
             btnCancel.Click += btnCancel_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            panel1.Location = new System.Drawing.Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(146, 422);
+            panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(spStep);
+            panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            panel2.Location = new System.Drawing.Point(146, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(594, 52);
+            panel2.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.user_logo;
+            pictureBox1.Location = new System.Drawing.Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(146, 422);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
             // frmCompanySetup
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.White;
-            ClientSize = new System.Drawing.Size(740, 387);
+            ClientSize = new System.Drawing.Size(740, 422);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(btnCancel);
             Controls.Add(btnBack);
             Controls.Add(btnNext);
             Controls.Add(radPanel1);
-            Controls.Add(spStep);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             KeyPreview = true;
             MaximizeBox = false;
@@ -535,6 +597,9 @@
             ((System.ComponentModel.ISupportInitialize)btnNext).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnBack).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnCancel).EndInit();
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -582,5 +647,8 @@
         private Telerik.WinControls.UI.RadTextBox txtBank;
         private Telerik.WinControls.UI.RadTextBox txtWhatItDo;
         private Telerik.WinControls.UI.StepProgressItem stepProgressItem1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
