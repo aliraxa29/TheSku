@@ -610,4 +610,26 @@ public class DefaultData
             new Role() { Name = "Translator", RoleName = "Translator", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
         };
     }
+    
+    public static List<UserPermission> UserPermissions(Role role)
+    {
+        return new List<UserPermission>
+        {
+            // User Permissions for System Manager
+            new UserPermission() { DocumentType = "Account", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Brand", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Chart Of Accounts", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = false, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Company", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = false, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Cost Center", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Country", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Currency", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Customer", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Role", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Role Permission Manager", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Supplier", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Supplier Group", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "System Settings", Role = role, Read = true, Write = true, Create = false, Cancel = false, Delete = false, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "User", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+        };
+    }
 }

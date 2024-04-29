@@ -138,6 +138,7 @@ namespace TheSku
                         c.Currency = currency;
                         dbContext.Company.Add(c);
                         dbContext.Users.Add(new() { Creation = DateTime.Now, FullName = this.txtFullName.Text, Name = this.txtUsername.Text.Trim(), UserName = this.txtUsername.Text, Password = Security.EncryptString(this.txtPassword.Text), ModifiedBy = "Administrator", FirstName = name[0], LastName = name.Length > 1 ? name[1] : "", Role = dbContext.Roles.Where(r => r.Name.Equals("System Manager")).FirstOrDefault() });
+                        dbContext.UserPermissions.AddRange(DefaultData.UserPermissions(dbContext.Roles.Where(r => r.Name.Equals("System Manager")).FirstOrDefault()));
                         dbContext.SaveChanges();
                         this.CreateChartOfAccounts(c, currency);
                         this.AddCostCenters(c);
