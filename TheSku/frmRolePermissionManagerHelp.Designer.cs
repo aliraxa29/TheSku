@@ -1,4 +1,4 @@
-﻿namespace PharmacyManagementSystem.User
+﻿namespace TheSku
 {
     partial class frmRolePermissionManagerHelp
     {

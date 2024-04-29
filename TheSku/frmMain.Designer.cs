@@ -55,13 +55,13 @@
             currencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             companyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             sessionSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            roleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            rolePermissionManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ssMain = new System.Windows.Forms.StatusStrip();
             toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             lblUsername = new System.Windows.Forms.ToolStripStatusLabel();
-            roleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            rolePermissionManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ssMain.SuspendLayout();
             SuspendLayout();
@@ -256,6 +256,20 @@
             sessionSettingsToolStripMenuItem.Text = "System Settings";
             sessionSettingsToolStripMenuItem.Click += sessionSettingsToolStripMenuItem_Click;
             // 
+            // roleToolStripMenuItem
+            // 
+            roleToolStripMenuItem.Name = "roleToolStripMenuItem";
+            roleToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            roleToolStripMenuItem.Text = "Role";
+            roleToolStripMenuItem.Click += roleToolStripMenuItem_Click;
+            // 
+            // rolePermissionManagerToolStripMenuItem
+            // 
+            rolePermissionManagerToolStripMenuItem.Name = "rolePermissionManagerToolStripMenuItem";
+            rolePermissionManagerToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            rolePermissionManagerToolStripMenuItem.Text = "Role Permission Manager";
+            rolePermissionManagerToolStripMenuItem.Click += rolePermissionManagerToolStripMenuItem_Click;
+            // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { aboutUsToolStripMenuItem });
@@ -290,19 +304,6 @@
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new System.Drawing.Size(30, 17);
             lblUsername.Text = "User";
-            // 
-            // roleToolStripMenuItem
-            // 
-            roleToolStripMenuItem.Name = "roleToolStripMenuItem";
-            roleToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            roleToolStripMenuItem.Text = "Role";
-            roleToolStripMenuItem.Click += roleToolStripMenuItem_Click;
-            // 
-            // rolePermissionManagerToolStripMenuItem
-            // 
-            rolePermissionManagerToolStripMenuItem.Name = "rolePermissionManagerToolStripMenuItem";
-            rolePermissionManagerToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            rolePermissionManagerToolStripMenuItem.Text = "Role Permission Manager";
             // 
             // frmMain
             // 

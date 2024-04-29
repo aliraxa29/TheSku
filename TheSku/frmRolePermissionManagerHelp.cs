@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PharmacyManagementSystem.User
+namespace TheSku
 {
     public partial class frmRolePermissionManagerHelp : Form
     {

@@ -10,7 +10,7 @@ namespace TheSku.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -84,6 +84,8 @@ namespace TheSku.Data
         public DbSet<ModeOfPayment> ModeOfPayment { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<UserPermission> UserPermissions { get; set; }
+        public DbSet<Document> Documents { get; set; }
     }
 }
 

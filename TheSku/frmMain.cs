@@ -194,5 +194,10 @@ namespace TheSku
                 new frmRole(dbContext) { MdiParent = this }.Show();
             }
         }
+
+        private void rolePermissionManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmRolePermissionManager(dbContext) { MdiParent = this }.Show();
+        }
     }
 }

@@ -638,8 +638,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel pYourOrganization;
         private System.Windows.Forms.ComboBox cmbCoaTemplate;
-        private Telerik.WinControls.UI.RadTextBox radTextBox1;
-        private Telerik.WinControls.UI.RadTextBox radTextBox2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label13;

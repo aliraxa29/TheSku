@@ -1,4 +1,4 @@
-﻿namespace PharmacyManagementSystem.User
+﻿namespace TheSku
 {
     partial class frmRolePermissionManager
     {
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn7 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn8 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn9 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
@@ -37,251 +38,256 @@
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn11 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn12 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnHelp = new Telerik.WinControls.UI.RadButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddPermission = new Telerik.WinControls.UI.RadButton();
-            this.gvList = new Telerik.WinControls.UI.RadGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbRole = new System.Windows.Forms.ComboBox();
-            this.cmbDocument = new System.Windows.Forms.ComboBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddPermission)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvList.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new System.Windows.Forms.Panel();
+            btnHelp = new Telerik.WinControls.UI.RadButton();
+            label1 = new System.Windows.Forms.Label();
+            panel2 = new System.Windows.Forms.Panel();
+            btnAddPermission = new Telerik.WinControls.UI.RadButton();
+            gvList = new Telerik.WinControls.UI.RadGridView();
+            label3 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            cmbRole = new Telerik.WinControls.UI.RadDropDownList();
+            cmbDocument = new Telerik.WinControls.UI.RadDropDownList();
+            windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnHelp).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnAddPermission).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gvList).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gvList.MasterTemplate).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cmbRole).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cmbDocument).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnHelp);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 87);
-            this.panel1.TabIndex = 0;
+            panel1.BackColor = System.Drawing.Color.White;
+            panel1.Controls.Add(btnHelp);
+            panel1.Controls.Add(label1);
+            panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            panel1.Location = new System.Drawing.Point(0, 0);
+            panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(1148, 100);
+            panel1.TabIndex = 0;
             // 
             // btnHelp
             // 
-            this.btnHelp.Location = new System.Drawing.Point(862, 57);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(110, 24);
-            this.btnHelp.TabIndex = 2;
-            this.btnHelp.Text = "Help";
-            this.btnHelp.ThemeName = "ControlDefault";
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            btnHelp.Location = new System.Drawing.Point(1006, 66);
+            btnHelp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnHelp.Name = "btnHelp";
+            btnHelp.Size = new System.Drawing.Size(128, 28);
+            btnHelp.TabIndex = 2;
+            btnHelp.Text = "Help";
+            btnHelp.ThemeName = "Windows8";
+            btnHelp.Click += btnHelp_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(380, 40);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Role Permissions Manager";
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Location = new System.Drawing.Point(14, 28);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(380, 40);
+            label1.TabIndex = 1;
+            label1.Text = "Role Permissions Manager";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btnAddPermission);
-            this.panel2.Controls.Add(this.gvList);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.cmbRole);
-            this.panel2.Controls.Add(this.cmbDocument);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 87);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(984, 438);
-            this.panel2.TabIndex = 2;
+            panel2.BackColor = System.Drawing.Color.White;
+            panel2.Controls.Add(btnAddPermission);
+            panel2.Controls.Add(gvList);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(cmbRole);
+            panel2.Controls.Add(cmbDocument);
+            panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel2.Location = new System.Drawing.Point(0, 100);
+            panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(1148, 506);
+            panel2.TabIndex = 2;
             // 
             // btnAddPermission
             // 
-            this.btnAddPermission.Location = new System.Drawing.Point(862, 33);
-            this.btnAddPermission.Name = "btnAddPermission";
-            this.btnAddPermission.Size = new System.Drawing.Size(110, 29);
-            this.btnAddPermission.TabIndex = 2;
-            this.btnAddPermission.Text = "Add Permission";
-            this.btnAddPermission.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddPermission.ThemeName = "ControlDefault";
-            this.btnAddPermission.Click += new System.EventHandler(this.btnAddPermission_Click);
+            btnAddPermission.Location = new System.Drawing.Point(1006, 34);
+            btnAddPermission.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnAddPermission.Name = "btnAddPermission";
+            btnAddPermission.Size = new System.Drawing.Size(128, 33);
+            btnAddPermission.TabIndex = 2;
+            btnAddPermission.Text = "Add Permission";
+            btnAddPermission.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            btnAddPermission.ThemeName = "Windows8";
+            btnAddPermission.Click += btnAddPermission_Click;
             // 
             // gvList
             // 
-            this.gvList.BackColor = System.Drawing.Color.White;
-            this.gvList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gvList.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.gvList.ForeColor = System.Drawing.Color.Black;
-            this.gvList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gvList.Location = new System.Drawing.Point(12, 68);
+            gvList.BackColor = System.Drawing.Color.White;
+            gvList.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            gvList.ForeColor = System.Drawing.Color.Black;
+            gvList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            gvList.Location = new System.Drawing.Point(14, 78);
+            gvList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             // 
             // 
             // 
-            this.gvList.MasterTemplate.AllowAddNewRow = false;
-            this.gvList.MasterTemplate.AllowColumnChooser = false;
-            this.gvList.MasterTemplate.AllowDragToGroup = false;
-            this.gvList.MasterTemplate.AllowRowResize = false;
-            this.gvList.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "role";
-            gridViewTextBoxColumn3.HeaderText = "Role";
-            gridViewTextBoxColumn3.Name = "role";
-            gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.Width = 234;
+            gvList.MasterTemplate.AllowAddNewRow = false;
+            gvList.MasterTemplate.AllowColumnChooser = false;
+            gvList.MasterTemplate.AllowDragToGroup = false;
+            gvList.MasterTemplate.AllowRowResize = false;
+            gvList.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "document_type";
-            gridViewTextBoxColumn4.HeaderText = "Document";
-            gridViewTextBoxColumn4.Name = "document";
+            gridViewTextBoxColumn4.FieldName = "Name";
+            gridViewTextBoxColumn4.HeaderText = "Name";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "name";
             gridViewTextBoxColumn4.ReadOnly = true;
-            gridViewTextBoxColumn4.Width = 342;
+            gridViewTextBoxColumn4.Width = 46;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "Role";
+            gridViewTextBoxColumn5.HeaderText = "Role";
+            gridViewTextBoxColumn5.Name = "role";
+            gridViewTextBoxColumn5.ReadOnly = true;
+            gridViewTextBoxColumn5.Width = 274;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "DocumentType";
+            gridViewTextBoxColumn6.HeaderText = "Document";
+            gridViewTextBoxColumn6.Name = "document";
+            gridViewTextBoxColumn6.ReadOnly = true;
+            gridViewTextBoxColumn6.Width = 400;
             gridViewCheckBoxColumn7.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn7.FieldName = "read";
+            gridViewCheckBoxColumn7.FieldName = "Read";
             gridViewCheckBoxColumn7.HeaderText = "Read";
-            gridViewCheckBoxColumn7.MinWidth = 20;
+            gridViewCheckBoxColumn7.MinWidth = 23;
             gridViewCheckBoxColumn7.Name = "read";
-            gridViewCheckBoxColumn7.Width = 69;
+            gridViewCheckBoxColumn7.Width = 80;
             gridViewCheckBoxColumn8.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn8.FieldName = "write";
+            gridViewCheckBoxColumn8.FieldName = "Write";
             gridViewCheckBoxColumn8.HeaderText = "Write";
-            gridViewCheckBoxColumn8.MinWidth = 20;
+            gridViewCheckBoxColumn8.MinWidth = 23;
             gridViewCheckBoxColumn8.Name = "write";
-            gridViewCheckBoxColumn8.Width = 59;
+            gridViewCheckBoxColumn8.Width = 69;
             gridViewCheckBoxColumn9.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn9.FieldName = "create";
+            gridViewCheckBoxColumn9.FieldName = "Create";
             gridViewCheckBoxColumn9.HeaderText = "Create";
-            gridViewCheckBoxColumn9.MinWidth = 20;
+            gridViewCheckBoxColumn9.MinWidth = 23;
             gridViewCheckBoxColumn9.Name = "create";
-            gridViewCheckBoxColumn9.Width = 64;
+            gridViewCheckBoxColumn9.Width = 74;
             gridViewCheckBoxColumn10.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn10.FieldName = "delete";
+            gridViewCheckBoxColumn10.FieldName = "Delete";
             gridViewCheckBoxColumn10.HeaderText = "Delete";
-            gridViewCheckBoxColumn10.MinWidth = 20;
+            gridViewCheckBoxColumn10.MinWidth = 23;
             gridViewCheckBoxColumn10.Name = "delete";
-            gridViewCheckBoxColumn10.Width = 59;
+            gridViewCheckBoxColumn10.Width = 69;
             gridViewCheckBoxColumn11.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn11.FieldName = "submit";
+            gridViewCheckBoxColumn11.FieldName = "Submit";
             gridViewCheckBoxColumn11.HeaderText = "Submit";
-            gridViewCheckBoxColumn11.MinWidth = 20;
+            gridViewCheckBoxColumn11.MinWidth = 23;
             gridViewCheckBoxColumn11.Name = "submit";
-            gridViewCheckBoxColumn11.Width = 66;
+            gridViewCheckBoxColumn11.Width = 76;
             gridViewCheckBoxColumn12.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn12.FieldName = "cancel";
+            gridViewCheckBoxColumn12.FieldName = "Cancel";
             gridViewCheckBoxColumn12.HeaderText = "Cancel";
-            gridViewCheckBoxColumn12.MinWidth = 20;
+            gridViewCheckBoxColumn12.MinWidth = 23;
             gridViewCheckBoxColumn12.Name = "cancel";
-            gridViewCheckBoxColumn12.Width = 53;
-            this.gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewCheckBoxColumn7,
-            gridViewCheckBoxColumn8,
-            gridViewCheckBoxColumn9,
-            gridViewCheckBoxColumn10,
-            gridViewCheckBoxColumn11,
-            gridViewCheckBoxColumn12});
-            this.gvList.MasterTemplate.EnableGrouping = false;
-            this.gvList.MasterTemplate.EnableSorting = false;
-            this.gvList.MasterTemplate.SummaryRowsTop.Add(new Telerik.WinControls.UI.GridViewSummaryRowItem(new Telerik.WinControls.UI.GridViewSummaryItem[0]));
-            this.gvList.MasterTemplate.ViewDefinition = tableViewDefinition2;
-            this.gvList.Name = "gvList";
-            this.gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gvList.Size = new System.Drawing.Size(960, 358);
-            this.gvList.TabIndex = 2;
-            this.gvList.ThemeName = "ControlDefault";
-            this.gvList.CellValueChanged += new Telerik.WinControls.UI.GridViewCellEventHandler(this.gvList_CellValueChanged);
+            gridViewCheckBoxColumn12.Width = 64;
+            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn4, gridViewTextBoxColumn5, gridViewTextBoxColumn6, gridViewCheckBoxColumn7, gridViewCheckBoxColumn8, gridViewCheckBoxColumn9, gridViewCheckBoxColumn10, gridViewCheckBoxColumn11, gridViewCheckBoxColumn12 });
+            gvList.MasterTemplate.EnableGrouping = false;
+            gvList.MasterTemplate.EnableSorting = false;
+            gvList.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            gvList.Name = "gvList";
+            gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            gvList.Size = new System.Drawing.Size(1120, 413);
+            gvList.TabIndex = 2;
+            gvList.ThemeName = "ControlDefault";
+            gvList.CellValueChanged += gvList_CellValueChanged;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(457, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Role";
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label3.Location = new System.Drawing.Point(533, 15);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(35, 17);
+            label3.TabIndex = 1;
+            label3.Text = "Role";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Document";
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label2.Location = new System.Drawing.Point(10, 15);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(72, 17);
+            label2.TabIndex = 1;
+            label2.Text = "Document";
             // 
             // cmbRole
             // 
-            this.cmbRole.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbRole.DisplayMember = "name";
-            this.cmbRole.DropDownHeight = 130;
-            this.cmbRole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbRole.FormattingEnabled = true;
-            this.cmbRole.IntegralHeight = false;
-            this.cmbRole.ItemHeight = 21;
-            this.cmbRole.Location = new System.Drawing.Point(460, 33);
-            this.cmbRole.MaxDropDownItems = 20;
-            this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(396, 29);
-            this.cmbRole.TabIndex = 0;
-            this.cmbRole.ValueMember = "name";
-            this.cmbRole.SelectedIndexChanged += new System.EventHandler(this.cmbDocument_SelectedIndexChanged);
+            cmbRole.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            cmbRole.DisplayMember = "name";
+            cmbRole.DropDownAnimationEnabled = true;
+            cmbRole.DropDownHeight = 130;
+            cmbRole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            cmbRole.ItemHeight = 21;
+            cmbRole.Location = new System.Drawing.Point(537, 38);
+            cmbRole.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cmbRole.MaxDropDownItems = 20;
+            cmbRole.Name = "cmbRole";
+            cmbRole.Size = new System.Drawing.Size(461, 27);
+            cmbRole.TabIndex = 0;
+            cmbRole.ThemeName = "Windows8";
+            cmbRole.ValueMember = "name";
+            cmbRole.SelectedIndexChanged += cmbDocument_SelectedIndexChanged;
             // 
             // cmbDocument
             // 
-            this.cmbDocument.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbDocument.DisplayMember = "name";
-            this.cmbDocument.DropDownHeight = 130;
-            this.cmbDocument.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDocument.FormattingEnabled = true;
-            this.cmbDocument.IntegralHeight = false;
-            this.cmbDocument.ItemHeight = 21;
-            this.cmbDocument.Location = new System.Drawing.Point(12, 33);
-            this.cmbDocument.MaxDropDownItems = 20;
-            this.cmbDocument.Name = "cmbDocument";
-            this.cmbDocument.Size = new System.Drawing.Size(442, 29);
-            this.cmbDocument.TabIndex = 0;
-            this.cmbDocument.ValueMember = "name";
-            this.cmbDocument.SelectedIndexChanged += new System.EventHandler(this.cmbDocument_SelectedIndexChanged);
+            cmbDocument.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            cmbDocument.DisplayMember = "name";
+            cmbDocument.DropDownAnimationEnabled = true;
+            cmbDocument.DropDownHeight = 130;
+            cmbDocument.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            cmbDocument.ItemHeight = 21;
+            cmbDocument.Location = new System.Drawing.Point(14, 38);
+            cmbDocument.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cmbDocument.MaxDropDownItems = 20;
+            cmbDocument.Name = "cmbDocument";
+            cmbDocument.Size = new System.Drawing.Size(515, 27);
+            cmbDocument.TabIndex = 0;
+            cmbDocument.ThemeName = "Windows8";
+            cmbDocument.ValueMember = "name";
+            cmbDocument.SelectedIndexChanged += cmbDocument_SelectedIndexChanged;
             // 
             // frmRolePermissionManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(984, 525);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.KeyPreview = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "frmRolePermissionManager";
-            // 
-            // 
-            // 
-            this.RootElement.ApplyShapeToControl = true;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Role Permission Manager";
-            this.ThemeName = "ControlDefault";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddPermission)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvList.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            ClientSize = new System.Drawing.Size(1148, 606);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            KeyPreview = true;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "frmRolePermissionManager";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Role Permission Manager";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnHelp).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnAddPermission).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gvList.MasterTemplate).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gvList).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cmbRole).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cmbDocument).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -290,11 +296,12 @@
         private System.Windows.Forms.Label label1;
         private Telerik.WinControls.UI.RadButton btnHelp;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cmbDocument;
+        private Telerik.WinControls.UI.RadDropDownList cmbDocument;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbRole;
+        private Telerik.WinControls.UI.RadDropDownList cmbRole;
         private Telerik.WinControls.UI.RadGridView gvList;
         private Telerik.WinControls.UI.RadButton btnAddPermission;
+        private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
     }
 }
