@@ -36,6 +36,7 @@ namespace TheSku.Data
             modelBuilder.Entity<Currency>().HasData(DefaultData.Currencies());
             modelBuilder.Entity<Language>().HasData(DefaultData.Languages());
             modelBuilder.Entity<Document>().HasData(DefaultData.Documents());
+            modelBuilder.Entity<Role>().HasData(DefaultData.Roles());
             var defaultSingles = DefaultData.DefaultValues().Select(s => new Singles
             {
                 Name = Guid.NewGuid(),
