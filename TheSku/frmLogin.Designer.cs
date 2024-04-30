@@ -84,7 +84,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             label1.Location = new System.Drawing.Point(105, 129);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(139, 25);

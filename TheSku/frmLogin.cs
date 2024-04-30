@@ -9,6 +9,7 @@ namespace TheSku
     public partial class frmLogin : Form
     {
         readonly AppDbContext dbContext1;
+        LanguageHelper LanguageHelper = new LanguageHelper();
 
         public frmLogin(AppDbContext dbContext)
         {
@@ -20,13 +21,13 @@ namespace TheSku
         {
             if (string.IsNullOrWhiteSpace(this.txtUserName.Text))
             {
-                MessageBox.Show("User Name is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(LanguageHelper.GetString("UserIsRequired"), LanguageHelper.GetString("Required"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtUserName.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(this.txtPassword.Text))
             {
-                MessageBox.Show("Password is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(LanguageHelper.GetString("PasswordRequired"), LanguageHelper.GetString("Required"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtPassword.Focus();
                 return;
             }

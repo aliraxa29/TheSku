@@ -22,6 +22,17 @@ public class Global
         }
     }
     
+    public static string Language
+    {
+        get
+        {
+            using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
+            {
+                return dbContext.Singles.Where(c => c.Field == "default_language" && c.Doctype == "System Settings").Select(s => s.Value).FirstOrDefault();
+            }
+        }
+    }
+    
     public static Warehouse Warehouse
     {
         get

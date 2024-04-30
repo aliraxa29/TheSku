@@ -370,6 +370,7 @@ public class DefaultData
             new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Country", Field = "default_country", Value = null },
             new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Currency", Field = "default_currency", Value = null },
             new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Warehouse", Field = "default_warehouse", Value = null },
+            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Language", Field = "default_language", Value = null },
         };
     }
 

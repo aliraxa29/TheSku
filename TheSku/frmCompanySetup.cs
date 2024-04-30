@@ -140,7 +140,7 @@ namespace TheSku
                         dbContext.Company.Add(c);
                         dbContext.Users.Add(new() { Creation = DateTime.Now, FullName = this.txtFullName.Text, Name = this.txtUsername.Text.Trim(), UserName = this.txtUsername.Text, Password = Security.EncryptString(this.txtPassword.Text), ModifiedBy = "Administrator", FirstName = name[0], LastName = name.Length > 1 ? name[1] : "", Role = dbContext.Roles.Where(r => r.Name.Equals("System Manager")).FirstOrDefault() });
                         dbContext.UserPermissions.AddRange(DefaultData.UserPermissions(dbContext.Roles.Where(r => r.Name.Equals("System Manager")).FirstOrDefault()));
-                        foreach (Singles item in dbContext.Singles.Where(s => s.Doctype.Equals("System Settings") && new List<string> { "default_country", "default_currency", "default_company" }.Contains(s.Field)).ToList())
+                        foreach (Singles item in dbContext.Singles.Where(s => s.Doctype.Equals("System Settings") && new List<string> { "default_country", "default_currency", "default_company", "default_language" }.Contains(s.Field)).ToList())
                         {
                             if (item.Field.Equals("default_country"))
                             {
@@ -155,6 +155,11 @@ namespace TheSku
                             else if (item.Field.Equals("default_company"))
                             {
                                 item.Value = c.Name;
+                                dbContext.Singles.Update(item);
+                            }
+                            else if (item.Field.Equals("default_language"))
+                            {
+                                item.Value = this.cmbLanguage.SelectedValue?.ToString();
                                 dbContext.Singles.Update(item);
                             }
                         }
