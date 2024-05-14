@@ -302,10 +302,10 @@ namespace TheSku
         private void BindCombo()
         {
             this.cmbCompany.DataSource = dbContext.Company.ToList();
-            this.cmbCompany.SelectedValue = Global.Company;
-            this.cmbCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled == true).ToList();
-            this.cmbCurrency.SelectedValue = Global.Currency;
-            this.cmbParentAccount.DataSource = dbContext.Account.Where(c => c.IsGroup && c.Company == dbContext.Company.Where(c => c.Name == this.cmbCompany.SelectedValue.ToString()).FirstOrDefault()).ToList(); ;
+            this.cmbCompany.SelectedValue = Global.Company.Name;
+            this.cmbCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled).ToList();
+            this.cmbCurrency.SelectedValue = Global.Currency.Name;
+            this.cmbParentAccount.DataSource = dbContext.Account.Where(c => c.IsGroup && c.Company == dbContext.Company.Where(c => c.Name == this.cmbCompany.SelectedValue.ToString()).FirstOrDefault()).ToList();
         }
 
         private void brnRefreshFields_Click(object sender, EventArgs e)

@@ -204,5 +204,17 @@ namespace TheSku
                 new frmRolePermissionManager(dbContext).ShowDialog();
             }
         }
+
+        private void posProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmPosProfile"] != null)
+            {
+                Application.OpenForms["frmPosProfile"].BringToFront();
+            }
+            else
+            {
+                new frmPosProfile(dbContext) { MdiParent = this }.Show();
+            }
+        }
     }
 }

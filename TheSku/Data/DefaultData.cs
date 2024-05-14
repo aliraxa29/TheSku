@@ -370,6 +370,7 @@ public class DefaultData
             new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Country", Field = "default_country", Value = null },
             new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Currency", Field = "default_currency", Value = null },
             new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Warehouse", Field = "default_warehouse", Value = null },
+            new Singles() { Creation = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator", Doctype = "System Settings", Label = "Default Language", Field = "default_language", Value = null },
         };
     }
 
@@ -387,10 +388,10 @@ public class DefaultData
         return new List<Warehouse>
         {
             new Warehouse() { Name = $"All Warehouses - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = true },
-            new Warehouse() { Name = $"Finished Goods - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
-            new Warehouse() { Name = $"Goods In Transit - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
-            new Warehouse() { Name = $"Stores - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
-            new Warehouse() { Name = $"Work In Progress - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "All Warehouses", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
+            new Warehouse() { Name = $"Finished Goods - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "Finished Goods", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
+            new Warehouse() { Name = $"Goods In Transit - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "Goods In Transit", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
+            new Warehouse() { Name = $"Stores - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "Stores", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
+            new Warehouse() { Name = $"Work In Progress - {company.Abbrivation}", Creation = DateTime.Now, Owner = user, ModifiedBy = user, WarehouseName = "Work In Progress", Company = company, IsGroup = false, ParentWarehouse = $"All Warehouses - {company.Abbrivation}" },
         };
     }
     
@@ -606,7 +607,6 @@ public class DefaultData
             new Role() { Name = "Supplier", RoleName = "Supplier", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
             new Role() { Name = "Support Team", RoleName = "Support Team", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
             new Role() { Name = "System Manager", RoleName = "System Manager", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
-            new Role() { Name = "Translator", RoleName = "Translator", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
             new Role() { Name = "Translator", RoleName = "Translator", Disabled = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
         };
     }

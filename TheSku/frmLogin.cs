@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 using TheSku.Data;
@@ -8,6 +9,7 @@ namespace TheSku
     public partial class frmLogin : Form
     {
         readonly AppDbContext dbContext1;
+        LanguageHelper LanguageHelper = new LanguageHelper();
 
         public frmLogin(AppDbContext dbContext)
         {
@@ -19,18 +21,18 @@ namespace TheSku
         {
             if (string.IsNullOrWhiteSpace(this.txtUserName.Text))
             {
-                MessageBox.Show("User Name is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(LanguageHelper.GetString("UserIsRequired"), LanguageHelper.GetString("Required"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtUserName.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(this.txtPassword.Text))
             {
-                MessageBox.Show("Password is required", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(LanguageHelper.GetString("PasswordRequired"), LanguageHelper.GetString("Required"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.txtPassword.Focus();
                 return;
             }
             var user = dbContext1.Users
-                     .Where(x => x.UserName.Equals(this.txtUserName.Text.Trim()) && x.Password.Equals(Security.EncryptString(this.txtPassword.Text)))
+                     .Where(x => x.UserName.Equals(this.txtUserName.Text.Trim()) && x.Password.Equals(Security.EncryptString(this.txtPassword.Text))).Include(f => f.Role)
                      .FirstOrDefault();
             if (user is not null)
             {

@@ -14,76 +14,34 @@ public class UserPermissions
 
     public bool HasReadPermission(string doctype)
     {
-        return dbContext.UserPermissions.Where(p => p.DocumentType.Equals(doctype) && p.Role.Equals(Global.User.Role)).Select(p => p.Read).FirstOrDefault();
+        return dbContext.UserPermissions.Where(p => p.DocumentType.Equals(doctype) && p.Role == Global.User.Role).Select(p => p.Read).FirstOrDefault();
     }
     
     public bool HasCreatePermission(string doctype)
     {
-        if (doctype != "")
-        {
-            //var s = Db.Con.Query("tabUser Permission").Select("create").Where(new { document_type = doctype, role = Role }).FirstOrDefault();
-            //if (s != null)
-            //{
-            //    return Convert.ToBoolean(s.create);
-            //}
-        }
-        return false;
+        return dbContext.UserPermissions.Where(p => p.DocumentType.Equals(doctype) && p.Role == Global.User.Role).Select(p => p.Create).FirstOrDefault();
     }
 
     public bool HasWritePermission(string doctype)
     {
-        if (doctype!= "")
-        {
-            //var s = Db.Con.Query("tabUser Permission").Select("write").Where(new { document_type = doctype, role = Role }).FirstOrDefault();
-            //if (s != null)
-            //{
-            //    return Convert.ToBoolean(s.write);
-            //}
-        }
-        return false;
+        return dbContext.UserPermissions.Where(p => p.DocumentType.Equals(doctype) && p.Role == Global.User.Role).Select(p => p.Write).FirstOrDefault();
     }
 
 
     public bool HasSubmitPermission(string doctype)
     {
-        if (doctype != "")
-        {
-            //var s = Db.Con.Query("tabUser Permission").Select("submit").Where(new { document_type = doctype, role = Role }).FirstOrDefault();
-            //if (s != null)
-            //{
-            //    return Convert.ToBoolean(s.submit);
-            //}
-        }
-        return false;
+        return dbContext.UserPermissions.Where(p => p.DocumentType.Equals(doctype) && p.Role == Global.User.Role).Select(p => p.Submit).FirstOrDefault();
     }
     
     public bool HasDeletePermission(string doctype)
     {
-        if (doctype != "")
-        {
-            //var s = Db.Con.Query("tabUser Permission").Select("delete").Where(new { document_type = doctype, role = Role }).FirstOrDefault();
-            //if (s != null)
-            //{
-            //    return Convert.ToBoolean(s.delete);
-            //}
-        }
-        return false;
-    }
-    
-    public bool HasCancelPermission(string doctype)
-    {
-        if (doctype != "")
-        {
-            //var s = Db.Con.Query("tabUser Permission").Select("cancel").Where(new { document_type = doctype, role = Role }).FirstOrDefault();
-            //if (s != null)
-            //{
-            //    return Convert.ToBoolean(s.cancel);
-            //}
-        }
-        return false;
+        return dbContext.UserPermissions.Where(p => p.DocumentType.Equals(doctype) && p.Role == Global.User.Role).Select(p => p.Delete).FirstOrDefault();
     }
 
-    public static string Role { get; set; }
+    public bool HasCancelPermission(string doctype)
+    {
+        return dbContext.UserPermissions.Where(p => p.DocumentType.Equals(doctype) && p.Role == Global.User.Role).Select(p => p.Cancel).FirstOrDefault();
+    }
 
     public bool Authenticate(string username, string password)
     {

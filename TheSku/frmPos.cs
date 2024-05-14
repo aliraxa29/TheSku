@@ -54,27 +54,12 @@ namespace TheSku
 
         public frmPos()
         {
-            //if (Global.LicenseStatus == LicenseStatus.Expired)
-            //{
-            //    MessageBox.Show("Your License has been expired. Kindly Renew your license.", "License Expired", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    base.DialogResult = DialogResult.Cancel;
-            //    return;
-            //}
             this.InitializeComponent();
             this.cmbCustomer.Text = sellingSettings.DefaultCustomerInPOS;
             this.lblPosProfile.Text = PosProfileSetting.PosProfile.Name;
             this.txtExtraDiscount.Maximum = PosProfileSetting.AdditionalDiscountLimit;
             this.BindItemGrid();
             this.ActiveControl = this.txtFilter;
-            //this.gvSalesList.Columns["discount_percentage"].IsVisible = Users.HasReadPermission("POS Sales Invoice Discount Percentage");
-            //this.gvSalesList.Columns["discount_percentage"].ReadOnly = !Users.HasWritePermission("POS Sales Invoice Discount Percentage");
-            //this.gvSalesList.Columns["buying_rate"].IsVisible = Users.HasReadPermission("POS Sales Invoice Buying Rate");
-            //this.gvSalesList.Columns["price_list_rate"].ReadOnly = !Users.HasWritePermission("POS Sales Invoice Rate");
-            //this.txtExtraDiscount.Enabled = Users.HasWritePermission("POS Sales Invoice Extra Discount");
-            //this.txtExtraDiscount.Visible = Users.HasReadPermission("POS Sales Invoice Extra Discount");
-            //this.label2.Visible = Users.HasReadPermission("POS Sales Invoice Extra Discount");
-            //this.chkStandardDiscount.Enabled = Users.HasWritePermission("POS Sales Invoice Apply Standard Discount");
-            //this.chkStandardDiscount.Visible = Users.HasReadPermission("POS Sales Invoice Apply Standard Discount");
             this.gvItemList.AutoGenerateColumns = false;
         }
 

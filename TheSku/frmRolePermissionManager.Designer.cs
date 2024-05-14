@@ -30,35 +30,35 @@ namespace TheSku
         /// </summary>
         private void InitializeComponent()
         {
-            GridViewTextBoxColumn gridViewTextBoxColumn1 = new GridViewTextBoxColumn();
-            GridViewTextBoxColumn gridViewTextBoxColumn2 = new GridViewTextBoxColumn();
-            GridViewTextBoxColumn gridViewTextBoxColumn3 = new GridViewTextBoxColumn();
-            GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new GridViewCheckBoxColumn();
-            GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new GridViewCheckBoxColumn();
-            GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new GridViewCheckBoxColumn();
-            GridViewCheckBoxColumn gridViewCheckBoxColumn4 = new GridViewCheckBoxColumn();
-            GridViewCheckBoxColumn gridViewCheckBoxColumn5 = new GridViewCheckBoxColumn();
-            GridViewCheckBoxColumn gridViewCheckBoxColumn6 = new GridViewCheckBoxColumn();
-            TableViewDefinition tableViewDefinition1 = new TableViewDefinition();
+            GridViewTextBoxColumn gridViewTextBoxColumn7 = new GridViewTextBoxColumn();
+            GridViewTextBoxColumn gridViewTextBoxColumn8 = new GridViewTextBoxColumn();
+            GridViewTextBoxColumn gridViewTextBoxColumn9 = new GridViewTextBoxColumn();
+            GridViewCheckBoxColumn gridViewCheckBoxColumn13 = new GridViewCheckBoxColumn();
+            GridViewCheckBoxColumn gridViewCheckBoxColumn14 = new GridViewCheckBoxColumn();
+            GridViewCheckBoxColumn gridViewCheckBoxColumn15 = new GridViewCheckBoxColumn();
+            GridViewCheckBoxColumn gridViewCheckBoxColumn16 = new GridViewCheckBoxColumn();
+            GridViewCheckBoxColumn gridViewCheckBoxColumn17 = new GridViewCheckBoxColumn();
+            GridViewCheckBoxColumn gridViewCheckBoxColumn18 = new GridViewCheckBoxColumn();
+            TableViewDefinition tableViewDefinition3 = new TableViewDefinition();
             panel1 = new System.Windows.Forms.Panel();
             btnHelp = new RadButton();
             label1 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
+            cmbDocument = new RadDropDownList();
+            cmbRole = new RadDropDownList();
             btnAddPermission = new RadButton();
             gvList = new RadGridView();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
-            cmbRole = new RadDropDownList();
-            cmbDocument = new RadDropDownList();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnHelp).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cmbDocument).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cmbRole).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnAddPermission).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gvList).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gvList.MasterTemplate).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cmbRole).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cmbDocument).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -98,18 +98,48 @@ namespace TheSku
             // panel2
             // 
             panel2.BackColor = System.Drawing.Color.White;
+            panel2.Controls.Add(cmbDocument);
+            panel2.Controls.Add(cmbRole);
             panel2.Controls.Add(btnAddPermission);
             panel2.Controls.Add(gvList);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(cmbRole);
-            panel2.Controls.Add(cmbDocument);
             panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             panel2.Location = new System.Drawing.Point(0, 100);
             panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(1148, 506);
             panel2.TabIndex = 2;
+            // 
+            // cmbDocument
+            // 
+            cmbDocument.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            cmbDocument.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            cmbDocument.DisplayMember = "DocumentName";
+            cmbDocument.DropDownAnimationEnabled = true;
+            cmbDocument.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            cmbDocument.Location = new System.Drawing.Point(14, 38);
+            cmbDocument.Name = "cmbDocument";
+            cmbDocument.Size = new System.Drawing.Size(463, 27);
+            cmbDocument.TabIndex = 3;
+            cmbDocument.ThemeName = "Windows8";
+            cmbDocument.ValueMember = "Name";
+            cmbDocument.SelectedIndexChanged += cmbDocument_SelectedIndexChanged;
+            // 
+            // cmbRole
+            // 
+            cmbRole.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            cmbRole.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            cmbRole.DisplayMember = "RoleName";
+            cmbRole.DropDownAnimationEnabled = true;
+            cmbRole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            cmbRole.Location = new System.Drawing.Point(483, 38);
+            cmbRole.Name = "cmbRole";
+            cmbRole.Size = new System.Drawing.Size(463, 27);
+            cmbRole.TabIndex = 3;
+            cmbRole.ThemeName = "Windows8";
+            cmbRole.ValueMember = "Name";
+            cmbRole.SelectedIndexChanged += cmbDocument_SelectedIndexChanged;
             // 
             // btnAddPermission
             // 
@@ -139,65 +169,65 @@ namespace TheSku
             gvList.MasterTemplate.AllowDragToGroup = false;
             gvList.MasterTemplate.AllowRowResize = false;
             gvList.MasterTemplate.AutoSizeColumnsMode = GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "Name";
-            gridViewTextBoxColumn1.HeaderText = "Name";
-            gridViewTextBoxColumn1.IsVisible = false;
-            gridViewTextBoxColumn1.Name = "name";
-            gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.Width = 46;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Role";
-            gridViewTextBoxColumn2.HeaderText = "Role";
-            gridViewTextBoxColumn2.Name = "role";
-            gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 274;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "DocumentType";
-            gridViewTextBoxColumn3.HeaderText = "Document";
-            gridViewTextBoxColumn3.Name = "document";
-            gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.Width = 400;
-            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn1.FieldName = "Read";
-            gridViewCheckBoxColumn1.HeaderText = "Read";
-            gridViewCheckBoxColumn1.MinWidth = 23;
-            gridViewCheckBoxColumn1.Name = "read";
-            gridViewCheckBoxColumn1.Width = 80;
-            gridViewCheckBoxColumn2.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn2.FieldName = "Write";
-            gridViewCheckBoxColumn2.HeaderText = "Write";
-            gridViewCheckBoxColumn2.MinWidth = 23;
-            gridViewCheckBoxColumn2.Name = "write";
-            gridViewCheckBoxColumn2.Width = 69;
-            gridViewCheckBoxColumn3.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn3.FieldName = "Create";
-            gridViewCheckBoxColumn3.HeaderText = "Create";
-            gridViewCheckBoxColumn3.MinWidth = 23;
-            gridViewCheckBoxColumn3.Name = "create";
-            gridViewCheckBoxColumn3.Width = 74;
-            gridViewCheckBoxColumn4.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn4.FieldName = "Delete";
-            gridViewCheckBoxColumn4.HeaderText = "Delete";
-            gridViewCheckBoxColumn4.MinWidth = 23;
-            gridViewCheckBoxColumn4.Name = "delete";
-            gridViewCheckBoxColumn4.Width = 69;
-            gridViewCheckBoxColumn5.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn5.FieldName = "Submit";
-            gridViewCheckBoxColumn5.HeaderText = "Submit";
-            gridViewCheckBoxColumn5.MinWidth = 23;
-            gridViewCheckBoxColumn5.Name = "submit";
-            gridViewCheckBoxColumn5.Width = 76;
-            gridViewCheckBoxColumn6.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn6.FieldName = "Cancel";
-            gridViewCheckBoxColumn6.HeaderText = "Cancel";
-            gridViewCheckBoxColumn6.MinWidth = 23;
-            gridViewCheckBoxColumn6.Name = "cancel";
-            gridViewCheckBoxColumn6.Width = 64;
-            gvList.MasterTemplate.Columns.AddRange(new GridViewDataColumn[] { gridViewTextBoxColumn1, gridViewTextBoxColumn2, gridViewTextBoxColumn3, gridViewCheckBoxColumn1, gridViewCheckBoxColumn2, gridViewCheckBoxColumn3, gridViewCheckBoxColumn4, gridViewCheckBoxColumn5, gridViewCheckBoxColumn6 });
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "Name";
+            gridViewTextBoxColumn7.HeaderText = "Name";
+            gridViewTextBoxColumn7.IsVisible = false;
+            gridViewTextBoxColumn7.Name = "name";
+            gridViewTextBoxColumn7.ReadOnly = true;
+            gridViewTextBoxColumn7.Width = 46;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "Role.Name";
+            gridViewTextBoxColumn8.HeaderText = "Role";
+            gridViewTextBoxColumn8.Name = "role";
+            gridViewTextBoxColumn8.ReadOnly = true;
+            gridViewTextBoxColumn8.Width = 274;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "DocumentType";
+            gridViewTextBoxColumn9.HeaderText = "Document";
+            gridViewTextBoxColumn9.Name = "document";
+            gridViewTextBoxColumn9.ReadOnly = true;
+            gridViewTextBoxColumn9.Width = 400;
+            gridViewCheckBoxColumn13.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn13.FieldName = "Read";
+            gridViewCheckBoxColumn13.HeaderText = "Read";
+            gridViewCheckBoxColumn13.MinWidth = 23;
+            gridViewCheckBoxColumn13.Name = "read";
+            gridViewCheckBoxColumn13.Width = 80;
+            gridViewCheckBoxColumn14.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn14.FieldName = "Write";
+            gridViewCheckBoxColumn14.HeaderText = "Write";
+            gridViewCheckBoxColumn14.MinWidth = 23;
+            gridViewCheckBoxColumn14.Name = "write";
+            gridViewCheckBoxColumn14.Width = 69;
+            gridViewCheckBoxColumn15.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn15.FieldName = "Create";
+            gridViewCheckBoxColumn15.HeaderText = "Create";
+            gridViewCheckBoxColumn15.MinWidth = 23;
+            gridViewCheckBoxColumn15.Name = "create";
+            gridViewCheckBoxColumn15.Width = 74;
+            gridViewCheckBoxColumn16.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn16.FieldName = "Delete";
+            gridViewCheckBoxColumn16.HeaderText = "Delete";
+            gridViewCheckBoxColumn16.MinWidth = 23;
+            gridViewCheckBoxColumn16.Name = "delete";
+            gridViewCheckBoxColumn16.Width = 69;
+            gridViewCheckBoxColumn17.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn17.FieldName = "Submit";
+            gridViewCheckBoxColumn17.HeaderText = "Submit";
+            gridViewCheckBoxColumn17.MinWidth = 23;
+            gridViewCheckBoxColumn17.Name = "submit";
+            gridViewCheckBoxColumn17.Width = 76;
+            gridViewCheckBoxColumn18.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn18.FieldName = "Cancel";
+            gridViewCheckBoxColumn18.HeaderText = "Cancel";
+            gridViewCheckBoxColumn18.MinWidth = 23;
+            gridViewCheckBoxColumn18.Name = "cancel";
+            gridViewCheckBoxColumn18.Width = 64;
+            gvList.MasterTemplate.Columns.AddRange(new GridViewDataColumn[] { gridViewTextBoxColumn7, gridViewTextBoxColumn8, gridViewTextBoxColumn9, gridViewCheckBoxColumn13, gridViewCheckBoxColumn14, gridViewCheckBoxColumn15, gridViewCheckBoxColumn16, gridViewCheckBoxColumn17, gridViewCheckBoxColumn18 });
             gvList.MasterTemplate.EnableGrouping = false;
             gvList.MasterTemplate.EnableSorting = false;
-            gvList.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            gvList.MasterTemplate.ViewDefinition = tableViewDefinition3;
             gvList.Name = "gvList";
             gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
             gvList.Size = new System.Drawing.Size(1120, 413);
@@ -209,7 +239,7 @@ namespace TheSku
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label3.Location = new System.Drawing.Point(533, 15);
+            label3.Location = new System.Drawing.Point(480, 15);
             label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(35, 17);
@@ -226,42 +256,6 @@ namespace TheSku
             label2.Size = new System.Drawing.Size(72, 17);
             label2.TabIndex = 1;
             label2.Text = "Document";
-            // 
-            // cmbRole
-            // 
-            cmbRole.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            cmbRole.DisplayMember = "Name";
-            cmbRole.DropDownAnimationEnabled = true;
-            cmbRole.DropDownHeight = 130;
-            cmbRole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            cmbRole.ItemHeight = 21;
-            cmbRole.Location = new System.Drawing.Point(537, 38);
-            cmbRole.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            cmbRole.MaxDropDownItems = 20;
-            cmbRole.Name = "cmbRole";
-            cmbRole.Size = new System.Drawing.Size(461, 27);
-            cmbRole.TabIndex = 0;
-            cmbRole.ThemeName = "Windows8";
-            cmbRole.ValueMember = "name";
-            cmbRole.SelectedIndexChanged += cmbDocument_SelectedIndexChanged;
-            // 
-            // cmbDocument
-            // 
-            cmbDocument.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            cmbDocument.DisplayMember = "Name";
-            cmbDocument.DropDownAnimationEnabled = true;
-            cmbDocument.DropDownHeight = 130;
-            cmbDocument.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            cmbDocument.ItemHeight = 21;
-            cmbDocument.Location = new System.Drawing.Point(14, 38);
-            cmbDocument.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            cmbDocument.MaxDropDownItems = 20;
-            cmbDocument.Name = "cmbDocument";
-            cmbDocument.Size = new System.Drawing.Size(515, 27);
-            cmbDocument.TabIndex = 0;
-            cmbDocument.ThemeName = "Windows8";
-            cmbDocument.ValueMember = "name";
-            cmbDocument.SelectedIndexChanged += cmbDocument_SelectedIndexChanged;
             // 
             // frmRolePermissionManager
             // 
@@ -284,11 +278,11 @@ namespace TheSku
             ((System.ComponentModel.ISupportInitialize)btnHelp).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cmbDocument).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cmbRole).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnAddPermission).EndInit();
             ((System.ComponentModel.ISupportInitialize)gvList.MasterTemplate).EndInit();
             ((System.ComponentModel.ISupportInitialize)gvList).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cmbRole).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cmbDocument).EndInit();
             ResumeLayout(false);
         }
 
@@ -298,12 +292,12 @@ namespace TheSku
         private System.Windows.Forms.Label label1;
         private Telerik.WinControls.UI.RadButton btnHelp;
         private System.Windows.Forms.Panel panel2;
-        private Telerik.WinControls.UI.RadDropDownList cmbDocument;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private Telerik.WinControls.UI.RadDropDownList cmbRole;
         private Telerik.WinControls.UI.RadGridView gvList;
         private Telerik.WinControls.UI.RadButton btnAddPermission;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
+        private RadDropDownList cmbDocument;
+        private RadDropDownList cmbRole;
     }
 }

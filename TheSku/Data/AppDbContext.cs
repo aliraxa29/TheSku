@@ -31,12 +31,12 @@ namespace TheSku.Data
                             .WithOne()
                             .HasForeignKey<Company>(c => c.RoundOffAccountId)
                             .IsRequired(false);
+            modelBuilder.Entity<Role>().HasData(DefaultData.Roles());
             modelBuilder.Entity<PackingType>().HasData(DefaultData.PackingTypes());
             modelBuilder.Entity<Country>().HasData(DefaultData.Countries());
             modelBuilder.Entity<Currency>().HasData(DefaultData.Currencies());
             modelBuilder.Entity<Language>().HasData(DefaultData.Languages());
             modelBuilder.Entity<Document>().HasData(DefaultData.Documents());
-            modelBuilder.Entity<Role>().HasData(DefaultData.Roles());
             var defaultSingles = DefaultData.DefaultValues().Select(s => new Singles
             {
                 Name = Guid.NewGuid(),
