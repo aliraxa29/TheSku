@@ -535,6 +535,7 @@ public class DefaultData
             new Document() { Name = "Cost Center", DocumentName = "Cost Center", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
             new Document() { Name = "Company", DocumentName = "Company", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
             new Document() { Name = "Chart Of Accounts", DocumentName = "Chart Of Accounts", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new Document() { Name = "Pos Profile", DocumentName = "Pos Profile", Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
         };
     }
     
@@ -630,6 +631,7 @@ public class DefaultData
             new UserPermission() { DocumentType = "Supplier Group", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
             new UserPermission() { DocumentType = "System Settings", Role = role, Read = true, Write = true, Create = false, Cancel = false, Delete = false, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
             new UserPermission() { DocumentType = "User", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
+            new UserPermission() { DocumentType = "Pos Profile", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
         };
     }
 }
