@@ -27,6 +27,7 @@ namespace TheSku
                 this.cmbDefaultCompany.SelectedValue = data.Where(s => s.Field == "default_company").Select(s => s.Value).FirstOrDefault()?.ToString();
                 this.cmbDefaultCurrency.SelectedValue = data.Where(s => s.Field == "default_currency").Select(s => s.Value).FirstOrDefault()?.ToString();
                 this.cmbDefaultCountry.SelectedValue = data.Where(s => s.Field == "default_country").Select(s => s.Value).FirstOrDefault()?.ToString();
+                this.cmbWarehouse.SelectedValue = data.Where(s => s.Field == "default_warehouse").Select(s => s.Value).FirstOrDefault()?.ToString();
             }
         }
 
@@ -35,6 +36,7 @@ namespace TheSku
             this.cmbDefaultCompany.DataSource = dbContext.Company.ToList();
             this.cmbDefaultCountry.DataSource = dbContext.Country.ToList();
             this.cmbDefaultCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled).ToList();
+            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => !w.IsGroup && !w.Disabled).ToList();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -55,6 +57,10 @@ namespace TheSku
                     if (singles.Field == "default_country")
                     {
                         singles.Value = this.cmbDefaultCountry.SelectedValue?.ToString();
+                    }
+                    if (singles.Field == "default_warehouse")
+                    {
+                        singles.Value = this.cmbWarehouse.SelectedValue?.ToString();
                     }
                     singles.Modified = DateTime.Now;
                     singles.ModifiedBy = Global.UserName;
@@ -93,6 +99,11 @@ namespace TheSku
             {
                 this.btnClose.PerformClick();
             }
+        }
+
+        private void cmbWarehouse_Enter(object sender, EventArgs e)
+        {
+            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => !w.IsGroup && !w.Disabled && w.Company.Equals(dbContext.Company.Where(c => c.Name.Equals(this.cmbDefaultCompany.SelectedValue)).FirstOrDefault())).ToList();
         }
     }
 }

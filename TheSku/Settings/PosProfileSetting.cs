@@ -1,17 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using TheSku.Data;
 
 public class PosProfileSetting
 {
-    private Dictionary<string, object> Filters = new Dictionary<string, object>()
-    {
-        {"warehouse", Global.Warehouse },
-        {"disabled", 0 },
-        {"company", Global.Company },
-    };
 
     public static Warehouse Warehouse
     {
@@ -19,7 +10,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.Warehouse.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault();
+                return dbContext.Warehouse.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault();
             }
         }
     }
@@ -30,7 +21,8 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault();
+                var d = dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault();
+                return d;
             }
         }
     }
@@ -40,7 +32,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().Company;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().Company;
             }
         }
     }
@@ -50,7 +42,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().Customer.Name;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().Customer.Name;
             }
         }
     }
@@ -60,7 +52,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().Country.Name;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().Country.Name;
             }
         }
     }
@@ -70,7 +62,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().CompanyAddress;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().CompanyAddress;
             }
         }
     }
@@ -80,7 +72,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().ValidateStockOnSave;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().ValidateStockOnSave;
             }
         }
     }
@@ -90,7 +82,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().UpdateStock;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().UpdateStock;
             }
         }
     }
@@ -100,7 +92,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().IgnorePricingRule;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().IgnorePricingRule;
             }
         }
     }
@@ -110,7 +102,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().AllowChangeRate;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().AllowChangeRate;
             }
         }
     }
@@ -120,7 +112,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().AllowChangeDiscount;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().AllowChangeDiscount;
             }
         }
     }
@@ -130,7 +122,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().PrintFormat;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().PrintFormat;
             }
         }
     }
@@ -140,7 +132,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().PriceList.Name;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().PriceList.Name;
             }
         }
     }
@@ -150,7 +142,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().Currency.Name;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().Currency.Name;
             }
         }
     }
@@ -160,7 +152,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().WriteOffAccount.Name;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().WriteOffAccount.Name;
             }
         }
     }
@@ -170,7 +162,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().WriteOffCostCenter.Name;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().WriteOffCostCenter.Name;
             }
         }
     }
@@ -180,7 +172,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().WriteOffLimit;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().WriteOffLimit;
             }
         }
     }
@@ -190,7 +182,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().AccountForChangeAmount.Name;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().AccountForChangeAmount.Name;
             }
         }
     }
@@ -200,7 +192,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().DisableRoundedTotal;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().DisableRoundedTotal;
             }
         }
     }
@@ -210,7 +202,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().IncomeAccount.Name;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().IncomeAccount.Name;
             }
         }
     }
@@ -220,7 +212,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().ExpenseAccount.Name;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().ExpenseAccount.Name;
             }
         }
     }
@@ -230,7 +222,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().CostCenter.Name;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().CostCenter.Name;
             }
         }
     }
@@ -241,7 +233,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.PosProfile.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company == dbContext.Company.Where(c => c.Name.Equals(Global.Company)).FirstOrDefault()).FirstOrDefault().AdditionalDiscountLimit;
+                return dbContext.PosProfile.Where(c => c.Warehouse.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault().AdditionalDiscountLimit;
             }
         }
     }

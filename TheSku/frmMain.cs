@@ -16,6 +16,8 @@ namespace TheSku
             permissions = new UserPermissions(dbContext1);
             InitializeComponent();
             this.lblUsername.Text = Global.UserName;
+            this.lblCompany.Text = Global.Company?.Name ?? "";
+            this.lblWarehouse.Text = Global.Warehouse?.Name ?? "";
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
