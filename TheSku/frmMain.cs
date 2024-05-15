@@ -16,6 +16,8 @@ namespace TheSku
             permissions = new UserPermissions(dbContext1);
             InitializeComponent();
             this.lblUsername.Text = Global.UserName;
+            this.lblCompany.Text = Global.Company?.Name ?? "";
+            this.lblWarehouse.Text = Global.Warehouse?.Name ?? "";
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -215,6 +217,23 @@ namespace TheSku
             {
                 new frmPosProfile(dbContext) { MdiParent = this }.Show();
             }
+        }
+
+        private void itemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmPosProfile"] != null)
+            {
+                Application.OpenForms["frmPosProfile"].BringToFront();
+            }
+            else
+            {
+                new frmItem(dbContext) { MdiParent = this }.Show();
+            }
+        }
+
+        private void uOMUnitOfMeasureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

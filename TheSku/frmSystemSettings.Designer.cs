@@ -34,9 +34,10 @@
             cmbDefaultCompany = new Telerik.WinControls.UI.RadDropDownList();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             cmbDefaultCountry = new Telerik.WinControls.UI.RadDropDownList();
-            txtSupplierName = new Telerik.WinControls.UI.RadTextBox();
             label3 = new System.Windows.Forms.Label();
             cmbDefaultCurrency = new Telerik.WinControls.UI.RadDropDownList();
+            label4 = new System.Windows.Forms.Label();
+            cmbWarehouse = new Telerik.WinControls.UI.RadDropDownList();
             groupBox3 = new System.Windows.Forms.GroupBox();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
@@ -52,8 +53,8 @@
             ((System.ComponentModel.ISupportInitialize)cmbDefaultCompany).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cmbDefaultCountry).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtSupplierName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cmbDefaultCurrency).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cmbWarehouse).BeginInit();
             groupBox3.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -111,9 +112,10 @@
             tableLayoutPanel1.Controls.Add(label5, 2, 0);
             tableLayoutPanel1.Controls.Add(cmbDefaultCompany, 3, 0);
             tableLayoutPanel1.Controls.Add(cmbDefaultCountry, 1, 0);
-            tableLayoutPanel1.Controls.Add(txtSupplierName, 1, 1);
             tableLayoutPanel1.Controls.Add(label3, 2, 1);
             tableLayoutPanel1.Controls.Add(cmbDefaultCurrency, 3, 1);
+            tableLayoutPanel1.Controls.Add(label4, 0, 1);
+            tableLayoutPanel1.Controls.Add(cmbWarehouse, 1, 1);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             tableLayoutPanel1.Location = new System.Drawing.Point(3, 21);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -138,16 +140,6 @@
             cmbDefaultCountry.ThemeName = "Windows8";
             cmbDefaultCountry.ValueMember = "Name";
             // 
-            // txtSupplierName
-            // 
-            txtSupplierName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtSupplierName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtSupplierName.Location = new System.Drawing.Point(273, 38);
-            txtSupplierName.Name = "txtSupplierName";
-            txtSupplierName.Size = new System.Drawing.Size(264, 23);
-            txtSupplierName.TabIndex = 1;
-            txtSupplierName.ThemeName = "Windows8";
-            // 
             // label3
             // 
             label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -171,6 +163,31 @@
             cmbDefaultCurrency.TabIndex = 2;
             cmbDefaultCurrency.ThemeName = "Windows8";
             cmbDefaultCurrency.ValueMember = "Name";
+            // 
+            // label4
+            // 
+            label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(191, 41);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(76, 17);
+            label4.TabIndex = 0;
+            label4.Text = "Warehouse";
+            // 
+            // cmbWarehouse
+            // 
+            cmbWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            cmbWarehouse.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            cmbWarehouse.DisplayMember = "WarehouseName";
+            cmbWarehouse.DropDownAnimationEnabled = true;
+            cmbWarehouse.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            cmbWarehouse.Location = new System.Drawing.Point(273, 38);
+            cmbWarehouse.Name = "cmbWarehouse";
+            cmbWarehouse.Size = new System.Drawing.Size(264, 23);
+            cmbWarehouse.TabIndex = 2;
+            cmbWarehouse.ThemeName = "Windows8";
+            cmbWarehouse.ValueMember = "Name";
+            cmbWarehouse.Enter += cmbWarehouse_Enter;
             // 
             // groupBox3
             // 
@@ -317,8 +334,8 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)cmbDefaultCountry).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtSupplierName).EndInit();
             ((System.ComponentModel.ISupportInitialize)cmbDefaultCurrency).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cmbWarehouse).EndInit();
             groupBox3.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
@@ -352,9 +369,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private Telerik.WinControls.UI.RadTextBox txtSupplierName;
         private Telerik.WinControls.UI.RadDropDownList cmbDefaultCountry;
         private System.Windows.Forms.Label label3;
         private Telerik.WinControls.UI.RadDropDownList cmbDefaultCurrency;
+        private System.Windows.Forms.Label label4;
+        private Telerik.WinControls.UI.RadDropDownList cmbWarehouse;
     }
 }
