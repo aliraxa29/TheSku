@@ -39,6 +39,8 @@
             customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             customerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             customerGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            itemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             buyingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             supplierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,19 +65,19 @@
             ssMain = new System.Windows.Forms.StatusStrip();
             toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             lblUsername = new System.Windows.Forms.ToolStripStatusLabel();
+            toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             lblCompany = new System.Windows.Forms.ToolStripStatusLabel();
+            toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             lblWarehouse = new System.Windows.Forms.ToolStripStatusLabel();
-            toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
             ssMain.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, viewToolStripMenuItem, sellingToolStripMenuItem, buyingToolStripMenuItem, accountingToolStripMenuItem, userManagementToolStripMenuItem, aboutToolStripMenuItem });
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, viewToolStripMenuItem, sellingToolStripMenuItem, stockToolStripMenuItem, buyingToolStripMenuItem, accountingToolStripMenuItem, userManagementToolStripMenuItem, aboutToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -150,6 +152,20 @@
             customerGroupToolStripMenuItem.Name = "customerGroupToolStripMenuItem";
             customerGroupToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             customerGroupToolStripMenuItem.Text = "Customer Group";
+            // 
+            // stockToolStripMenuItem
+            // 
+            stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { itemToolStripMenuItem });
+            stockToolStripMenuItem.Name = "stockToolStripMenuItem";
+            stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            stockToolStripMenuItem.Text = "Stock";
+            // 
+            // itemToolStripMenuItem
+            // 
+            itemToolStripMenuItem.Name = "itemToolStripMenuItem";
+            itemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            itemToolStripMenuItem.Text = "Item";
+            itemToolStripMenuItem.Click += itemToolStripMenuItem_Click;
             // 
             // buyingToolStripMenuItem
             // 
@@ -319,6 +335,12 @@
             lblUsername.Size = new System.Drawing.Size(30, 17);
             lblUsername.Text = "User";
             // 
+            // toolStripStatusLabel5
+            // 
+            toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+            toolStripStatusLabel5.Size = new System.Drawing.Size(10, 17);
+            toolStripStatusLabel5.Text = "|";
+            // 
             // toolStripStatusLabel3
             // 
             toolStripStatusLabel3.Name = "toolStripStatusLabel3";
@@ -331,6 +353,12 @@
             lblCompany.Size = new System.Drawing.Size(59, 17);
             lblCompany.Text = "Company";
             // 
+            // toolStripStatusLabel4
+            // 
+            toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            toolStripStatusLabel4.Size = new System.Drawing.Size(10, 17);
+            toolStripStatusLabel4.Text = "|";
+            // 
             // toolStripStatusLabel2
             // 
             toolStripStatusLabel2.Name = "toolStripStatusLabel2";
@@ -342,18 +370,6 @@
             lblWarehouse.Name = "lblWarehouse";
             lblWarehouse.Size = new System.Drawing.Size(66, 17);
             lblWarehouse.Text = "Warehouse";
-            // 
-            // toolStripStatusLabel4
-            // 
-            toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            toolStripStatusLabel4.Size = new System.Drawing.Size(10, 17);
-            toolStripStatusLabel4.Text = "|";
-            // 
-            // toolStripStatusLabel5
-            // 
-            toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            toolStripStatusLabel5.Size = new System.Drawing.Size(10, 17);
-            toolStripStatusLabel5.Text = "|";
             // 
             // frmMain
             // 
@@ -419,5 +435,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lblWarehouse;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itemToolStripMenuItem;
     }
 }
