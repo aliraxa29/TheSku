@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn3 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             txtLimit = new System.Windows.Forms.NumericUpDown();
             txtNameFilter = new Telerik.WinControls.UI.RadTextBox();
@@ -237,36 +237,36 @@
             gvList.MasterTemplate.AllowDragToGroup = false;
             gvList.MasterTemplate.AllowRowResize = false;
             gvList.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "SupplierName";
-            gridViewTextBoxColumn7.HeaderText = "Pos Profile Name";
-            gridViewTextBoxColumn7.Name = "pos_profile_name";
-            gridViewTextBoxColumn7.ReadOnly = true;
-            gridViewTextBoxColumn7.Width = 433;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "Company";
-            gridViewTextBoxColumn8.HeaderText = "Company";
-            gridViewTextBoxColumn8.Name = "company";
-            gridViewTextBoxColumn8.ReadOnly = true;
-            gridViewTextBoxColumn8.Width = 303;
-            gridViewCheckBoxColumn3.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn3.FieldName = "Disabled";
-            gridViewCheckBoxColumn3.HeaderText = "Disabled";
-            gridViewCheckBoxColumn3.MinWidth = 20;
-            gridViewCheckBoxColumn3.Name = "disabled";
-            gridViewCheckBoxColumn3.ReadOnly = true;
-            gridViewCheckBoxColumn3.Width = 117;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "Name";
-            gridViewTextBoxColumn9.HeaderText = "Name";
-            gridViewTextBoxColumn9.Name = "name";
-            gridViewTextBoxColumn9.ReadOnly = true;
-            gridViewTextBoxColumn9.Width = 209;
-            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn7, gridViewTextBoxColumn8, gridViewCheckBoxColumn3, gridViewTextBoxColumn9 });
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "PosProfileName";
+            gridViewTextBoxColumn1.HeaderText = "Pos Profile Name";
+            gridViewTextBoxColumn1.Name = "pos_profile_name";
+            gridViewTextBoxColumn1.ReadOnly = true;
+            gridViewTextBoxColumn1.Width = 433;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Company.Name";
+            gridViewTextBoxColumn2.HeaderText = "Company";
+            gridViewTextBoxColumn2.Name = "company";
+            gridViewTextBoxColumn2.ReadOnly = true;
+            gridViewTextBoxColumn2.Width = 303;
+            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn1.FieldName = "Disabled";
+            gridViewCheckBoxColumn1.HeaderText = "Disabled";
+            gridViewCheckBoxColumn1.MinWidth = 20;
+            gridViewCheckBoxColumn1.Name = "disabled";
+            gridViewCheckBoxColumn1.ReadOnly = true;
+            gridViewCheckBoxColumn1.Width = 117;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Name";
+            gridViewTextBoxColumn3.HeaderText = "Name";
+            gridViewTextBoxColumn3.Name = "name";
+            gridViewTextBoxColumn3.ReadOnly = true;
+            gridViewTextBoxColumn3.Width = 209;
+            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn1, gridViewTextBoxColumn2, gridViewCheckBoxColumn1, gridViewTextBoxColumn3 });
             gvList.MasterTemplate.EnableFiltering = true;
             gvList.MasterTemplate.EnableGrouping = false;
             gvList.MasterTemplate.EnablePaging = true;
-            gvList.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            gvList.MasterTemplate.ViewDefinition = tableViewDefinition1;
             gvList.Name = "gvList";
             gvList.ReadOnly = true;
             gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -342,6 +342,7 @@
             cmbCompany.TabIndex = 12;
             cmbCompany.ThemeName = "Windows8";
             cmbCompany.ValueMember = "Name";
+            cmbCompany.SelectedIndexChanged += cmbCompany_SelectedIndexChanged;
             // 
             // tableLayoutPanel1
             // 
@@ -453,6 +454,7 @@
             cmbCountry.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             cmbCountry.Location = new System.Drawing.Point(813, 59);
             cmbCountry.Name = "cmbCountry";
+            cmbCountry.ReadOnly = true;
             cmbCountry.Size = new System.Drawing.Size(264, 23);
             cmbCountry.TabIndex = 14;
             cmbCountry.ThemeName = "Windows8";
@@ -547,6 +549,7 @@
             cmbWarehouse.TabIndex = 1;
             cmbWarehouse.ThemeName = "Windows8";
             cmbWarehouse.ValueMember = "Name";
+            cmbWarehouse.Enter += cmbWarehouse_Enter;
             // 
             // label9
             // 
@@ -663,6 +666,7 @@
             cmbWriteOffAccount.TabIndex = 6;
             cmbWriteOffAccount.ThemeName = "Windows8";
             cmbWriteOffAccount.ValueMember = "Name";
+            cmbWriteOffAccount.Enter += cmbWriteOffAccount_Enter;
             // 
             // label14
             // 
@@ -687,6 +691,7 @@
             cmbWriteOffCostCenter.TabIndex = 7;
             cmbWriteOffCostCenter.ThemeName = "Windows8";
             cmbWriteOffCostCenter.ValueMember = "Name";
+            cmbWriteOffCostCenter.Enter += cmbWriteOffCostCenter_Enter;
             // 
             // txtWriteOffLimit
             // 
@@ -734,6 +739,7 @@
             cmbAccForChangeAmount.TabIndex = 9;
             cmbAccForChangeAmount.ThemeName = "Windows8";
             cmbAccForChangeAmount.ValueMember = "Name";
+            cmbAccForChangeAmount.Enter += cmbAccForChangeAmount_Enter;
             // 
             // chkDisableRoundedTotal
             // 
@@ -769,6 +775,7 @@
             cmbIncomeAccount.TabIndex = 10;
             cmbIncomeAccount.ThemeName = "Windows8";
             cmbIncomeAccount.ValueMember = "Name";
+            cmbIncomeAccount.Enter += cmbIncomeAccount_Enter;
             // 
             // label18
             // 
@@ -793,6 +800,7 @@
             cmbExpenseAccount.TabIndex = 11;
             cmbExpenseAccount.ThemeName = "Windows8";
             cmbExpenseAccount.ValueMember = "Name";
+            cmbExpenseAccount.Enter += cmbExpenseAccount_Enter;
             // 
             // txtAdditionalDiscLimit
             // 
