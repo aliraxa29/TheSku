@@ -71,6 +71,7 @@
             toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             lblWarehouse = new System.Windows.Forms.ToolStripStatusLabel();
+            uOMUnitOfMeasureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ssMain.SuspendLayout();
             SuspendLayout();
@@ -155,7 +156,7 @@
             // 
             // stockToolStripMenuItem
             // 
-            stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { itemToolStripMenuItem });
+            stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { itemToolStripMenuItem, uOMUnitOfMeasureToolStripMenuItem });
             stockToolStripMenuItem.Name = "stockToolStripMenuItem";
             stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             stockToolStripMenuItem.Text = "Stock";
@@ -163,7 +164,7 @@
             // itemToolStripMenuItem
             // 
             itemToolStripMenuItem.Name = "itemToolStripMenuItem";
-            itemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            itemToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             itemToolStripMenuItem.Text = "Item";
             itemToolStripMenuItem.Click += itemToolStripMenuItem_Click;
             // 
@@ -371,6 +372,13 @@
             lblWarehouse.Size = new System.Drawing.Size(66, 17);
             lblWarehouse.Text = "Warehouse";
             // 
+            // uOMUnitOfMeasureToolStripMenuItem
+            // 
+            uOMUnitOfMeasureToolStripMenuItem.Name = "uOMUnitOfMeasureToolStripMenuItem";
+            uOMUnitOfMeasureToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            uOMUnitOfMeasureToolStripMenuItem.Text = "UOM (Unit Of Measure)";
+            uOMUnitOfMeasureToolStripMenuItem.Click += uOMUnitOfMeasureToolStripMenuItem_Click;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -437,5 +445,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uOMUnitOfMeasureToolStripMenuItem;
     }
 }

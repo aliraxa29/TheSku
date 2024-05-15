@@ -230,5 +230,10 @@ namespace TheSku
                 new frmItem(dbContext) { MdiParent = this }.Show();
             }
         }
+
+        private void uOMUnitOfMeasureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
