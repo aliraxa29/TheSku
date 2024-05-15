@@ -1,9 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
-using System.Security.Principal;
-using TheSku.Data;
-using System.Linq;
+
 [Table("tabWarehouse")]
 public class Warehouse
 {
