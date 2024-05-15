@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -11,6 +12,7 @@ namespace TheSku
     {
         AppDbContext dbContext;
         bool IsBinded = false;
+        Company company;
 
         public frmPosProfile(AppDbContext dbContext)
         {
@@ -21,6 +23,7 @@ namespace TheSku
             this.btnCopyNameToClipboard.Shortcuts.Add(new RadShortcut(Keys.Alt, Keys.C));
             this.gvList.AutoGenerateColumns = false;
             this.ActiveControl = this.txtPosProfileName;
+            this.BindCombo();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -73,7 +76,7 @@ namespace TheSku
                 PosProfile posProfile = new PosProfile()
                 {
                     Name = this.txtPosProfileName.Text.Trim(),
-                    Creation = Utility.Now,
+                    Creation = DateTime.Now,
                     ModifiedBy = Global.UserName,
                     Owner = Global.UserName,
                     PosProfileName = this.txtPosProfileName.Text.Trim(),
@@ -248,19 +251,19 @@ namespace TheSku
                 if (posProfile is not null)
                 {
                     this.txtPosProfileName.Text = posProfile.PosProfileName;
-                    this.cmbWarehouse.SelectedValue = posProfile.Warehouse.Name;
+                    this.cmbWarehouse.SelectedValue = posProfile.Warehouse?.Name ?? null;
                     this.txtCompanyAddress.Text = posProfile.CompanyAddress;
                     this.cmbPrintFormat.Text = posProfile.PrintFormat;
-                    this.cmbSellingPriceList.SelectedValue = posProfile.PriceList.Name;
-                    this.cmbCurrency.SelectedValue = posProfile.Currency.Name;
-                    this.cmbWriteOffAccount.SelectedValue = posProfile.WriteOffAccount.Name;
-                    this.cmbWriteOffCostCenter.SelectedValue = posProfile.WriteOffCostCenter.Name;
+                    this.cmbSellingPriceList.SelectedValue = posProfile.PriceList?.Name ?? null;
+                    this.cmbCurrency.SelectedValue = posProfile.Currency?.Name ?? null;
+                    this.cmbWriteOffAccount.SelectedValue = posProfile.WriteOffAccount?.Name ?? null;
+                    this.cmbWriteOffCostCenter.SelectedValue = posProfile.WriteOffCostCenter?.Name ?? null;
                     this.txtWriteOffLimit.Value = posProfile.WriteOffLimit;
-                    this.cmbAccForChangeAmount.SelectedValue = posProfile.AccountForChangeAmount.Name;
-                    this.cmbIncomeAccount.SelectedValue = posProfile.IncomeAccount.Name;
-                    this.cmbExpenseAccount.SelectedValue = posProfile.ExpenseAccount.Name;
-                    this.cmbCompany.SelectedValue = posProfile.Company.Name;
-                    this.cmbCustomer.SelectedValue = posProfile.Customer.Name;
+                    this.cmbAccForChangeAmount.SelectedValue = posProfile.AccountForChangeAmount?.Name ?? null;
+                    this.cmbIncomeAccount.SelectedValue = posProfile.IncomeAccount?.Name ?? null;
+                    this.cmbExpenseAccount.SelectedValue = posProfile.ExpenseAccount?.Name ?? null;
+                    this.cmbCompany.SelectedValue = posProfile.Company?.Name ?? null;
+                    this.cmbCustomer.SelectedValue = posProfile.Customer?.Name ?? null;
                     this.chkIgnorePricingRule.Checked = posProfile.IgnorePricingRule;
                     this.chkAllowChangeRate.Checked = posProfile.AllowChangeRate;
                     this.chkAllowChangeDiscount.Checked = posProfile.AllowChangeDiscount;
@@ -269,7 +272,7 @@ namespace TheSku
                     this.chkDisabled.Checked = posProfile.Disabled;
                     this.chkDisableRoundedTotal.Checked = posProfile.DisableRoundedTotal;
                     this.txtAdditionalDiscLimit.Value = posProfile.AdditionalDiscountLimit;
-                    this.cmbCostCenter.SelectedValue = posProfile.CostCenter.Name;
+                    this.cmbCostCenter.SelectedValue = posProfile.CostCenter?.Name ?? null;
                     this.txtFooter.Text = posProfile.ReceiptFooter;
                     this.txtHeader.Text = posProfile.ReceiptHeader;
                     this.tabControl1.SelectTab(0);
@@ -360,19 +363,54 @@ namespace TheSku
         private void BindCombo()
         {
             this.cmbCompany.DataSource = dbContext.Company.ToList();
-            this.cmbCompany.SelectedValue = Global.Company.Name;
-            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => !w.Disabled && !w.IsGroup).ToList();
+            this.cmbCompany.SelectedValue = Global.Company.Name ?? null;
+            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => !w.Disabled && !w.IsGroup && w.Company.Equals(company)).ToList();
             this.cmbSellingPriceList.DataSource = dbContext.PriceList.Where(w => w.Selling).ToList();
             this.cmbCurrency.DataSource = dbContext.Currency.Where(w => w.Enabled).ToList();
             this.cmbCurrency.SelectedValue = Global.Currency.Name;
-            this.cmbWriteOffAccount.DataSource = dbContext.Account.Where(w => !w.Disabled && !w.IsGroup).ToList();
-            this.cmbWriteOffCostCenter.DataSource = dbContext.CostCenter.Where(w => !w.Disabled && !w.IsGroup).ToList();
-            this.cmbAccForChangeAmount.DataSource = dbContext.Account.Where(w => !w.Disabled && !w.IsGroup).ToList();
-            this.cmbIncomeAccount.DataSource = dbContext.Account.Where(w => !w.Disabled && !w.IsGroup).ToList();
-            this.cmbExpenseAccount.DataSource = dbContext.Account.Where(w => !w.Disabled && !w.IsGroup).ToList();
+            this.cmbWriteOffAccount.DataSource = dbContext.Account.Where(w => !w.Disabled && !w.IsGroup && w.ReportType.Equals("Profit and Loss") && w.Company.Equals(company)).ToList();
+            this.cmbWriteOffCostCenter.DataSource = dbContext.CostCenter.Where(w => !w.Disabled && !w.IsGroup && w.Company.Equals(company)).ToList();
+            this.cmbAccForChangeAmount.DataSource = dbContext.Account.Where(w => !w.Disabled && !w.IsGroup && w.Company.Equals(company) && new List<string>() { "Cash", "Bank" }.Contains(w.AccountType)).ToList();
+            this.cmbIncomeAccount.DataSource = dbContext.Account.Where(w => !w.Disabled && !w.IsGroup && w.Company.Equals(company) && w.AccountType.Equals("Income Account")).ToList();
+            this.cmbExpenseAccount.DataSource = dbContext.Account.Where(w => !w.Disabled && !w.IsGroup && w.Company.Equals(company) && w.ReportType.Equals("Profit and Loss")).ToList();
             this.cmbCountry.DataSource = dbContext.Country.ToList();
             this.cmbCountry.SelectedValue = Global.Country.Name;
             this.cmbCostCenter.DataSource = dbContext.CostCenter.Where(w => !w.Disabled && !w.IsGroup).ToList();
+        }
+
+        private void cmbCompany_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            company = dbContext.Company.Where(c => c.Name.Equals(this.cmbCompany.SelectedValue)).FirstOrDefault();
+        }
+
+        private void cmbWarehouse_Enter(object sender, EventArgs e)
+        {
+            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => !w.Disabled && !w.IsGroup && w.Company.Equals(company)).ToList();
+        }
+
+        private void cmbWriteOffAccount_Enter(object sender, EventArgs e)
+        {
+            this.cmbWriteOffAccount.DataSource = dbContext.Account.Where(w => !w.Disabled && !w.IsGroup && w.ReportType.Equals("Profit and Loss") && w.Company.Equals(company)).ToList();
+        }
+
+        private void cmbWriteOffCostCenter_Enter(object sender, EventArgs e)
+        {
+            this.cmbWriteOffCostCenter.DataSource = dbContext.CostCenter.Where(w => !w.Disabled && !w.IsGroup && w.Company.Equals(company)).ToList();
+        }
+
+        private void cmbAccForChangeAmount_Enter(object sender, EventArgs e)
+        {
+            this.cmbAccForChangeAmount.DataSource = dbContext.Account.Where(w => !w.Disabled && !w.IsGroup && w.Company.Equals(company) && new List<string>() { "Cash", "Bank" }.Contains(w.AccountType)).ToList();
+        }
+
+        private void cmbIncomeAccount_Enter(object sender, EventArgs e)
+        {
+            this.cmbIncomeAccount.DataSource = dbContext.Account.Where(w => !w.Disabled && !w.IsGroup && w.Company.Equals(company) && w.AccountType.Equals("Income Account")).ToList();
+        }
+
+        private void cmbExpenseAccount_Enter(object sender, EventArgs e)
+        {
+            this.cmbExpenseAccount.DataSource = dbContext.Account.Where(w => !w.Disabled && !w.IsGroup && w.Company.Equals(company) && w.ReportType.Equals("Profit and Loss")).ToList();
         }
     }
 }
