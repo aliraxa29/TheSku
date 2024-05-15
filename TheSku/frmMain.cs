@@ -233,7 +233,14 @@ namespace TheSku
 
         private void uOMUnitOfMeasureToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (Application.OpenForms["frmUom"] != null)
+            {
+                Application.OpenForms["frmUom"].BringToFront();
+            }
+            else
+            {
+                new frmUom(dbContext) { MdiParent = this }.Show();
+            }
         }
     }
 }
