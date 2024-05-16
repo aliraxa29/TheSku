@@ -254,5 +254,17 @@ namespace TheSku
                 new frmWarehouse(dbContext) { MdiParent = this }.Show();
             }
         }
+
+        private void itemGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmItemGroup"] != null)
+            {
+                Application.OpenForms["frmItemGroup"].BringToFront();
+            }
+            else
+            {
+                new frmItemGroup(dbContext) { MdiParent = this }.Show();
+            }
+        }
     }
 }

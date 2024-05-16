@@ -58,6 +58,7 @@
             countryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             currencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             companyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            warehouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             sessionSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             roleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             rolePermissionManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +73,7 @@
             toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             lblWarehouse = new System.Windows.Forms.ToolStripStatusLabel();
-            warehouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            itemGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ssMain.SuspendLayout();
             SuspendLayout();
@@ -157,7 +158,7 @@
             // 
             // stockToolStripMenuItem
             // 
-            stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { itemToolStripMenuItem, uOMUnitOfMeasureToolStripMenuItem });
+            stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { itemToolStripMenuItem, itemGroupToolStripMenuItem, uOMUnitOfMeasureToolStripMenuItem });
             stockToolStripMenuItem.Name = "stockToolStripMenuItem";
             stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             stockToolStripMenuItem.Text = "Stock";
@@ -288,6 +289,13 @@
             companyToolStripMenuItem.Text = "Company";
             companyToolStripMenuItem.Click += companyToolStripMenuItem_Click;
             // 
+            // warehouseToolStripMenuItem
+            // 
+            warehouseToolStripMenuItem.Name = "warehouseToolStripMenuItem";
+            warehouseToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            warehouseToolStripMenuItem.Text = "Warehouse";
+            warehouseToolStripMenuItem.Click += warehouseToolStripMenuItem_Click;
+            // 
             // sessionSettingsToolStripMenuItem
             // 
             sessionSettingsToolStripMenuItem.Name = "sessionSettingsToolStripMenuItem";
@@ -380,12 +388,12 @@
             lblWarehouse.Size = new System.Drawing.Size(66, 17);
             lblWarehouse.Text = "Warehouse";
             // 
-            // warehouseToolStripMenuItem
+            // itemGroupToolStripMenuItem
             // 
-            warehouseToolStripMenuItem.Name = "warehouseToolStripMenuItem";
-            warehouseToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            warehouseToolStripMenuItem.Text = "Warehouse";
-            warehouseToolStripMenuItem.Click += warehouseToolStripMenuItem_Click;
+            itemGroupToolStripMenuItem.Name = "itemGroupToolStripMenuItem";
+            itemGroupToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            itemGroupToolStripMenuItem.Text = "Item Group";
+            itemGroupToolStripMenuItem.Click += itemGroupToolStripMenuItem_Click;
             // 
             // frmMain
             // 
@@ -455,5 +463,6 @@
         private System.Windows.Forms.ToolStripMenuItem itemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uOMUnitOfMeasureToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem warehouseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itemGroupToolStripMenuItem;
     }
 }
