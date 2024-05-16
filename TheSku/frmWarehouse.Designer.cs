@@ -34,7 +34,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
-            txtLimit = new System.Windows.Forms.NumericUpDown();
+            txtLimit = new Telerik.WinControls.UI.RadSpinEditor();
             txtNameFilter = new Telerik.WinControls.UI.RadTextBox();
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -48,27 +48,16 @@
             label5 = new System.Windows.Forms.Label();
             cmbAccount = new Telerik.WinControls.UI.RadDropDownList();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            groupBox3 = new System.Windows.Forms.GroupBox();
-            tabControl1 = new System.Windows.Forms.TabControl();
-            tabPage1 = new System.Windows.Forms.TabPage();
-            panel3 = new System.Windows.Forms.Panel();
-            btnClose = new Telerik.WinControls.UI.RadButton();
-            btnNew = new Telerik.WinControls.UI.RadButton();
-            brnRefreshFields = new Telerik.WinControls.UI.RadButton();
-            btnSave = new Telerik.WinControls.UI.RadButton();
-            btnCopyNameToClipboard = new Telerik.WinControls.UI.RadMenuItem();
-            btnDelete = new Telerik.WinControls.UI.RadMenuItem();
-            btnReload = new Telerik.WinControls.UI.RadMenuItem();
-            radDropDownButton1 = new Telerik.WinControls.UI.RadDropDownButton();
-            panel2 = new System.Windows.Forms.Panel();
-            lblID = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
-            panel1 = new System.Windows.Forms.Panel();
             label6 = new System.Windows.Forms.Label();
             cmbParentWarehouse = new Telerik.WinControls.UI.RadDropDownList();
             cmbCompany = new Telerik.WinControls.UI.RadDropDownList();
             label7 = new System.Windows.Forms.Label();
             chkIsGroupWarehouse = new Telerik.WinControls.UI.RadCheckBox();
+            chkEnable = new Telerik.WinControls.UI.RadCheckBox();
+            chkIsFranchise = new Telerik.WinControls.UI.RadCheckBox();
+            groupBox3 = new System.Windows.Forms.GroupBox();
+            tabControl1 = new System.Windows.Forms.TabControl();
+            tabPage1 = new System.Windows.Forms.TabPage();
             groupBox4 = new System.Windows.Forms.GroupBox();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             txtPhoneNo = new Telerik.WinControls.UI.RadTextBox();
@@ -83,7 +72,19 @@
             txtAddressLine2 = new Telerik.WinControls.UI.RadTextBox();
             txtState = new Telerik.WinControls.UI.RadTextBox();
             txtCity = new Telerik.WinControls.UI.RadTextBox();
-            chkEnable = new Telerik.WinControls.UI.RadCheckBox();
+            panel3 = new System.Windows.Forms.Panel();
+            btnClose = new Telerik.WinControls.UI.RadButton();
+            btnNew = new Telerik.WinControls.UI.RadButton();
+            brnRefreshFields = new Telerik.WinControls.UI.RadButton();
+            btnSave = new Telerik.WinControls.UI.RadButton();
+            btnCopyNameToClipboard = new Telerik.WinControls.UI.RadMenuItem();
+            btnDelete = new Telerik.WinControls.UI.RadMenuItem();
+            btnReload = new Telerik.WinControls.UI.RadMenuItem();
+            radDropDownButton1 = new Telerik.WinControls.UI.RadDropDownButton();
+            panel2 = new System.Windows.Forms.Panel();
+            lblID = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)txtLimit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtNameFilter).BeginInit();
             groupBox1.SuspendLayout();
@@ -95,20 +96,14 @@
             ((System.ComponentModel.ISupportInitialize)txtWarehouseName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cmbAccount).BeginInit();
             tableLayoutPanel1.SuspendLayout();
-            groupBox3.SuspendLayout();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnNew).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)brnRefreshFields).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnSave).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)radDropDownButton1).BeginInit();
-            panel2.SuspendLayout();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cmbParentWarehouse).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cmbCompany).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chkIsGroupWarehouse).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chkEnable).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chkIsFranchise).BeginInit();
+            groupBox3.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
             groupBox4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtPhoneNo).BeginInit();
@@ -117,17 +112,28 @@
             ((System.ComponentModel.ISupportInitialize)txtAddressLine2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtState).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtCity).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chkEnable).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnNew).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)brnRefreshFields).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnSave).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)radDropDownButton1).BeginInit();
+            panel2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // txtLimit
             // 
-            txtLimit.Location = new System.Drawing.Point(165, 58);
+            txtLimit.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            txtLimit.Location = new System.Drawing.Point(165, 60);
             txtLimit.Maximum = new decimal(new int[] { -915455471, -439557943, 2, 0 });
             txtLimit.Name = "txtLimit";
-            txtLimit.Size = new System.Drawing.Size(90, 25);
+            txtLimit.NullableValue = new decimal(new int[] { 100, 0, 0, 0 });
+            txtLimit.Size = new System.Drawing.Size(90, 23);
             txtLimit.TabIndex = 4;
+            txtLimit.ThemeName = "Windows8";
             txtLimit.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            txtLimit.KeyDown += txtNameFilter_KeyDown;
             // 
             // txtNameFilter
             // 
@@ -137,6 +143,7 @@
             txtNameFilter.Size = new System.Drawing.Size(153, 23);
             txtNameFilter.TabIndex = 3;
             txtNameFilter.ThemeName = "Windows8";
+            txtNameFilter.KeyDown += txtNameFilter_KeyDown;
             // 
             // label4
             // 
@@ -174,12 +181,13 @@
             // btnDisplay
             // 
             btnDisplay.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnDisplay.Location = new System.Drawing.Point(1563, 36);
+            btnDisplay.Location = new System.Drawing.Point(988, 47);
             btnDisplay.Name = "btnDisplay";
             btnDisplay.Size = new System.Drawing.Size(90, 36);
             btnDisplay.TabIndex = 1;
             btnDisplay.Text = "Display";
             btnDisplay.ThemeName = "Windows8";
+            btnDisplay.Click += btnDisplay_Click;
             // 
             // gvList
             // 
@@ -205,7 +213,7 @@
             gridViewTextBoxColumn3.Width = 476;
             gridViewCheckBoxColumn3.EnableExpressionEditor = false;
             gridViewCheckBoxColumn3.FieldName = "Enabled";
-            gridViewCheckBoxColumn3.HeaderText = "Status";
+            gridViewCheckBoxColumn3.HeaderText = "Enabled";
             gridViewCheckBoxColumn3.MinWidth = 20;
             gridViewCheckBoxColumn3.Name = "enabled";
             gridViewCheckBoxColumn3.ReadOnly = true;
@@ -233,6 +241,8 @@
             gvList.Size = new System.Drawing.Size(1078, 372);
             gvList.TabIndex = 0;
             gvList.ThemeName = "Windows8";
+            gvList.CellDoubleClick += gvList_CellDoubleClick;
+            gvList.KeyDown += gvList_KeyDown;
             // 
             // groupBox2
             // 
@@ -264,7 +274,7 @@
             txtWarehouseName.Location = new System.Drawing.Point(272, 5);
             txtWarehouseName.Name = "txtWarehouseName";
             txtWarehouseName.Size = new System.Drawing.Size(263, 23);
-            txtWarehouseName.TabIndex = 1;
+            txtWarehouseName.TabIndex = 0;
             txtWarehouseName.ThemeName = "Windows8";
             // 
             // label2
@@ -291,13 +301,13 @@
             // 
             cmbAccount.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             cmbAccount.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            cmbAccount.DisplayMember = "SupplierGroupName";
+            cmbAccount.DisplayMember = "AccountName";
             cmbAccount.DropDownAnimationEnabled = true;
             cmbAccount.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             cmbAccount.Location = new System.Drawing.Point(810, 5);
             cmbAccount.Name = "cmbAccount";
             cmbAccount.Size = new System.Drawing.Size(265, 23);
-            cmbAccount.TabIndex = 2;
+            cmbAccount.TabIndex = 4;
             cmbAccount.ThemeName = "Windows8";
             cmbAccount.ValueMember = "Name";
             // 
@@ -318,6 +328,7 @@
             tableLayoutPanel1.Controls.Add(label7, 2, 1);
             tableLayoutPanel1.Controls.Add(chkIsGroupWarehouse, 1, 2);
             tableLayoutPanel1.Controls.Add(chkEnable, 3, 2);
+            tableLayoutPanel1.Controls.Add(chkIsFranchise, 2, 2);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             tableLayoutPanel1.Location = new System.Drawing.Point(3, 21);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -327,6 +338,87 @@
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.Size = new System.Drawing.Size(1078, 102);
             tableLayoutPanel1.TabIndex = 3;
+            // 
+            // label6
+            // 
+            label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(146, 41);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(120, 17);
+            label6.TabIndex = 0;
+            label6.Text = "Parent Warehouse";
+            // 
+            // cmbParentWarehouse
+            // 
+            cmbParentWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            cmbParentWarehouse.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            cmbParentWarehouse.DisplayMember = "WarehouseName";
+            cmbParentWarehouse.DropDownAnimationEnabled = true;
+            cmbParentWarehouse.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            cmbParentWarehouse.Location = new System.Drawing.Point(272, 38);
+            cmbParentWarehouse.Name = "cmbParentWarehouse";
+            cmbParentWarehouse.Size = new System.Drawing.Size(263, 23);
+            cmbParentWarehouse.TabIndex = 1;
+            cmbParentWarehouse.ThemeName = "Windows8";
+            cmbParentWarehouse.ValueMember = "Name";
+            // 
+            // cmbCompany
+            // 
+            cmbCompany.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            cmbCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            cmbCompany.DisplayMember = "CompanyName";
+            cmbCompany.DropDownAnimationEnabled = true;
+            cmbCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            cmbCompany.Location = new System.Drawing.Point(810, 38);
+            cmbCompany.Name = "cmbCompany";
+            cmbCompany.Size = new System.Drawing.Size(265, 23);
+            cmbCompany.TabIndex = 5;
+            cmbCompany.ThemeName = "Windows8";
+            cmbCompany.ValueMember = "Name";
+            cmbCompany.SelectedIndexChanged += cmbCompany_SelectedIndexChanged;
+            // 
+            // label7
+            // 
+            label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(738, 41);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(66, 17);
+            label7.TabIndex = 0;
+            label7.Text = "Company";
+            // 
+            // chkIsGroupWarehouse
+            // 
+            chkIsGroupWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            chkIsGroupWarehouse.Location = new System.Drawing.Point(272, 75);
+            chkIsGroupWarehouse.Name = "chkIsGroupWarehouse";
+            chkIsGroupWarehouse.Size = new System.Drawing.Size(125, 18);
+            chkIsGroupWarehouse.TabIndex = 2;
+            chkIsGroupWarehouse.Text = "Is Group Warehouse";
+            chkIsGroupWarehouse.ThemeName = "Windows8";
+            // 
+            // chkEnable
+            // 
+            chkEnable.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            chkEnable.CheckState = System.Windows.Forms.CheckState.Checked;
+            chkEnable.Location = new System.Drawing.Point(810, 75);
+            chkEnable.Name = "chkEnable";
+            chkEnable.Size = new System.Drawing.Size(63, 18);
+            chkEnable.TabIndex = 6;
+            chkEnable.Text = "Enabled";
+            chkEnable.ThemeName = "Windows8";
+            chkEnable.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            // 
+            // chkIsFranchise
+            // 
+            chkIsFranchise.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            chkIsFranchise.Location = new System.Drawing.Point(541, 75);
+            chkIsFranchise.Name = "chkIsFranchise";
+            chkIsFranchise.Size = new System.Drawing.Size(81, 18);
+            chkIsFranchise.TabIndex = 3;
+            chkIsFranchise.Text = "Is Franchise";
+            chkIsFranchise.ThemeName = "Windows8";
             // 
             // groupBox3
             // 
@@ -362,193 +454,6 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Warehouse";
             tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(tabControl1);
-            panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel3.Location = new System.Drawing.Point(200, 71);
-            panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(1098, 521);
-            panel3.TabIndex = 3;
-            // 
-            // btnClose
-            // 
-            btnClose.ForeColor = System.Drawing.Color.Black;
-            btnClose.Image = Properties.Resources.Delete_24;
-            btnClose.Location = new System.Drawing.Point(3, 174);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new System.Drawing.Size(194, 36);
-            btnClose.TabIndex = 7;
-            btnClose.Text = "Close";
-            btnClose.ThemeName = "Windows8";
-            // 
-            // btnNew
-            // 
-            btnNew.Image = Properties.Resources.New_24;
-            btnNew.Location = new System.Drawing.Point(3, 132);
-            btnNew.Name = "btnNew";
-            btnNew.Size = new System.Drawing.Size(194, 36);
-            btnNew.TabIndex = 6;
-            btnNew.Text = "New";
-            btnNew.ThemeName = "Windows8";
-            // 
-            // brnRefreshFields
-            // 
-            brnRefreshFields.Image = Properties.Resources.Refresh_24;
-            brnRefreshFields.Location = new System.Drawing.Point(3, 90);
-            brnRefreshFields.Name = "brnRefreshFields";
-            brnRefreshFields.Size = new System.Drawing.Size(194, 36);
-            brnRefreshFields.TabIndex = 4;
-            brnRefreshFields.Text = "Refresh Fields";
-            brnRefreshFields.ThemeName = "Windows8";
-            // 
-            // btnSave
-            // 
-            btnSave.Image = Properties.Resources.Save_24;
-            btnSave.Location = new System.Drawing.Point(3, 48);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new System.Drawing.Size(194, 36);
-            btnSave.TabIndex = 4;
-            btnSave.Text = "Save";
-            btnSave.ThemeName = "Windows8";
-            // 
-            // btnCopyNameToClipboard
-            // 
-            btnCopyNameToClipboard.Image = Properties.Resources.Copy__2__24;
-            btnCopyNameToClipboard.Name = "btnCopyNameToClipboard";
-            btnCopyNameToClipboard.Text = "Copy To Clipboard";
-            btnCopyNameToClipboard.UseCompatibleTextRendering = false;
-            // 
-            // btnDelete
-            // 
-            btnDelete.ForeColor = System.Drawing.Color.Red;
-            btnDelete.Image = Properties.Resources.Delete_File_24;
-            btnDelete.Name = "btnDelete";
-            btnDelete.Text = "Delete";
-            btnDelete.UseCompatibleTextRendering = false;
-            // 
-            // btnReload
-            // 
-            btnReload.Image = Properties.Resources.Refresh_24;
-            btnReload.Name = "btnReload";
-            btnReload.Text = "Reload";
-            btnReload.UseCompatibleTextRendering = false;
-            // 
-            // radDropDownButton1
-            // 
-            radDropDownButton1.Image = Properties.Resources.Configuration_24;
-            radDropDownButton1.Items.AddRange(new Telerik.WinControls.RadItem[] { btnReload, btnDelete, btnCopyNameToClipboard });
-            radDropDownButton1.Location = new System.Drawing.Point(3, 6);
-            radDropDownButton1.Name = "radDropDownButton1";
-            radDropDownButton1.Size = new System.Drawing.Size(194, 36);
-            radDropDownButton1.TabIndex = 5;
-            radDropDownButton1.Text = "Actions";
-            radDropDownButton1.ThemeName = "Windows8";
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(radDropDownButton1);
-            panel2.Controls.Add(btnClose);
-            panel2.Controls.Add(btnNew);
-            panel2.Controls.Add(brnRefreshFields);
-            panel2.Controls.Add(btnSave);
-            panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            panel2.Location = new System.Drawing.Point(0, 71);
-            panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(200, 521);
-            panel2.TabIndex = 4;
-            // 
-            // lblID
-            // 
-            lblID.AutoSize = true;
-            lblID.ForeColor = System.Drawing.Color.White;
-            lblID.Location = new System.Drawing.Point(172, 33);
-            lblID.Name = "lblID";
-            lblID.Size = new System.Drawing.Size(13, 15);
-            lblID.TabIndex = 1;
-            lblID.Text = "0";
-            lblID.Visible = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label1.ForeColor = System.Drawing.Color.White;
-            label1.Location = new System.Drawing.Point(12, 15);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(154, 37);
-            label1.TabIndex = 0;
-            label1.Text = "Warehouse";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = System.Drawing.Color.Black;
-            panel1.Controls.Add(lblID);
-            panel1.Controls.Add(label1);
-            panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            panel1.Location = new System.Drawing.Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(1298, 71);
-            panel1.TabIndex = 2;
-            // 
-            // label6
-            // 
-            label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(146, 41);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(120, 17);
-            label6.TabIndex = 0;
-            label6.Text = "Parent Warehouse";
-            // 
-            // cmbParentWarehouse
-            // 
-            cmbParentWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            cmbParentWarehouse.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            cmbParentWarehouse.DisplayMember = "SupplierGroupName";
-            cmbParentWarehouse.DropDownAnimationEnabled = true;
-            cmbParentWarehouse.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            cmbParentWarehouse.Location = new System.Drawing.Point(272, 38);
-            cmbParentWarehouse.Name = "cmbParentWarehouse";
-            cmbParentWarehouse.Size = new System.Drawing.Size(263, 23);
-            cmbParentWarehouse.TabIndex = 2;
-            cmbParentWarehouse.ThemeName = "Windows8";
-            cmbParentWarehouse.ValueMember = "Name";
-            // 
-            // cmbCompany
-            // 
-            cmbCompany.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            cmbCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            cmbCompany.DisplayMember = "SupplierGroupName";
-            cmbCompany.DropDownAnimationEnabled = true;
-            cmbCompany.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            cmbCompany.Location = new System.Drawing.Point(810, 38);
-            cmbCompany.Name = "cmbCompany";
-            cmbCompany.Size = new System.Drawing.Size(265, 23);
-            cmbCompany.TabIndex = 2;
-            cmbCompany.ThemeName = "Windows8";
-            cmbCompany.ValueMember = "Name";
-            // 
-            // label7
-            // 
-            label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(738, 41);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(66, 17);
-            label7.TabIndex = 0;
-            label7.Text = "Company";
-            // 
-            // chkIsGroupWarehouse
-            // 
-            chkIsGroupWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkIsGroupWarehouse.Location = new System.Drawing.Point(272, 75);
-            chkIsGroupWarehouse.Name = "chkIsGroupWarehouse";
-            chkIsGroupWarehouse.Size = new System.Drawing.Size(125, 18);
-            chkIsGroupWarehouse.TabIndex = 4;
-            chkIsGroupWarehouse.Text = "Is Group Warehouse";
-            chkIsGroupWarehouse.ThemeName = "Windows8";
             // 
             // groupBox4
             // 
@@ -597,7 +502,7 @@
             txtPhoneNo.Location = new System.Drawing.Point(272, 5);
             txtPhoneNo.Name = "txtPhoneNo";
             txtPhoneNo.Size = new System.Drawing.Size(263, 23);
-            txtPhoneNo.TabIndex = 1;
+            txtPhoneNo.TabIndex = 0;
             txtPhoneNo.ThemeName = "Windows8";
             // 
             // label8
@@ -667,7 +572,7 @@
             txtAddressLine1.Location = new System.Drawing.Point(272, 72);
             txtAddressLine1.Name = "txtAddressLine1";
             txtAddressLine1.Size = new System.Drawing.Size(263, 23);
-            txtAddressLine1.TabIndex = 1;
+            txtAddressLine1.TabIndex = 2;
             txtAddressLine1.ThemeName = "Windows8";
             // 
             // label13
@@ -687,7 +592,7 @@
             txtAddressLine2.Location = new System.Drawing.Point(810, 72);
             txtAddressLine2.Name = "txtAddressLine2";
             txtAddressLine2.Size = new System.Drawing.Size(265, 23);
-            txtAddressLine2.TabIndex = 1;
+            txtAddressLine2.TabIndex = 5;
             txtAddressLine2.ThemeName = "Windows8";
             // 
             // txtState
@@ -697,7 +602,7 @@
             txtState.Location = new System.Drawing.Point(810, 38);
             txtState.Name = "txtState";
             txtState.Size = new System.Drawing.Size(265, 23);
-            txtState.TabIndex = 1;
+            txtState.TabIndex = 4;
             txtState.ThemeName = "Windows8";
             // 
             // txtCity
@@ -707,20 +612,144 @@
             txtCity.Location = new System.Drawing.Point(810, 5);
             txtCity.Name = "txtCity";
             txtCity.Size = new System.Drawing.Size(265, 23);
-            txtCity.TabIndex = 1;
+            txtCity.TabIndex = 3;
             txtCity.ThemeName = "Windows8";
             // 
-            // chkEnable
+            // panel3
             // 
-            chkEnable.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkEnable.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkEnable.Location = new System.Drawing.Point(810, 75);
-            chkEnable.Name = "chkEnable";
-            chkEnable.Size = new System.Drawing.Size(56, 18);
-            chkEnable.TabIndex = 4;
-            chkEnable.Text = "Enable";
-            chkEnable.ThemeName = "Windows8";
-            chkEnable.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            panel3.Controls.Add(tabControl1);
+            panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel3.Location = new System.Drawing.Point(200, 71);
+            panel3.Name = "panel3";
+            panel3.Size = new System.Drawing.Size(1098, 521);
+            panel3.TabIndex = 3;
+            // 
+            // btnClose
+            // 
+            btnClose.ForeColor = System.Drawing.Color.Black;
+            btnClose.Image = Properties.Resources.Delete_24;
+            btnClose.Location = new System.Drawing.Point(3, 174);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new System.Drawing.Size(194, 36);
+            btnClose.TabIndex = 7;
+            btnClose.Text = "Close";
+            btnClose.ThemeName = "Windows8";
+            btnClose.Click += btnClose_Click;
+            // 
+            // btnNew
+            // 
+            btnNew.Image = Properties.Resources.New_24;
+            btnNew.Location = new System.Drawing.Point(3, 132);
+            btnNew.Name = "btnNew";
+            btnNew.Size = new System.Drawing.Size(194, 36);
+            btnNew.TabIndex = 6;
+            btnNew.Text = "New";
+            btnNew.ThemeName = "Windows8";
+            btnNew.Click += btnNew_Click;
+            // 
+            // brnRefreshFields
+            // 
+            brnRefreshFields.Image = Properties.Resources.Refresh_24;
+            brnRefreshFields.Location = new System.Drawing.Point(3, 90);
+            brnRefreshFields.Name = "brnRefreshFields";
+            brnRefreshFields.Size = new System.Drawing.Size(194, 36);
+            brnRefreshFields.TabIndex = 4;
+            brnRefreshFields.Text = "Refresh Fields";
+            brnRefreshFields.ThemeName = "Windows8";
+            brnRefreshFields.Click += brnRefreshFields_Click;
+            // 
+            // btnSave
+            // 
+            btnSave.Image = Properties.Resources.Save_24;
+            btnSave.Location = new System.Drawing.Point(3, 48);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new System.Drawing.Size(194, 36);
+            btnSave.TabIndex = 4;
+            btnSave.Text = "Save";
+            btnSave.ThemeName = "Windows8";
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnCopyNameToClipboard
+            // 
+            btnCopyNameToClipboard.Image = Properties.Resources.Copy__2__24;
+            btnCopyNameToClipboard.Name = "btnCopyNameToClipboard";
+            btnCopyNameToClipboard.Text = "Copy To Clipboard";
+            btnCopyNameToClipboard.UseCompatibleTextRendering = false;
+            btnCopyNameToClipboard.Click += btnCopyNameToClipboard_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.ForeColor = System.Drawing.Color.Red;
+            btnDelete.Image = Properties.Resources.Delete_File_24;
+            btnDelete.Name = "btnDelete";
+            btnDelete.Text = "Delete";
+            btnDelete.UseCompatibleTextRendering = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnReload
+            // 
+            btnReload.Image = Properties.Resources.Refresh_24;
+            btnReload.Name = "btnReload";
+            btnReload.Text = "Reload";
+            btnReload.UseCompatibleTextRendering = false;
+            btnReload.Click += btnReload_Click;
+            // 
+            // radDropDownButton1
+            // 
+            radDropDownButton1.Image = Properties.Resources.Configuration_24;
+            radDropDownButton1.Items.AddRange(new Telerik.WinControls.RadItem[] { btnReload, btnDelete, btnCopyNameToClipboard });
+            radDropDownButton1.Location = new System.Drawing.Point(3, 6);
+            radDropDownButton1.Name = "radDropDownButton1";
+            radDropDownButton1.Size = new System.Drawing.Size(194, 36);
+            radDropDownButton1.TabIndex = 5;
+            radDropDownButton1.Text = "Actions";
+            radDropDownButton1.ThemeName = "Windows8";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(radDropDownButton1);
+            panel2.Controls.Add(btnClose);
+            panel2.Controls.Add(btnNew);
+            panel2.Controls.Add(brnRefreshFields);
+            panel2.Controls.Add(btnSave);
+            panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            panel2.Location = new System.Drawing.Point(0, 71);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(200, 521);
+            panel2.TabIndex = 4;
+            // 
+            // lblID
+            // 
+            lblID.AutoSize = true;
+            lblID.ForeColor = System.Drawing.Color.White;
+            lblID.Location = new System.Drawing.Point(172, 33);
+            lblID.Name = "lblID";
+            lblID.Size = new System.Drawing.Size(13, 15);
+            lblID.TabIndex = 1;
+            lblID.Text = "0";
+            lblID.Visible = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.ForeColor = System.Drawing.Color.White;
+            label1.Location = new System.Drawing.Point(12, 15);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(154, 37);
+            label1.TabIndex = 0;
+            label1.Text = "Warehouse";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = System.Drawing.Color.Black;
+            panel1.Controls.Add(lblID);
+            panel1.Controls.Add(label1);
+            panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            panel1.Location = new System.Drawing.Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(1298, 71);
+            panel1.TabIndex = 2;
             // 
             // frmWarehouse
             // 
@@ -734,6 +763,7 @@
             Name = "frmWarehouse";
             Text = "Warehouse";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            KeyDown += frmWarehouse_KeyDown;
             ((System.ComponentModel.ISupportInitialize)txtLimit).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtNameFilter).EndInit();
             groupBox1.ResumeLayout(false);
@@ -747,21 +777,14 @@
             ((System.ComponentModel.ISupportInitialize)cmbAccount).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnNew).EndInit();
-            ((System.ComponentModel.ISupportInitialize)brnRefreshFields).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnSave).EndInit();
-            ((System.ComponentModel.ISupportInitialize)radDropDownButton1).EndInit();
-            panel2.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)cmbParentWarehouse).EndInit();
             ((System.ComponentModel.ISupportInitialize)cmbCompany).EndInit();
             ((System.ComponentModel.ISupportInitialize)chkIsGroupWarehouse).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chkEnable).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chkIsFranchise).EndInit();
+            groupBox3.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
@@ -771,14 +794,22 @@
             ((System.ComponentModel.ISupportInitialize)txtAddressLine2).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtState).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtCity).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chkEnable).EndInit();
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnNew).EndInit();
+            ((System.ComponentModel.ISupportInitialize)brnRefreshFields).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnSave).EndInit();
+            ((System.ComponentModel.ISupportInitialize)radDropDownButton1).EndInit();
+            panel2.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
-        private System.Windows.Forms.NumericUpDown txtLimit;
+        private Telerik.WinControls.UI.RadSpinEditor txtLimit;
         private Telerik.WinControls.UI.RadTextBox txtNameFilter;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -828,5 +859,6 @@
         private Telerik.WinControls.UI.RadTextBox txtState;
         private Telerik.WinControls.UI.RadTextBox txtCity;
         private Telerik.WinControls.UI.RadCheckBox chkEnable;
+        private Telerik.WinControls.UI.RadCheckBox chkIsFranchise;
     }
 }

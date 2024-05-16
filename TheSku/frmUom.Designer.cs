@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
-            txtLimit = new System.Windows.Forms.NumericUpDown();
+            txtLimit = new Telerik.WinControls.UI.RadSpinEditor();
             txtNameFilter = new Telerik.WinControls.UI.RadTextBox();
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -90,11 +90,14 @@
             // 
             // txtLimit
             // 
-            txtLimit.Location = new System.Drawing.Point(165, 58);
+            txtLimit.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            txtLimit.Location = new System.Drawing.Point(165, 60);
             txtLimit.Maximum = new decimal(new int[] { -915455471, -439557943, 2, 0 });
             txtLimit.Name = "txtLimit";
-            txtLimit.Size = new System.Drawing.Size(90, 25);
+            txtLimit.NullableValue = new decimal(new int[] { 100, 0, 0, 0 });
+            txtLimit.Size = new System.Drawing.Size(90, 23);
             txtLimit.TabIndex = 4;
+            txtLimit.ThemeName = "Windows8";
             txtLimit.Value = new decimal(new int[] { 100, 0, 0, 0 });
             txtLimit.KeyDown += txtNameFilter_KeyDown;
             // 
@@ -168,29 +171,30 @@
             gvList.MasterTemplate.AllowDragToGroup = false;
             gvList.MasterTemplate.AllowRowResize = false;
             gvList.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "SupplierName";
-            gridViewTextBoxColumn1.HeaderText = "Supplier Name";
-            gridViewTextBoxColumn1.Name = "supplier_name";
-            gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.Width = 470;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "SupplierGroup";
-            gridViewTextBoxColumn2.HeaderText = "Supplier Group";
-            gridViewTextBoxColumn2.Name = "suppiler_group";
-            gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 329;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "Name";
-            gridViewTextBoxColumn3.HeaderText = "Name";
-            gridViewTextBoxColumn3.Name = "name";
+            gridViewTextBoxColumn3.FieldName = "UomName";
+            gridViewTextBoxColumn3.HeaderText = "Uom Name";
+            gridViewTextBoxColumn3.Name = "uom_name";
             gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.Width = 264;
-            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn1, gridViewTextBoxColumn2, gridViewTextBoxColumn3 });
+            gridViewTextBoxColumn3.Width = 525;
+            gridViewCheckBoxColumn2.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn2.FieldName = "Enabled";
+            gridViewCheckBoxColumn2.HeaderText = "Enabled";
+            gridViewCheckBoxColumn2.MinWidth = 20;
+            gridViewCheckBoxColumn2.Name = "enabled";
+            gridViewCheckBoxColumn2.ReadOnly = true;
+            gridViewCheckBoxColumn2.Width = 161;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "Name";
+            gridViewTextBoxColumn4.HeaderText = "Name";
+            gridViewTextBoxColumn4.Name = "name";
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.Width = 377;
+            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn3, gridViewCheckBoxColumn2, gridViewTextBoxColumn4 });
             gvList.MasterTemplate.EnableFiltering = true;
             gvList.MasterTemplate.EnableGrouping = false;
             gvList.MasterTemplate.EnablePaging = true;
-            gvList.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            gvList.MasterTemplate.ViewDefinition = tableViewDefinition2;
             gvList.Name = "gvList";
             gvList.ReadOnly = true;
             gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -500,7 +504,7 @@
         #endregion
 
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
-        private System.Windows.Forms.NumericUpDown txtLimit;
+        private Telerik.WinControls.UI.RadSpinEditor txtLimit;
         private Telerik.WinControls.UI.RadTextBox txtNameFilter;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

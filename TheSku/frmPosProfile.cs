@@ -364,7 +364,7 @@ namespace TheSku
         {
             this.cmbCompany.DataSource = dbContext.Company.ToList();
             this.cmbCompany.SelectedValue = Global.Company.Name ?? null;
-            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => !w.Disabled && !w.IsGroup && w.Company.Equals(company)).ToList();
+            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => w.Enabled && !w.IsGroup && w.Company.Equals(company)).ToList();
             this.cmbSellingPriceList.DataSource = dbContext.PriceList.Where(w => w.Selling).ToList();
             this.cmbCurrency.DataSource = dbContext.Currency.Where(w => w.Enabled).ToList();
             this.cmbCurrency.SelectedValue = Global.Currency.Name;
@@ -385,7 +385,7 @@ namespace TheSku
 
         private void cmbWarehouse_Enter(object sender, EventArgs e)
         {
-            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => !w.Disabled && !w.IsGroup && w.Company.Equals(company)).ToList();
+            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => w.Enabled && !w.IsGroup && w.Company.Equals(company)).ToList();
         }
 
         private void cmbWriteOffAccount_Enter(object sender, EventArgs e)

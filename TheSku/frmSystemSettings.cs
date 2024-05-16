@@ -36,7 +36,7 @@ namespace TheSku
             this.cmbDefaultCompany.DataSource = dbContext.Company.ToList();
             this.cmbDefaultCountry.DataSource = dbContext.Country.ToList();
             this.cmbDefaultCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled).ToList();
-            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => !w.IsGroup && !w.Disabled).ToList();
+            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => !w.IsGroup && w.Enabled).ToList();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -103,7 +103,7 @@ namespace TheSku
 
         private void cmbWarehouse_Enter(object sender, EventArgs e)
         {
-            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => !w.IsGroup && !w.Disabled && w.Company.Equals(dbContext.Company.Where(c => c.Name.Equals(this.cmbDefaultCompany.SelectedValue)).FirstOrDefault())).ToList();
+            this.cmbWarehouse.DataSource = dbContext.Warehouse.Where(w => !w.IsGroup && w.Enabled && w.Company.Equals(dbContext.Company.Where(c => c.Name.Equals(this.cmbDefaultCompany.SelectedValue)).FirstOrDefault())).ToList();
         }
     }
 }

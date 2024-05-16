@@ -29,8 +29,8 @@ public class Warehouse
     public bool IsGroup { get; set; } = false;
     [Column("is_franchise")]
     public bool IsFranchise { get; set; } = false;
-    [Column("disabled")]
-    public bool Disabled { get; set; } = false;
+    [Column("enabled")]
+    public bool Enabled { get; set; } = false;
     [MaxLength(255)]
     [Column("company")]
     public Company Company { get; set; }
@@ -38,11 +38,11 @@ public class Warehouse
     [Column("account")]
     public Account Account { get; set; }
     [MaxLength(255)]
-    [Column("email_address")]
-    public string EmailAddress { get; set; }
-    [MaxLength(255)]
     [Column("phone_no")]
     public string PhoneNo { get; set; }
+    [MaxLength(255)]
+    [Column("mobile_no")]
+    public string MobileNo { get; set; }
     [Column("address_line_1")]
     public string AddressLine1 { get; set; }
     [Column("address_line_2")]
@@ -52,11 +52,5 @@ public class Warehouse
     public string City { get; set; }
     [MaxLength(255)]
     [Column("state")]
-    public string State { get; set; }
-    [MaxLength(255)]
-    [Column("pin")]
-    public string Pin { get; set; }
-    [MaxLength(255)]
-    [Column("cost_center")]
-    public CostCenter CostCenter { get; set; }    
+    public string State { get; set; }  
 }
