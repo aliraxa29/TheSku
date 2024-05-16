@@ -118,57 +118,57 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Actions" xml:space="preserve">
-    <value>Actions</value>
+    <value>Aksies</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Kanselleer</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Close</value>
+    <value>Naby</value>
   </data>
   <data name="CopyNameToClipboard" xml:space="preserve">
-    <value>Copy Name To Clipboard</value>
+    <value>Kopieer naam na knipbord</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>Vee uit</value>
   </data>
   <data name="Display" xml:space="preserve">
-    <value>Display</value>
+    <value>Vertoon</value>
   </data>
   <data name="List" xml:space="preserve">
-    <value>List</value>
+    <value>Lys</value>
   </data>
   <data name="New" xml:space="preserve">
-    <value>New</value>
+    <value>Nuut</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>Password</value>
+    <value>Wagwoord</value>
   </data>
   <data name="PasswordRequired" xml:space="preserve">
-    <value>Password Required</value>
+    <value>Wagwoord word benodig</value>
   </data>
   <data name="Refresh Fields" xml:space="preserve">
-    <value>Refresh Fields</value>
+    <value>Verfris velde</value>
   </data>
   <data name="Reload" xml:space="preserve">
-    <value>Reload</value>
+    <value>Herlaai</value>
   </data>
   <data name="Required" xml:space="preserve">
-    <value>Required</value>
+    <value>Vereis</value>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Stoor</value>
   </data>
   <data name="Sign In" xml:space="preserve">
-    <value>Sign In</value>
+    <value>Meld aan</value>
   </data>
   <data name="User" xml:space="preserve">
-    <value>User</value>
+    <value>Gebruiker</value>
   </data>
   <data name="UserIsRequired" xml:space="preserve">
-    <value>User is Required</value>
+    <value>Gebruikersnaam word vereis</value>
   </data>
   <data name="Username" xml:space="preserve">
-    <value>Username</value>
+    <value>Gebruikersnaam</value>
   </data>
 </root>
