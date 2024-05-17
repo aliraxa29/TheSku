@@ -237,7 +237,7 @@ public class Global
     {
         using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
         {
-            return dbContext.UomConversionDetail.Where(c => c.ItemCode.Equals(ItemCode) && c.Uom.Equals(uom)).FirstOrDefault().ConversionFactor;
+            return dbContext.UomConversionDetail.Where(c => c.ItemCode.Equals(dbContext.Item.Where(i => i.Name.Equals(ItemCode)).FirstOrDefault()) && c.Uom.Equals(uom)).FirstOrDefault().ConversionFactor;
         }
     }
 

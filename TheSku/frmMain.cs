@@ -221,9 +221,9 @@ namespace TheSku
 
         private void itemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["frmPosProfile"] != null)
+            if (Application.OpenForms["frmItem"] != null)
             {
-                Application.OpenForms["frmPosProfile"].BringToFront();
+                Application.OpenForms["frmItem"].BringToFront();
             }
             else
             {
@@ -245,9 +245,9 @@ namespace TheSku
 
         private void warehouseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["frmUom"] != null)
+            if (Application.OpenForms["frmWarehouse"] != null)
             {
-                Application.OpenForms["frmUom"].BringToFront();
+                Application.OpenForms["frmWarehouse"].BringToFront();
             }
             else
             {

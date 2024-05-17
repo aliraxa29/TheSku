@@ -23,7 +23,7 @@ public class UomConversionDetail
     public int Index { get; set; }
     [MaxLength(255)]
     [Column("item_code")]
-    public string ItemCode { get; set; }
+    public Item ItemCode { get; set; }
     [MaxLength(255)]
     [Column("uom")]
     public Uom Uom { get; set; }
