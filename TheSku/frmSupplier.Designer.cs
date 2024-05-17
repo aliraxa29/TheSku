@@ -57,7 +57,7 @@
             groupBox2 = new System.Windows.Forms.GroupBox();
             gvList = new Telerik.WinControls.UI.RadGridView();
             groupBox1 = new System.Windows.Forms.GroupBox();
-            txtLimit = new System.Windows.Forms.NumericUpDown();
+            txtLimit = new Telerik.WinControls.UI.RadSpinEditor();
             txtNameFilter = new Telerik.WinControls.UI.RadTextBox();
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -411,11 +411,14 @@
             // 
             // txtLimit
             // 
-            txtLimit.Location = new System.Drawing.Point(165, 58);
+            txtLimit.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            txtLimit.Location = new System.Drawing.Point(165, 60);
             txtLimit.Maximum = new decimal(new int[] { -915455471, -439557943, 2, 0 });
             txtLimit.Name = "txtLimit";
-            txtLimit.Size = new System.Drawing.Size(90, 25);
+            txtLimit.NullableValue = new decimal(new int[] { 100, 0, 0, 0 });
+            txtLimit.Size = new System.Drawing.Size(90, 23);
             txtLimit.TabIndex = 4;
+            txtLimit.ThemeName = "Windows8";
             txtLimit.Value = new decimal(new int[] { 100, 0, 0, 0 });
             txtLimit.KeyDown += txtNameFilter_KeyDown;
             // 
@@ -441,7 +444,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(165, 38);
+            label3.Location = new System.Drawing.Point(165, 40);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(40, 17);
             label3.TabIndex = 2;
@@ -516,7 +519,7 @@
         private System.Windows.Forms.Label label2;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
         private Telerik.WinControls.UI.RadButton btnDisplay;
-        private System.Windows.Forms.NumericUpDown txtLimit;
+        private Telerik.WinControls.UI.RadSpinEditor txtLimit;
         private Telerik.WinControls.UI.RadTextBox txtNameFilter;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

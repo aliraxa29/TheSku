@@ -88,6 +88,7 @@ namespace TheSku.Data
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserPermission> UserPermissions { get; set; }
         public DbSet<Document> Documents { get; set; }
+        public DbSet<Series> Series { get; set; }
     }
 }
 

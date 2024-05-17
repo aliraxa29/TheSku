@@ -22,14 +22,14 @@ namespace TheSku.LanguageResource {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class af {
+    internal class en {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal af() {
+        internal en() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace TheSku.LanguageResource {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TheSku.LanguageResource.af", typeof(af).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TheSku.LanguageResource.en", typeof(en).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Actions.
+        ///   Looks up a localized string similar to Aksies.
         /// </summary>
         internal static string Actions {
             get {
@@ -70,7 +70,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cancel.
+        ///   Looks up a localized string similar to Kanselleer.
         /// </summary>
         internal static string Cancel {
             get {
@@ -79,7 +79,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Close.
+        ///   Looks up a localized string similar to Naby.
         /// </summary>
         internal static string Close {
             get {
@@ -88,7 +88,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy Name To Clipboard.
+        ///   Looks up a localized string similar to Kopieer naam na knipbord.
         /// </summary>
         internal static string CopyNameToClipboard {
             get {
@@ -97,7 +97,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete.
+        ///   Looks up a localized string similar to Vee uit.
         /// </summary>
         internal static string Delete {
             get {
@@ -106,7 +106,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Display.
+        ///   Looks up a localized string similar to Vertoon.
         /// </summary>
         internal static string Display {
             get {
@@ -115,7 +115,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to List.
+        ///   Looks up a localized string similar to Lys.
         /// </summary>
         internal static string List {
             get {
@@ -124,7 +124,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New.
+        ///   Looks up a localized string similar to Nuut.
         /// </summary>
         internal static string New {
             get {
@@ -133,7 +133,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password.
+        ///   Looks up a localized string similar to Wagwoord.
         /// </summary>
         internal static string Password {
             get {
@@ -142,7 +142,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password Required.
+        ///   Looks up a localized string similar to Wagwoord word benodig.
         /// </summary>
         internal static string PasswordRequired {
             get {
@@ -151,7 +151,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Refresh Fields.
+        ///   Looks up a localized string similar to Verfris velde.
         /// </summary>
         internal static string Refresh_Fields {
             get {
@@ -160,7 +160,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reload.
+        ///   Looks up a localized string similar to Herlaai.
         /// </summary>
         internal static string Reload {
             get {
@@ -169,7 +169,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Required.
+        ///   Looks up a localized string similar to Vereis.
         /// </summary>
         internal static string Required {
             get {
@@ -178,7 +178,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save.
+        ///   Looks up a localized string similar to Stoor.
         /// </summary>
         internal static string Save {
             get {
@@ -187,7 +187,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sign In.
+        ///   Looks up a localized string similar to Meld aan.
         /// </summary>
         internal static string Sign_In {
             get {
@@ -196,7 +196,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User.
+        ///   Looks up a localized string similar to Gebruiker.
         /// </summary>
         internal static string User {
             get {
@@ -205,7 +205,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User is Required.
+        ///   Looks up a localized string similar to Gebruikersnaam word vereis.
         /// </summary>
         internal static string UserIsRequired {
             get {
@@ -214,7 +214,7 @@ namespace TheSku.LanguageResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Username.
+        ///   Looks up a localized string similar to Gebruikersnaam.
         /// </summary>
         internal static string Username {
             get {

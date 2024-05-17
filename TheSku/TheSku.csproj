@@ -28,6 +28,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="LanguageResource\en.Designer.cs">
+      <DependentUpon>en.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="LanguageResource\af.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -41,6 +46,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="LanguageResource\en.resx">
+      <LastGenOutput>en.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="LanguageResource\af.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>af.Designer.cs</LastGenOutput>

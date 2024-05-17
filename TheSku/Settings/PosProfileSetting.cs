@@ -10,7 +10,7 @@ public class PosProfileSetting
         {
             using (var dbContext = new AppDbContext(DbContextOptionsProvider.Options))
             {
-                return dbContext.Warehouse.Where(c => c.Name.Equals(Global.Warehouse) && !c.Disabled && c.Company.Equals(Global.Company)).FirstOrDefault();
+                return dbContext.Warehouse.Where(c => c.Name.Equals(Global.Warehouse) && c.Enabled && c.Company.Equals(Global.Company)).FirstOrDefault();
             }
         }
     }

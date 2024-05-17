@@ -221,9 +221,9 @@ namespace TheSku
 
         private void itemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["frmPosProfile"] != null)
+            if (Application.OpenForms["frmItem"] != null)
             {
-                Application.OpenForms["frmPosProfile"].BringToFront();
+                Application.OpenForms["frmItem"].BringToFront();
             }
             else
             {
@@ -240,6 +240,30 @@ namespace TheSku
             else
             {
                 new frmUom(dbContext) { MdiParent = this }.Show();
+            }
+        }
+
+        private void warehouseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmWarehouse"] != null)
+            {
+                Application.OpenForms["frmWarehouse"].BringToFront();
+            }
+            else
+            {
+                new frmWarehouse(dbContext) { MdiParent = this }.Show();
+            }
+        }
+
+        private void itemGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmItemGroup"] != null)
+            {
+                Application.OpenForms["frmItemGroup"].BringToFront();
+            }
+            else
+            {
+                new frmItemGroup(dbContext) { MdiParent = this }.Show();
             }
         }
     }
