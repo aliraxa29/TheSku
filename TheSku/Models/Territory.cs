@@ -23,5 +23,5 @@ public class Territory
     public string TerritoryName { get; set; }
     [MaxLength(255)]
     [Column("territory_manager")]
-    public string TerritoryManager { get; set; }
+    public User TerritoryManager { get; set; }
 }
