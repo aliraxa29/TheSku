@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using TheSku.Data;
-using static System.Windows.Forms.AxHost;
 
 namespace TheSku
 {
@@ -67,6 +66,11 @@ namespace TheSku
             }
             else
             {
+                if (dbContext.Warehouse.Where(w => w.ParentWarehouse.Equals(this.lblID.Text)).ToList().Count > 0 && !this.chkEnable.Checked)
+                {
+                    MessageBox.Show($"You cannot disable {this.lblID.Text} untill child warehouses are present.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 Warehouse warehouse = dbContext.Warehouse.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
                 if (warehouse is not null)
                 {
@@ -109,6 +113,7 @@ namespace TheSku
             this.txtState.Clear();
             this.tabControl1.SelectTab(0);
             this.txtWarehouseName.Focus();
+            this.chkIsGroupWarehouse.ReadOnly = false;
         }
 
         private void frmWarehouse_KeyDown(object sender, KeyEventArgs e)
@@ -195,6 +200,7 @@ namespace TheSku
                     this.tabControl1.SelectTab(0);
                     this.txtWarehouseName.Focus();
                     this.lblID.Visible = true;
+                    this.chkIsGroupWarehouse.ReadOnly = true;
                 }
             }
         }

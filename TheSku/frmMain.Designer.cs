@@ -41,6 +41,7 @@
             customerGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             itemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            itemGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             uOMUnitOfMeasureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             buyingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +74,7 @@
             toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             lblWarehouse = new System.Windows.Forms.ToolStripStatusLabel();
-            itemGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            territoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ssMain.SuspendLayout();
             SuspendLayout();
@@ -131,7 +132,7 @@
             // 
             // sellingToolStripMenuItem
             // 
-            sellingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { customerToolStripMenuItem });
+            sellingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { customerToolStripMenuItem, territoryToolStripMenuItem });
             sellingToolStripMenuItem.Name = "sellingToolStripMenuItem";
             sellingToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             sellingToolStripMenuItem.Text = "Selling";
@@ -140,7 +141,7 @@
             // 
             customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { customerToolStripMenuItem1, customerGroupToolStripMenuItem });
             customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            customerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            customerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             customerToolStripMenuItem.Text = "Customer";
             // 
             // customerToolStripMenuItem1
@@ -169,6 +170,13 @@
             itemToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             itemToolStripMenuItem.Text = "Item";
             itemToolStripMenuItem.Click += itemToolStripMenuItem_Click;
+            // 
+            // itemGroupToolStripMenuItem
+            // 
+            itemGroupToolStripMenuItem.Name = "itemGroupToolStripMenuItem";
+            itemGroupToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            itemGroupToolStripMenuItem.Text = "Item Group";
+            itemGroupToolStripMenuItem.Click += itemGroupToolStripMenuItem_Click;
             // 
             // uOMUnitOfMeasureToolStripMenuItem
             // 
@@ -388,12 +396,12 @@
             lblWarehouse.Size = new System.Drawing.Size(66, 17);
             lblWarehouse.Text = "Warehouse";
             // 
-            // itemGroupToolStripMenuItem
+            // territoryToolStripMenuItem
             // 
-            itemGroupToolStripMenuItem.Name = "itemGroupToolStripMenuItem";
-            itemGroupToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            itemGroupToolStripMenuItem.Text = "Item Group";
-            itemGroupToolStripMenuItem.Click += itemGroupToolStripMenuItem_Click;
+            territoryToolStripMenuItem.Name = "territoryToolStripMenuItem";
+            territoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            territoryToolStripMenuItem.Text = "Territory";
+            territoryToolStripMenuItem.Click += territoryToolStripMenuItem_Click;
             // 
             // frmMain
             // 
@@ -464,5 +472,6 @@
         private System.Windows.Forms.ToolStripMenuItem uOMUnitOfMeasureToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem warehouseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemGroupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem territoryToolStripMenuItem;
     }
 }

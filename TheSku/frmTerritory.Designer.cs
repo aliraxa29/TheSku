@@ -1,6 +1,6 @@
 ﻿namespace TheSku
 {
-    partial class frmUom
+    partial class frmTerritory
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             txtLimit = new Telerik.WinControls.UI.RadSpinEditor();
             txtNameFilter = new Telerik.WinControls.UI.RadTextBox();
@@ -42,11 +42,11 @@
             gvList = new Telerik.WinControls.UI.RadGridView();
             groupBox2 = new System.Windows.Forms.GroupBox();
             tpList = new System.Windows.Forms.TabPage();
-            txtUomName = new Telerik.WinControls.UI.RadTextBox();
+            txtSupplierName = new Telerik.WinControls.UI.RadTextBox();
             label2 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            cmbSupplierGroup = new Telerik.WinControls.UI.RadDropDownList();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            chkEnabled = new Telerik.WinControls.UI.RadCheckBox();
-            chkMustBeWholeNumber = new Telerik.WinControls.UI.RadCheckBox();
             groupBox3 = new System.Windows.Forms.GroupBox();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
@@ -71,10 +71,9 @@
             ((System.ComponentModel.ISupportInitialize)gvList.MasterTemplate).BeginInit();
             groupBox2.SuspendLayout();
             tpList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)txtUomName).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtSupplierName).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cmbSupplierGroup).BeginInit();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chkEnabled).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chkMustBeWholeNumber).BeginInit();
             groupBox3.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -123,7 +122,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(165, 38);
+            label3.Location = new System.Drawing.Point(165, 40);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(40, 17);
             label3.TabIndex = 2;
@@ -139,7 +138,7 @@
             groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             groupBox1.Location = new System.Drawing.Point(3, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(1088, 89);
+            groupBox1.Size = new System.Drawing.Size(1090, 89);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filters";
@@ -147,7 +146,7 @@
             // btnDisplay
             // 
             btnDisplay.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnDisplay.Location = new System.Drawing.Point(992, 47);
+            btnDisplay.Location = new System.Drawing.Point(994, 47);
             btnDisplay.Name = "btnDisplay";
             btnDisplay.Size = new System.Drawing.Size(90, 36);
             btnDisplay.TabIndex = 1;
@@ -171,34 +170,33 @@
             gvList.MasterTemplate.AllowDragToGroup = false;
             gvList.MasterTemplate.AllowRowResize = false;
             gvList.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "UomName";
-            gridViewTextBoxColumn1.HeaderText = "Uom Name";
-            gridViewTextBoxColumn1.Name = "uom_name";
-            gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.Width = 525;
-            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn1.FieldName = "Enabled";
-            gridViewCheckBoxColumn1.HeaderText = "Enabled";
-            gridViewCheckBoxColumn1.MinWidth = 20;
-            gridViewCheckBoxColumn1.Name = "enabled";
-            gridViewCheckBoxColumn1.ReadOnly = true;
-            gridViewCheckBoxColumn1.Width = 161;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Name";
-            gridViewTextBoxColumn2.HeaderText = "Name";
-            gridViewTextBoxColumn2.Name = "name";
-            gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 377;
-            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn1, gridViewCheckBoxColumn1, gridViewTextBoxColumn2 });
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "TerritoryName";
+            gridViewTextBoxColumn4.HeaderText = "Territory Name";
+            gridViewTextBoxColumn4.Name = "territory_name";
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.Width = 471;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "TerritoryManager.Name";
+            gridViewTextBoxColumn5.HeaderText = "Territory Manager";
+            gridViewTextBoxColumn5.Name = "territory_manager";
+            gridViewTextBoxColumn5.ReadOnly = true;
+            gridViewTextBoxColumn5.Width = 330;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "Name";
+            gridViewTextBoxColumn6.HeaderText = "Name";
+            gridViewTextBoxColumn6.Name = "name";
+            gridViewTextBoxColumn6.ReadOnly = true;
+            gridViewTextBoxColumn6.Width = 264;
+            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn4, gridViewTextBoxColumn5, gridViewTextBoxColumn6 });
             gvList.MasterTemplate.EnableFiltering = true;
             gvList.MasterTemplate.EnableGrouping = false;
             gvList.MasterTemplate.EnablePaging = true;
-            gvList.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            gvList.MasterTemplate.ViewDefinition = tableViewDefinition2;
             gvList.Name = "gvList";
             gvList.ReadOnly = true;
             gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            gvList.Size = new System.Drawing.Size(1082, 372);
+            gvList.Size = new System.Drawing.Size(1084, 372);
             gvList.TabIndex = 0;
             gvList.ThemeName = "Windows8";
             gvList.CellDoubleClick += gvList_CellDoubleClick;
@@ -210,7 +208,7 @@
             groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             groupBox2.Location = new System.Drawing.Point(3, 92);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new System.Drawing.Size(1088, 396);
+            groupBox2.Size = new System.Drawing.Size(1090, 396);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "List";
@@ -222,30 +220,54 @@
             tpList.Location = new System.Drawing.Point(4, 26);
             tpList.Name = "tpList";
             tpList.Padding = new System.Windows.Forms.Padding(3);
-            tpList.Size = new System.Drawing.Size(1094, 491);
+            tpList.Size = new System.Drawing.Size(1096, 491);
             tpList.TabIndex = 1;
             tpList.Text = "List";
             tpList.UseVisualStyleBackColor = true;
             // 
-            // txtUomName
+            // txtSupplierName
             // 
-            txtUomName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtUomName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtUomName.Location = new System.Drawing.Point(273, 5);
-            txtUomName.Name = "txtUomName";
-            txtUomName.Size = new System.Drawing.Size(264, 23);
-            txtUomName.TabIndex = 0;
-            txtUomName.ThemeName = "Windows8";
+            txtSupplierName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtSupplierName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtSupplierName.Location = new System.Drawing.Point(274, 11);
+            txtSupplierName.Name = "txtSupplierName";
+            txtSupplierName.Size = new System.Drawing.Size(265, 23);
+            txtSupplierName.TabIndex = 1;
+            txtSupplierName.ThemeName = "Windows8";
             // 
             // label2
             // 
             label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(190, 8);
+            label2.Location = new System.Drawing.Point(166, 14);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(77, 17);
+            label2.Size = new System.Drawing.Size(102, 17);
             label2.TabIndex = 0;
-            label2.Text = "Uom Name";
+            label2.Text = "Territory Name";
+            // 
+            // label5
+            // 
+            label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(690, 14);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(120, 17);
+            label5.TabIndex = 0;
+            label5.Text = "Territory Manager";
+            // 
+            // cmbSupplierGroup
+            // 
+            cmbSupplierGroup.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            cmbSupplierGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            cmbSupplierGroup.DisplayMember = "SupplierGroupName";
+            cmbSupplierGroup.DropDownAnimationEnabled = true;
+            cmbSupplierGroup.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            cmbSupplierGroup.Location = new System.Drawing.Point(816, 11);
+            cmbSupplierGroup.Name = "cmbSupplierGroup";
+            cmbSupplierGroup.Size = new System.Drawing.Size(265, 23);
+            cmbSupplierGroup.TabIndex = 2;
+            cmbSupplierGroup.ThemeName = "Windows8";
+            cmbSupplierGroup.ValueMember = "Name";
             // 
             // tableLayoutPanel1
             // 
@@ -254,41 +276,17 @@
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            tableLayoutPanel1.Controls.Add(txtUomName, 1, 0);
+            tableLayoutPanel1.Controls.Add(txtSupplierName, 1, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 0);
-            tableLayoutPanel1.Controls.Add(chkEnabled, 1, 1);
-            tableLayoutPanel1.Controls.Add(chkMustBeWholeNumber, 1, 2);
+            tableLayoutPanel1.Controls.Add(label5, 2, 0);
+            tableLayoutPanel1.Controls.Add(cmbSupplierGroup, 3, 0);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             tableLayoutPanel1.Location = new System.Drawing.Point(3, 21);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(1082, 102);
+            tableLayoutPanel1.Size = new System.Drawing.Size(1084, 45);
             tableLayoutPanel1.TabIndex = 3;
-            // 
-            // chkEnabled
-            // 
-            chkEnabled.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkEnabled.Location = new System.Drawing.Point(273, 40);
-            chkEnabled.Name = "chkEnabled";
-            chkEnabled.Size = new System.Drawing.Size(63, 18);
-            chkEnabled.TabIndex = 1;
-            chkEnabled.Text = "Enabled";
-            chkEnabled.ThemeName = "Windows8";
-            chkEnabled.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
-            // 
-            // chkMustBeWholeNumber
-            // 
-            chkMustBeWholeNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkMustBeWholeNumber.Location = new System.Drawing.Point(273, 75);
-            chkMustBeWholeNumber.Name = "chkMustBeWholeNumber";
-            chkMustBeWholeNumber.Size = new System.Drawing.Size(144, 18);
-            chkMustBeWholeNumber.TabIndex = 2;
-            chkMustBeWholeNumber.Text = "Must be Whole Number";
-            chkMustBeWholeNumber.ThemeName = "Windows8";
             // 
             // groupBox3
             // 
@@ -296,7 +294,7 @@
             groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             groupBox3.Location = new System.Drawing.Point(3, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(1088, 126);
+            groupBox3.Size = new System.Drawing.Size(1090, 69);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Details";
@@ -310,7 +308,7 @@
             tabControl1.Location = new System.Drawing.Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new System.Drawing.Size(1102, 521);
+            tabControl1.Size = new System.Drawing.Size(1104, 521);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -319,9 +317,9 @@
             tabPage1.Location = new System.Drawing.Point(4, 26);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            tabPage1.Size = new System.Drawing.Size(1094, 491);
+            tabPage1.Size = new System.Drawing.Size(1096, 491);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "Uom";
+            tabPage1.Text = "Territory";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel3
@@ -330,7 +328,7 @@
             panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             panel3.Location = new System.Drawing.Point(200, 71);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(1102, 521);
+            panel3.Size = new System.Drawing.Size(1104, 521);
             panel3.TabIndex = 3;
             // 
             // btnClose
@@ -340,7 +338,7 @@
             btnClose.Location = new System.Drawing.Point(3, 174);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(194, 36);
-            btnClose.TabIndex = 4;
+            btnClose.TabIndex = 7;
             btnClose.Text = "Close";
             btnClose.ThemeName = "Windows8";
             btnClose.Click += btnClose_Click;
@@ -351,7 +349,7 @@
             btnNew.Location = new System.Drawing.Point(3, 132);
             btnNew.Name = "btnNew";
             btnNew.Size = new System.Drawing.Size(194, 36);
-            btnNew.TabIndex = 3;
+            btnNew.TabIndex = 6;
             btnNew.Text = "New";
             btnNew.ThemeName = "Windows8";
             btnNew.Click += btnNew_Click;
@@ -362,7 +360,7 @@
             brnRefreshFields.Location = new System.Drawing.Point(3, 90);
             brnRefreshFields.Name = "brnRefreshFields";
             brnRefreshFields.Size = new System.Drawing.Size(194, 36);
-            brnRefreshFields.TabIndex = 2;
+            brnRefreshFields.TabIndex = 4;
             brnRefreshFields.Text = "Refresh Fields";
             brnRefreshFields.ThemeName = "Windows8";
             // 
@@ -372,7 +370,7 @@
             btnSave.Location = new System.Drawing.Point(3, 48);
             btnSave.Name = "btnSave";
             btnSave.Size = new System.Drawing.Size(194, 36);
-            btnSave.TabIndex = 1;
+            btnSave.TabIndex = 4;
             btnSave.Text = "Save";
             btnSave.ThemeName = "Windows8";
             btnSave.Click += btnSave_Click;
@@ -409,7 +407,7 @@
             radDropDownButton1.Location = new System.Drawing.Point(3, 6);
             radDropDownButton1.Name = "radDropDownButton1";
             radDropDownButton1.Size = new System.Drawing.Size(194, 36);
-            radDropDownButton1.TabIndex = 0;
+            radDropDownButton1.TabIndex = 5;
             radDropDownButton1.Text = "Actions";
             radDropDownButton1.ThemeName = "Windows8";
             // 
@@ -430,7 +428,7 @@
             // 
             lblID.AutoSize = true;
             lblID.ForeColor = System.Drawing.Color.White;
-            lblID.Location = new System.Drawing.Point(125, 33);
+            lblID.Location = new System.Drawing.Point(162, 31);
             lblID.Name = "lblID";
             lblID.Size = new System.Drawing.Size(13, 15);
             lblID.TabIndex = 1;
@@ -444,9 +442,9 @@
             label1.ForeColor = System.Drawing.Color.White;
             label1.Location = new System.Drawing.Point(12, 15);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(81, 37);
+            label1.Size = new System.Drawing.Size(120, 37);
             label1.TabIndex = 0;
-            label1.Text = "UOM";
+            label1.Text = "Territory";
             // 
             // panel1
             // 
@@ -456,22 +454,22 @@
             panel1.Dock = System.Windows.Forms.DockStyle.Top;
             panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(1302, 71);
+            panel1.Size = new System.Drawing.Size(1304, 71);
             panel1.TabIndex = 2;
             // 
-            // frmUom
+            // frmTerritory
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1302, 592);
+            ClientSize = new System.Drawing.Size(1304, 592);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             KeyPreview = true;
-            Name = "frmUom";
-            Text = "Uom (Unit Of Measure)";
+            Name = "frmTerritory";
+            Text = "Territory";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            KeyDown += frmUom_KeyDown;
+            KeyDown += frmTerritory_KeyDown;
             ((System.ComponentModel.ISupportInitialize)txtLimit).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtNameFilter).EndInit();
             groupBox1.ResumeLayout(false);
@@ -481,11 +479,10 @@
             ((System.ComponentModel.ISupportInitialize)gvList).EndInit();
             groupBox2.ResumeLayout(false);
             tpList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)txtUomName).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtSupplierName).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cmbSupplierGroup).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)chkEnabled).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chkMustBeWholeNumber).EndInit();
             groupBox3.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
@@ -513,8 +510,10 @@
         private Telerik.WinControls.UI.RadGridView gvList;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TabPage tpList;
-        private Telerik.WinControls.UI.RadTextBox txtUomName;
+        private Telerik.WinControls.UI.RadTextBox txtSupplierName;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private Telerik.WinControls.UI.RadDropDownList cmbSupplierGroup;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TabControl tabControl1;
@@ -532,7 +531,5 @@
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private Telerik.WinControls.UI.RadCheckBox chkEnabled;
-        private Telerik.WinControls.UI.RadCheckBox chkMustBeWholeNumber;
     }
 }
