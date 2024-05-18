@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using TheSku.Data;
-using static System.Windows.Forms.AxHost;
 
 namespace TheSku
 {

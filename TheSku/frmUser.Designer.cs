@@ -30,14 +30,14 @@ namespace TheSku
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             ControlsContainer = new Telerik.WinControls.UI.CollapsiblePanelControlsContainer();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             radTextBox1 = new Telerik.WinControls.UI.RadTextBox();
-            txtLimit = new System.Windows.Forms.NumericUpDown();
+            txtLimit = new Telerik.WinControls.UI.RadSpinEditor();
             txtNameFilter = new Telerik.WinControls.UI.RadTextBox();
             label4 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -50,6 +50,7 @@ namespace TheSku
             label2 = new System.Windows.Forms.Label();
             groupBox3 = new System.Windows.Forms.GroupBox();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            cmbRole = new Telerik.WinControls.UI.RadDropDownList();
             label7 = new System.Windows.Forms.Label();
             txtUsername = new Telerik.WinControls.UI.RadTextBox();
             txtFullName = new Telerik.WinControls.UI.RadTextBox();
@@ -58,6 +59,7 @@ namespace TheSku
             label9 = new System.Windows.Forms.Label();
             txtPassword = new Telerik.WinControls.UI.RadTextBox();
             label6 = new System.Windows.Forms.Label();
+            label10 = new System.Windows.Forms.Label();
             tabPage1 = new System.Windows.Forms.TabPage();
             panel3 = new System.Windows.Forms.Panel();
             tabControl1 = new System.Windows.Forms.TabControl();
@@ -74,8 +76,6 @@ namespace TheSku
             lblID = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             panel1 = new System.Windows.Forms.Panel();
-            cmbRole = new Telerik.WinControls.UI.RadDropDownList();
-            label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)ControlsContainer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)radTextBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtLimit).BeginInit();
@@ -88,6 +88,7 @@ namespace TheSku
             ((System.ComponentModel.ISupportInitialize)txtFirstName).BeginInit();
             groupBox3.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cmbRole).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtUsername).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtFullName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtLastName).BeginInit();
@@ -103,14 +104,13 @@ namespace TheSku
             ((System.ComponentModel.ISupportInitialize)brnRefreshFields).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnSave).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)cmbRole).BeginInit();
             SuspendLayout();
             // 
             // radTextBox1
             // 
             radTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             radTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            radTextBox1.Location = new System.Drawing.Point(1087, 66);
+            radTextBox1.Location = new System.Drawing.Point(1087, 54);
             radTextBox1.Name = "radTextBox1";
             radTextBox1.Size = new System.Drawing.Size(232, 23);
             radTextBox1.TabIndex = 1;
@@ -118,11 +118,14 @@ namespace TheSku
             // 
             // txtLimit
             // 
-            txtLimit.Location = new System.Drawing.Point(165, 58);
+            txtLimit.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            txtLimit.Location = new System.Drawing.Point(165, 60);
             txtLimit.Maximum = new decimal(new int[] { -915455471, -439557943, 2, 0 });
             txtLimit.Name = "txtLimit";
-            txtLimit.Size = new System.Drawing.Size(90, 25);
+            txtLimit.NullableValue = new decimal(new int[] { 100, 0, 0, 0 });
+            txtLimit.Size = new System.Drawing.Size(90, 23);
             txtLimit.TabIndex = 4;
+            txtLimit.ThemeName = "Windows8";
             txtLimit.Value = new decimal(new int[] { 100, 0, 0, 0 });
             txtLimit.KeyDown += txtNameFilter_KeyDown;
             // 
@@ -207,29 +210,29 @@ namespace TheSku
             gvList.MasterTemplate.AllowDragToGroup = false;
             gvList.MasterTemplate.AllowRowResize = false;
             gvList.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "UserName";
-            gridViewTextBoxColumn7.HeaderText = "User Name";
-            gridViewTextBoxColumn7.Name = "user_name";
-            gridViewTextBoxColumn7.ReadOnly = true;
-            gridViewTextBoxColumn7.Width = 321;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "FullName";
-            gridViewTextBoxColumn8.HeaderText = "Full Name";
-            gridViewTextBoxColumn8.Name = "full_name";
-            gridViewTextBoxColumn8.ReadOnly = true;
-            gridViewTextBoxColumn8.Width = 225;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "Name";
-            gridViewTextBoxColumn9.HeaderText = "Name";
-            gridViewTextBoxColumn9.Name = "name";
-            gridViewTextBoxColumn9.ReadOnly = true;
-            gridViewTextBoxColumn9.Width = 180;
-            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn7, gridViewTextBoxColumn8, gridViewTextBoxColumn9 });
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "UserName";
+            gridViewTextBoxColumn1.HeaderText = "User Name";
+            gridViewTextBoxColumn1.Name = "user_name";
+            gridViewTextBoxColumn1.ReadOnly = true;
+            gridViewTextBoxColumn1.Width = 321;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "FullName";
+            gridViewTextBoxColumn2.HeaderText = "Full Name";
+            gridViewTextBoxColumn2.Name = "full_name";
+            gridViewTextBoxColumn2.ReadOnly = true;
+            gridViewTextBoxColumn2.Width = 225;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Name";
+            gridViewTextBoxColumn3.HeaderText = "Name";
+            gridViewTextBoxColumn3.Name = "name";
+            gridViewTextBoxColumn3.ReadOnly = true;
+            gridViewTextBoxColumn3.Width = 180;
+            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn1, gridViewTextBoxColumn2, gridViewTextBoxColumn3 });
             gvList.MasterTemplate.EnableFiltering = true;
             gvList.MasterTemplate.EnableGrouping = false;
             gvList.MasterTemplate.EnablePaging = true;
-            gvList.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            gvList.MasterTemplate.ViewDefinition = tableViewDefinition1;
             gvList.Name = "gvList";
             gvList.ReadOnly = true;
             gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -243,7 +246,7 @@ namespace TheSku
             // 
             label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(970, 69);
+            label5.Location = new System.Drawing.Point(970, 57);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(99, 17);
             label5.TabIndex = 0;
@@ -251,9 +254,9 @@ namespace TheSku
             // 
             // txtFirstName
             // 
-            txtFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtFirstName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtFirstName.Location = new System.Drawing.Point(189, 3);
+            txtFirstName.Location = new System.Drawing.Point(189, 5);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new System.Drawing.Size(180, 23);
             txtFirstName.TabIndex = 0;
@@ -278,7 +281,7 @@ namespace TheSku
             groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             groupBox3.Location = new System.Drawing.Point(3, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(751, 151);
+            groupBox3.Size = new System.Drawing.Size(751, 126);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Details";
@@ -302,15 +305,33 @@ namespace TheSku
             tableLayoutPanel1.Controls.Add(txtPassword, 1, 2);
             tableLayoutPanel1.Controls.Add(label6, 2, 0);
             tableLayoutPanel1.Controls.Add(label10, 2, 2);
-            tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             tableLayoutPanel1.Location = new System.Drawing.Point(3, 21);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(745, 100);
+            tableLayoutPanel1.Size = new System.Drawing.Size(745, 102);
             tableLayoutPanel1.TabIndex = 2;
+            // 
+            // cmbRole
+            // 
+            cmbRole.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            cmbRole.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            cmbRole.DisplayMember = "name";
+            cmbRole.DropDownAnimationEnabled = true;
+            cmbRole.DropDownHeight = 130;
+            cmbRole.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            cmbRole.ItemHeight = 21;
+            cmbRole.Location = new System.Drawing.Point(562, 72);
+            cmbRole.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cmbRole.MaxDropDownItems = 20;
+            cmbRole.Name = "cmbRole";
+            cmbRole.Size = new System.Drawing.Size(179, 23);
+            cmbRole.TabIndex = 5;
+            cmbRole.ThemeName = "Windows8";
+            cmbRole.ValueMember = "name";
             // 
             // label7
             // 
@@ -324,9 +345,9 @@ namespace TheSku
             // 
             // txtUsername
             // 
-            txtUsername.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtUsername.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtUsername.Location = new System.Drawing.Point(561, 36);
+            txtUsername.Location = new System.Drawing.Point(561, 38);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new System.Drawing.Size(181, 23);
             txtUsername.TabIndex = 4;
@@ -334,9 +355,9 @@ namespace TheSku
             // 
             // txtFullName
             // 
-            txtFullName.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtFullName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtFullName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtFullName.Location = new System.Drawing.Point(189, 36);
+            txtFullName.Location = new System.Drawing.Point(189, 38);
             txtFullName.Name = "txtFullName";
             txtFullName.ReadOnly = true;
             txtFullName.Size = new System.Drawing.Size(180, 23);
@@ -345,9 +366,9 @@ namespace TheSku
             // 
             // txtLastName
             // 
-            txtLastName.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtLastName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtLastName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtLastName.Location = new System.Drawing.Point(561, 3);
+            txtLastName.Location = new System.Drawing.Point(561, 5);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new System.Drawing.Size(181, 23);
             txtLastName.TabIndex = 3;
@@ -368,7 +389,7 @@ namespace TheSku
             // 
             label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(117, 74);
+            label9.Location = new System.Drawing.Point(117, 75);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(66, 17);
             label9.TabIndex = 0;
@@ -376,9 +397,9 @@ namespace TheSku
             // 
             // txtPassword
             // 
-            txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtPassword.Location = new System.Drawing.Point(189, 69);
+            txtPassword.Location = new System.Drawing.Point(189, 72);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '●';
             txtPassword.Size = new System.Drawing.Size(180, 23);
@@ -396,6 +417,16 @@ namespace TheSku
             label6.Size = new System.Drawing.Size(73, 17);
             label6.TabIndex = 0;
             label6.Text = "Last Name";
+            // 
+            // label10
+            // 
+            label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(520, 75);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(35, 17);
+            label10.TabIndex = 0;
+            label10.Text = "Role";
             // 
             // tabPage1
             // 
@@ -461,7 +492,7 @@ namespace TheSku
             radDropDownButton1.Location = new System.Drawing.Point(3, 6);
             radDropDownButton1.Name = "radDropDownButton1";
             radDropDownButton1.Size = new System.Drawing.Size(194, 36);
-            radDropDownButton1.TabIndex = 10;
+            radDropDownButton1.TabIndex = 0;
             radDropDownButton1.Text = "Actions";
             radDropDownButton1.ThemeName = "Windows8";
             // 
@@ -497,7 +528,7 @@ namespace TheSku
             btnClose.Location = new System.Drawing.Point(3, 174);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(194, 36);
-            btnClose.TabIndex = 12;
+            btnClose.TabIndex = 4;
             btnClose.Text = "Close";
             btnClose.ThemeName = "Windows8";
             btnClose.Click += btnClose_Click;
@@ -508,7 +539,7 @@ namespace TheSku
             btnNew.Location = new System.Drawing.Point(3, 132);
             btnNew.Name = "btnNew";
             btnNew.Size = new System.Drawing.Size(194, 36);
-            btnNew.TabIndex = 11;
+            btnNew.TabIndex = 3;
             btnNew.Text = "New";
             btnNew.ThemeName = "Windows8";
             btnNew.Click += btnNew_Click;
@@ -519,7 +550,7 @@ namespace TheSku
             brnRefreshFields.Location = new System.Drawing.Point(3, 90);
             brnRefreshFields.Name = "brnRefreshFields";
             brnRefreshFields.Size = new System.Drawing.Size(194, 36);
-            brnRefreshFields.TabIndex = 8;
+            brnRefreshFields.TabIndex = 2;
             brnRefreshFields.Text = "Refresh Fields";
             brnRefreshFields.ThemeName = "Windows8";
             brnRefreshFields.Click += brnRefreshFields_Click;
@@ -530,7 +561,7 @@ namespace TheSku
             btnSave.Location = new System.Drawing.Point(3, 48);
             btnSave.Name = "btnSave";
             btnSave.Size = new System.Drawing.Size(194, 36);
-            btnSave.TabIndex = 9;
+            btnSave.TabIndex = 1;
             btnSave.Text = "Save";
             btnSave.ThemeName = "Windows8";
             btnSave.Click += btnSave_Click;
@@ -568,34 +599,6 @@ namespace TheSku
             panel1.Size = new System.Drawing.Size(965, 71);
             panel1.TabIndex = 2;
             // 
-            // cmbRole
-            // 
-            cmbRole.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            cmbRole.DisplayMember = "name";
-            cmbRole.Dock = System.Windows.Forms.DockStyle.Fill;
-            cmbRole.DropDownAnimationEnabled = true;
-            cmbRole.DropDownHeight = 130;
-            cmbRole.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            cmbRole.ItemHeight = 21;
-            cmbRole.Location = new System.Drawing.Point(562, 69);
-            cmbRole.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            cmbRole.MaxDropDownItems = 20;
-            cmbRole.Name = "cmbRole";
-            cmbRole.Size = new System.Drawing.Size(179, 23);
-            cmbRole.TabIndex = 1;
-            cmbRole.ThemeName = "Windows8";
-            cmbRole.ValueMember = "name";
-            // 
-            // label10
-            // 
-            label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(520, 74);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(35, 17);
-            label10.TabIndex = 0;
-            label10.Text = "Role";
-            // 
             // frmUser
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -624,6 +627,7 @@ namespace TheSku
             groupBox3.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cmbRole).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtUsername).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtFullName).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtLastName).EndInit();
@@ -640,7 +644,6 @@ namespace TheSku
             ((System.ComponentModel.ISupportInitialize)btnSave).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)cmbRole).EndInit();
             ResumeLayout(false);
         }
 
@@ -649,7 +652,7 @@ namespace TheSku
         private Telerik.WinControls.UI.CollapsiblePanelControlsContainer ControlsContainer;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
         private Telerik.WinControls.UI.RadTextBox radTextBox1;
-        private System.Windows.Forms.NumericUpDown txtLimit;
+        private Telerik.WinControls.UI.RadSpinEditor txtLimit;
         private Telerik.WinControls.UI.RadTextBox txtNameFilter;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
