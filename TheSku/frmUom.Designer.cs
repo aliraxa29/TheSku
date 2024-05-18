@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             txtLimit = new Telerik.WinControls.UI.RadSpinEditor();
             txtNameFilter = new Telerik.WinControls.UI.RadTextBox();
@@ -171,30 +171,30 @@
             gvList.MasterTemplate.AllowDragToGroup = false;
             gvList.MasterTemplate.AllowRowResize = false;
             gvList.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "UomName";
-            gridViewTextBoxColumn3.HeaderText = "Uom Name";
-            gridViewTextBoxColumn3.Name = "uom_name";
-            gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.Width = 525;
-            gridViewCheckBoxColumn2.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn2.FieldName = "Enabled";
-            gridViewCheckBoxColumn2.HeaderText = "Enabled";
-            gridViewCheckBoxColumn2.MinWidth = 20;
-            gridViewCheckBoxColumn2.Name = "enabled";
-            gridViewCheckBoxColumn2.ReadOnly = true;
-            gridViewCheckBoxColumn2.Width = 161;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "Name";
-            gridViewTextBoxColumn4.HeaderText = "Name";
-            gridViewTextBoxColumn4.Name = "name";
-            gridViewTextBoxColumn4.ReadOnly = true;
-            gridViewTextBoxColumn4.Width = 377;
-            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn3, gridViewCheckBoxColumn2, gridViewTextBoxColumn4 });
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "UomName";
+            gridViewTextBoxColumn1.HeaderText = "Uom Name";
+            gridViewTextBoxColumn1.Name = "uom_name";
+            gridViewTextBoxColumn1.ReadOnly = true;
+            gridViewTextBoxColumn1.Width = 525;
+            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn1.FieldName = "Enabled";
+            gridViewCheckBoxColumn1.HeaderText = "Enabled";
+            gridViewCheckBoxColumn1.MinWidth = 20;
+            gridViewCheckBoxColumn1.Name = "enabled";
+            gridViewCheckBoxColumn1.ReadOnly = true;
+            gridViewCheckBoxColumn1.Width = 161;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Name";
+            gridViewTextBoxColumn2.HeaderText = "Name";
+            gridViewTextBoxColumn2.Name = "name";
+            gridViewTextBoxColumn2.ReadOnly = true;
+            gridViewTextBoxColumn2.Width = 377;
+            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn1, gridViewCheckBoxColumn1, gridViewTextBoxColumn2 });
             gvList.MasterTemplate.EnableFiltering = true;
             gvList.MasterTemplate.EnableGrouping = false;
             gvList.MasterTemplate.EnablePaging = true;
-            gvList.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            gvList.MasterTemplate.ViewDefinition = tableViewDefinition1;
             gvList.Name = "gvList";
             gvList.ReadOnly = true;
             gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -234,7 +234,7 @@
             txtUomName.Location = new System.Drawing.Point(273, 5);
             txtUomName.Name = "txtUomName";
             txtUomName.Size = new System.Drawing.Size(264, 23);
-            txtUomName.TabIndex = 1;
+            txtUomName.TabIndex = 0;
             txtUomName.ThemeName = "Windows8";
             // 
             // label2
@@ -275,7 +275,7 @@
             chkEnabled.Location = new System.Drawing.Point(273, 40);
             chkEnabled.Name = "chkEnabled";
             chkEnabled.Size = new System.Drawing.Size(63, 18);
-            chkEnabled.TabIndex = 4;
+            chkEnabled.TabIndex = 1;
             chkEnabled.Text = "Enabled";
             chkEnabled.ThemeName = "Windows8";
             chkEnabled.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
@@ -286,7 +286,7 @@
             chkMustBeWholeNumber.Location = new System.Drawing.Point(273, 75);
             chkMustBeWholeNumber.Name = "chkMustBeWholeNumber";
             chkMustBeWholeNumber.Size = new System.Drawing.Size(144, 18);
-            chkMustBeWholeNumber.TabIndex = 4;
+            chkMustBeWholeNumber.TabIndex = 2;
             chkMustBeWholeNumber.Text = "Must be Whole Number";
             chkMustBeWholeNumber.ThemeName = "Windows8";
             // 
@@ -340,7 +340,7 @@
             btnClose.Location = new System.Drawing.Point(3, 174);
             btnClose.Name = "btnClose";
             btnClose.Size = new System.Drawing.Size(194, 36);
-            btnClose.TabIndex = 7;
+            btnClose.TabIndex = 4;
             btnClose.Text = "Close";
             btnClose.ThemeName = "Windows8";
             btnClose.Click += btnClose_Click;
@@ -351,7 +351,7 @@
             btnNew.Location = new System.Drawing.Point(3, 132);
             btnNew.Name = "btnNew";
             btnNew.Size = new System.Drawing.Size(194, 36);
-            btnNew.TabIndex = 6;
+            btnNew.TabIndex = 3;
             btnNew.Text = "New";
             btnNew.ThemeName = "Windows8";
             btnNew.Click += btnNew_Click;
@@ -362,7 +362,7 @@
             brnRefreshFields.Location = new System.Drawing.Point(3, 90);
             brnRefreshFields.Name = "brnRefreshFields";
             brnRefreshFields.Size = new System.Drawing.Size(194, 36);
-            brnRefreshFields.TabIndex = 4;
+            brnRefreshFields.TabIndex = 2;
             brnRefreshFields.Text = "Refresh Fields";
             brnRefreshFields.ThemeName = "Windows8";
             // 
@@ -372,7 +372,7 @@
             btnSave.Location = new System.Drawing.Point(3, 48);
             btnSave.Name = "btnSave";
             btnSave.Size = new System.Drawing.Size(194, 36);
-            btnSave.TabIndex = 4;
+            btnSave.TabIndex = 1;
             btnSave.Text = "Save";
             btnSave.ThemeName = "Windows8";
             btnSave.Click += btnSave_Click;
@@ -409,7 +409,7 @@
             radDropDownButton1.Location = new System.Drawing.Point(3, 6);
             radDropDownButton1.Name = "radDropDownButton1";
             radDropDownButton1.Size = new System.Drawing.Size(194, 36);
-            radDropDownButton1.TabIndex = 5;
+            radDropDownButton1.TabIndex = 0;
             radDropDownButton1.Text = "Actions";
             radDropDownButton1.ThemeName = "Windows8";
             // 
