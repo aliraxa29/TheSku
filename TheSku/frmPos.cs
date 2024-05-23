@@ -15,7 +15,10 @@ namespace TheSku
     public partial class frmPos : Form
     {
         SellingSettings sellingSettings = new SellingSettings();
-        AppDbContext dbContext = new AppDbContext(DbContextOptionsProvider.Options);
+        AppDbContext dbContext;
+        DbUser objUser;
+        TransactionService transactionService;
+        List<object> transactionEntities = new List<object>();
         string previousText = "";
         bool Validation = true;
         bool IsPosPayment = false;
@@ -48,8 +51,11 @@ namespace TheSku
         public static string InvoiceToLoad { get; set; }
         public static string QuoteToLoad { get; set; }
 
-        public frmPos()
+        public frmPos(AppDbContext dbContext)
         {
+            this.dbContext = dbContext;
+            this.transactionService = new TransactionService(dbContext);
+            this.objUser = new DbUser(dbContext);
             this.InitializeComponent();
             this.cmbCustomer.Text = sellingSettings.DefaultCustomerInPOS;
             this.lblPosProfile.Text = PosProfileSetting.PosProfile.Name;
@@ -128,7 +134,7 @@ namespace TheSku
         private void BindItemGrid()
         {
             this.gvItemList.AutoGenerateColumns = false;
-            //this.gvItemList.DataSource = this.objUser.GetItems(string.Concat(this.txtFilter.Text, "%")).Tables[0];
+            this.gvItemList.DataSource = this.objUser.GetItems(this.txtFilter.Text);
             this.txtFilter.Focus();
         }
 
