@@ -26,7 +26,7 @@ public class DbUser
             Name = i.Name,
             ItemName = i.ItemName,
             Description = i.Description
-        }).Take(50).ToList();
+        }).Take(50).OrderBy(i => i.ItemName).ToList();
         return items;
     }
 

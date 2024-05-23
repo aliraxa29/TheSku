@@ -16,6 +16,7 @@ namespace TheSku
     {
         SellingSettings sellingSettings = new SellingSettings();
         AppDbContext dbContext;
+        UserPermissions user;
         DbUser objUser;
         TransactionService transactionService;
         List<object> transactionEntities = new List<object>();
@@ -56,9 +57,10 @@ namespace TheSku
             this.dbContext = dbContext;
             this.transactionService = new TransactionService(dbContext);
             this.objUser = new DbUser(dbContext);
+            this.user = new UserPermissions(dbContext);
             this.InitializeComponent();
             this.cmbCustomer.Text = sellingSettings.DefaultCustomerInPOS;
-            this.lblPosProfile.Text = PosProfileSetting.PosProfile.Name;
+            this.lblPosProfile.Text = PosProfileSetting.PosProfile?.Name ?? "";
             this.txtExtraDiscount.Maximum = PosProfileSetting.AdditionalDiscountLimit;
             this.BindItemGrid();
             this.ActiveControl = this.txtFilter;
@@ -318,7 +320,6 @@ namespace TheSku
             if (e.Control && e.KeyCode == Keys.D)
             {
                 this.txtExtraDiscount.Focus();
-                this.txtExtraDiscount.Select(0, 4);
             }
             if (e.Control && e.KeyCode == Keys.H)
             {
@@ -352,20 +353,20 @@ namespace TheSku
             }
             if (e.KeyCode == Keys.F5)
             {
-                //if (Users.HasReadPermission("POS Sales Invoice"))
-                //{
-                //    if (Application.OpenForms["frmListOfPOSInvoices"] == null)
-                //    {
-                //        (new frmListOfPOSInvoices()
-                //        {
-                //            MdiParent = this.MdiParent
-                //        }).Show();
-                //    }
-                //    else
-                //    {
-                //        Application.OpenForms["frmListOfPOSInvoices"].BringToFront();
-                //    }
-                //}
+                if (user.HasReadPermission("Pos Sales Invoice"))
+                {
+                    if (Application.OpenForms["frmListOfPosInvoices"] == null)
+                    {
+                        (new frmListOfPosInvoices()
+                        {
+                            MdiParent = this.MdiParent
+                        }).Show();
+                    }
+                    else
+                    {
+                        Application.OpenForms["frmListOfPosInvoices"].BringToFront();
+                    }
+                }
             }
             if (e.Control && e.KeyCode == Keys.G)
             {
@@ -889,7 +890,7 @@ namespace TheSku
 
         private void SalesAddItem()
         {
-            //GridViewDataRowInfo gridViewDataRowInfo = new GridViewDataRowInfo(this.gvSalesList.MasterView);
+            GridViewDataRowInfo gridViewDataRowInfo = new GridViewDataRowInfo(this.gvSalesList.MasterView);
             //frmQtyItem frmQtyItem = new frmQtyItem(this.gvItemList.Rows[this.gvItemList.CurrentRow.Index].Cells["name"].Value.ToString(), gridViewDataRowInfo, "Sale");
             //frmQtyItem.ShowDialog();
             //int Qty = frmQtyItem.Qty;
@@ -936,7 +937,7 @@ namespace TheSku
             }
             foreach (GridViewRowInfo row in this.gvSalesList.Rows)
             {
-                if (this.RoundDouble(row.Cells["stock_qty"].Value.ToString()) <= 0)
+                if (this.RoundDouble(row.Cells["stock_qty"].Value) <= 0)
                 {
                     MessageBox.Show(string.Concat("The Qty for Item `", row.Cells["item_name"].Value.ToString(), "` is not correct. Please fix it or remove this item from sale"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     row.IsCurrent = true;

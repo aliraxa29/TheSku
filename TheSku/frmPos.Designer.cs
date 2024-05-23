@@ -37,6 +37,8 @@ namespace TheSku
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             GridViewTextBoxColumn gridViewTextBoxColumn1 = new GridViewTextBoxColumn();
             GridViewTextBoxColumn gridViewTextBoxColumn2 = new GridViewTextBoxColumn();
             GridViewTextBoxColumn gridViewTextBoxColumn3 = new GridViewTextBoxColumn();
@@ -94,9 +96,10 @@ namespace TheSku
             GridViewSummaryItem gridViewSummaryItem10 = new GridViewSummaryItem();
             GridViewSummaryItem gridViewSummaryItem11 = new GridViewSummaryItem();
             TableViewDefinition tableViewDefinition1 = new TableViewDefinition();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             gvItemList = new DataGridView();
+            name = new DataGridViewTextBoxColumn();
+            item_name = new DataGridViewTextBoxColumn();
+            description = new DataGridViewTextBoxColumn();
             txtFilter = new RadTextBox();
             label1 = new Label();
             txtPatient = new RadTextBox();
@@ -111,12 +114,11 @@ namespace TheSku
             label10 = new Label();
             chkStandardDiscount = new RadCheckBox();
             PrintDoc = new PrintDocument();
-            lblHelp = new LinkLabel();
             radGroupBox1 = new RadGroupBox();
             btnClose = new RadButton();
             label11 = new Label();
             label2 = new Label();
-            txtExtraDiscount = new NumericUpDown();
+            txtExtraDiscount = new RadSpinEditor();
             txtAdditionalDiscountAmount = new RadTextBox();
             txtGrandTotal = new RadTextBox();
             txtTotalTaxesAdded = new RadTextBox();
@@ -133,9 +135,6 @@ namespace TheSku
             btnSubmit = new RadButton();
             label7 = new Label();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
-            name = new DataGridViewTextBoxColumn();
-            item_name = new DataGridViewTextBoxColumn();
-            description = new DataGridViewTextBoxColumn();
             ((ISupportInitialize)gvItemList).BeginInit();
             ((ISupportInitialize)txtFilter).BeginInit();
             ((ISupportInitialize)txtPatient).BeginInit();
@@ -186,10 +185,38 @@ namespace TheSku
             gvItemList.CellDoubleClick += gvItemList_CellDoubleClick;
             gvItemList.KeyDown += gvItemList_KeyDown;
             // 
+            // name
+            // 
+            name.DataPropertyName = "Name";
+            name.HeaderText = "Name";
+            name.Name = "name";
+            name.ReadOnly = true;
+            name.Visible = false;
+            // 
+            // item_name
+            // 
+            item_name.DataPropertyName = "ItemName";
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            item_name.DefaultCellStyle = dataGridViewCellStyle1;
+            item_name.HeaderText = "Item Name";
+            item_name.Name = "item_name";
+            item_name.ReadOnly = true;
+            item_name.Width = 300;
+            // 
+            // description
+            // 
+            description.DataPropertyName = "Description";
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            description.DefaultCellStyle = dataGridViewCellStyle2;
+            description.HeaderText = "Description";
+            description.Name = "description";
+            description.ReadOnly = true;
+            description.Width = 150;
+            // 
             // txtFilter
             // 
             txtFilter.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtFilter.Location = new Point(95, 115);
+            txtFilter.Location = new Point(95, 113);
             txtFilter.Name = "txtFilter";
             txtFilter.Size = new Size(304, 23);
             txtFilter.TabIndex = 0;
@@ -201,7 +228,7 @@ namespace TheSku
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Roboto", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(10, 119);
+            label1.Location = new Point(10, 117);
             label1.Name = "label1";
             label1.Size = new Size(79, 15);
             label1.TabIndex = 2;
@@ -683,18 +710,6 @@ namespace TheSku
             // 
             PrintDoc.PrintPage += PrintDoc_PrintPage;
             // 
-            // lblHelp
-            // 
-            lblHelp.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            lblHelp.AutoSize = true;
-            lblHelp.Location = new Point(66, 157);
-            lblHelp.Name = "lblHelp";
-            lblHelp.Size = new Size(32, 15);
-            lblHelp.TabIndex = 10;
-            lblHelp.TabStop = true;
-            lblHelp.Text = "Help";
-            lblHelp.LinkClicked += lblHelp_LinkClicked;
-            // 
             // radGroupBox1
             // 
             radGroupBox1.AccessibleRole = AccessibleRole.Grouping;
@@ -703,7 +718,6 @@ namespace TheSku
             radGroupBox1.Controls.Add(label11);
             radGroupBox1.Controls.Add(label2);
             radGroupBox1.Controls.Add(txtExtraDiscount);
-            radGroupBox1.Controls.Add(lblHelp);
             radGroupBox1.Controls.Add(txtAdditionalDiscountAmount);
             radGroupBox1.Controls.Add(txtGrandTotal);
             radGroupBox1.Controls.Add(txtTotalTaxesAdded);
@@ -758,8 +772,9 @@ namespace TheSku
             txtExtraDiscount.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtExtraDiscount.Location = new Point(4, 42);
             txtExtraDiscount.Name = "txtExtraDiscount";
-            txtExtraDiscount.Size = new Size(131, 25);
+            txtExtraDiscount.Size = new Size(131, 23);
             txtExtraDiscount.TabIndex = 11;
+            txtExtraDiscount.ThemeName = "Windows8";
             txtExtraDiscount.ValueChanged += txtExtraDiscount_ValueChanged;
             // 
             // txtAdditionalDiscountAmount
@@ -952,34 +967,6 @@ namespace TheSku
             label7.TabIndex = 2;
             label7.Text = "POS Terminal:";
             // 
-            // name
-            // 
-            name.DataPropertyName = "Name";
-            name.HeaderText = "Name";
-            name.Name = "name";
-            name.ReadOnly = true;
-            name.Visible = false;
-            // 
-            // item_name
-            // 
-            item_name.DataPropertyName = "ItemName";
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            item_name.DefaultCellStyle = dataGridViewCellStyle1;
-            item_name.HeaderText = "Item Name";
-            item_name.Name = "item_name";
-            item_name.ReadOnly = true;
-            item_name.Width = 300;
-            // 
-            // description
-            // 
-            description.DataPropertyName = "Description";
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            description.DefaultCellStyle = dataGridViewCellStyle2;
-            description.HeaderText = "Description";
-            description.Name = "description";
-            description.ReadOnly = true;
-            description.Width = 150;
-            // 
             // frmPos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1070,15 +1057,13 @@ namespace TheSku
         private RadCheckBox chkStandardDiscount;
 
         private PrintDocument PrintDoc;
-
-        private LinkLabel lblHelp;
         private RadGroupBox radGroupBox1;
         private RadTextBox txtGrossTotal;
         private RadTextBox txtGrandTotal;
         private RadTextBox txtDiscount;
         private RadGroupBox radGroupBox2;
         private Label label2;
-        private NumericUpDown txtExtraDiscount;
+        private RadSpinEditor txtExtraDiscount;
         private Label lblPosProfile;
         private RadGroupBox radGroupBox3;
         private RadGroupBox radGroupBox4;
