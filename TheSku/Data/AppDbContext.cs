@@ -28,6 +28,7 @@ namespace TheSku.Data
             }
             modelBuilder.Entity<Company>().HasOne(c => c.RoundOffAccount).WithOne().HasForeignKey<Company>(c => c.RoundOffAccountId).IsRequired(false);
             modelBuilder.Entity<Item>().HasIndex(i => new { i.ItemName, i.Modified }).HasDatabaseName("idx_item_itemname_modified");
+            modelBuilder.Entity<StockLedger>().HasIndex(i => new { i.VoucherType, i.VoucherNo, i.PostingDate, i.PostingTime, i.Modified }).HasDatabaseName("idx_stock_ledger_modified_voucher_type_voucher_no_posting_datetime");
             modelBuilder.Entity<Role>().HasData(DefaultData.Roles());
             modelBuilder.Entity<PackingType>().HasData(DefaultData.PackingTypes());
             modelBuilder.Entity<Country>().HasData(DefaultData.Countries());

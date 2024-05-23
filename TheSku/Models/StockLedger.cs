@@ -25,7 +25,7 @@ public class StockLedger
     [Column("warehouse")]
     public Warehouse Warehouse { get; set; }
     [Column("posting_date")]
-    public DateTime PostingDate { get; set; }
+    public DateOnly PostingDate { get; set; }
     [Column("posting_time")]
     public TimeSpan PostingTime { get; set; }
     [MaxLength(255)]
