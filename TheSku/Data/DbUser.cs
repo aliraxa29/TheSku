@@ -26,7 +26,7 @@ public class DbUser
             Name = i.Name,
             ItemName = i.ItemName,
             Description = i.Description
-        }).ToList();
+        }).Take(50).ToList();
         return items;
     }
 

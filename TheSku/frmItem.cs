@@ -249,7 +249,7 @@ namespace TheSku
                     this.txtPacking.Text = item.Packing;
                     this.txtRackLocation.Text = item.RackLocation;
                     this.txtStandardRate.Value = item.StandardRate;
-                    this.cmbStockUom.SelectedValue = item.StockUom;
+                    this.cmbStockUom.SelectedValue = item.StockUom?.Name ?? null;
                     this.tabControl1.SelectTab(0);
                     this.txtItemName.Focus();
                     this.lblID.Visible = true;

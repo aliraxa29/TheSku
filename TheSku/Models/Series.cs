@@ -45,7 +45,8 @@ public class Series
         else
         {
             series1.Current = series1.Current + 1;
-            dbContext.Series.Add(series1);
+            series1.Modified = DateTime.Now;
+            series1.ModifiedBy = Global.UserName;
             dbContext.SaveChanges();
             return series1.Current;
         }

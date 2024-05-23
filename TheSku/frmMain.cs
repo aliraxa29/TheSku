@@ -160,7 +160,7 @@ namespace TheSku
                 MessageBox.Show("Please setup POS Profile first in order to use it.", "POS Profile Setup Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            new frmPos() { MdiParent = this }.Show();
+            new frmPos(this.dbContext) { MdiParent = this }.Show();
         }
 
         private void brandToolStripMenuItem_Click(object sender, EventArgs e)
