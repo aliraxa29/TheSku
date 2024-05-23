@@ -142,11 +142,11 @@ namespace TheSku
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            //frmAddCustomers frmAddCustomer = new frmAddCustomers(this.cmbCustomer.Text);
-            //if (frmAddCustomer.ShowDialog() == DialogResult.OK)
-            //{
-            //    this.cmbCustomer.SelectedValue = frmAddCustomer.Customer;
-            //}
+            frmAddCustomer frmAddCustomer = new frmAddCustomer(this.dbContext, this.cmbCustomer.Text);
+            if (frmAddCustomer.ShowDialog() == DialogResult.OK)
+            {
+                this.cmbCustomer.SelectedValue = frmAddCustomer.Customer;
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -311,11 +311,11 @@ namespace TheSku
             }
             if (e.Control && e.KeyCode == Keys.ShiftKey)
             {
-                //frmAddCustomers frmAddCustomer = new frmAddCustomers(this.cmbCustomer.Text);
-                //if (frmAddCustomer.ShowDialog() == DialogResult.OK)
-                //{
-                //    this.cmbCustomer.SelectedValue = frmAddCustomer.Customer;
-                //}
+                frmAddCustomer frmAddCustomer = new frmAddCustomer(this.dbContext, this.cmbCustomer.Text);
+                if (frmAddCustomer.ShowDialog() == DialogResult.OK)
+                {
+                    this.cmbCustomer.SelectedValue = frmAddCustomer.Customer;
+                }
             }
             if (e.Control && e.KeyCode == Keys.D)
             {
