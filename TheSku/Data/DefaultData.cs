@@ -634,4 +634,16 @@ public class DefaultData
             new UserPermission() { DocumentType = "Pos Profile", Role = role, Read = true, Write = true, Create = true, Cancel = false, Delete = true, Submit = false, Creation = DateTime.Now, Modified = DateTime.Now, Owner = "Administrator", ModifiedBy = "Administrator" },
         };
     }
+
+    public static List<CustomerGroup> GetCustomerGroups()
+    {
+        return new List<CustomerGroup>
+        {
+            new CustomerGroup() { Creation = DateTime.Now, CustomerGroupName = "Commercial", Name = "Commercial", ModifiedBy = "Administrator", Owner = "Administrator" },
+            new CustomerGroup() { Creation = DateTime.Now, CustomerGroupName = "Government", Name = "Government", ModifiedBy = "Administrator", Owner = "Administrator" },
+            new CustomerGroup() { Creation = DateTime.Now, CustomerGroupName = "Individual", Name = "Individual", ModifiedBy = "Administrator", Owner = "Administrator" },
+            new CustomerGroup() { Creation = DateTime.Now, CustomerGroupName = "Non Profit", Name = "Non Profit", ModifiedBy = "Administrator", Owner = "Administrator" },
+        };
+
+    }
 }

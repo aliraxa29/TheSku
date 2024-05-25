@@ -15,7 +15,11 @@ namespace TheSku
     public partial class frmPos : Form
     {
         SellingSettings sellingSettings = new SellingSettings();
-        AppDbContext dbContext = new AppDbContext(DbContextOptionsProvider.Options);
+        AppDbContext dbContext;
+        UserPermissions user;
+        DbUser objUser;
+        TransactionService transactionService;
+        List<object> transactionEntities = new List<object>();
         string previousText = "";
         bool Validation = true;
         bool IsPosPayment = false;
@@ -44,19 +48,19 @@ namespace TheSku
         decimal TotalCommission;
         decimal AmountEligibleForCommission;
 
-        decimal BatchQty = 0;
-        decimal BinQty = 0;
-        decimal ReservedQty = 0;
-
         public static string DocType { get; set; }
         public static string InvoiceToLoad { get; set; }
         public static string QuoteToLoad { get; set; }
 
-        public frmPos()
+        public frmPos(AppDbContext dbContext)
         {
+            this.dbContext = dbContext;
+            this.transactionService = new TransactionService(dbContext);
+            this.objUser = new DbUser(dbContext);
+            this.user = new UserPermissions(dbContext);
             this.InitializeComponent();
             this.cmbCustomer.Text = sellingSettings.DefaultCustomerInPOS;
-            this.lblPosProfile.Text = PosProfileSetting.PosProfile.Name;
+            this.lblPosProfile.Text = PosProfileSetting.PosProfile?.Name ?? "";
             this.txtExtraDiscount.Maximum = PosProfileSetting.AdditionalDiscountLimit;
             this.BindItemGrid();
             this.ActiveControl = this.txtFilter;
@@ -76,121 +80,6 @@ namespace TheSku
             return false;
         }
 
-        private void AddSalesItemsBatchWise(GridViewRowInfo row1)
-        {
-            //DataTable gv = new DataTable();
-            //foreach (GridViewDataColumn column in this.gvSalesList.Columns)
-            //{
-            //    gv.Columns.Add(column.Name, column.DataType);
-            //}
-            //DataRow value = gv.NewRow();
-            //foreach (GridViewColumn col in this.gvSalesList.Columns)
-            //{
-            //    foreach (GridViewCellInfo info in row1.Cells)
-            //    {
-            //        if (info.ColumnInfo.Name == col.Name)
-            //        {
-            //            value[col.Name] = info.Value == null ? DBNull.Value : info.Value;
-            //        }
-            //    }
-            //}
-            //gv.Rows.Add(value);
-            //this.BatchQty = this.RoundDouble(row1.Cells["stock_qty"].Value);
-            //List<Bin> bin = dbContext.Bin.Where(b => b.ItemCode.Equals(row1.Cells["item_code"].Value) && b.Warehouse.Equals("") && b.ActualQty > 0).OrderBy(b => b.ExpiryDate).ToList();
-            //if (bin.Count > 0)
-            //{
-            //    foreach (Bin bin1 in bin)
-            //    {
-            //        DataRow dr = gv.Rows[0];
-            //        this.BinQty = this.RoundDouble(bin1.ActualQty);
-            //        if (this.BinQty > 0)
-            //        {
-            //            if (this.BatchQty != 0)
-            //            {
-            //                if (this.BatchQty < this.BinQty)
-            //                {
-            //                    this.ReservedQty = this.BatchQty;
-            //                }
-            //                else
-            //                {
-            //                    this.ReservedQty = this.RoundDouble(this.BinQty);
-            //                }
-            //                if (this.BatchQty > this.ReservedQty)
-            //                {
-            //                    dr["qty"] = this.ReservedQty;
-            //                    this.CalculateDTRows(gv);
-
-            //                    this.sql.Add(this.objUser.GenerateInsertQuery("tabSales Invoice Item", this.objUser.AddSalesInvoiceItem((sellingSettings.EnableCashierTerminal) ? 0 : 1, this.SalesID, row1.Index, dr["barcode"].ToString(), dr["item_code"].ToString(),
-            //                        dr["item_name"].ToString(), "", dr["description"].ToString(), dr["item_group"].ToString(), dr["brand"].ToString(), dr["packing_type"].ToString(), dr["packing"].ToString(), this.RoundDouble(dr["qty"]),
-            //                        StockSettings.DefaultStockUom, dr["uom"].ToString(), this.RoundDouble(dr["conversion_factor"].ToString()), this.RoundDouble(dr["stock_qty"].ToString()), this.RoundDouble(dr["price_list_rate"].ToString()),
-            //                        this.RoundDouble(dr["base_price_list_rate"].ToString()), this.RoundDouble(dr["total"]), this.RoundDouble(dr["discount_percentage"].ToString()), this.RoundDouble(dr["discount_amount"].ToString()), this.RoundDouble(dr["rate"].ToString()), this.RoundDouble(dr["amount"].ToString()),
-            //                        dr["item_tax_template"].ToString(), this.RoundDouble(dr["tax_amount"]), this.RoundDouble(dr["base_rate"].ToString()), this.RoundDouble(dr["base_amount"].ToString()), this.RoundDouble(dr["stock_uom_rate"].ToString()), 0, 1, this.RoundDouble(dr["net_rate"].ToString()),
-            //                        this.RoundDouble(dr["net_amount"].ToString()), this.RoundDouble(dr["base_net_rate"].ToString()), this.RoundDouble(dr["base_net_amount"].ToString()), PosProfileSetting.IncomeAccount, 0, "", Company.DefaultFinanceBook,
-            //                        PosProfileSetting.ExpenseAccount, "", Company.DefaultDeferredRevenueAccount, "", 0, "", "", 0, 0, "", PosProfileSetting.Warehouse, "", "", row["batch_no"].ToString(), this.RoundDouble(row["valuation_rate"]), 0, "", "", "", "", "", 0, PosProfileSetting.CostCenter, "", (sellingSettings.EnableCashierTerminal) ? 0 : 1, dr["doctor_name"].ToString(), Utility.DateTimeToString(row["expiry_date"]), dr["rack_location"].ToString())));
-            //                    if (!sellingSettings.EnableCashierTerminal)
-            //                    {
-            //                        this.sql.Add(new StockModule().AddBin(PosProfileSetting.Warehouse, row1.Cells["item_code"].Value.ToString(), 0, -this.ReservedQty, 0, 0, 0, 0, 0, row1.Cells["stock_uom"].ToString(), Convert.ToDecimal(row["valuation_rate"]), 0,
-            //                        row["batch_no"].ToString(), Utility.DateTimeToString(row["expiry_date"])));
-            //                    }
-
-            //                    this.ReservedQty = this.BatchQty - BinQty;
-            //                    this.BatchQty -= BinQty;
-            //                }
-            //                else
-            //                {
-            //                    gv.Rows[0]["qty"] = this.ReservedQty;
-            //                    this.CalculateDTRows(gv);
-            //                    this.sql.Add(this.objUser.GenerateInsertQuery("tabSales Invoice Item", this.objUser.AddSalesInvoiceItem((sellingSettings.EnableCashierTerminal) ? 0 : 1, this.SalesID, 0, dr["barcode"].ToString(), dr["item_code"].ToString(),
-            //                       dr["item_name"].ToString(), "", dr["description"].ToString(), dr["item_group"].ToString(), dr["brand"].ToString(), dr["packing_type"].ToString(), dr["packing"].ToString(), this.ReservedQty,
-            //                       StockSettings.DefaultStockUom, dr["uom"].ToString(), this.RoundDouble(dr["conversion_factor"].ToString()), this.RoundDouble(dr["stock_qty"].ToString()), this.RoundDouble(dr["price_list_rate"].ToString()),
-            //                       this.RoundDouble(dr["base_price_list_rate"].ToString()), this.RoundDouble(dr["total"]), this.RoundDouble(dr["discount_percentage"].ToString()), this.RoundDouble(dr["discount_amount"].ToString()), this.RoundDouble(dr["rate"].ToString()), this.RoundDouble(dr["amount"].ToString()),
-            //                       dr["item_tax_template"].ToString(), this.RoundDouble(dr["tax_amount"]), this.RoundDouble(dr["base_rate"].ToString()), this.RoundDouble(dr["base_amount"].ToString()), this.RoundDouble(dr["stock_uom_rate"].ToString()), 0, 1, this.RoundDouble(dr["net_rate"].ToString()),
-            //                       this.RoundDouble(dr["net_amount"].ToString()), this.RoundDouble(dr["base_net_rate"].ToString()), this.RoundDouble(dr["base_net_amount"].ToString()), PosProfileSetting.IncomeAccount, 0, "", Company.DefaultFinanceBook,
-            //                       PosProfileSetting.ExpenseAccount, "", Company.DefaultDeferredRevenueAccount, "", 0, "", "", 0, 0, "", PosProfileSetting.Warehouse, "", "", row["batch_no"].ToString(), this.RoundDouble(row["valuation_rate"]), 0, "", "", "", "", "", 0, PosProfileSetting.CostCenter, "", (sellingSettings.EnableCashierTerminal) ? 0 : 1, dr["doctor_name"].ToString(), Utility.DateTimeToString(row["expiry_date"]), dr["rack_location"].ToString())));
-            //                    if (!sellingSettings.EnableCashierTerminal)
-            //                    {
-            //                        this.sql.Add(new StockModule().AddBin(PosProfileSetting.Warehouse, dr["item_code"].ToString(), 0, -this.ReservedQty, 0, 0, 0, 0, 0, dr["stock_uom"].ToString(), Convert.ToDecimal(row["valuation_rate"]), 0,
-            //                        row["batch_no"].ToString(), Utility.DateTimeToString(row["expiry_date"])));
-            //                    }
-            //                    this.BatchQty = 0;
-            //                    return;
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-            //else if (this.RoundDouble(dt1.Rows[0]["actual_qty"]) <= this.BatchQty)
-            //{
-            //    this.sql.Add(this.objUser.GenerateInsertQuery("tabSales Invoice Item", this.objUser.AddSalesInvoiceItem((sellingSettings.EnableCashierTerminal) ? 0 : 1, this.SalesID, row1.Index, row1.Cells["barcode"].Value?.ToString(), row1.Cells["item_code"].Value?.ToString(),
-            //    row1.Cells["item_name"].Value?.ToString(), "", row1.Cells["description"].Value?.ToString(), row1.Cells["item_group"].Value?.ToString(), row1.Cells["brand"].Value?.ToString(), row1.Cells["packing_type"].Value?.ToString(), row1.Cells["packing"].Value?.ToString(), this.RoundDouble(row1.Cells["qty"].Value?.ToString()),
-            //    StockSettings.DefaultStockUom, row1.Cells["uom"].Value?.ToString(), this.RoundDouble(row1.Cells["conversion_factor"].Value?.ToString()), this.RoundDouble(row1.Cells["stock_qty"].Value?.ToString()), this.RoundDouble(row1.Cells["price_list_rate"].Value?.ToString()),
-            //    this.RoundDouble(row1.Cells["base_price_list_rate"].Value?.ToString()), this.RoundDouble(row1.Cells["total"].Value), this.RoundDouble(row1.Cells["discount_percentage"].Value?.ToString()), this.RoundDouble(row1.Cells["discount_amount"].Value?.ToString()), this.RoundDouble(row1.Cells["rate"].Value?.ToString()), this.RoundDouble(row1.Cells["amount"].Value?.ToString()),
-            //    row1.Cells["item_tax_template"].Value?.ToString(), this.RoundDouble(row1.Cells["tax_amount"].Value?.ToString()), this.RoundDouble(row1.Cells["base_rate"].Value?.ToString()), this.RoundDouble(row1.Cells["base_amount"].Value?.ToString()), this.RoundDouble(row1.Cells["stock_uom_rate"].Value?.ToString()), 0, 1, this.RoundDouble(row1.Cells["net_rate"].Value?.ToString()),
-            //    this.RoundDouble(row1.Cells["net_amount"].Value?.ToString()), this.RoundDouble(row1.Cells["base_net_rate"].Value?.ToString()), this.RoundDouble(row1.Cells["base_net_amount"].Value?.ToString()), PosProfileSetting.IncomeAccount, 0, "", Company.DefaultFinanceBook,
-            //    PosProfileSetting.ExpenseAccount, "", Company.DefaultDeferredRevenueAccount, "", 0, "", "", 0, 0, "", PosProfileSetting.Warehouse, "", "", dt1.Rows[0]["batch_no"].ToString(), Convert.ToDecimal(dt1.Rows[0]["valuation_rate"]), 0, "", "", "", "", "", 0, PosProfileSetting.CostCenter, "", (sellingSettings.EnableCashierTerminal) ? 0 : 1, row1.Cells["doctor_name"].Value?.ToString(), Utility.DateTimeToString(dt1.Rows[0]["expiry_date"]), row1.Cells["rack_location"].Value?.ToString())));
-            //    if (!sellingSettings.EnableCashierTerminal)
-            //    {
-            //        sql.Add(new StockModule().AddBin(PosProfileSetting.Warehouse, row1.Cells["item_code"].Value.ToString(), 0, -this.RoundDouble(dt1.Rows[0]["actual_qty"]), 0, 0, 0, 0, 0, row1.Cells["stock_uom"].Value?.ToString(), Convert.ToDecimal(dt1.Rows[0]["valuation_rate"]), 0,
-            //                    dt1.Rows[0]["batch_no"].ToString(), Utility.DateTimeToString(dt1.Rows[0]["expiry_date"])));
-            //    }
-            //}
-            //else
-            //{
-            //    this.sql.Add(this.objUser.GenerateInsertQuery("tabSales Invoice Item", this.objUser.AddSalesInvoiceItem((sellingSettings.EnableCashierTerminal) ? 0 : 1, this.SalesID, row1.Index, row1.Cells["barcode"].Value?.ToString(), row1.Cells["item_code"].Value?.ToString(),
-            //        row1.Cells["item_name"].Value?.ToString(), "", row1.Cells["description"].Value?.ToString(), row1.Cells["item_group"].Value?.ToString(), row1.Cells["brand"].Value?.ToString(), row1.Cells["packing_type"].Value?.ToString(), row1.Cells["packing"].Value?.ToString(), this.RoundDouble(row1.Cells["qty"].Value.ToString()),
-            //        StockSettings.DefaultStockUom, row1.Cells["uom"].Value?.ToString(), this.RoundDouble(row1.Cells["conversion_factor"].Value?.ToString()), this.RoundDouble(row1.Cells["stock_qty"].Value?.ToString()), this.RoundDouble(row1.Cells["price_list_rate"].Value?.ToString()),
-            //        this.RoundDouble(row1.Cells["base_price_list_rate"].Value?.ToString()), this.RoundDouble(row1.Cells["total"].Value), this.RoundDouble(row1.Cells["discount_percentage"].Value?.ToString()), this.RoundDouble(row1.Cells["discount_amount"].Value?.ToString()), this.RoundDouble(row1.Cells["rate"].Value?.ToString()), this.RoundDouble(row1.Cells["amount"].Value?.ToString()),
-            //        row1.Cells["item_tax_template"].Value?.ToString(), this.RoundDouble(row1.Cells["tax_amount"].Value?.ToString()), this.RoundDouble(row1.Cells["base_rate"].Value?.ToString()), this.RoundDouble(row1.Cells["base_amount"].Value?.ToString()), this.RoundDouble(row1.Cells["stock_uom_rate"].Value?.ToString()), 0, 1, this.RoundDouble(row1.Cells["net_rate"].Value?.ToString()),
-            //        this.RoundDouble(row1.Cells["net_amount"].Value?.ToString()), this.RoundDouble(row1.Cells["base_net_rate"].Value?.ToString()), this.RoundDouble(row1.Cells["base_net_amount"].Value?.ToString()), PosProfileSetting.IncomeAccount, 0, "", Company.DefaultFinanceBook,
-            //        PosProfileSetting.ExpenseAccount, "", Company.DefaultDeferredRevenueAccount, "", 0, "", "", 0, 0, "", PosProfileSetting.Warehouse, "", "", dt1.Rows[0]["batch_no"].ToString(), Convert.ToDecimal(dt1.Rows[0]["valuation_rate"]), 0, "", "", "", "", "", 0, PosProfileSetting.CostCenter, "", (sellingSettings.EnableCashierTerminal) ? 0 : 1, row1.Cells["doctor_name"].Value?.ToString(), Utility.DateTimeToString(dt1.Rows[0]["expiry_date"]), row1.Cells["rack_location"].Value?.ToString())));
-            //    if (!sellingSettings.EnableCashierTerminal)
-            //    {
-            //        this.sql.Add(new StockModule().AddBin(PosProfileSetting.Warehouse, row1.Cells["item_code"].Value.ToString(), 0, -this.BatchQty, 0, 0, 0, 0, 0, row1.Cells["stock_uom"].Value?.ToString(), Convert.ToDecimal(dt1.Rows[0]["valuation_rate"]), 0,
-            //                    dt1.Rows[0]["batch_no"].ToString(), Utility.DateTimeToString(dt1.Rows[0]["expiry_date"])));
-            //    }
-            //}
-        }
-
         private void PrintThermalInvoice()
         {
             if (PosProfileSetting.PrintFormat == "Thermal")
@@ -200,26 +89,6 @@ namespace TheSku
                 printDialog.Document = printDocument;
                 printDocument.PrintPage += this.PrintDoc_PrintPage;
                 printDocument.Print();
-            }
-        }
-
-        private void CalculateDTRows(DataTable dt)
-        {
-            foreach (DataRow row in dt.Rows)
-            {
-                row["stock_qty"] = this.RoundDouble(row["qty"]) * this.RoundDouble(row["conversion_factor"]);
-                row["total"] = this.RoundDouble(row["qty"]) * this.RoundDouble(row["price_list_rate"]);
-                row["discount_amount"] = ((this.RoundDouble(row["discount_percentage"]) * this.RoundDouble(row["price_list_rate"])) / 100);
-                row["rate"] = this.RoundDouble(row["price_list_rate"]) - this.RoundDouble(row["discount_amount"]);
-                row["amount"] = this.RoundDouble(row["rate"]) * this.RoundDouble(row["qty"]);
-                row["base_rate"] = this.RoundDouble(row["base_price_list_rate"]) - this.RoundDouble(row["discount_amount"]);
-                row["base_amount"] = this.RoundDouble(row["base_rate"]) * this.RoundDouble(row["qty"]);
-                this.CalculateTaxes(row);
-                row["net_rate"] = this.RoundDouble(row["rate"]) + this.RoundDouble(row["tax_amount"]);
-                row["net_amount"] = this.RoundDouble(row["net_rate"]) * this.RoundDouble(row["qty"]);
-                row["base_net_rate"] = this.RoundDouble(row["base_rate"]) + this.RoundDouble(row["tax_amount"]);
-                row["base_net_amount"] = this.RoundDouble(row["base_net_rate"]) * this.RoundDouble(row["qty"]);
-                row["stock_uom_rate"] = this.RoundDouble(row["rate"]) / this.RoundDouble(row["conversion_factor"]);
             }
         }
 
@@ -267,17 +136,17 @@ namespace TheSku
         private void BindItemGrid()
         {
             this.gvItemList.AutoGenerateColumns = false;
-            //this.gvItemList.DataSource = this.objUser.GetItems(string.Concat(this.txtFilter.Text, "%")).Tables[0];
+            this.gvItemList.DataSource = this.objUser.GetItems(this.txtFilter.Text);
             this.txtFilter.Focus();
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            //frmAddCustomers frmAddCustomer = new frmAddCustomers(this.cmbCustomer.Text);
-            //if (frmAddCustomer.ShowDialog() == DialogResult.OK)
-            //{
-            //    this.cmbCustomer.SelectedValue = frmAddCustomer.Customer;
-            //}
+            frmAddCustomer frmAddCustomer = new frmAddCustomer(this.dbContext, this.cmbCustomer.Text);
+            if (frmAddCustomer.ShowDialog() == DialogResult.OK)
+            {
+                this.cmbCustomer.SelectedValue = frmAddCustomer.Customer;
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -442,16 +311,15 @@ namespace TheSku
             }
             if (e.Control && e.KeyCode == Keys.ShiftKey)
             {
-                //frmAddCustomers frmAddCustomer = new frmAddCustomers(this.cmbCustomer.Text);
-                //if (frmAddCustomer.ShowDialog() == DialogResult.OK)
-                //{
-                //    this.cmbCustomer.SelectedValue = frmAddCustomer.Customer;
-                //}
+                frmAddCustomer frmAddCustomer = new frmAddCustomer(this.dbContext, this.cmbCustomer.Text);
+                if (frmAddCustomer.ShowDialog() == DialogResult.OK)
+                {
+                    this.cmbCustomer.SelectedValue = frmAddCustomer.Customer;
+                }
             }
             if (e.Control && e.KeyCode == Keys.D)
             {
                 this.txtExtraDiscount.Focus();
-                this.txtExtraDiscount.Select(0, 4);
             }
             if (e.Control && e.KeyCode == Keys.H)
             {
@@ -485,20 +353,20 @@ namespace TheSku
             }
             if (e.KeyCode == Keys.F5)
             {
-                //if (Users.HasReadPermission("POS Sales Invoice"))
-                //{
-                //    if (Application.OpenForms["frmListOfPOSInvoices"] == null)
-                //    {
-                //        (new frmListOfPOSInvoices()
-                //        {
-                //            MdiParent = this.MdiParent
-                //        }).Show();
-                //    }
-                //    else
-                //    {
-                //        Application.OpenForms["frmListOfPOSInvoices"].BringToFront();
-                //    }
-                //}
+                if (user.HasReadPermission("Pos Sales Invoice"))
+                {
+                    if (Application.OpenForms["frmListOfPosInvoices"] == null)
+                    {
+                        (new frmListOfPosInvoices()
+                        {
+                            MdiParent = this.MdiParent
+                        }).Show();
+                    }
+                    else
+                    {
+                        Application.OpenForms["frmListOfPosInvoices"].BringToFront();
+                    }
+                }
             }
             if (e.Control && e.KeyCode == Keys.G)
             {
@@ -1022,7 +890,7 @@ namespace TheSku
 
         private void SalesAddItem()
         {
-            //GridViewDataRowInfo gridViewDataRowInfo = new GridViewDataRowInfo(this.gvSalesList.MasterView);
+            GridViewDataRowInfo gridViewDataRowInfo = new GridViewDataRowInfo(this.gvSalesList.MasterView);
             //frmQtyItem frmQtyItem = new frmQtyItem(this.gvItemList.Rows[this.gvItemList.CurrentRow.Index].Cells["name"].Value.ToString(), gridViewDataRowInfo, "Sale");
             //frmQtyItem.ShowDialog();
             //int Qty = frmQtyItem.Qty;
@@ -1069,7 +937,7 @@ namespace TheSku
             }
             foreach (GridViewRowInfo row in this.gvSalesList.Rows)
             {
-                if (this.RoundDouble(row.Cells["stock_qty"].Value.ToString()) <= 0)
+                if (this.RoundDouble(row.Cells["stock_qty"].Value) <= 0)
                 {
                     MessageBox.Show(string.Concat("The Qty for Item `", row.Cells["item_name"].Value.ToString(), "` is not correct. Please fix it or remove this item from sale"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     row.IsCurrent = true;
@@ -1324,7 +1192,6 @@ namespace TheSku
                             {
                                 this.AddStockLedger(row);
                             }
-                            this.AddSalesItemsBatchWise(row);
                         }
                         else
                         {

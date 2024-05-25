@@ -26,17 +26,21 @@ namespace TheSku.Data
             {
                 fk.DeleteBehavior = DeleteBehavior.Restrict;
             }
-            modelBuilder.Entity<Company>()
-                            .HasOne(c => c.RoundOffAccount)
-                            .WithOne()
-                            .HasForeignKey<Company>(c => c.RoundOffAccountId)
-                            .IsRequired(false);
+            modelBuilder.Entity<Company>().HasOne(c => c.RoundOffAccount).WithOne().HasForeignKey<Company>(c => c.RoundOffAccountId).IsRequired(false);
+
+            //Indexes
+            modelBuilder.Entity<Item>().HasIndex(i => new { i.ItemName, i.Modified }).HasDatabaseName("idx_item_itemname_modified");
+            modelBuilder.Entity<StockLedger>().HasIndex(i => new { i.VoucherType, i.VoucherNo, i.PostingDate, i.PostingTime, i.Modified }).HasDatabaseName("idx_stock_ledger_modified_voucher_type_voucher_no_posting_datetime");
+            modelBuilder.Entity<SalesInvoicePayment>().HasIndex(i => new { i.Modified }).HasDatabaseName("idx_sales_invoice_payment_modified");
+
+            //Default Data
             modelBuilder.Entity<Role>().HasData(DefaultData.Roles());
             modelBuilder.Entity<PackingType>().HasData(DefaultData.PackingTypes());
             modelBuilder.Entity<Country>().HasData(DefaultData.Countries());
             modelBuilder.Entity<Currency>().HasData(DefaultData.Currencies());
             modelBuilder.Entity<Language>().HasData(DefaultData.Languages());
             modelBuilder.Entity<Document>().HasData(DefaultData.Documents());
+            modelBuilder.Entity<CustomerGroup>().HasData(DefaultData.GetCustomerGroups());
             var defaultSingles = DefaultData.DefaultValues().Select(s => new Singles
             {
                 Name = Guid.NewGuid(),
@@ -89,6 +93,7 @@ namespace TheSku.Data
         public DbSet<UserPermission> UserPermissions { get; set; }
         public DbSet<Document> Documents { get; set; }
         public DbSet<Series> Series { get; set; }
+        public DbSet<StockLedger> StockLedger { get; set; }
     }
 }
 

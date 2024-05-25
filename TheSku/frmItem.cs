@@ -76,7 +76,7 @@ namespace TheSku
                     IsPurchaseItem = this.chkIsPurchaseItem.Checked,
                     IsSaleItem = this.chkIsSaleItem.Checked,
                     IsShortItem = this.chkIsShort.Checked,
-                    IsStockItem = this.chkIsShort.Checked,
+                    IsStockItem = this.chkIsStockItem.Checked,
                     AllowNegativeStock = this.chkAllowNegativeStock.Checked,
                     Brand = dbContext.Brand.Where(b => b.Name.Equals(this.cmbBrand.SelectedValue)).FirstOrDefault(),
                     Description = this.txtDescription.Text,
@@ -108,7 +108,7 @@ namespace TheSku
                     item.IsPurchaseItem = this.chkIsPurchaseItem.Checked;
                     item.IsSaleItem = this.chkIsSaleItem.Checked;
                     item.IsShortItem = this.chkIsShort.Checked;
-                    item.IsStockItem = this.chkIsShort.Checked;
+                    item.IsStockItem = this.chkIsStockItem.Checked;
                     item.AllowNegativeStock = this.chkAllowNegativeStock.Checked;
                     item.Brand = dbContext.Brand.Where(b => b.Name.Equals(this.cmbBrand.SelectedValue)).FirstOrDefault();
                     item.Description = this.txtDescription.Text;
@@ -249,7 +249,7 @@ namespace TheSku
                     this.txtPacking.Text = item.Packing;
                     this.txtRackLocation.Text = item.RackLocation;
                     this.txtStandardRate.Value = item.StandardRate;
-                    this.cmbStockUom.SelectedValue = item.StockUom;
+                    this.cmbStockUom.SelectedValue = item.StockUom?.Name ?? null;
                     this.tabControl1.SelectTab(0);
                     this.txtItemName.Focus();
                     this.lblID.Visible = true;
