@@ -69,7 +69,7 @@ $ git clone https://github.com/aliraxa29/TheSku.git
 # Go into the repository
 $ cd TheSku
 
-# Change the configuration in App.config file like connectionstring.
+# Change the configuration in the App.config file like connectionstring.
     <connectionStrings>
         <add name="ConString" connectionString="Server=localhost;Database=thesku;user=root;Password=aliraxa229;Port=3307;" />
     </connectionStrings>
@@ -81,7 +81,7 @@ $ dotnet ef add migrations InitialCreate --project TheSku
 $ dotnet ef database update --project TheSku
 ```
 
-After that, just build the project to get executeables for the development. You can login your system after migration using username Admin and password admin.
+After that, the project will be built to get executables for development. You can log in to your system after migration using username Admin and password admin.
 
 > **Note**
 > This application uses **MariaDB** or **MySql** as backend server. So be sure, you have installed one of them.
