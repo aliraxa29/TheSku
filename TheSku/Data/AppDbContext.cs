@@ -94,6 +94,7 @@ namespace TheSku.Data
         public DbSet<Document> Documents { get; set; }
         public DbSet<Series> Series { get; set; }
         public DbSet<StockLedger> StockLedger { get; set; }
+        public DbSet<ItemSupplier> ItemSupplier { get; set; }
     }
 }
 

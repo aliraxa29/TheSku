@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn4 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
-            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn5 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition5 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn6 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition6 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn2 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             txtLimit = new Telerik.WinControls.UI.RadSpinEditor();
             txtNameFilter = new Telerik.WinControls.UI.RadTextBox();
@@ -209,7 +209,7 @@
             groupBox1.Controls.Add(btnDisplay);
             groupBox1.Location = new System.Drawing.Point(3, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(1046, 89);
+            groupBox1.Size = new System.Drawing.Size(1063, 89);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filters";
@@ -217,7 +217,7 @@
             // btnDisplay
             // 
             btnDisplay.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnDisplay.Location = new System.Drawing.Point(950, 47);
+            btnDisplay.Location = new System.Drawing.Point(967, 47);
             btnDisplay.Name = "btnDisplay";
             btnDisplay.Size = new System.Drawing.Size(90, 36);
             btnDisplay.TabIndex = 1;
@@ -241,39 +241,39 @@
             gvList.MasterTemplate.AllowDragToGroup = false;
             gvList.MasterTemplate.AllowRowResize = false;
             gvList.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "ItemName";
-            gridViewTextBoxColumn7.HeaderText = "Item Name";
-            gridViewTextBoxColumn7.Name = "item_name";
-            gridViewTextBoxColumn7.ReadOnly = true;
-            gridViewTextBoxColumn7.Width = 417;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "ItemGroup.Name";
-            gridViewTextBoxColumn8.HeaderText = "Item Group";
-            gridViewTextBoxColumn8.Name = "item_group";
-            gridViewTextBoxColumn8.ReadOnly = true;
-            gridViewTextBoxColumn8.Width = 232;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "Disabled";
-            gridViewTextBoxColumn9.HeaderText = "Disabled";
-            gridViewTextBoxColumn9.Name = "status";
-            gridViewTextBoxColumn9.ReadOnly = true;
-            gridViewTextBoxColumn9.Width = 157;
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "Name";
-            gridViewTextBoxColumn10.HeaderText = "Name";
-            gridViewTextBoxColumn10.Name = "name";
-            gridViewTextBoxColumn10.ReadOnly = true;
-            gridViewTextBoxColumn10.Width = 216;
-            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn7, gridViewTextBoxColumn8, gridViewTextBoxColumn9, gridViewTextBoxColumn10 });
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ItemName";
+            gridViewTextBoxColumn1.HeaderText = "Item Name";
+            gridViewTextBoxColumn1.Name = "item_name";
+            gridViewTextBoxColumn1.ReadOnly = true;
+            gridViewTextBoxColumn1.Width = 423;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "ItemGroup.Name";
+            gridViewTextBoxColumn2.HeaderText = "Item Group";
+            gridViewTextBoxColumn2.Name = "item_group";
+            gridViewTextBoxColumn2.ReadOnly = true;
+            gridViewTextBoxColumn2.Width = 235;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Disabled";
+            gridViewTextBoxColumn3.HeaderText = "Disabled";
+            gridViewTextBoxColumn3.Name = "status";
+            gridViewTextBoxColumn3.ReadOnly = true;
+            gridViewTextBoxColumn3.Width = 159;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "Name";
+            gridViewTextBoxColumn4.HeaderText = "Name";
+            gridViewTextBoxColumn4.Name = "name";
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.Width = 219;
+            gvList.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn1, gridViewTextBoxColumn2, gridViewTextBoxColumn3, gridViewTextBoxColumn4 });
             gvList.MasterTemplate.EnableFiltering = true;
             gvList.MasterTemplate.EnableGrouping = false;
             gvList.MasterTemplate.EnablePaging = true;
-            gvList.MasterTemplate.ViewDefinition = tableViewDefinition4;
+            gvList.MasterTemplate.ViewDefinition = tableViewDefinition1;
             gvList.Name = "gvList";
             gvList.ReadOnly = true;
             gvList.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            gvList.Size = new System.Drawing.Size(1040, 372);
+            gvList.Size = new System.Drawing.Size(1054, 372);
             gvList.TabIndex = 0;
             gvList.ThemeName = "Windows8";
             gvList.CellDoubleClick += gvList_CellDoubleClick;
@@ -285,7 +285,7 @@
             groupBox2.Controls.Add(gvList);
             groupBox2.Location = new System.Drawing.Point(3, 92);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new System.Drawing.Size(1049, 401);
+            groupBox2.Size = new System.Drawing.Size(1063, 401);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "List";
@@ -297,7 +297,7 @@
             tpList.Location = new System.Drawing.Point(4, 26);
             tpList.Name = "tpList";
             tpList.Padding = new System.Windows.Forms.Padding(3);
-            tpList.Size = new System.Drawing.Size(1055, 696);
+            tpList.Size = new System.Drawing.Size(1072, 696);
             tpList.TabIndex = 1;
             tpList.Text = "List";
             tpList.UseVisualStyleBackColor = true;
@@ -306,9 +306,9 @@
             // 
             txtItemCode.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtItemCode.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtItemCode.Location = new System.Drawing.Point(263, 4);
+            txtItemCode.Location = new System.Drawing.Point(268, 4);
             txtItemCode.Name = "txtItemCode";
-            txtItemCode.Size = new System.Drawing.Size(254, 23);
+            txtItemCode.Size = new System.Drawing.Size(259, 23);
             txtItemCode.TabIndex = 1;
             txtItemCode.ThemeName = "Windows8";
             // 
@@ -316,7 +316,7 @@
             // 
             label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(186, 7);
+            label2.Location = new System.Drawing.Point(191, 7);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(71, 17);
             label2.TabIndex = 0;
@@ -326,7 +326,7 @@
             // 
             label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(701, 7);
+            label5.Location = new System.Drawing.Point(716, 7);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(76, 17);
             label5.TabIndex = 0;
@@ -339,9 +339,9 @@
             cmbStockUom.DisplayMember = "UomName";
             cmbStockUom.DropDownAnimationEnabled = true;
             cmbStockUom.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            cmbStockUom.Location = new System.Drawing.Point(783, 4);
+            cmbStockUom.Location = new System.Drawing.Point(798, 4);
             cmbStockUom.Name = "cmbStockUom";
-            cmbStockUom.Size = new System.Drawing.Size(257, 23);
+            cmbStockUom.Size = new System.Drawing.Size(259, 23);
             cmbStockUom.TabIndex = 2;
             cmbStockUom.ThemeName = "Windows8";
             cmbStockUom.ValueMember = "Name";
@@ -405,14 +405,14 @@
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(1043, 392);
+            tableLayoutPanel1.Size = new System.Drawing.Size(1060, 392);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // label6
             // 
             label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(181, 39);
+            label6.Location = new System.Drawing.Point(186, 39);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(76, 17);
             label6.TabIndex = 0;
@@ -422,9 +422,9 @@
             // 
             txtItemName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtItemName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtItemName.Location = new System.Drawing.Point(263, 36);
+            txtItemName.Location = new System.Drawing.Point(268, 36);
             txtItemName.Name = "txtItemName";
-            txtItemName.Size = new System.Drawing.Size(254, 23);
+            txtItemName.Size = new System.Drawing.Size(259, 23);
             txtItemName.TabIndex = 1;
             txtItemName.ThemeName = "Windows8";
             // 
@@ -432,7 +432,7 @@
             // 
             label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(179, 71);
+            label7.Location = new System.Drawing.Point(184, 71);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(78, 17);
             label7.TabIndex = 0;
@@ -445,9 +445,9 @@
             cmbItemGroup.DisplayMember = "ItemGroupName";
             cmbItemGroup.DropDownAnimationEnabled = true;
             cmbItemGroup.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            cmbItemGroup.Location = new System.Drawing.Point(263, 68);
+            cmbItemGroup.Location = new System.Drawing.Point(268, 68);
             cmbItemGroup.Name = "cmbItemGroup";
-            cmbItemGroup.Size = new System.Drawing.Size(254, 23);
+            cmbItemGroup.Size = new System.Drawing.Size(259, 23);
             cmbItemGroup.TabIndex = 2;
             cmbItemGroup.ThemeName = "Windows8";
             cmbItemGroup.ValueMember = "Name";
@@ -456,7 +456,7 @@
             // 
             chkIsStockItem.Anchor = System.Windows.Forms.AnchorStyles.Left;
             chkIsStockItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkIsStockItem.Location = new System.Drawing.Point(783, 71);
+            chkIsStockItem.Location = new System.Drawing.Point(798, 71);
             chkIsStockItem.Name = "chkIsStockItem";
             chkIsStockItem.Size = new System.Drawing.Size(87, 18);
             chkIsStockItem.TabIndex = 4;
@@ -469,9 +469,9 @@
             txtValuationRate.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtValuationRate.DecimalPlaces = 2;
             txtValuationRate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtValuationRate.Location = new System.Drawing.Point(263, 100);
+            txtValuationRate.Location = new System.Drawing.Point(268, 100);
             txtValuationRate.Name = "txtValuationRate";
-            txtValuationRate.Size = new System.Drawing.Size(254, 23);
+            txtValuationRate.Size = new System.Drawing.Size(259, 23);
             txtValuationRate.TabIndex = 15;
             txtValuationRate.ThemeName = "Windows8";
             // 
@@ -479,7 +479,7 @@
             // 
             label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(159, 103);
+            label8.Location = new System.Drawing.Point(164, 103);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(98, 17);
             label8.TabIndex = 0;
@@ -489,7 +489,7 @@
             // 
             label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(159, 135);
+            label9.Location = new System.Drawing.Point(164, 135);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(98, 17);
             label9.TabIndex = 0;
@@ -500,9 +500,9 @@
             txtOpeningStock.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtOpeningStock.DecimalPlaces = 2;
             txtOpeningStock.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtOpeningStock.Location = new System.Drawing.Point(263, 132);
+            txtOpeningStock.Location = new System.Drawing.Point(268, 132);
             txtOpeningStock.Name = "txtOpeningStock";
-            txtOpeningStock.Size = new System.Drawing.Size(254, 23);
+            txtOpeningStock.Size = new System.Drawing.Size(259, 23);
             txtOpeningStock.TabIndex = 15;
             txtOpeningStock.ThemeName = "Windows8";
             // 
@@ -510,7 +510,7 @@
             // 
             label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(163, 167);
+            label10.Location = new System.Drawing.Point(168, 167);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(94, 17);
             label10.TabIndex = 0;
@@ -521,9 +521,9 @@
             txtStandardRate.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtStandardRate.DecimalPlaces = 2;
             txtStandardRate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtStandardRate.Location = new System.Drawing.Point(263, 164);
+            txtStandardRate.Location = new System.Drawing.Point(268, 164);
             txtStandardRate.Name = "txtStandardRate";
-            txtStandardRate.Size = new System.Drawing.Size(254, 23);
+            txtStandardRate.Size = new System.Drawing.Size(259, 23);
             txtStandardRate.TabIndex = 15;
             txtStandardRate.ThemeName = "Windows8";
             // 
@@ -531,7 +531,7 @@
             // 
             label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(213, 199);
+            label11.Location = new System.Drawing.Point(218, 199);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(44, 17);
             label11.TabIndex = 0;
@@ -544,9 +544,9 @@
             cmbBrand.DisplayMember = "BrandName";
             cmbBrand.DropDownAnimationEnabled = true;
             cmbBrand.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            cmbBrand.Location = new System.Drawing.Point(263, 196);
+            cmbBrand.Location = new System.Drawing.Point(268, 196);
             cmbBrand.Name = "cmbBrand";
-            cmbBrand.Size = new System.Drawing.Size(254, 23);
+            cmbBrand.Size = new System.Drawing.Size(259, 23);
             cmbBrand.TabIndex = 2;
             cmbBrand.ThemeName = "Windows8";
             cmbBrand.ValueMember = "Name";
@@ -555,7 +555,7 @@
             // 
             label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(178, 231);
+            label12.Location = new System.Drawing.Point(183, 231);
             label12.Name = "label12";
             label12.Size = new System.Drawing.Size(79, 17);
             label12.TabIndex = 0;
@@ -565,16 +565,16 @@
             // 
             txtDescription.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtDescription.Location = new System.Drawing.Point(263, 228);
+            txtDescription.Location = new System.Drawing.Point(268, 228);
             txtDescription.Name = "txtDescription";
-            txtDescription.Size = new System.Drawing.Size(254, 23);
+            txtDescription.Size = new System.Drawing.Size(259, 23);
             txtDescription.TabIndex = 1;
             txtDescription.ThemeName = "Windows8";
             // 
             // chkAllowNegativeStock
             // 
             chkAllowNegativeStock.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkAllowNegativeStock.Location = new System.Drawing.Point(783, 135);
+            chkAllowNegativeStock.Location = new System.Drawing.Point(798, 135);
             chkAllowNegativeStock.Name = "chkAllowNegativeStock";
             chkAllowNegativeStock.Size = new System.Drawing.Size(129, 18);
             chkAllowNegativeStock.TabIndex = 4;
@@ -585,7 +585,7 @@
             // 
             chkIsPurchaseItem.Anchor = System.Windows.Forms.AnchorStyles.Left;
             chkIsPurchaseItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkIsPurchaseItem.Location = new System.Drawing.Point(783, 167);
+            chkIsPurchaseItem.Location = new System.Drawing.Point(798, 167);
             chkIsPurchaseItem.Name = "chkIsPurchaseItem";
             chkIsPurchaseItem.Size = new System.Drawing.Size(105, 18);
             chkIsPurchaseItem.TabIndex = 4;
@@ -596,7 +596,7 @@
             // chkDisabled
             // 
             chkDisabled.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkDisabled.Location = new System.Drawing.Point(783, 39);
+            chkDisabled.Location = new System.Drawing.Point(798, 39);
             chkDisabled.Name = "chkDisabled";
             chkDisabled.Size = new System.Drawing.Size(66, 18);
             chkDisabled.TabIndex = 4;
@@ -607,7 +607,7 @@
             // 
             chkIsSaleItem.Anchor = System.Windows.Forms.AnchorStyles.Left;
             chkIsSaleItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkIsSaleItem.Location = new System.Drawing.Point(783, 199);
+            chkIsSaleItem.Location = new System.Drawing.Point(798, 199);
             chkIsSaleItem.Name = "chkIsSaleItem";
             chkIsSaleItem.Size = new System.Drawing.Size(80, 18);
             chkIsSaleItem.TabIndex = 4;
@@ -622,9 +622,9 @@
             cmbPackingType.DisplayMember = "PackingTypeName";
             cmbPackingType.DropDownAnimationEnabled = true;
             cmbPackingType.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            cmbPackingType.Location = new System.Drawing.Point(263, 260);
+            cmbPackingType.Location = new System.Drawing.Point(268, 260);
             cmbPackingType.Name = "cmbPackingType";
-            cmbPackingType.Size = new System.Drawing.Size(254, 23);
+            cmbPackingType.Size = new System.Drawing.Size(259, 23);
             cmbPackingType.TabIndex = 2;
             cmbPackingType.ThemeName = "Windows8";
             cmbPackingType.ValueMember = "Name";
@@ -633,7 +633,7 @@
             // 
             label13.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(168, 263);
+            label13.Location = new System.Drawing.Point(173, 263);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(89, 17);
             label13.TabIndex = 0;
@@ -643,7 +643,7 @@
             // 
             label14.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label14.AutoSize = true;
-            label14.Location = new System.Drawing.Point(201, 295);
+            label14.Location = new System.Drawing.Point(206, 295);
             label14.Name = "label14";
             label14.Size = new System.Drawing.Size(56, 17);
             label14.TabIndex = 0;
@@ -653,16 +653,16 @@
             // 
             txtPacking.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtPacking.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtPacking.Location = new System.Drawing.Point(263, 292);
+            txtPacking.Location = new System.Drawing.Point(268, 292);
             txtPacking.Name = "txtPacking";
-            txtPacking.Size = new System.Drawing.Size(254, 23);
+            txtPacking.Size = new System.Drawing.Size(259, 23);
             txtPacking.TabIndex = 1;
             txtPacking.ThemeName = "Windows8";
             // 
             // chkIsFridgeItem
             // 
             chkIsFridgeItem.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkIsFridgeItem.Location = new System.Drawing.Point(783, 231);
+            chkIsFridgeItem.Location = new System.Drawing.Point(798, 231);
             chkIsFridgeItem.Name = "chkIsFridgeItem";
             chkIsFridgeItem.Size = new System.Drawing.Size(91, 18);
             chkIsFridgeItem.TabIndex = 4;
@@ -672,7 +672,7 @@
             // chkIsNarcotic
             // 
             chkIsNarcotic.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkIsNarcotic.Location = new System.Drawing.Point(783, 263);
+            chkIsNarcotic.Location = new System.Drawing.Point(798, 263);
             chkIsNarcotic.Name = "chkIsNarcotic";
             chkIsNarcotic.Size = new System.Drawing.Size(76, 18);
             chkIsNarcotic.TabIndex = 4;
@@ -682,7 +682,7 @@
             // chkIsShort
             // 
             chkIsShort.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkIsShort.Location = new System.Drawing.Point(783, 295);
+            chkIsShort.Location = new System.Drawing.Point(798, 295);
             chkIsShort.Name = "chkIsShort";
             chkIsShort.Size = new System.Drawing.Size(61, 18);
             chkIsShort.TabIndex = 4;
@@ -692,7 +692,7 @@
             // chkIsNonReturnable
             // 
             chkIsNonReturnable.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkIsNonReturnable.Location = new System.Drawing.Point(783, 327);
+            chkIsNonReturnable.Location = new System.Drawing.Point(798, 327);
             chkIsNonReturnable.Name = "chkIsNonReturnable";
             chkIsNonReturnable.Size = new System.Drawing.Size(113, 18);
             chkIsNonReturnable.TabIndex = 4;
@@ -703,9 +703,9 @@
             // 
             txtRackLocation.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtRackLocation.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtRackLocation.Location = new System.Drawing.Point(263, 324);
+            txtRackLocation.Location = new System.Drawing.Point(268, 324);
             txtRackLocation.Name = "txtRackLocation";
-            txtRackLocation.Size = new System.Drawing.Size(254, 23);
+            txtRackLocation.Size = new System.Drawing.Size(259, 23);
             txtRackLocation.TabIndex = 1;
             txtRackLocation.ThemeName = "Windows8";
             // 
@@ -713,7 +713,7 @@
             // 
             label15.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(164, 327);
+            label15.Location = new System.Drawing.Point(169, 327);
             label15.Name = "label15";
             label15.Size = new System.Drawing.Size(93, 17);
             label15.TabIndex = 0;
@@ -723,7 +723,7 @@
             // 
             label16.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label16.AutoSize = true;
-            label16.Location = new System.Drawing.Point(163, 363);
+            label16.Location = new System.Drawing.Point(168, 363);
             label16.Name = "label16";
             label16.Size = new System.Drawing.Size(94, 17);
             label16.TabIndex = 0;
@@ -733,16 +733,16 @@
             // 
             txtGenericName.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtGenericName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            txtGenericName.Location = new System.Drawing.Point(263, 360);
+            txtGenericName.Location = new System.Drawing.Point(268, 360);
             txtGenericName.Name = "txtGenericName";
-            txtGenericName.Size = new System.Drawing.Size(254, 23);
+            txtGenericName.Size = new System.Drawing.Size(259, 23);
             txtGenericName.TabIndex = 1;
             txtGenericName.ThemeName = "Windows8";
             // 
             // chkIsNearExpiry
             // 
             chkIsNearExpiry.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            chkIsNearExpiry.Location = new System.Drawing.Point(783, 103);
+            chkIsNearExpiry.Location = new System.Drawing.Point(798, 103);
             chkIsNearExpiry.Name = "chkIsNearExpiry";
             chkIsNearExpiry.Size = new System.Drawing.Size(91, 18);
             chkIsNearExpiry.TabIndex = 4;
@@ -755,7 +755,7 @@
             groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             groupBox3.Location = new System.Drawing.Point(3, 3);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new System.Drawing.Size(1049, 416);
+            groupBox3.Size = new System.Drawing.Size(1066, 416);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Details";
@@ -769,7 +769,7 @@
             tabControl1.Location = new System.Drawing.Point(200, 71);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new System.Drawing.Size(1063, 726);
+            tabControl1.Size = new System.Drawing.Size(1080, 726);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -779,7 +779,7 @@
             tabPage1.Location = new System.Drawing.Point(4, 26);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            tabPage1.Size = new System.Drawing.Size(1055, 696);
+            tabPage1.Size = new System.Drawing.Size(1072, 696);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Item";
             tabPage1.UseVisualStyleBackColor = true;
@@ -790,7 +790,7 @@
             groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             groupBox4.Location = new System.Drawing.Point(3, 419);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new System.Drawing.Size(1049, 274);
+            groupBox4.Size = new System.Drawing.Size(1066, 274);
             groupBox4.TabIndex = 1;
             groupBox4.TabStop = false;
             groupBox4.Text = "Other Details";
@@ -811,7 +811,7 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
-            tableLayoutPanel2.Size = new System.Drawing.Size(1043, 132);
+            tableLayoutPanel2.Size = new System.Drawing.Size(1060, 132);
             tableLayoutPanel2.TabIndex = 5;
             // 
             // gvUom
@@ -821,38 +821,40 @@
             gvUom.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             gvUom.ForeColor = System.Drawing.SystemColors.ControlText;
             gvUom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            gvUom.Location = new System.Drawing.Point(263, 3);
+            gvUom.Location = new System.Drawing.Point(268, 3);
             // 
             // 
             // 
             gvUom.MasterTemplate.AllowColumnChooser = false;
             gvUom.MasterTemplate.AllowRowResize = false;
             gvUom.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn11.EnableExpressionEditor = false;
-            gridViewTextBoxColumn11.FieldName = "Name";
-            gridViewTextBoxColumn11.HeaderText = "Name";
-            gridViewTextBoxColumn11.IsVisible = false;
-            gridViewTextBoxColumn11.Name = "name";
-            gridViewTextBoxColumn11.ReadOnly = true;
-            gridViewTextBoxColumn11.Width = 78;
-            gridViewComboBoxColumn4.DisplayMember = "UomName";
-            gridViewComboBoxColumn4.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDown;
-            gridViewComboBoxColumn4.EnableExpressionEditor = false;
-            gridViewComboBoxColumn4.HeaderText = "Uom";
-            gridViewComboBoxColumn4.Name = "uom";
-            gridViewComboBoxColumn4.ValueMember = "UomName";
-            gridViewComboBoxColumn4.Width = 152;
-            gridViewComboBoxColumn5.EnableExpressionEditor = false;
-            gridViewComboBoxColumn5.FieldName = "ConversionFactor";
-            gridViewComboBoxColumn5.HeaderText = "Conversion Factor";
-            gridViewComboBoxColumn5.Name = "conversion_factor";
-            gridViewComboBoxColumn5.Width = 82;
-            gvUom.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn11, gridViewComboBoxColumn4, gridViewComboBoxColumn5 });
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "Name";
+            gridViewTextBoxColumn5.HeaderText = "Name";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "name";
+            gridViewTextBoxColumn5.ReadOnly = true;
+            gridViewTextBoxColumn5.Width = 78;
+            gridViewComboBoxColumn1.DisplayMember = "UomName";
+            gridViewComboBoxColumn1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDown;
+            gridViewComboBoxColumn1.EnableExpressionEditor = false;
+            gridViewComboBoxColumn1.HeaderText = "Uom";
+            gridViewComboBoxColumn1.Name = "uom";
+            gridViewComboBoxColumn1.ValueMember = "UomName";
+            gridViewComboBoxColumn1.Width = 154;
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "ConversionFactor";
+            gridViewDecimalColumn1.HeaderText = "Conversion Factor";
+            gridViewDecimalColumn1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            gridViewDecimalColumn1.Name = "conversion_factor";
+            gridViewDecimalColumn1.ShowUpDownButtons = false;
+            gridViewDecimalColumn1.Width = 85;
+            gvUom.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn5, gridViewComboBoxColumn1, gridViewDecimalColumn1 });
             gvUom.MasterTemplate.EnableGrouping = false;
-            gvUom.MasterTemplate.ViewDefinition = tableViewDefinition5;
+            gvUom.MasterTemplate.ViewDefinition = tableViewDefinition2;
             gvUom.Name = "gvUom";
             gvUom.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            gvUom.Size = new System.Drawing.Size(254, 126);
+            gvUom.Size = new System.Drawing.Size(259, 126);
             gvUom.TabIndex = 3;
             gvUom.ThemeName = "Windows8";
             // 
@@ -860,7 +862,7 @@
             // 
             label18.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label18.AutoSize = true;
-            label18.Location = new System.Drawing.Point(718, 57);
+            label18.Location = new System.Drawing.Point(733, 57);
             label18.Name = "label18";
             label18.Size = new System.Drawing.Size(59, 17);
             label18.TabIndex = 0;
@@ -870,7 +872,7 @@
             // 
             label17.Anchor = System.Windows.Forms.AnchorStyles.Right;
             label17.AutoSize = true;
-            label17.Location = new System.Drawing.Point(179, 57);
+            label17.Location = new System.Drawing.Point(184, 57);
             label17.Name = "label17";
             label17.Size = new System.Drawing.Size(78, 17);
             label17.TabIndex = 0;
@@ -883,34 +885,34 @@
             gvSupplier.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             gvSupplier.ForeColor = System.Drawing.SystemColors.ControlText;
             gvSupplier.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            gvSupplier.Location = new System.Drawing.Point(783, 3);
+            gvSupplier.Location = new System.Drawing.Point(798, 3);
             // 
             // 
             // 
             gvSupplier.MasterTemplate.AllowColumnChooser = false;
             gvSupplier.MasterTemplate.AllowRowResize = false;
             gvSupplier.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn12.EnableExpressionEditor = false;
-            gridViewTextBoxColumn12.FieldName = "Name";
-            gridViewTextBoxColumn12.HeaderText = "Name";
-            gridViewTextBoxColumn12.IsVisible = false;
-            gridViewTextBoxColumn12.Name = "name";
-            gridViewTextBoxColumn12.ReadOnly = true;
-            gridViewTextBoxColumn12.Width = 78;
-            gridViewComboBoxColumn6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            gridViewComboBoxColumn6.DisplayMember = "SupplierName";
-            gridViewComboBoxColumn6.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDown;
-            gridViewComboBoxColumn6.EnableExpressionEditor = false;
-            gridViewComboBoxColumn6.HeaderText = "Supplier";
-            gridViewComboBoxColumn6.Name = "supplier";
-            gridViewComboBoxColumn6.ValueMember = "Name";
-            gridViewComboBoxColumn6.Width = 236;
-            gvSupplier.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn12, gridViewComboBoxColumn6 });
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "Name";
+            gridViewTextBoxColumn6.HeaderText = "Name";
+            gridViewTextBoxColumn6.IsVisible = false;
+            gridViewTextBoxColumn6.Name = "name";
+            gridViewTextBoxColumn6.ReadOnly = true;
+            gridViewTextBoxColumn6.Width = 78;
+            gridViewComboBoxColumn2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            gridViewComboBoxColumn2.DisplayMember = "SupplierName";
+            gridViewComboBoxColumn2.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDown;
+            gridViewComboBoxColumn2.EnableExpressionEditor = false;
+            gridViewComboBoxColumn2.HeaderText = "Supplier";
+            gridViewComboBoxColumn2.Name = "supplier";
+            gridViewComboBoxColumn2.ValueMember = "Name";
+            gridViewComboBoxColumn2.Width = 238;
+            gvSupplier.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] { gridViewTextBoxColumn6, gridViewComboBoxColumn2 });
             gvSupplier.MasterTemplate.EnableGrouping = false;
-            gvSupplier.MasterTemplate.ViewDefinition = tableViewDefinition6;
+            gvSupplier.MasterTemplate.ViewDefinition = tableViewDefinition3;
             gvSupplier.Name = "gvSupplier";
             gvSupplier.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            gvSupplier.Size = new System.Drawing.Size(257, 126);
+            gvSupplier.Size = new System.Drawing.Size(259, 126);
             gvSupplier.TabIndex = 4;
             gvSupplier.ThemeName = "Windows8";
             // 
