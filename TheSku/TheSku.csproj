@@ -60,6 +60,10 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Classes\" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties ShouldAddDPIScalingManifest="" /></VisualStudio></ProjectExtensions>
      
 

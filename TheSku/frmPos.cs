@@ -481,11 +481,11 @@ namespace TheSku
             }
             if (e.KeyCode == Keys.Up && this.gvItemList.Rows.Count > 1 && this.gvItemList.CurrentRow.Index == 0)
             {
-                this.gvItemList.CurrentCell = this.gvItemList.Rows[this.gvItemList.Rows.Count - 1].Cells[0];
+                this.gvItemList.CurrentCell = this.gvItemList.Rows[this.gvItemList.Rows.Count - 1].Cells[1];
             }
             if (e.KeyCode == Keys.Down && this.gvItemList.Rows.Count > 1 && this.gvItemList.CurrentRow.Index == this.gvItemList.Rows.Count - 1)
             {
-                this.gvItemList.CurrentCell = this.gvItemList.Rows[0].Cells[0];
+                this.gvItemList.CurrentCell = this.gvItemList.Rows[0].Cells[1];
             }
             if (char.IsLetterOrDigit((char)e.KeyCode))
             {
@@ -891,37 +891,34 @@ namespace TheSku
         private void SalesAddItem()
         {
             GridViewDataRowInfo gridViewDataRowInfo = new GridViewDataRowInfo(this.gvSalesList.MasterView);
-            //frmQtyItem frmQtyItem = new frmQtyItem(this.gvItemList.Rows[this.gvItemList.CurrentRow.Index].Cells["name"].Value.ToString(), gridViewDataRowInfo, "Sale");
-            //frmQtyItem.ShowDialog();
-            //int Qty = frmQtyItem.Qty;
-            //if (Qty >= 0 && gridViewDataRowInfo.Cells["item_code"].Value != null)
-            //{
-            //    if (!sellingSettings.AllowMultipleItemsToAddInSale)
-            //    {
-            //        foreach (GridViewDataRowInfo row in this.gvSalesList.Rows)
-            //        {
-            //            if (row.Cells["item_code"].Value.ToString() == gridViewDataRowInfo.Cells["item_code"].Value.ToString())
-            //            {
-            //                MessageBox.Show("Duplicate Item, Please Select other item", "Duplicate Item", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //                Qty = -1;
-            //            }
-            //        }
-            //    }
-            //    if (Qty >= 0)
-            //    {
-            //        if (gridViewDataRowInfo.Cells["item_code"].Value != null && gridViewDataRowInfo.Cells["item_code"].Value != DBNull.Value)
-            //        {
-            //            this.gvSalesList.Rows.Add(gridViewDataRowInfo);
-            //        }
-            //        this.Calculate();
-            //        this.txtFilter.Clear();
-            //        this.txtFilter.Focus();
-            //    }
-            //}
-            //else
-            //{
-            //    this.txtFilter.Focus();
-            //}
+            frmPosQty frmQtyItem = new frmPosQty(this.gvItemList.Rows[this.gvItemList.CurrentRow.Index].Cells["name"].Value.ToString(), gridViewDataRowInfo, "Sale", this.dbContext);
+            frmQtyItem.ShowDialog();
+            int Qty = frmQtyItem.Qty;
+            if (Qty >= 0 && gridViewDataRowInfo.Cells["item_code"].Value != null)
+            {
+                foreach (GridViewDataRowInfo row in this.gvSalesList.Rows)
+                {
+                    if (row.Cells["item_code"].Value.ToString() == gridViewDataRowInfo.Cells["item_code"].Value.ToString())
+                    {
+                        MessageBox.Show("Duplicate Item, Please Select other item", "Duplicate Item", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Qty = -1;
+                    }
+                }
+                if (Qty >= 0)
+                {
+                    if (gridViewDataRowInfo.Cells["item_code"].Value != null && gridViewDataRowInfo.Cells["item_code"].Value != DBNull.Value)
+                    {
+                        this.gvSalesList.Rows.Add(gridViewDataRowInfo);
+                    }
+                    this.Calculate();
+                    this.txtFilter.Clear();
+                    this.txtFilter.Focus();
+                }
+            }
+            else
+            {
+                this.txtFilter.Focus();
+            }
         }
 
         private void SaveandPrint()
@@ -1255,7 +1252,7 @@ namespace TheSku
                     this.gvItemList.CurrentRow.Selected = true;
                     if (this.gvItemList.Rows.Count - 1 > this.gvItemList.CurrentRow.Index)
                     {
-                        this.gvItemList.CurrentCell = this.gvItemList.Rows[this.gvItemList.CurrentRow.Index + 1].Cells[0];
+                        this.gvItemList.CurrentCell = this.gvItemList.Rows[this.gvItemList.CurrentRow.Index + 1].Cells[1];
                     }
                 }
             }

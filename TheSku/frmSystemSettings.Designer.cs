@@ -207,7 +207,6 @@
             cmbLanguage.TabIndex = 2;
             cmbLanguage.ThemeName = "Windows8";
             cmbLanguage.ValueMember = "Name";
-            cmbLanguage.Enter += cmbWarehouse_Enter;
             // 
             // label6
             // 

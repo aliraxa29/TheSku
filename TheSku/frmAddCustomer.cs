@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using TheSku.Data;
@@ -50,6 +46,13 @@ namespace TheSku
                 MessageBox.Show("Customer Mobile No Should Be 10 Digits Long", "Length Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 base.DialogResult = DialogResult.None;
                 this.txtPhoneNo.Focus();
+                return;
+            }
+            if (this.cmbCustomerGroup.SelectedIndex == -1)
+            {
+                MessageBox.Show("Select Customer Group", "Customer Group", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                base.DialogResult = DialogResult.None;
+                this.cmbCustomerGroup.Focus();
                 return;
             }
             Customer customer1 = dbContext.Customer.Where(c => c.Name.Equals(this.txtPhoneNo.Text.Trim())).FirstOrDefault();

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Security.AccessControl;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
@@ -90,6 +89,28 @@ namespace TheSku
                     StandardRate = this.txtStandardRate.Value,
                     StockUom = dbContext.Uom.Where(u => u.Name.Equals(this.cmbStockUom.SelectedValue)).FirstOrDefault()
                 };
+                foreach (GridViewRowInfo row in this.gvUom.Rows)
+                {
+                    UomConversionDetail uc = new UomConversionDetail()
+                    {
+                        Creation = DateTime.Now,
+                        Owner = Global.UserName,
+                        ItemCode = item,
+                        Uom = dbContext.Uom.Where(u => u.Name.Equals(row.Cells["uom"].Value)).FirstOrDefault()
+                    };
+                    dbContext.UomConversionDetail.Add(uc);
+                }
+                foreach (GridViewRowInfo row in this.gvSupplier.Rows)
+                {
+                    ItemSupplier iSupplier = new ItemSupplier()
+                    {
+                        Creation = DateTime.Now,
+                        Owner = Global.UserName,
+                        ItemCode = item,
+                        Supplier = dbContext.Suppliers.Where(u => u.Name.Equals(row.Cells["supplier"].Value)).FirstOrDefault()
+                    };
+                    dbContext.ItemSupplier.Add(iSupplier);
+                }
                 dbContext.Item.Add(item1);
                 dbContext.SaveChanges();
                 this.ResetForm();
@@ -122,6 +143,48 @@ namespace TheSku
                     item.StandardRate = this.txtStandardRate.Value;
                     item.StockUom = dbContext.Uom.Where(u => u.Name.Equals(this.cmbStockUom.SelectedValue)).FirstOrDefault();
                     dbContext.Item.Update(item);
+                    foreach (GridViewRowInfo row in this.gvUom.Rows)
+                    {
+                        if (row.Cells["name"].Value is null)
+                        {
+                            UomConversionDetail uc = new UomConversionDetail()
+                            {
+                                Creation = DateTime.Now,
+                                Owner = Global.UserName,
+                                ItemCode = item,
+                                Uom = dbContext.Uom.Where(u => u.Name.Equals(row.Cells["uom"].Value)).FirstOrDefault(),
+                                ConversionFactor = Convert.ToDecimal(row.Cells["conversion_factor"].Value),
+                            };
+                            dbContext.UomConversionDetail.Add(uc);
+                        }
+                        else
+                        {
+                            UomConversionDetail uc = dbContext.UomConversionDetail.Where(u => u.Name.Equals(row.Cells["name"].Value)).FirstOrDefault();
+                            uc.Uom = dbContext.Uom.Where(u => u.Name.Equals(row.Cells["uom"].Value)).FirstOrDefault();
+                            uc.ConversionFactor = Convert.ToDecimal(row.Cells["conversion_factor"].Value);
+                            dbContext.UomConversionDetail.Update(uc);
+                        }
+                    }
+                    foreach (GridViewRowInfo row in this.gvSupplier.Rows)
+                    {
+                        if (row.Cells["name"].Value is null)
+                        {
+                            ItemSupplier iSupplier = new ItemSupplier()
+                            {
+                                Creation = DateTime.Now,
+                                Owner = Global.UserName,
+                                ItemCode = item,
+                                Supplier = dbContext.Suppliers.Where(u => u.Name.Equals(row.Cells["supplier"].Value)).FirstOrDefault()
+                            };
+                            dbContext.ItemSupplier.Add(iSupplier);
+                        }
+                        else
+                        {
+                            ItemSupplier iSupplier = dbContext.ItemSupplier.Where(u => u.Name.Equals(row.Cells["name"].Value)).FirstOrDefault();
+                            iSupplier.Supplier = dbContext.Suppliers.Where(u => u.Name.Equals(row.Cells["supplier"].Value)).FirstOrDefault();
+                            dbContext.ItemSupplier.Update(iSupplier);
+                        }
+                    }
                     dbContext.SaveChanges();
                     this.ResetForm();
                 }
@@ -237,7 +300,7 @@ namespace TheSku
                     this.chkIsPurchaseItem.Checked = item.IsPurchaseItem;
                     this.chkIsSaleItem.Checked = item.IsSaleItem;
                     this.chkIsShort.Checked = item.IsShortItem;
-                    this.chkIsShort.Checked = item.IsStockItem;
+                    this.chkIsStockItem.Checked = item.IsStockItem;
                     this.chkAllowNegativeStock.Checked = item.AllowNegativeStock;
                     this.cmbBrand.SelectedValue = item.Brand?.Name ?? null;
                     this.txtDescription.Text = item.Description;
@@ -250,6 +313,23 @@ namespace TheSku
                     this.txtRackLocation.Text = item.RackLocation;
                     this.txtStandardRate.Value = item.StandardRate;
                     this.cmbStockUom.SelectedValue = item.StockUom?.Name ?? null;
+                    this.gvSupplier.Rows.Clear();
+                    this.gvUom.Rows.Clear();
+                    foreach (UomConversionDetail uom in dbContext.UomConversionDetail.Where(u => u.ItemCode.Equals(item)).ToList())
+                    {
+                        GridViewDataRowInfo row = new GridViewDataRowInfo(this.gvUom.MasterView);
+                        row.Cells["name"].Value = uom.Name;
+                        row.Cells["uom"].Value = uom.Uom?.Name ?? null;
+                        row.Cells["conversion_factor"].Value = uom.ConversionFactor;
+                        this.gvUom.Rows.Add(row);
+                    }
+                    foreach (ItemSupplier supplier in dbContext.ItemSupplier.Where(u => u.ItemCode.Equals(item)).ToList())
+                    {
+                        GridViewDataRowInfo row = new GridViewDataRowInfo(this.gvSupplier.MasterView);
+                        row.Cells["name"].Value = supplier.Name;
+                        row.Cells["supplier"].Value = supplier.Supplier?.Name ?? null;
+                        this.gvSupplier.Rows.Add(row);
+                    }
                     this.tabControl1.SelectTab(0);
                     this.txtItemName.Focus();
                     this.lblID.Visible = true;
@@ -336,6 +416,8 @@ namespace TheSku
             this.cmbItemGroup.DataSource = dbContext.ItemGroup.ToList();
             this.cmbPackingType.DataSource = dbContext.PackingType.ToList();
             this.cmbStockUom.DataSource = dbContext.Uom.ToList();
+            ((GridViewComboBoxColumn)this.gvUom.Columns["uom"]).DataSource = dbContext.Uom.ToList();
+            ((GridViewComboBoxColumn)this.gvSupplier.Columns["supplier"]).DataSource = dbContext.Suppliers.ToList();
         }
     }
 }
