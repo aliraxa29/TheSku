@@ -65,6 +65,7 @@ namespace TheSku
             label8 = new Label();
             lblPP = new Label();
             label4 = new Label();
+            label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
             lblGeneric = new TextBox();
@@ -78,7 +79,6 @@ namespace TheSku
             label13 = new Label();
             label9 = new Label();
             windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
-            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)txtDrname).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -281,7 +281,7 @@ namespace TheSku
             // 
             // cmbUOM
             // 
-            cmbUOM.DisplayMember = "uom";
+            cmbUOM.DisplayMember = "Uom.Name";
             cmbUOM.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbUOM.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             cmbUOM.FormattingEnabled = true;
@@ -290,7 +290,7 @@ namespace TheSku
             cmbUOM.Name = "cmbUOM";
             cmbUOM.Size = new System.Drawing.Size(312, 29);
             cmbUOM.TabIndex = 25;
-            cmbUOM.ValueMember = "uom";
+            cmbUOM.ValueMember = "Uom";
             cmbUOM.SelectedIndexChanged += cmbUOM_SelectedIndexChanged;
             // 
             // label28
@@ -505,6 +505,17 @@ namespace TheSku
             label4.TabIndex = 13;
             label4.Text = "Unit Price";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label2.Location = new System.Drawing.Point(8, 31);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(71, 17);
+            label2.TabIndex = 14;
+            label2.Text = "Item Code";
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -650,18 +661,7 @@ namespace TheSku
             label9.TabIndex = 9;
             label9.Text = "Return To HO";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label2.Location = new System.Drawing.Point(8, 31);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(71, 17);
-            label2.TabIndex = 14;
-            label2.Text = "Item Code";
-            // 
-            // frmQtyItem
+            // frmPosQty
             // 
             AcceptButton = btnOk;
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -683,7 +683,7 @@ namespace TheSku
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "frmQtyItem";
+            Name = "frmPosQty";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Item Details";
             FormClosing += frmQtyItem_FormClosing;

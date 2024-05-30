@@ -64,8 +64,8 @@ namespace TheSku
                 this.GetgvRowInfo.Cells["packing"].Value = this.lblPacking.Text;
                 this.GetgvRowInfo.Cells["qty"].Value = this.txtQty.Value;
                 this.GetgvRowInfo.Cells["stock_uom"].Value = "Nos";
-                this.GetgvRowInfo.Cells["unit_price_list_rate"].Value = this.lblPrice.Text;
-                this.GetgvRowInfo.Cells["base_unit_price_list_rate"].Value = this.lblPrice.Text;
+                this.GetgvRowInfo.Cells["unit_price_list_rate"].Value = this.RoundDouble(this.lblPrice.Text);
+                this.GetgvRowInfo.Cells["base_unit_price_list_rate"].Value = this.RoundDouble(this.lblPrice.Text);
                 this.GetgvRowInfo.Cells["uom"].Value = this.cmbUOM.SelectedValue;
                 this.GetgvRowInfo.Cells["conversion_factor"].Value = dbContext.UomConversionDetail.Where(u => u.ItemCode.Equals(dbContext.Item.Where(i => i.ItemCode.Equals(this.lblItemCode.Text)).FirstOrDefault())).FirstOrDefault();
                 this.GetgvRowInfo.Cells["stock_qty"].Value = this.RoundDouble(this.GetgvRowInfo.Cells["qty"].Value) * this.RoundDouble(this.GetgvRowInfo.Cells["conversion_factor"].Value);
@@ -148,7 +148,7 @@ namespace TheSku
                     this.cmbUOM.DataSource = s;
                 }
                 this.lblPurchaseRate.Text = itemprice.Where(i => i.Buying).FirstOrDefault()?.PriceListRate.ToString("#0.00");
-                this.lblRetailPrice.Text = Math.Round(this.RoundDouble(this.RoundDouble(this.lblPrice.Text) * this.RoundDouble(this.lblConversionFactor.Text)), 3).ToString();
+                this.lblRetailPrice.Text = (this.RoundDouble(this.RoundDouble(this.lblPrice.Text) * this.RoundDouble(this.lblConversionFactor.Text))).ToString();
                 this.lblStock.Text = dbContext.Bin.Where(b => b.ItemCode.Equals(item) && b.Warehouse.Equals(Global.Warehouse)).Sum(s => s.ActualQty).ToString("#0.00");
             }
             else
