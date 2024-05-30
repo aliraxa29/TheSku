@@ -436,6 +436,7 @@ namespace TheSku
             dtpIncorporation.Text = "4/8/2024";
             dtpIncorporation.ThemeName = "Windows8";
             dtpIncorporation.Value = new System.DateTime(2024, 4, 8, 13, 21, 32, 648);
+            dtpIncorporation.ValueChanged += dtpIncorporation_ValueChanged;
             // 
             // dtpEstablishment
             // 

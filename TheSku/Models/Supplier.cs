@@ -21,9 +21,6 @@ public class Supplier
     [MaxLength(255)]
     [Column("owner")]
     public string Owner { get; set; }
-    [MaxLength(1)]
-    [Column("docstatus")]
-    public int Docstatus { get; set; }
     [MaxLength(255)]
     [Required]
     [Column("supplier_name")]
@@ -47,10 +44,8 @@ public class Supplier
     public string PrimaryContact { get; set; }
     [Column("accounts")]
     public List<PartyAccount> PartyAccounts { get; set; }
-    [MaxLength(1)]
     [Column("disabled")]
-    public int Disabled { get; set; }
-    [MaxLength(1)]
+    public bool Disabled { get; set; }
     [Column("block_supplier")]
-    public int BlockSupplier { get; set; }
+    public bool BlockSupplier { get; set; }
 }

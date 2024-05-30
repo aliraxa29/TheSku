@@ -374,9 +374,9 @@ namespace TheSku
         private void BindCombo()
         {
             this.cmbCountry.DataSource = dbContext.Country.ToList();
-            this.cmbCountry.SelectedValue = Global.Country.Name??"";
+            this.cmbCountry.SelectedValue = Global.Country.Name ?? "";
             this.cmbCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled).ToList();
-            this.cmbCountry.SelectedValue = Global.Country.Name??"";
+            this.cmbCountry.SelectedValue = Global.Country.Name ?? "";
             this.cmbCurrency.SelectedValue = Global.Currency.Name;
         }
 
@@ -425,6 +425,11 @@ namespace TheSku
                     e.CellElement.Text = "Disabled";
                 }
             }
+        }
+
+        private void dtpIncorporation_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

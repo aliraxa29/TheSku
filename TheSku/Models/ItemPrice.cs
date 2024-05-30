@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
-using TheSku.Data;
-using System.Linq;
 
 [Table("tabItem Price")]
 public class ItemPrice
@@ -56,5 +54,5 @@ public class ItemPrice
     [Column("price_list_rate", TypeName = "DECIMAL(21,9)")]
     public decimal PriceListRate { get; set; } = 0;
     [Column("valid_from", TypeName = "DATE")]
-    public DateTime? ValidFrom { get; set; }
+    public DateOnly? ValidFrom { get; set; }
 }

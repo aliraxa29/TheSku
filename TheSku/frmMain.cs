@@ -278,5 +278,17 @@ namespace TheSku
                 new frmTerritory(dbContext) { MdiParent = this }.Show();
             }
         }
+
+        private void itemPriceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmItemPrice"] != null)
+            {
+                Application.OpenForms["frmItemPrice"].BringToFront();
+            }
+            else
+            {
+                new frmItemPrice(dbContext) { MdiParent = this }.Show();
+            }
+        }
     }
 }
