@@ -644,6 +644,14 @@ public class DefaultData
             new CustomerGroup() { Creation = DateTime.Now, CustomerGroupName = "Individual", Name = "Individual", ModifiedBy = "Administrator", Owner = "Administrator" },
             new CustomerGroup() { Creation = DateTime.Now, CustomerGroupName = "Non Profit", Name = "Non Profit", ModifiedBy = "Administrator", Owner = "Administrator" },
         };
+    }
 
+    public static List<PriceList> GetPriceLists()
+    {
+        return new List<PriceList>
+        {
+            new PriceList() { Creation = DateTime.Now, PriceListName = "Standard Selling", Name = "Standard Selling", Selling = true, Buying = false, PriceNotUomDependent = false, ModifiedBy = "Administrator", Owner = "Administrator" },
+            new PriceList() { Creation = DateTime.Now, PriceListName = "Standard Buying", Name = "Standard Buying", Selling = false ,Buying = true, PriceNotUomDependent = false, ModifiedBy = "Administrator", Owner = "Administrator" },
+        };
     }
 }

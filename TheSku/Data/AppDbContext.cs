@@ -29,9 +29,10 @@ namespace TheSku.Data
             modelBuilder.Entity<Company>().HasOne(c => c.RoundOffAccount).WithOne().HasForeignKey<Company>(c => c.RoundOffAccountId).IsRequired(false);
 
             //Indexes
-            modelBuilder.Entity<Item>().HasIndex(i => new { i.ItemName, i.Modified }).HasDatabaseName("idx_item_itemname_modified");
+            modelBuilder.Entity<Item>().HasIndex(i => new { i.ItemName, i.ItemCode, i.Modified }).HasDatabaseName("idx_item_item_code_itemname_modified");
             modelBuilder.Entity<StockLedger>().HasIndex(i => new { i.VoucherType, i.VoucherNo, i.PostingDate, i.PostingTime, i.Modified }).HasDatabaseName("idx_stock_ledger_modified_voucher_type_voucher_no_posting_datetime");
             modelBuilder.Entity<SalesInvoicePayment>().HasIndex(i => new { i.Modified }).HasDatabaseName("idx_sales_invoice_payment_modified");
+            modelBuilder.Entity<PriceList>().HasIndex(i => new { i.Modified }).HasDatabaseName("idx_price_list_modified");
 
             //Default Data
             modelBuilder.Entity<Role>().HasData(DefaultData.Roles());
@@ -41,6 +42,7 @@ namespace TheSku.Data
             modelBuilder.Entity<Language>().HasData(DefaultData.Languages());
             modelBuilder.Entity<Document>().HasData(DefaultData.Documents());
             modelBuilder.Entity<CustomerGroup>().HasData(DefaultData.GetCustomerGroups());
+            modelBuilder.Entity<PriceList>().HasData(DefaultData.GetPriceLists());
             var defaultSingles = DefaultData.DefaultValues().Select(s => new Singles
             {
                 Name = Guid.NewGuid(),

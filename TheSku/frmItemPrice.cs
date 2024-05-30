@@ -24,6 +24,7 @@ namespace TheSku
             this.gvList.AutoGenerateColumns = false;
             this.ActiveControl = this.txtItemName;
             this.dtpValidFrom.Value = DateTime.Now;
+            this.brnRefreshFields.PerformClick();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -277,6 +278,7 @@ namespace TheSku
         private void brnRefreshFields_Click(object sender, EventArgs e)
         {
             this.cmbCurrency.DataSource = dbContext.Currency.Where(c => c.Enabled).ToList();
+            this.cmbCurrency.SelectedValue = Global.Currency?.Name ?? null;
             this.cmbPriceList.DataSource = dbContext.PriceList.Where(pl => pl.Enabled).ToList();
             this.cmbSupplier.DataSource = dbContext.Suppliers.Where(s => !s.Disabled).ToList();
             this.cmbUom.DataSource = dbContext.Uom.Where(u => u.Enabled).ToList();
@@ -314,6 +316,17 @@ namespace TheSku
             this.cmbCustomer.Text = previousText;
             this.cmbCustomer.TextChanged += cmbCustomer_TextChanged;
             this.cmbCustomer.SelectText(cmbCustomer.Text.Length, 0);
+        }
+
+        private void cmbItemCode_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e)
+        {
+            Item item = dbContext.Item.Where(i => i.Name.Equals(this.cmbItemCode.SelectedValue)).FirstOrDefault();
+            if (item is not null)
+            {
+                this.txtItemName.Text = item.ItemName;
+                this.txtBrand.Text = item.Brand?.Name ?? "";
+                this.txtDescription.Text = item.Description;
+            }
         }
     }
 }
