@@ -290,5 +290,17 @@ namespace TheSku
                 new frmItemPrice(dbContext) { MdiParent = this }.Show();
             }
         }
+
+        private void priceListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frmPriceList"] != null)
+            {
+                Application.OpenForms["frmPriceList"].BringToFront();
+            }
+            else
+            {
+                new frmPriceList(dbContext) { MdiParent = this }.Show();
+            }
+        }
     }
 }

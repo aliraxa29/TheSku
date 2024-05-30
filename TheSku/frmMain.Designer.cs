@@ -45,6 +45,7 @@
             itemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             itemGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             uOMUnitOfMeasureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            itemPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             buyingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             supplierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +77,7 @@
             toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             lblWarehouse = new System.Windows.Forms.ToolStripStatusLabel();
-            itemPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            priceListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ssMain.SuspendLayout();
             SuspendLayout();
@@ -176,7 +177,7 @@
             // 
             // stockToolStripMenuItem
             // 
-            stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { itemToolStripMenuItem, itemGroupToolStripMenuItem, uOMUnitOfMeasureToolStripMenuItem, itemPriceToolStripMenuItem });
+            stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { itemToolStripMenuItem, itemGroupToolStripMenuItem, itemPriceToolStripMenuItem, priceListToolStripMenuItem, uOMUnitOfMeasureToolStripMenuItem });
             stockToolStripMenuItem.Name = "stockToolStripMenuItem";
             stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             stockToolStripMenuItem.Text = "Stock";
@@ -201,6 +202,13 @@
             uOMUnitOfMeasureToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             uOMUnitOfMeasureToolStripMenuItem.Text = "UOM (Unit Of Measure)";
             uOMUnitOfMeasureToolStripMenuItem.Click += uOMUnitOfMeasureToolStripMenuItem_Click;
+            // 
+            // itemPriceToolStripMenuItem
+            // 
+            itemPriceToolStripMenuItem.Name = "itemPriceToolStripMenuItem";
+            itemPriceToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            itemPriceToolStripMenuItem.Text = "Item Price";
+            itemPriceToolStripMenuItem.Click += itemPriceToolStripMenuItem_Click;
             // 
             // buyingToolStripMenuItem
             // 
@@ -413,12 +421,12 @@
             lblWarehouse.Size = new System.Drawing.Size(66, 17);
             lblWarehouse.Text = "Warehouse";
             // 
-            // itemPriceToolStripMenuItem
+            // priceListToolStripMenuItem
             // 
-            itemPriceToolStripMenuItem.Name = "itemPriceToolStripMenuItem";
-            itemPriceToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            itemPriceToolStripMenuItem.Text = "Item Price";
-            itemPriceToolStripMenuItem.Click += itemPriceToolStripMenuItem_Click;
+            priceListToolStripMenuItem.Name = "priceListToolStripMenuItem";
+            priceListToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            priceListToolStripMenuItem.Text = "Price List";
+            priceListToolStripMenuItem.Click += priceListToolStripMenuItem_Click;
             // 
             // frmMain
             // 
@@ -492,5 +500,6 @@
         private System.Windows.Forms.ToolStripMenuItem territoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemPriceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem priceListToolStripMenuItem;
     }
 }
