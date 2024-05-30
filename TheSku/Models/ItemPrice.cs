@@ -5,10 +5,9 @@ using System;
 [Table("tabItem Price")]
 public class ItemPrice
 {
-    [MaxLength(255)]
     [Key]
     [Column("name")]
-    public Guid Name { get; set; }
+    public int Name { get; set; }
     [Column("creation")]
     public DateTime Creation { get; set; }
     [Column("modified")]
@@ -21,7 +20,9 @@ public class ItemPrice
     public string Owner { get; set; }
     [MaxLength(255)]
     [Column("item_code")]
-    public Item ItemCode { get; set; }
+    public string ItemCode { get; set; }
+    [ForeignKey("ItemCode")]
+    public virtual Item item_code { get; set; }
     [MaxLength(255)]
     [Column("uom")]
     public Uom Uom { get; set; }

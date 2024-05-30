@@ -279,6 +279,7 @@
             txtItemName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtItemName.Location = new System.Drawing.Point(272, 38);
             txtItemName.Name = "txtItemName";
+            txtItemName.ReadOnly = true;
             txtItemName.Size = new System.Drawing.Size(263, 23);
             txtItemName.TabIndex = 1;
             txtItemName.ThemeName = "Windows8";
@@ -405,6 +406,7 @@
             txtBrand.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtBrand.Location = new System.Drawing.Point(272, 71);
             txtBrand.Name = "txtBrand";
+            txtBrand.ReadOnly = true;
             txtBrand.Size = new System.Drawing.Size(263, 23);
             txtBrand.TabIndex = 2;
             txtBrand.ThemeName = "Windows8";
@@ -425,6 +427,7 @@
             txtDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             txtDescription.Location = new System.Drawing.Point(272, 104);
             txtDescription.Name = "txtDescription";
+            txtDescription.ReadOnly = true;
             txtDescription.Size = new System.Drawing.Size(263, 23);
             txtDescription.TabIndex = 3;
             txtDescription.ThemeName = "Windows8";

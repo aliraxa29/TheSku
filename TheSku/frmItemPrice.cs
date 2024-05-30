@@ -47,7 +47,7 @@ namespace TheSku
                 {
                     Creation = DateTime.Now,
                     Owner = Global.UserName,
-                    ItemCode = dbContext.Item.Where(i => i.Name.Equals(this.cmbItemCode.SelectedValue)).FirstOrDefault(),
+                    ItemCode = this.cmbItemCode.SelectedValue?.ToString(),
                     ItemName = this.txtItemName.Text,
                     Brand = dbContext.Brand.Where(i => i.Name.Equals(this.txtBrand.Text)).FirstOrDefault(),
                     Description = this.txtDescription.Text,
@@ -71,7 +71,7 @@ namespace TheSku
                 ItemPrice itemPrice = dbContext.ItemPrice.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
                 if (itemPrice is not null)
                 {
-                    itemPrice.ItemCode = dbContext.Item.Where(i => i.Name.Equals(this.cmbItemCode.SelectedValue)).FirstOrDefault();
+                    itemPrice.ItemCode = this.cmbItemCode.SelectedValue?.ToString();
                     itemPrice.ItemName = this.txtItemName.Text;
                     itemPrice.Brand = dbContext.Brand.Where(i => i.Name.Equals(this.txtBrand.Text)).FirstOrDefault();
                     itemPrice.Description = this.txtDescription.Text;
@@ -163,7 +163,7 @@ namespace TheSku
         {
             var itemPrices = dbContext.ItemPrice
                             .OrderByDescending(x => x.Modified)
-                            .Where(s => string.IsNullOrEmpty(this.txtNameFilter.Text) || s.ItemCode.Name.Contains(this.txtNameFilter.Text))
+                            .Where(s => string.IsNullOrEmpty(this.txtNameFilter.Text) || s.ItemCode.Contains(this.txtNameFilter.Text))
                             .Take((int)this.txtLimit.Value)
                             .ToList();
             this.gvList.DataSource = itemPrices;
@@ -181,7 +181,7 @@ namespace TheSku
                 var itemPrice = dbContext.ItemPrice.Where(x => x.Name.Equals(this.lblID.Text)).FirstOrDefault();
                 if (itemPrice is not null)
                 {
-                    this.cmbItemCode.SelectedValue = itemPrice.ItemCode?.Name ?? null;
+                    this.cmbItemCode.SelectedValue = itemPrice.ItemCode;
                     this.txtItemName.Text = itemPrice.ItemName;
                     this.txtBrand.Text = itemPrice.Brand?.Name ?? "";
                     this.txtDescription.Text = itemPrice.Description;
